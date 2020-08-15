@@ -1,0 +1,2215 @@
+openapi: 3.0.1
+info:
+  description: "<h1>API Quickstart Guide</h1>\n       <p>This documentation contains\
+    \ a Quickstart Guide, a few <a href=\"downloads.html\">sample clients</a>  for\
+    \ download and information about the available  <a href=\"resources.html\">endpoints</a>\
+    \  and  <a href=\"data.html\">DataTypes</a>  </p>\n\n   <p>The <a target=\"_blank\"\
+    \ href=\"http://madana-explorer-staging.eu-central-1.elasticbeanstalk.com/login\"\
+    >  MADANA Explorer</a> can be used to verify the interactions with the API</p>\n\
+    \   \n      <p>Internal use only. For more information visit <a href=\"https://www.madana.io\"\
+    >www.madana.io</a></p>\n     \n\n <br> <br>"
+  title: madana-api
+  version: 0.4.12
+servers:
+- url: //api.madana.io/rest/
+tags:
+- description: Used to Handle all actions in reference to a Password.
+  name: AccountService
+- description: |-
+    Authentication service
+    Used to get an Token in exchange for the sent credentials.
+  name: AuthenticationService
+- name: CertificateService
+- name: DataCollectionService
+- name: NodeService
+- name: OrganizationService
+- description: Endpoint for the handling of Analysis Requests.
+  name: RequestService
+- name: SocialPlatformService
+- description: Endpoint used for all actions related to users within the system.
+  name: SocialService
+- name: SystemService
+- description: Endpoint which handles user creation, editing & deletion.
+  name: UserService
+paths:
+  /account/activation/{token}:
+    get:
+      operationId: activateUser
+      parameters:
+      - in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - AccountService
+  /account/password:
+    post:
+      description: Sends an Password reset mail to the given MailAddress
+      operationId: createObject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_MailAddress'
+        description: '- the MaiAddress under which the user has signed up'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: HTTP Status Accepted if the mail has been send, NOT FOUND
+                  if the mail address could be found in the system or EXPECTATION
+                  FAILED when an error occured
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: HTTP Status Accepted if the mail has been send, NOT FOUND
+                  if the mail address could be found in the system or EXPECTATION
+                  FAILED when an error occured
+                format: binary
+                type: string
+          description: HTTP Status Accepted if the mail has been send, NOT FOUND if
+            the mail address could be found in the system or EXPECTATION FAILED when
+            an error occured
+      summary: Sends an Password reset mail to the given MailAddress.
+      tags:
+      - AccountService
+      x-codegen-request-body-name: body
+    put:
+      description: Receives the Password reset and tries to set the provided password
+        for the user. The Password will only be set if a valid token is provided
+      operationId: updateObject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_PasswordReset'
+        description: '- the MDN_PasswordReset Object'
+        required: false
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: HTTP Status ACCEPTED if password has been reset, FORBIDDEN
+                  if the token is invalid, NOT FOUND if the email is invalid, EXPECTATION
+                  FAILED if an error occured
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: HTTP Status ACCEPTED if password has been reset, FORBIDDEN
+                  if the token is invalid, NOT FOUND if the email is invalid, EXPECTATION
+                  FAILED if an error occured
+                format: binary
+                type: string
+          description: HTTP Status ACCEPTED if password has been reset, FORBIDDEN
+            if the token is invalid, NOT FOUND if the email is invalid, EXPECTATION
+            FAILED if an error occured
+      summary: Receives the Password reset and tries to set the provided password
+        for the user.
+      tags:
+      - AccountService
+      x-codegen-request-body-name: body
+  /account/verifymail:
+    get:
+      description: Used to request a new  activation-mail for the user
+      operationId: requestVerificationMail
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  properties: {}
+                  type: object
+                description: If the mail has been sent
+                type: object
+          description: If the mail has been sent
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Used to request a new  activation-mail for the user.
+      tags:
+      - AccountService
+  /authentication:
+    get:
+      description: Used to validate the active connection with the API
+      operationId: getObject
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  properties: {}
+                  type: object
+                description: If the usage could be generated
+                type: object
+          description: If the usage could be generated
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Used to validate the active connection with the API.
+      tags:
+      - AuthenticationService
+    post:
+      description: Authenticates a new user and returns the token (  forbidden if
+        the credentials cannot be validated )
+      operationId: authenticateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_UserCredentials'
+        description: the credentials used to validate the user
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_MDN_Token'
+          description: If the credentials could be verified
+        403:
+          content: {}
+          description: If the credentials could not be verified
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Authenticates a new user and returns the token (  forbidden if the
+        credentials cannot be validated ).
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/application:
+    post:
+      description: Authenticates a new application and returns the token
+      operationId: authenticateApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_Certificate'
+        description: the credentials used to validate the user
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_MDN_Token'
+          description: If the application certificate could be verified
+        401:
+          content: {}
+          description: If the application could not be found
+        403:
+          content: {}
+          description: If the an error occurs verifying the Application certificate
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Authenticates a new application and returns the token.
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/ethereum/{wallet}:
+    get:
+      description: Returns a nonce for the client which is used as content for the
+        to be created signature
+      operationId: getNonceForEthereumWallet
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - description: |-
+          - wallet address as String
+          * @HTTP 417 If the address is not valid
+        in: path
+        name: wallet
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_MDN_Token'
+          description: ""
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Returns a nonce for the client which is used as content for the to
+        be created signature.
+      tags:
+      - AuthenticationService
+    post:
+      operationId: authenticateEthereumWallet
+      parameters:
+      - description: the wallet which should be authenticated
+        in: path
+        name: wallet
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_OAuthToken'
+        description: Token containing nonce and signate
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+        417:
+          content: {}
+          description: If the nonce could not be verified
+        500:
+          content: {}
+          description: If an servsided error occurs
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/ethereum/{wallet}/challenge:
+    post:
+      operationId: authenticateWithEthereumChallenge
+      parameters:
+      - description: the wallet which should be authenticated
+        in: path
+        name: wallet
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_OAuthToken'
+        description: Token containing nonce and signate
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+        417:
+          content: {}
+          description: If the nonce could not be verified
+        500:
+          content: {}
+          description: If an servsided error occurs
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/facebook:
+    post:
+      description: Used as Callback URL when users have successfully authorized their
+        facbeook account
+      operationId: setFacebookUID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ""
+              type: string
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Used as Callback URL when users have successfully authorized their
+        facbeook account.
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/fractal:
+    get:
+      description: Returns the AUthorization URL to verify a Twitter Accounts
+      operationId: getFractalAuthenticationURL
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Returns the AUthorization URL to verify a Twitter Accounts.
+      tags:
+      - AuthenticationService
+    post:
+      operationId: setFractalUID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ""
+              type: string
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /authentication/twitter:
+    get:
+      description: Returns the AUthorization URL to verify a Twitter Accounts
+      operationId: getTwitterAuthenticationURL
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Returns the AUthorization URL to verify a Twitter Accounts.
+      tags:
+      - AuthenticationService
+    post:
+      operationId: setTwitterUID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_OAuthToken'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - AuthenticationService
+      x-codegen-request-body-name: body
+  /certificates:
+    post:
+      description: Issues certificates for logged-in users
+      operationId: authenticateCertificate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_Data'
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_MDN_Certificate'
+          description: If the Request have been signed could be verified
+        403:
+          content: {}
+          description: If an error occurs
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Issues certificates for logged-in users.
+      tags:
+      - CertificateService
+      x-codegen-request-body-name: body
+  /certificates/root:
+    get:
+      operationId: getCertificate
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - CertificateService
+  /certificates/{fingerprint}:
+    get:
+      operationId: getCertificate
+      parameters:
+      - in: path
+        name: fingerprint
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - CertificateService
+  /datacollection/methods:
+    get:
+      operationId: getNodes
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - DataCollectionService
+  /datacollection/types:
+    get:
+      operationId: getTypes
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - DataCollectionService
+  /datacollection/types/{name}/methods:
+    get:
+      operationId: getMethodsForType
+      parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - DataCollectionService
+  /nodes:
+    get:
+      operationId: getNodes2
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - NodeService
+    post:
+      operationId: postNodeInfo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_NodeInfo'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - NodeService
+      x-codegen-request-body-name: body
+  /organizations:
+    get:
+      operationId: getNodes3
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - OrganizationService
+  /platforms:
+    get:
+      description: Used to Handle Incoming Webhooks from Facebook
+      operationId: getPlatforms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ""
+              type: string
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Used to Handle Incoming Webhooks from Facebook.
+      tags:
+      - SocialPlatformService
+      x-codegen-request-body-name: body
+  /platforms/twitter:
+    get:
+      description: Used to Handle Incoming Webhooks from Twitter
+      operationId: registerTwitterWebhook
+      parameters:
+      - in: query
+        name: crc_token
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Used to Handle Incoming Webhooks from Twitter.
+      tags:
+      - SocialPlatformService
+    post:
+      description: Used to Handle Incoming Webhooks from Facebook
+      operationId: listenTwitterWebhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ""
+              type: string
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      summary: Used to Handle Incoming Webhooks from Facebook.
+      tags:
+      - SocialPlatformService
+      x-codegen-request-body-name: body
+  /requests:
+    get:
+      description: Returns UUIDs of existing analyses.
+      operationId: getAllRequests
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - description: '- if Queryparam "created=true" only the UUIDs of own Requests
+          are shown'
+        in: query
+        name: created
+        schema:
+          default: "false"
+          type: string
+      - description: '- if queryparam "history" is set to true, endpoint returns all
+          user actions. False per default.'
+        in: query
+        name: history
+        schema:
+          default: "false"
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - description: '-  if Queryparam "new=true" only the UUIDs of new Requests (
+          Requests the user has not participated in and still allow participation)
+          are shown'
+        in: query
+        name: new
+        schema:
+          default: "true"
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      - in: query
+        name: preview
+        schema:
+          default: "false"
+          type: string
+      - in: query
+        name: ready
+        schema:
+          default: "false"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the actions could be loaded
+                format: binary
+                type: string
+          description: If the actions could be loaded
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Returns UUIDs of existing analyses.
+      tags:
+      - RequestService
+    post:
+      description: Endpoint used to create a new Analysis Request
+      operationId: createNewRequest
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the request has been created
+                type: string
+          description: If the request has been created
+        403:
+          content: {}
+          description: If the calling entity is not allowed to create the request
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Endpoint used to create a new Analysis Request.
+      tags:
+      - RequestService
+      x-codegen-request-body-name: body
+  /requests/actions:
+    get:
+      operationId: getActions
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - RequestService
+  /requests/{uuid}:
+    get:
+      description: Returns the details for certain Request. When requesting an analysis
+        a view of the analysis is stored in the database
+      operationId: getRequest
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_Analysis'
+          description: If the consent has been received could be loaded
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+      summary: Returns the details for certain Request.
+      tags:
+      - RequestService
+    post:
+      description: Endpoint used initialized addition datacollection parameters for
+        requester
+      operationId: initRequestParameters
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ""
+              type: string
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the request has been created
+                type: string
+          description: If the request has been created
+        403:
+          content: {}
+          description: If the calling entity is not allowed to create the request
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Endpoint used initialized addition datacollection parameters for requester.
+      tags:
+      - RequestService
+      x-codegen-request-body-name: body
+  /requests/{uuid}/agent:
+    get:
+      description: Is called from the APE to request all parked datasets. Returns
+        the transmitted data for certain Request. When requesting the data, the status
+        of the request is automatically set to processing.
+      operationId: getAgent
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the consent has been received could be loaded
+                format: binary
+                type: string
+          description: If the consent has been received could be loaded
+        403:
+          content: {}
+          description: If the endpoint is not called from the set agent / APE
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If the AnalysisRequest has been completed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Is called from the APE to request all parked datasets.
+      tags:
+      - RequestService
+    post:
+      description: Is called from the APE to request all parked datasets. Returns
+        the transmitted data for certain Request. When requesting the data, the status
+        of the request is automatically set to processing.
+      operationId: setAgent
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the consent has been received could be loaded
+                format: binary
+                type: string
+          description: If the consent has been received could be loaded
+        403:
+          content: {}
+          description: If the endpoint is not called from the set agent / APE
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If the AnalysisRequest has been completed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Is called from the APE to request all parked datasets.
+      tags:
+      - RequestService
+  /requests/{uuid}/cancel:
+    post:
+      description: Endpoint is called from the Analysis Processing entity to submit
+        the result
+      operationId: cancelProcessing
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_Analysis'
+          description: If the result has been received
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If  the AnalysisRequest has been completed, or the result is
+            malformed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Endpoint is called from the Analysis Processing entity to submit the
+        result.
+      tags:
+      - RequestService
+      x-codegen-request-body-name: body
+  /requests/{uuid}/consent:
+    post:
+      description: Used to give consent for request. If the Endpoint is called from
+        the creator of the Analysis, the status of the request is set to completed.
+        If called by another is interpreted as giving consent to participate.
+      operationId: giveConsent
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_Analysis'
+          description: If the consent has been received could be loaded
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If no consent can be received anymore because the AnalysisRequest
+            is already being processed or completed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Used to give consent for request.
+      tags:
+      - RequestService
+  /requests/{uuid}/data:
+    get:
+      description: Is called from the APE to request all parked datasets. Returns
+        the transmitted data for certain Request. When requesting the data, the status
+        of the request is automatically set to processing.
+      operationId: getData
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_SignedData'
+          description: If the consent has been received could be loaded
+        403:
+          content: {}
+          description: If the endpoint is not called from the set agent / APE
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If the AnalysisRequest has been completed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Is called from the APE to request all parked datasets.
+      tags:
+      - RequestService
+    post:
+      description: Is used to upload and park the data till the AnalysisRequest gets
+        processed
+      operationId: addData
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_Analysis'
+          description: If the data has been sucessfully received
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If an unprivileged user tries to send data
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Is used to upload and park the data till the AnalysisRequest gets processed.
+      tags:
+      - RequestService
+      x-codegen-request-body-name: body
+  /requests/{uuid}/result:
+    get:
+      description: Can be called from creator to request the AnalysisResult.
+      operationId: getResult
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_AnalysisResult'
+          description: If the consent has been received could be loaded
+        403:
+          content: {}
+          description: If the endpoint is not called from the set agent / APE
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If the AnalysisRequest has been completed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Can be called from creator to request the AnalysisResult.
+      tags:
+      - RequestService
+    post:
+      description: Endpoint is called from the Analysis Processing entity to submit
+        the result
+      operationId: setResult
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_SignedData'
+        required: false
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json_Analysis'
+          description: If the result has been received
+        404:
+          content: {}
+          description: If the uuid of the request cannot be found
+        406:
+          content: {}
+          description: If  the AnalysisRequest has been completed, or the result is
+            malformed
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Endpoint is called from the Analysis Processing entity to submit the
+        result.
+      tags:
+      - RequestService
+      x-codegen-request-body-name: body
+  /social:
+    get:
+      description: Returns all Platforms / Systems that can be Connected to the MADANA
+        Service
+      operationId: getPlatforms2
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: List<{MDN_SocialPlatform>
+                format: binary
+                type: string
+          description: List<{MDN_SocialPlatform>
+      summary: Returns all Platforms / Systems that can be Connected to the MADANA
+        Service.
+      tags:
+      - SocialService
+  /social/feed/{platform}:
+    get:
+      operationId: getSocialPlatformFeed
+      parameters:
+      - in: path
+        name: platform
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - SocialService
+  /social/profiles/me:
+    get:
+      operationId: getMyProfile
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - SocialService
+  /social/profiles/{username}:
+    get:
+      operationId: getUserProfile
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: simple
+        schema:
+          default: "false"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - SocialService
+  /social/profiles/{username}/simple:
+    get:
+      operationId: getUserProfile
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - SocialService
+  /social/ranking:
+    get:
+      description: Returns the Ranking by PTS within the System
+      operationId: getRanking
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: Map<String, String> - The key is the username and the
+                  value are the points
+                format: binary
+                type: string
+          description: Map<String, String> - The key is the username and the value
+            are the points
+      summary: Returns the Ranking by PTS within the System.
+      tags:
+      - SocialService
+  /system/health:
+    get:
+      operationId: getAllObjects
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - SystemService
+  /system/usage:
+    get:
+      description: Return the current application usage
+      operationId: getApplication
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  properties: {}
+                  type: object
+                description: If the usage could be generated
+                type: object
+          description: If the usage could be generated
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Return the current application usage.
+      tags:
+      - SystemService
+  /users:
+    post:
+      description: Creates a new user object
+      operationId: createObject2
+      parameters:
+      - in: query
+        name: referrer
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_User'
+        description: provided user object inheriting properties and credentials
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+          description: HTTP Response OK
+      summary: Creates a new user object.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+  /users/{username}:
+    delete:
+      description: Deletes an User based on the provided id and securitycontext
+      operationId: deleteObject
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+          description: HTTP Response OK
+      summary: Deletes an User based on the provided id and securitycontext.
+      tags:
+      - UserService
+    get:
+      operationId: getObject2
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - UserService
+    put:
+      description: Updates Userproperties based on the provided user object
+      operationId: updateObject2
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_User'
+        description: the new user object inherting all properties that should be change
+        required: false
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+          description: HTTP Response OK
+      summary: Updates Userproperties based on the provided user object.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+  /users/{username}/avatars:
+    get:
+      operationId: getAvatars
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - UserService
+    post:
+      operationId: setAvatar
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_UserProfileImage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_MDN_UserProfileImage'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+  /users/{username}/certificates:
+    get:
+      operationId: getCertificates
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - UserService
+  /users/{username}/settings:
+    post:
+      operationId: setSettings
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_MDN_UserSetting'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_MDN_UserSetting'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+  /users/{username}/social/{platform}/{ident}:
+    delete:
+      description: Deletes linked account from the user and securitycontext
+      operationId: deleteObject
+      parameters:
+      - in: path
+        name: ident
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: platform
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: HTTP Response OK
+                format: binary
+                type: string
+          description: HTTP Response OK
+      summary: Deletes linked account from the user and securitycontext.
+      tags:
+      - UserService
+components:
+  schemas:
+    json_Analysis:
+      allOf:
+      - $ref: '#/components/schemas/json_AnalysisRequest'
+      - $ref: '#/components/schemas/json_Analysis_allOf'
+      description: ""
+      title: Analysis
+    json_AnalysisRequest:
+      description: ""
+      example:
+        tokenAmount: '...'
+        treshold: '...'
+        dataCollectionMethod: '...'
+        dataCollectionConfig: '...'
+        description: '...'
+      properties:
+        tokenAmount:
+          description: ""
+          type: string
+        treshold:
+          description: ""
+          type: string
+        dataCollectionMethod:
+          description: ""
+          type: string
+        dataCollectionConfig:
+          description: ""
+          type: string
+        description:
+          description: ""
+          type: string
+      title: AnalysisRequest
+      type: object
+    json_AnalysisRequestAction:
+      description: ""
+      example:
+        requestID: '...'
+        user: '...'
+        connection: '...'
+        date: '...'
+        fingerprint: '...'
+        application: '...'
+        action: '...'
+        details: '...'
+        signature: '...'
+      properties:
+        requestID:
+          description: ""
+          type: string
+        user:
+          description: ""
+          type: string
+        connection:
+          description: ""
+          type: string
+        date:
+          description: ""
+          type: string
+        fingerprint:
+          description: ""
+          type: string
+        application:
+          description: ""
+          type: string
+        action:
+          description: ""
+          type: string
+        details:
+          description: ""
+          type: string
+        signature:
+          description: ""
+          type: string
+      title: AnalysisRequestAction
+      type: object
+    json_AnalysisResult:
+      description: ""
+      example:
+        rawBytes: '...'
+        description: '...'
+        subGroups:
+        - filter: '...'
+          rawBytes: '...'
+          description: '...'
+          subGroups:
+          - {}
+          - {}
+          visualization:
+            function: '...'
+            parameters:
+            - '...'
+            - '...'
+            scriptsrc: '...'
+        - filter: '...'
+          rawBytes: '...'
+          description: '...'
+          subGroups:
+          - {}
+          - {}
+          visualization:
+            function: '...'
+            parameters:
+            - '...'
+            - '...'
+            scriptsrc: '...'
+        visualization:
+          function: '...'
+          parameters:
+          - '...'
+          - '...'
+          scriptsrc: '...'
+      properties:
+        rawBytes:
+          description: ""
+          type: string
+        description:
+          description: ""
+          type: string
+        subGroups:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_AnalysisResultSubGroup'
+          type: array
+        visualization:
+          $ref: '#/components/schemas/json_AnalysisVisualization'
+      title: AnalysisResult
+      type: object
+    json_AnalysisResultSubGroup:
+      allOf:
+      - $ref: '#/components/schemas/json_AnalysisResult'
+      - $ref: '#/components/schemas/json_AnalysisResultSubGroup_allOf'
+      description: ""
+      title: AnalysisResultSubGroup
+    json_AnalysisVisualization:
+      description: ""
+      example:
+        function: '...'
+        parameters:
+        - '...'
+        - '...'
+        scriptsrc: '...'
+      properties:
+        function:
+          description: ""
+          type: string
+        parameters:
+          description: ""
+          items:
+            type: string
+          type: array
+        scriptsrc:
+          description: ""
+          type: string
+      title: AnalysisVisualization
+      type: object
+    json_DatasetInfo:
+      allOf:
+      - $ref: '#/components/schemas/json_SignedData'
+      - $ref: '#/components/schemas/json_DatasetInfo_allOf'
+      description: ""
+      title: DatasetInfo
+    json_MDN_A_UserObject:
+      description: ""
+      example:
+        image: '...'
+        activated: '...'
+        created: '...'
+        lastActive: '...'
+        userName: '...'
+      properties:
+        image:
+          description: ""
+          type: string
+        activated:
+          description: ""
+          type: string
+        created:
+          description: ""
+          type: string
+        lastActive:
+          description: ""
+          type: string
+        userName:
+          description: ""
+          type: string
+      title: MDN_A_UserObject
+      type: object
+    json_MDN_Certificate:
+      description: ""
+      example:
+        pem: '...'
+      properties:
+        pem:
+          description: ""
+          type: string
+      title: MDN_Certificate
+      type: object
+    json_MDN_Data:
+      description: ""
+      example:
+        data: '...'
+      properties:
+        data:
+          description: ""
+          type: string
+      title: MDN_Data
+      type: object
+    json_MDN_MailAddress:
+      description: ""
+      example:
+        mail: '...'
+      properties:
+        mail:
+          description: ""
+          type: string
+      title: MDN_MailAddress
+      type: object
+    json_MDN_OAuthToken:
+      description: ""
+      example:
+        token: '...'
+        verifier: '...'
+      properties:
+        token:
+          description: ""
+          type: string
+        verifier:
+          description: ""
+          type: string
+      title: MDN_OAuthToken
+      type: object
+    json_MDN_PasswordReset:
+      description: ""
+      example:
+        password: '...'
+        token: '...'
+        mail: '...'
+      properties:
+        password:
+          description: ""
+          type: string
+        token:
+          description: ""
+          type: string
+        mail:
+          description: ""
+          type: string
+      title: MDN_PasswordReset
+      type: object
+    json_MDN_Setting:
+      description: ""
+      example:
+        id: '...'
+        name: '...'
+        description: '...'
+      properties:
+        id:
+          description: ""
+          type: string
+        name:
+          description: ""
+          type: string
+        description:
+          description: ""
+          type: string
+      title: MDN_Setting
+      type: object
+    json_MDN_SocialUserObject:
+      description: ""
+      example:
+        image: '...'
+        platform: '...'
+        ident: '...'
+      properties:
+        image:
+          description: ""
+          type: string
+        platform:
+          description: ""
+          type: string
+        ident:
+          description: ""
+          type: string
+      title: MDN_SocialUserObject
+      type: object
+    json_MDN_Token:
+      description: ""
+      example:
+        token: '...'
+      properties:
+        token:
+          description: ""
+          type: string
+      title: MDN_Token
+      type: object
+    json_MDN_User:
+      allOf:
+      - $ref: '#/components/schemas/json_MDN_A_UserObject'
+      - $ref: '#/components/schemas/json_MDN_User_allOf'
+      description: ""
+      title: MDN_User
+    json_MDN_UserCredentials:
+      description: ""
+      example:
+        password: '...'
+        username: '...'
+      properties:
+        password:
+          description: ""
+          type: string
+        username:
+          description: ""
+          type: string
+      title: MDN_UserCredentials
+      type: object
+    json_MDN_UserProfileImage:
+      description: ""
+      example:
+        id: '...'
+        image: '...'
+      properties:
+        id:
+          description: ""
+          type: string
+        image:
+          description: ""
+          type: string
+      title: MDN_UserProfileImage
+      type: object
+    json_MDN_UserSetting:
+      allOf:
+      - $ref: '#/components/schemas/json_MDN_Setting'
+      - $ref: '#/components/schemas/json_MDN_UserSetting_allOf'
+      description: ""
+      title: MDN_UserSetting
+    json_NodeInfo:
+      description: ""
+      example:
+        hardwareBaseboard: '...'
+        publicKey: '...'
+        memory: '...'
+        processors:
+        - '...'
+        - '...'
+        cpuLogicalCount: 12345
+        connectionURL: '...'
+        operatingSystem: '...'
+        cpuPhysicalCores: 12345
+        status: '...'
+        operatingSystemUptime: 12345
+        cpuModel: '...'
+        owner: '...'
+        cpuFamily: '...'
+        cpuFrequency: '...'
+        hardwareFirmware: '...'
+      properties:
+        hardwareBaseboard:
+          description: ""
+          type: string
+        publicKey:
+          description: ""
+          type: string
+        memory:
+          description: ""
+          type: string
+        processors:
+          description: ""
+          items:
+            type: string
+          type: array
+        cpuLogicalCount:
+          description: ""
+          format: int32
+          type: integer
+        connectionURL:
+          description: ""
+          type: string
+        operatingSystem:
+          description: ""
+          type: string
+        cpuPhysicalCores:
+          description: ""
+          format: int32
+          type: integer
+        status:
+          description: ""
+          type: string
+        operatingSystemUptime:
+          description: ""
+          type: number
+        cpuModel:
+          description: ""
+          type: string
+        owner:
+          description: ""
+          type: string
+        cpuFamily:
+          description: ""
+          type: string
+        cpuFrequency:
+          description: ""
+          type: string
+        hardwareFirmware:
+          description: ""
+          type: string
+      title: NodeInfo
+      type: object
+    json_SignedData:
+      description: ""
+      example:
+        fingerpint: '...'
+        signature: '...'
+        data: '...'
+      properties:
+        fingerpint:
+          description: ""
+          type: string
+        signature:
+          description: ""
+          type: string
+        data:
+          description: ""
+          type: string
+      title: SignedData
+      type: object
+    xml_ns0_MDN_Setting:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_MDN_Setting_allOf'
+      description: ""
+      title: MDN_Setting
+    xml_ns0_MDN_UserProfileImage:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_MDN_UserProfileImage_allOf'
+      description: ""
+      title: MDN_UserProfileImage
+    xml_ns0_MDN_UserSetting:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_MDN_Setting'
+      - $ref: '#/components/schemas/xml_ns0_MDN_UserSetting_allOf'
+      description: ""
+      title: MDN_UserSetting
+    xml_ns0_signedData:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_signedData_allOf'
+      description: ""
+      title: signedData
+    json_Analysis_allOf:
+      properties:
+        created:
+          description: ""
+          type: string
+        uuid:
+          description: ""
+          type: string
+        status:
+          description: ""
+          type: string
+        agent:
+          description: ""
+          type: string
+        datasets:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_DatasetInfo'
+          type: array
+        participants:
+          description: ""
+          items:
+            type: string
+          type: array
+        views:
+          description: ""
+          type: string
+        actions:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_AnalysisRequestAction'
+          type: array
+        creator:
+          description: ""
+          type: string
+        datasetCount:
+          description: ""
+          type: string
+    json_AnalysisResultSubGroup_allOf:
+      properties:
+        filter:
+          description: ""
+          type: string
+    json_DatasetInfo_allOf:
+      properties:
+        signature:
+          description: ""
+          type: string
+        size:
+          description: ""
+          type: string
+        hash:
+          description: ""
+          type: string
+        creationdate:
+          description: ""
+          type: string
+        fingerprint:
+          description: ""
+          type: string
+    json_MDN_User_allOf:
+      properties:
+        mail:
+          description: ""
+          type: string
+        lastName:
+          description: ""
+          type: string
+        guid:
+          description: ""
+          type: string
+        settings:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_MDN_UserSetting'
+          type: array
+        socialAccounts:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_MDN_SocialUserObject'
+          type: array
+        credentials:
+          $ref: '#/components/schemas/json_MDN_UserCredentials'
+        firstName:
+          description: ""
+          type: string
+    json_MDN_UserSetting_allOf:
+      properties:
+        value:
+          description: ""
+          type: string
+    xml_ns0_MDN_Setting_allOf:
+      properties:
+        description:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        id:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        name:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_MDN_UserProfileImage_allOf:
+      properties:
+        id:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        image:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_MDN_UserSetting_allOf:
+      properties:
+        value:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_signedData_allOf:
+      properties:
+        data:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        fingerpint:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        signature:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
