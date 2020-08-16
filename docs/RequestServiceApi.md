@@ -9,10 +9,11 @@ Method | HTTP request | Description
 [**CreateNewRequest**](RequestServiceApi.md#CreateNewRequest) | **Post** /requests | Endpoint used to create a new Analysis Request.
 [**GetActions**](RequestServiceApi.md#GetActions) | **Get** /requests/actions | 
 [**GetAgent**](RequestServiceApi.md#GetAgent) | **Get** /requests/{uuid}/agent | Is called from the APE to request all parked datasets.
-[**GetAllRequests**](RequestServiceApi.md#GetAllRequests) | **Get** /requests | Returns UUIDs of existing analyses.
+[**GetAllRequests2**](RequestServiceApi.md#GetAllRequests2) | **Get** /requests | Returns UUIDs of existing analyses.
 [**GetData**](RequestServiceApi.md#GetData) | **Get** /requests/{uuid}/data | Is called from the APE to request all parked datasets.
 [**GetRequest**](RequestServiceApi.md#GetRequest) | **Get** /requests/{uuid} | Returns the details for certain Request.
 [**GetResult**](RequestServiceApi.md#GetResult) | **Get** /requests/{uuid}/result | Can be called from creator to request the AnalysisResult.
+[**GetStatus**](RequestServiceApi.md#GetStatus) | **Get** /requests/stats | 
 [**GiveConsent**](RequestServiceApi.md#GiveConsent) | **Post** /requests/{uuid}/consent | Used to give consent for request.
 [**InitRequestParameters**](RequestServiceApi.md#InitRequestParameters) | **Post** /requests/{uuid} | Endpoint used initialized addition datacollection parameters for requester.
 [**SetAgent**](RequestServiceApi.md#SetAgent) | **Post** /requests/{uuid}/agent | Is called from the APE to request all parked datasets.
@@ -22,7 +23,7 @@ Method | HTTP request | Description
 
 ## AddData
 
-> JsonAnalysis AddData(ctx, uuid, optional)
+> *os.File AddData(ctx, uuid, optional)
 
 Is used to upload and park the data till the AnalysisRequest gets processed.
 
@@ -50,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysis**](json_Analysis.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -68,7 +69,7 @@ No authorization required
 
 ## CancelProcessing
 
-> JsonAnalysis CancelProcessing(ctx, uuid, optional)
+> *os.File CancelProcessing(ctx, uuid, optional)
 
 Endpoint is called from the Analysis Processing entity to submit the result.
 
@@ -96,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysis**](json_Analysis.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -243,9 +244,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAllRequests
+## GetAllRequests2
 
-> *os.File GetAllRequests(ctx, optional)
+> *os.File GetAllRequests2(ctx, optional)
 
 Returns UUIDs of existing analyses.
 
@@ -257,11 +258,11 @@ Returns UUIDs of existing analyses.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetAllRequestsOpts** | optional parameters | nil if no parameters
+ **optional** | ***GetAllRequests2Opts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a GetAllRequestsOpts struct
+Optional parameters are passed through a pointer to a GetAllRequests2Opts struct
 
 
 Name | Type | Description  | Notes
@@ -340,7 +341,7 @@ No authorization required
 
 ## GetRequest
 
-> JsonAnalysis GetRequest(ctx, uuid, optional)
+> *os.File GetRequest(ctx, uuid, optional)
 
 Returns the details for certain Request.
 
@@ -367,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysis**](json_Analysis.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -385,7 +386,7 @@ No authorization required
 
 ## GetResult
 
-> JsonAnalysisResult GetResult(ctx, uuid, optional)
+> *os.File GetResult(ctx, uuid, optional)
 
 Can be called from creator to request the AnalysisResult.
 
@@ -412,7 +413,35 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysisResult**](json_AnalysisResult.md)
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStatus
+
+> *os.File GetStatus(ctx, )
+
+
+
+### Required Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -430,7 +459,7 @@ No authorization required
 
 ## GiveConsent
 
-> JsonAnalysis GiveConsent(ctx, uuid, optional)
+> *os.File GiveConsent(ctx, uuid, optional)
 
 Used to give consent for request.
 
@@ -457,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysis**](json_Analysis.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -566,7 +595,7 @@ No authorization required
 
 ## SetResult
 
-> JsonAnalysis SetResult(ctx, uuid, optional)
+> *os.File SetResult(ctx, uuid, optional)
 
 Endpoint is called from the Analysis Processing entity to submit the result.
 
@@ -594,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonAnalysis**](json_Analysis.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 

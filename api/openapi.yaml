@@ -1,15 +1,21 @@
 openapi: 3.0.1
 info:
-  description: "<h1>API Quickstart Guide</h1>\n       <p>This documentation contains\
-    \ a Quickstart Guide, a few <a href=\"downloads.html\">sample clients</a>  for\
-    \ download and information about the available  <a href=\"resources.html\">endpoints</a>\
-    \  and  <a href=\"data.html\">DataTypes</a>  </p>\n\n   <p>The <a target=\"_blank\"\
-    \ href=\"http://madana-explorer-staging.eu-central-1.elasticbeanstalk.com/login\"\
-    >  MADANA Explorer</a> can be used to verify the interactions with the API</p>\n\
-    \   \n      <p>Internal use only. For more information visit <a href=\"https://www.madana.io\"\
-    >www.madana.io</a></p>\n     \n\n <br> <br>"
+  description: "<h1>Using the madana-api</h1>\n       <p>This documentation contains\
+    \ a Quickstart Guide, relating client functionality and information about the\
+    \ available \n       endpoints and used datamodels.   </p>    \n\n <p> The madana-api\
+    \ and its implementations are still in heavy development. This means that there\
+    \ may be problems in our protocols, or there may be mistakes in our implementations.\
+    \ We take security vulnerabilities very seriously. If you discover a security\
+    \ issue, please bring it to our attention right away! If you find a vulnerability\
+    \ that may affect live deployments -- for example, by exposing a remote execution\
+    \ exploit -- please send your report privately to info@madana.io. Please DO NOT\
+    \ file a public issue. If the issue is a protocol weakness that cannot be immediately\
+    \ exploited or something not yet deployed, just discuss it openly   </p> \n <br>\n\
+    \  <p> Note: Not all functionality might be acessible without having accquired\
+    \ and api-license token. For more information visit <a href=\"https://www.madana.io\"\
+    >www.madana.io</a> </p>    \n  <br>"
   title: madana-api
-  version: 0.4.12
+  version: 0.4.14-master.16
 servers:
 - url: //api.madana.io/rest/
 tags:
@@ -21,6 +27,8 @@ tags:
   name: AuthenticationService
 - name: CertificateService
 - name: DataCollectionService
+- name: EnclaveService
+- name: EnvironmentService
 - name: NodeService
 - name: OrganizationService
 - description: Endpoint for the handling of Analysis Requests.
@@ -565,9 +573,473 @@ paths:
           description: ""
       tags:
       - DataCollectionService
+  /enclaves:
+    get:
+      description: Returns UUIDs of existing analyses.
+      operationId: getEnclaves
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - description: '- if Queryparam "created=true" only the UUIDs of own Requests
+          are shown'
+        in: query
+        name: created
+        schema:
+          default: "true"
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the actions could be loaded
+                format: binary
+                type: string
+          description: If the actions could be loaded
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Returns UUIDs of existing analyses.
+      tags:
+      - EnclaveService
+    post:
+      operationId: createEnclaveRunRequest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_EnclaveRunRequest'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+      x-codegen-request-body-name: body
+  /enclaves/types:
+    get:
+      operationId: getEnclaveTypes
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+  /enclaves/{uuid}:
+    get:
+      operationId: getEnclave
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+  /enclaves/{uuid}/approval:
+    post:
+      operationId: approveEnclave
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_EnclaveRunningAttestationApproval'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_EnclaveRunningAttestationApproval'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+      x-codegen-request-body-name: body
+  /enclaves/{uuid}/assign:
+    post:
+      operationId: assignEnclaveAgent
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_NodeInfo'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_NodeInfo'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+      x-codegen-request-body-name: body
+  /enclaves/{uuid}/attestation:
+    post:
+      operationId: attestateEnclave
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_EnclaveRunningAttestation'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_EnclaveRunningAttestation'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+      x-codegen-request-body-name: body
+  /enclaves/{uuid}/kill:
+    post:
+      operationId: killEnclave
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnclaveService
+  /environments:
+    get:
+      description: Returns UUIDs of existing analyses.
+      operationId: getAllRequests
+      parameters:
+      - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        in: header
+        name: Authorization
+        schema:
+          type: string
+      - description: '- if Queryparam "created=true" only the UUIDs of own Requests
+          are shown'
+        in: query
+        name: created
+        schema:
+          default: "true"
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - in: query
+        name: name
+        schema:
+          type: string
+      - description: Used for offset pagination. Limit/Offset Paging would look like
+          GET /request?limit=20&offset=100. This query would return the 20 rows starting
+          with the 100th row
+        in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: If the actions could be loaded
+                format: binary
+                type: string
+          description: If the actions could be loaded
+        500:
+          content: {}
+          description: If an servsided error occurs
+      summary: Returns UUIDs of existing analyses.
+      tags:
+      - EnvironmentService
+    post:
+      operationId: publishEnvironment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_EnvironmentPublishingRequest'
+        required: false
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+            application/xml:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+      x-codegen-request-body-name: body
+  /environments/published:
+    get:
+      operationId: getPublishedEnvironments
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+  /environments/subscriptions:
+    get:
+      operationId: getSubscribedEnvironments
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          default: "30"
+          type: string
+      - in: query
+        name: offset
+        schema:
+          default: "0"
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+  /environments/{uuid}:
+    delete:
+      operationId: deleteEnvironment
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+    get:
+      operationId: getEnvironment
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+    put:
+      operationId: updateEnvironment
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/json_Environment'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/json_Environment'
+        required: false
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+      x-codegen-request-body-name: body
+  /environments/{uuid}/subscribe:
+    delete:
+      operationId: deleteEnvironmentSubscription
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        204:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
+    post:
+      operationId: subscribeEnvironment
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - EnvironmentService
   /nodes:
     get:
       operationId: getNodes2
+      parameters:
+      - in: query
+        name: owner
+        schema:
+          type: string
       responses:
         200:
           content:
@@ -604,6 +1076,20 @@ paths:
       tags:
       - NodeService
       x-codegen-request-body-name: body
+  /nodes/bootstrap:
+    get:
+      operationId: getBootstrap
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - NodeService
   /organizations:
     get:
       operationId: getNodes3
@@ -699,7 +1185,7 @@ paths:
   /requests:
     get:
       description: Returns UUIDs of existing analyses.
-      operationId: getAllRequests
+      operationId: getAllRequests2
       parameters:
       - description: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
         in: header
@@ -830,6 +1316,20 @@ paths:
           description: ""
       tags:
       - RequestService
+  /requests/stats:
+    get:
+      operationId: getStatus
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                description: ""
+                format: binary
+                type: string
+          description: ""
+      tags:
+      - RequestService
   /requests/{uuid}:
     get:
       description: Returns the details for certain Request. When requesting an analysis
@@ -851,7 +1351,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_Analysis'
+                description: If the consent has been received could be loaded
+                format: binary
+                type: string
           description: If the consent has been received could be loaded
         404:
           content: {}
@@ -1010,7 +1512,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_Analysis'
+                description: If the result has been received
+                format: binary
+                type: string
           description: If the result has been received
         404:
           content: {}
@@ -1049,7 +1553,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_Analysis'
+                description: If the consent has been received could be loaded
+                format: binary
+                type: string
           description: If the consent has been received could be loaded
         404:
           content: {}
@@ -1129,7 +1635,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_Analysis'
+                description: If the data has been sucessfully received
+                format: binary
+                type: string
           description: If the data has been sucessfully received
         404:
           content: {}
@@ -1164,7 +1672,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_AnalysisResult'
+                description: If the consent has been received could be loaded
+                format: binary
+                type: string
           description: If the consent has been received could be loaded
         403:
           content: {}
@@ -1210,7 +1720,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/json_Analysis'
+                description: If the result has been received
+                format: binary
+                type: string
           description: If the result has been received
         404:
           content: {}
@@ -1624,185 +2136,381 @@ paths:
       - UserService
 components:
   schemas:
-    json_Analysis:
-      allOf:
-      - $ref: '#/components/schemas/json_AnalysisRequest'
-      - $ref: '#/components/schemas/json_Analysis_allOf'
-      description: ""
-      title: Analysis
-    json_AnalysisRequest:
+    json_Disk_config:
       description: ""
       example:
-        tokenAmount: '...'
-        treshold: '...'
-        dataCollectionMethod: '...'
-        dataCollectionConfig: '...'
-        description: '...'
+        roothash: '...'
+        disk: '...'
+        roothash_offset: 12345
+        readonly: true
       properties:
-        tokenAmount:
+        roothash:
           description: ""
           type: string
-        treshold:
+        disk:
           description: ""
           type: string
-        dataCollectionMethod:
+        roothash_offset:
+          description: ""
+          format: int32
+          type: integer
+        readonly:
+          description: ""
+          type: boolean
+      title: Disk_config
+      type: object
+    json_EnclaveProcess:
+      description: ""
+      example:
+        remoteControlServer: '...'
+        process:
+          inputStream: {}
+          alive: true
+          errorStream: {}
+          outputStream: {}
+        signerIdent: '...'
+        internalAttesationServer: '...'
+        attestationServer: '...'
+        internalRemoteControlServer: '...'
+        wgInterface:
+          port: '...'
+          name: '...'
+          address: '...'
+        endingTime: '...'
+        environment:
+          description: '...'
+          published: true
+          roothash: '...'
+          size: '...'
+          defaultRunConfiguration:
+            environment:
+              property1: '...'
+              property2: '...'
+            args:
+            - '...'
+            - '...'
+            run: '...'
+            disk_config:
+            - {}
+            - {}
+          ipfsHash: '...'
+          packages:
+          - '...'
+          - '...'
+          rootHashOffset: '...'
+          name: '...'
+          uuid: '...'
+          content:
+          - '...'
+          - '...'
+        internalIdent: '...'
+        consoleOutput: '...'
+        wireguardPublicKey: '...'
+        startupTime: '...'
+        enclaveIdent: '...'
+        status: '...'
+      properties:
+        remoteControlServer:
           description: ""
           type: string
-        dataCollectionConfig:
+        process:
+          $ref: '#/components/schemas/json_Process'
+        signerIdent:
           description: ""
           type: string
+        internalAttesationServer:
+          description: ""
+          type: string
+        attestationServer:
+          description: ""
+          type: string
+        internalRemoteControlServer:
+          description: ""
+          type: string
+        wgInterface:
+          $ref: '#/components/schemas/json_WireguardInterface'
+        endingTime:
+          description: ""
+          type: string
+        environment:
+          $ref: '#/components/schemas/json_Environment'
+        internalIdent:
+          description: ""
+          type: string
+        consoleOutput:
+          description: ""
+          type: string
+        wireguardPublicKey:
+          description: ""
+          type: string
+        startupTime:
+          description: ""
+          type: string
+        enclaveIdent:
+          description: ""
+          type: string
+        status:
+          description: ""
+          type: string
+      title: EnclaveProcess
+      type: object
+    json_EnclaveRunRequest:
+      description: ""
+      example:
+        environmentUUID: '...'
+        enclaveExecutionType: '...'
+      properties:
+        environmentUUID:
+          description: ""
+          type: string
+        enclaveExecutionType:
+          description: ""
+          type: string
+      title: EnclaveRunRequest
+      type: object
+    json_EnclaveRunningAttestation:
+      description: ""
+      example:
+        enclaveProcess:
+          remoteControlServer: '...'
+          process:
+            inputStream: {}
+            alive: true
+            errorStream: {}
+            outputStream: {}
+          signerIdent: '...'
+          internalAttesationServer: '...'
+          attestationServer: '...'
+          internalRemoteControlServer: '...'
+          wgInterface:
+            port: '...'
+            name: '...'
+            address: '...'
+          endingTime: '...'
+          environment:
+            description: '...'
+            published: true
+            roothash: '...'
+            size: '...'
+            defaultRunConfiguration: {}
+            ipfsHash: '...'
+            packages:
+            - '...'
+            - '...'
+            rootHashOffset: '...'
+            name: '...'
+            uuid: '...'
+            content:
+            - '...'
+            - '...'
+          internalIdent: '...'
+          consoleOutput: '...'
+          wireguardPublicKey: '...'
+          startupTime: '...'
+          enclaveIdent: '...'
+          status: '...'
+        nodeInfo:
+          cpuModel: '...'
+          hardwareFirmware: '...'
+          cpuFamily: '...'
+          memory: '...'
+          cpuLogicalCount: 12345
+          hardwareBaseboard: '...'
+          operatingSystem: '...'
+          publicKey: '...'
+          processors:
+          - '...'
+          - '...'
+          ipfsInfo:
+            swarmConnection: '...'
+            publicKey: '...'
+            protocolVersion: '...'
+            agentVersion: '...'
+            id: '...'
+          cpuFrequency: '...'
+          operatingSystemUptime: 12345
+          owner: '...'
+          cpuPhysicalCores: 12345
+          status: '...'
+          connectionURL: '...'
+      properties:
+        enclaveProcess:
+          $ref: '#/components/schemas/json_EnclaveProcess'
+        nodeInfo:
+          $ref: '#/components/schemas/json_NodeInfo'
+      title: EnclaveRunningAttestation
+      type: object
+    json_EnclaveRunningAttestationApproval:
+      allOf:
+      - $ref: '#/components/schemas/json_EnclaveRunningAttestation'
+      - $ref: '#/components/schemas/json_EnclaveRunningAttestationApproval_allOf'
+      description: ""
+      title: EnclaveRunningAttestationApproval
+    json_Environment:
+      description: ""
+      example:
+        description: '...'
+        published: true
+        roothash: '...'
+        size: '...'
+        defaultRunConfiguration:
+          environment:
+            property1: '...'
+            property2: '...'
+          args:
+          - '...'
+          - '...'
+          run: '...'
+          disk_config:
+          - roothash: '...'
+            disk: '...'
+            roothash_offset: 12345
+            readonly: true
+          - roothash: '...'
+            disk: '...'
+            roothash_offset: 12345
+            readonly: true
+        ipfsHash: '...'
+        packages:
+        - '...'
+        - '...'
+        rootHashOffset: '...'
+        name: '...'
+        uuid: '...'
+        content:
+        - '...'
+        - '...'
+      properties:
         description:
           description: ""
           type: string
-      title: AnalysisRequest
-      type: object
-    json_AnalysisRequestAction:
-      description: ""
-      example:
-        requestID: '...'
-        user: '...'
-        connection: '...'
-        date: '...'
-        fingerprint: '...'
-        application: '...'
-        action: '...'
-        details: '...'
-        signature: '...'
-      properties:
-        requestID:
+        published:
+          description: ""
+          type: boolean
+        roothash:
           description: ""
           type: string
-        user:
+        size:
           description: ""
           type: string
-        connection:
+        defaultRunConfiguration:
+          $ref: '#/components/schemas/json_RunConfig'
+        ipfsHash:
           description: ""
           type: string
-        date:
-          description: ""
-          type: string
-        fingerprint:
-          description: ""
-          type: string
-        application:
-          description: ""
-          type: string
-        action:
-          description: ""
-          type: string
-        details:
-          description: ""
-          type: string
-        signature:
-          description: ""
-          type: string
-      title: AnalysisRequestAction
-      type: object
-    json_AnalysisResult:
-      description: ""
-      example:
-        rawBytes: '...'
-        description: '...'
-        subGroups:
-        - filter: '...'
-          rawBytes: '...'
-          description: '...'
-          subGroups:
-          - {}
-          - {}
-          visualization:
-            function: '...'
-            parameters:
-            - '...'
-            - '...'
-            scriptsrc: '...'
-        - filter: '...'
-          rawBytes: '...'
-          description: '...'
-          subGroups:
-          - {}
-          - {}
-          visualization:
-            function: '...'
-            parameters:
-            - '...'
-            - '...'
-            scriptsrc: '...'
-        visualization:
-          function: '...'
-          parameters:
-          - '...'
-          - '...'
-          scriptsrc: '...'
-      properties:
-        rawBytes:
-          description: ""
-          type: string
-        description:
-          description: ""
-          type: string
-        subGroups:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_AnalysisResultSubGroup'
-          type: array
-        visualization:
-          $ref: '#/components/schemas/json_AnalysisVisualization'
-      title: AnalysisResult
-      type: object
-    json_AnalysisResultSubGroup:
-      allOf:
-      - $ref: '#/components/schemas/json_AnalysisResult'
-      - $ref: '#/components/schemas/json_AnalysisResultSubGroup_allOf'
-      description: ""
-      title: AnalysisResultSubGroup
-    json_AnalysisVisualization:
-      description: ""
-      example:
-        function: '...'
-        parameters:
-        - '...'
-        - '...'
-        scriptsrc: '...'
-      properties:
-        function:
-          description: ""
-          type: string
-        parameters:
+        packages:
           description: ""
           items:
             type: string
           type: array
-        scriptsrc:
+        rootHashOffset:
           description: ""
           type: string
-      title: AnalysisVisualization
+        name:
+          description: ""
+          type: string
+        uuid:
+          description: ""
+          type: string
+        content:
+          description: ""
+          items:
+            type: string
+          type: array
+      title: Environment
       type: object
-    json_DatasetInfo:
-      allOf:
-      - $ref: '#/components/schemas/json_SignedData'
-      - $ref: '#/components/schemas/json_DatasetInfo_allOf'
+    json_EnvironmentPublishingRequest:
       description: ""
-      title: DatasetInfo
+      example:
+        description: '...'
+        ipfsHash: '...'
+        size: '...'
+        isPublic: '...'
+        name: '...'
+        uuid: '...'
+        content: '...'
+        ipfsPrimaryPeer: '...'
+        packages: '...'
+      properties:
+        description:
+          description: ""
+          type: string
+        ipfsHash:
+          description: ""
+          type: string
+        size:
+          description: ""
+          type: string
+        isPublic:
+          description: ""
+          type: string
+        name:
+          description: ""
+          type: string
+        uuid:
+          description: ""
+          type: string
+        content:
+          description: ""
+          type: string
+        ipfsPrimaryPeer:
+          description: ""
+          type: string
+        packages:
+          description: ""
+          type: string
+      title: EnvironmentPublishingRequest
+      type: object
+    json_IPFSSystemInfo:
+      description: ""
+      example:
+        swarmConnection: '...'
+        publicKey: '...'
+        protocolVersion: '...'
+        agentVersion: '...'
+        id: '...'
+      properties:
+        swarmConnection:
+          description: ""
+          type: string
+        publicKey:
+          description: ""
+          type: string
+        protocolVersion:
+          description: ""
+          type: string
+        agentVersion:
+          description: ""
+          type: string
+        id:
+          description: ""
+          type: string
+      title: IPFSSystemInfo
+      type: object
+    json_InputStream:
+      description: ""
+      example: {}
+      title: InputStream
+      type: object
     json_MDN_A_UserObject:
       description: ""
       example:
-        image: '...'
-        activated: '...'
         created: '...'
+        activated: '...'
         lastActive: '...'
+        image: '...'
         userName: '...'
       properties:
-        image:
+        created:
           description: ""
           type: string
         activated:
           description: ""
           type: string
-        created:
+        lastActive:
           description: ""
           type: string
-        lastActive:
+        image:
           description: ""
           type: string
         userName:
@@ -1843,13 +2551,13 @@ components:
     json_MDN_OAuthToken:
       description: ""
       example:
-        token: '...'
         verifier: '...'
+        token: '...'
       properties:
-        token:
+        verifier:
           description: ""
           type: string
-        verifier:
+        token:
           description: ""
           type: string
       title: MDN_OAuthToken
@@ -1857,17 +2565,17 @@ components:
     json_MDN_PasswordReset:
       description: ""
       example:
-        password: '...'
         token: '...'
         mail: '...'
+        password: '...'
       properties:
-        password:
-          description: ""
-          type: string
         token:
           description: ""
           type: string
         mail:
+          description: ""
+          type: string
+        password:
           description: ""
           type: string
       title: MDN_PasswordReset
@@ -1875,14 +2583,14 @@ components:
     json_MDN_Setting:
       description: ""
       example:
-        id: '...'
         name: '...'
+        id: '...'
         description: '...'
       properties:
-        id:
+        name:
           description: ""
           type: string
-        name:
+        id:
           description: ""
           type: string
         description:
@@ -1927,13 +2635,13 @@ components:
     json_MDN_UserCredentials:
       description: ""
       example:
-        password: '...'
         username: '...'
+        password: '...'
       properties:
-        password:
+        username:
           description: ""
           type: string
-        username:
+        password:
           description: ""
           type: string
       title: MDN_UserCredentials
@@ -1958,34 +2666,70 @@ components:
       - $ref: '#/components/schemas/json_MDN_UserSetting_allOf'
       description: ""
       title: MDN_UserSetting
+    json_NetworkInterface:
+      description: ""
+      example:
+        name: '...'
+        address: '...'
+      properties:
+        name:
+          description: ""
+          type: string
+        address:
+          description: ""
+          type: string
+      title: NetworkInterface
+      type: object
     json_NodeInfo:
       description: ""
       example:
-        hardwareBaseboard: '...'
-        publicKey: '...'
+        cpuModel: '...'
+        hardwareFirmware: '...'
+        cpuFamily: '...'
         memory: '...'
+        cpuLogicalCount: 12345
+        hardwareBaseboard: '...'
+        operatingSystem: '...'
+        publicKey: '...'
         processors:
         - '...'
         - '...'
-        cpuLogicalCount: 12345
-        connectionURL: '...'
-        operatingSystem: '...'
+        ipfsInfo:
+          swarmConnection: '...'
+          publicKey: '...'
+          protocolVersion: '...'
+          agentVersion: '...'
+          id: '...'
+        cpuFrequency: '...'
+        operatingSystemUptime: 12345
+        owner: '...'
         cpuPhysicalCores: 12345
         status: '...'
-        operatingSystemUptime: 12345
-        cpuModel: '...'
-        owner: '...'
-        cpuFamily: '...'
-        cpuFrequency: '...'
-        hardwareFirmware: '...'
+        connectionURL: '...'
       properties:
-        hardwareBaseboard:
+        cpuModel:
           description: ""
           type: string
-        publicKey:
+        hardwareFirmware:
+          description: ""
+          type: string
+        cpuFamily:
           description: ""
           type: string
         memory:
+          description: ""
+          type: string
+        cpuLogicalCount:
+          description: ""
+          format: int32
+          type: integer
+        hardwareBaseboard:
+          description: ""
+          type: string
+        operatingSystem:
+          description: ""
+          type: string
+        publicKey:
           description: ""
           type: string
         processors:
@@ -1993,14 +2737,15 @@ components:
           items:
             type: string
           type: array
-        cpuLogicalCount:
-          description: ""
-          format: int32
-          type: integer
-        connectionURL:
+        ipfsInfo:
+          $ref: '#/components/schemas/json_IPFSSystemInfo'
+        cpuFrequency:
           description: ""
           type: string
-        operatingSystem:
+        operatingSystemUptime:
+          description: ""
+          type: number
+        owner:
           description: ""
           type: string
         cpuPhysicalCores:
@@ -2010,25 +2755,83 @@ components:
         status:
           description: ""
           type: string
-        operatingSystemUptime:
-          description: ""
-          type: number
-        cpuModel:
-          description: ""
-          type: string
-        owner:
-          description: ""
-          type: string
-        cpuFamily:
-          description: ""
-          type: string
-        cpuFrequency:
-          description: ""
-          type: string
-        hardwareFirmware:
+        connectionURL:
           description: ""
           type: string
       title: NodeInfo
+      type: object
+    json_OutputStream:
+      description: ""
+      example: {}
+      title: OutputStream
+      type: object
+    json_Process:
+      description: ""
+      example:
+        inputStream: {}
+        alive: true
+        errorStream: {}
+        outputStream: {}
+      properties:
+        inputStream:
+          description: ""
+          example: {}
+          title: InputStream
+          type: object
+        alive:
+          description: ""
+          type: boolean
+        errorStream:
+          description: ""
+          example: {}
+          title: InputStream
+          type: object
+        outputStream:
+          description: ""
+          example: {}
+          title: OutputStream
+          type: object
+      title: Process
+      type: object
+    json_RunConfig:
+      description: ""
+      example:
+        environment:
+          property1: '...'
+          property2: '...'
+        args:
+        - '...'
+        - '...'
+        run: '...'
+        disk_config:
+        - roothash: '...'
+          disk: '...'
+          roothash_offset: 12345
+          readonly: true
+        - roothash: '...'
+          disk: '...'
+          roothash_offset: 12345
+          readonly: true
+      properties:
+        environment:
+          additionalProperties:
+            type: string
+          description: ""
+          type: object
+        args:
+          description: ""
+          items:
+            type: string
+          type: array
+        run:
+          description: ""
+          type: string
+        disk_config:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_Disk_config'
+          type: array
+      title: RunConfig
       type: object
     json_SignedData:
       description: ""
@@ -2048,6 +2851,12 @@ components:
           type: string
       title: SignedData
       type: object
+    json_WireguardInterface:
+      allOf:
+      - $ref: '#/components/schemas/json_NetworkInterface'
+      - $ref: '#/components/schemas/json_WireguardInterface_allOf'
+      description: ""
+      title: WireguardInterface
     xml_ns0_MDN_Setting:
       allOf:
       - $ref: '#/components/schemas/xml_ns0_MDN_Setting_allOf'
@@ -2064,80 +2873,81 @@ components:
       - $ref: '#/components/schemas/xml_ns0_MDN_UserSetting_allOf'
       description: ""
       title: MDN_UserSetting
+    xml_ns0_enclaveProcess:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_enclaveProcess_allOf'
+      description: ""
+      title: enclaveProcess
+    xml_ns0_enclaveRunningAttestation:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_enclaveRunningAttestation_allOf'
+      description: ""
+      title: enclaveRunningAttestation
+    xml_ns0_enclaveRunningAttestationApproval:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_enclaveRunningAttestation'
+      - $ref: '#/components/schemas/xml_ns0_enclaveRunningAttestationApproval_allOf'
+      description: ""
+      title: enclaveRunningAttestationApproval
+    xml_ns0_environment:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_environment_allOf'
+      description: ""
+      title: environment
+    xml_ns0_IPFSSystemInfo:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_IPFSSystemInfo_allOf'
+      description: ""
+      title: IPFSSystemInfo
+    xml_ns0_networkInterface:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_networkInterface_allOf'
+      description: ""
+      title: networkInterface
+    xml_ns0_nodeInfo:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_nodeInfo_allOf'
+      description: ""
+      title: nodeInfo
     xml_ns0_signedData:
       allOf:
       - $ref: '#/components/schemas/xml_ns0_signedData_allOf'
       description: ""
       title: signedData
-    json_Analysis_allOf:
+    xml_ns0_wireguardInterface:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_networkInterface'
+      - $ref: '#/components/schemas/xml_ns0_wireguardInterface_allOf'
+      description: ""
+      title: wireguardInterface
+    xml_ns0_disk_config:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_disk_config_allOf'
+      description: ""
+      title: disk_config
+    xml_ns0_runConfig:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_runConfig_allOf'
+      description: ""
+      title: runConfig
+    xml_ns0_process:
+      allOf:
+      - type: object
+      description: ""
+      title: process
+    json_EnclaveRunningAttestationApproval_allOf:
       properties:
-        created:
-          description: ""
-          type: string
-        uuid:
-          description: ""
-          type: string
-        status:
-          description: ""
-          type: string
-        agent:
-          description: ""
-          type: string
-        datasets:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_DatasetInfo'
-          type: array
-        participants:
-          description: ""
-          items:
-            type: string
-          type: array
-        views:
-          description: ""
-          type: string
-        actions:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_AnalysisRequestAction'
-          type: array
-        creator:
-          description: ""
-          type: string
-        datasetCount:
-          description: ""
-          type: string
-    json_AnalysisResultSubGroup_allOf:
-      properties:
-        filter:
-          description: ""
-          type: string
-    json_DatasetInfo_allOf:
-      properties:
-        signature:
-          description: ""
-          type: string
-        size:
-          description: ""
-          type: string
-        hash:
-          description: ""
-          type: string
-        creationdate:
-          description: ""
-          type: string
-        fingerprint:
+        approved:
           description: ""
           type: string
     json_MDN_User_allOf:
       properties:
-        mail:
+        socialAccounts:
           description: ""
-          type: string
-        lastName:
-          description: ""
-          type: string
-        guid:
+          items:
+            $ref: '#/components/schemas/json_MDN_SocialUserObject'
+          type: array
+        firstName:
           description: ""
           type: string
         settings:
@@ -2145,19 +2955,25 @@ components:
           items:
             $ref: '#/components/schemas/json_MDN_UserSetting'
           type: array
-        socialAccounts:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_MDN_SocialUserObject'
-          type: array
-        credentials:
-          $ref: '#/components/schemas/json_MDN_UserCredentials'
-        firstName:
+        guid:
           description: ""
           type: string
+        lastName:
+          description: ""
+          type: string
+        mail:
+          description: ""
+          type: string
+        credentials:
+          $ref: '#/components/schemas/json_MDN_UserCredentials'
     json_MDN_UserSetting_allOf:
       properties:
         value:
+          description: ""
+          type: string
+    json_WireguardInterface_allOf:
+      properties:
+        port:
           description: ""
           type: string
     xml_ns0_MDN_Setting_allOf:
@@ -2196,6 +3012,268 @@ components:
           type: string
           xml:
             namespace: ""
+    xml_ns0_enclaveProcess_allOf:
+      properties:
+        attestationServer:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        consoleOutput:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        enclaveIdent:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        endingTime:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        environment:
+          $ref: '#/components/schemas/xml_ns0_environment'
+        internalAttesationServer:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        internalIdent:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        internalRemoteControlServer:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        process:
+          $ref: '#/components/schemas/xml_ns0_process'
+        remoteControlServer:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        signerIdent:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        startupTime:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        status:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        wgInterface:
+          $ref: '#/components/schemas/xml_ns0_wireguardInterface'
+        wireguardPublicKey:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_enclaveRunningAttestation_allOf:
+      properties:
+        enclaveProcess:
+          $ref: '#/components/schemas/xml_ns0_enclaveProcess'
+        nodeInfo:
+          $ref: '#/components/schemas/xml_ns0_nodeInfo'
+    xml_ns0_enclaveRunningAttestationApproval_allOf:
+      properties:
+        approved:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_environment_allOf:
+      properties:
+        content:
+          description: ""
+          items:
+            type: string
+          type: array
+          xml:
+            namespace: ""
+        defaultRunConfiguration:
+          $ref: '#/components/schemas/xml_ns0_runConfig'
+        description:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        ipfsHash:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        name:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        packages:
+          description: ""
+          items:
+            type: string
+          type: array
+          xml:
+            namespace: ""
+        published:
+          description: ""
+          type: boolean
+          xml:
+            namespace: ""
+        rootHashOffset:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        roothash:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        size:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        uuid:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_IPFSSystemInfo_allOf:
+      properties:
+        agentVersion:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        id:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        protocolVersion:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        publicKey:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        swarmConnection:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_networkInterface_allOf:
+      properties:
+        address:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        name:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_nodeInfo_allOf:
+      properties:
+        connectionURL:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        cpuFamily:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        cpuFrequency:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        cpuLogicalCount:
+          description: ""
+          format: int32
+          type: integer
+          xml:
+            namespace: ""
+        cpuModel:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        cpuPhysicalCores:
+          description: ""
+          format: int32
+          type: integer
+          xml:
+            namespace: ""
+        hardwareBaseboard:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        hardwareFirmware:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        ipfsInfo:
+          $ref: '#/components/schemas/xml_ns0_IPFSSystemInfo'
+        memory:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        operatingSystem:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        operatingSystemUptime:
+          description: ""
+          format: int64
+          type: integer
+          xml:
+            namespace: ""
+        owner:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        processors:
+          description: ""
+          items:
+            type: string
+          type: array
+          xml:
+            namespace: ""
+        publicKey:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        status:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
     xml_ns0_signedData_allOf:
       properties:
         data:
@@ -2209,6 +3287,63 @@ components:
           xml:
             namespace: ""
         signature:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_wireguardInterface_allOf:
+      properties:
+        port:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+    xml_ns0_disk_config_allOf:
+      properties:
+        disk:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        readonly:
+          description: ""
+          type: boolean
+          xml:
+            namespace: ""
+        roothash:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        roothash_offset:
+          description: ""
+          format: int32
+          type: integer
+          xml:
+            namespace: ""
+    xml_ns0_runConfig_allOf:
+      properties:
+        args:
+          description: ""
+          items:
+            type: string
+          type: array
+          xml:
+            namespace: ""
+        disk_config:
+          description: ""
+          items:
+            $ref: '#/components/schemas/xml_ns0_disk_config'
+          type: array
+          xml:
+            namespace: ""
+        environment:
+          description: ""
+          properties: {}
+          type: object
+          xml:
+            namespace: ""
+        run:
           description: ""
           type: string
           xml:

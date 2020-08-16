@@ -4,20 +4,62 @@ All URIs are relative to *http://api.madana.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetBootstrap**](NodeServiceApi.md#GetBootstrap) | **Get** /nodes/bootstrap | 
 [**GetNodes2**](NodeServiceApi.md#GetNodes2) | **Get** /nodes | 
 [**PostNodeInfo**](NodeServiceApi.md#PostNodeInfo) | **Post** /nodes | 
 
 
 
-## GetNodes2
+## GetBootstrap
 
-> *os.File GetNodes2(ctx, )
+> *os.File GetBootstrap(ctx, )
 
 
 
 ### Required Parameters
 
 This endpoint does not need any parameter.
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNodes2
+
+> *os.File GetNodes2(ctx, optional)
+
+
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetNodes2Opts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetNodes2Opts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **optional.String**|  | 
 
 ### Return type
 
