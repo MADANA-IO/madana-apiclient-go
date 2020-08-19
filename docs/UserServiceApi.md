@@ -4,7 +4,7 @@ All URIs are relative to *http://api.madana.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateObject2**](UserServiceApi.md#CreateObject2) | **Post** /users | Creates a new user object.
+[**CreateObject**](UserServiceApi.md#CreateObject) | **Post** /users | Creates a new user object.
 [**DeleteObject**](UserServiceApi.md#DeleteObject) | **Delete** /users/{username} | Deletes an User based on the provided id and securitycontext.
 [**DeleteObject_0**](UserServiceApi.md#DeleteObject_0) | **Delete** /users/{username}/social/{platform}/{ident} | Deletes linked account from the user and securitycontext.
 [**GetAvatars**](UserServiceApi.md#GetAvatars) | **Get** /users/{username}/avatars | 
@@ -12,13 +12,13 @@ Method | HTTP request | Description
 [**GetObject2**](UserServiceApi.md#GetObject2) | **Get** /users/{username} | 
 [**SetAvatar**](UserServiceApi.md#SetAvatar) | **Post** /users/{username}/avatars | 
 [**SetSettings**](UserServiceApi.md#SetSettings) | **Post** /users/{username}/settings | 
-[**UpdateObject2**](UserServiceApi.md#UpdateObject2) | **Put** /users/{username} | Updates Userproperties based on the provided user object.
+[**UpdateObject**](UserServiceApi.md#UpdateObject) | **Put** /users/{username} | Updates Userproperties based on the provided user object.
 
 
 
-## CreateObject2
+## CreateObject
 
-> *os.File CreateObject2(ctx, optional)
+> *os.File CreateObject(ctx, optional)
 
 Creates a new user object.
 
@@ -30,11 +30,11 @@ Creates a new user object
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateObject2Opts** | optional parameters | nil if no parameters
+ **optional** | ***CreateObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a CreateObject2Opts struct
+Optional parameters are passed through a pointer to a CreateObjectOpts struct
 
 
 Name | Type | Description  | Notes
@@ -312,9 +312,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateObject2
+## UpdateObject
 
-> *os.File UpdateObject2(ctx, username, optional)
+> *os.File UpdateObject(ctx, username, optional)
 
 Updates Userproperties based on the provided user object.
 
@@ -327,11 +327,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **username** | **string**|  | 
- **optional** | ***UpdateObject2Opts** | optional parameters | nil if no parameters
+ **optional** | ***UpdateObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a UpdateObject2Opts struct
+Optional parameters are passed through a pointer to a UpdateObjectOpts struct
 
 
 Name | Type | Description  | Notes

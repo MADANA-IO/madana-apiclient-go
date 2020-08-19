@@ -8,16 +8,6 @@
  */
 
 package madanaapiclient
-// JsonMdnAUserObject 
-type JsonMdnAUserObject struct {
-	// 
-	Created string `json:"created,omitempty"`
-	// 
-	Image string `json:"image,omitempty"`
-	// 
-	Activated string `json:"activated,omitempty"`
-	// 
-	UserName string `json:"userName,omitempty"`
-	// 
-	LastActive string `json:"lastActive,omitempty"`
+// XmlNs0InputStream 
+type XmlNs0InputStream struct {
 }

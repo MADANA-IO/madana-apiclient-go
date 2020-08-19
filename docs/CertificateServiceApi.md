@@ -5,8 +5,8 @@ All URIs are relative to *http://api.madana.io/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AuthenticateCertificate**](CertificateServiceApi.md#AuthenticateCertificate) | **Post** /certificates | Issues certificates for logged-in users.
-[**GetCertificate**](CertificateServiceApi.md#GetCertificate) | **Get** /certificates/root | 
-[**GetCertificate_0**](CertificateServiceApi.md#GetCertificate_0) | **Get** /certificates/{fingerprint} | 
+[**GetCertificateByFingerprint**](CertificateServiceApi.md#GetCertificateByFingerprint) | **Get** /certificates/{fingerprint} | 
+[**GetRootCertificate**](CertificateServiceApi.md#GetRootCertificate) | **Get** /certificates/root | 
 
 
 
@@ -53,15 +53,19 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetCertificate
+## GetCertificateByFingerprint
 
-> *os.File GetCertificate(ctx, )
+> *os.File GetCertificateByFingerprint(ctx, fingerprint)
 
 
 
 ### Required Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fingerprint** | **string**|  | 
 
 ### Return type
 
@@ -81,19 +85,15 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetCertificate_0
+## GetRootCertificate
 
-> *os.File GetCertificate_0(ctx, fingerprint)
+> *os.File GetRootCertificate(ctx, )
 
 
 
 ### Required Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fingerprint** | **string**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
