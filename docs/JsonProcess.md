@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OutputStream** | [**map[string]interface{}**](.md) |  | [optional] 
 **InputStream** | [**map[string]interface{}**](.md) |  | [optional] 
+**OutputStream** | [**map[string]interface{}**](.md) |  | [optional] 
 **Alive** | **bool** |  | [optional] 
 **ErrorStream** | [**map[string]interface{}**](.md) |  | [optional] 
 

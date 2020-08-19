@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | **string** |  | [optional] 
-**Uuid** | **string** |  | [optional] 
 **IpfsHash** | **string** |  | [optional] 
+**Content** | **string** |  | [optional] 
 **Size** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
 **Packages** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Uuid** | **string** |  | [optional] 
 **IsPublic** | **string** |  | [optional] 
 **IpfsPrimaryPeer** | **string** |  | [optional] 
 
