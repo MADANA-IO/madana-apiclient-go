@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CpuLogicalCount** | **int32** |  | [optional] 
+**Memory** | **string** |  | [optional] 
 **HardwareFirmware** | **string** |  | [optional] 
 **CpuModel** | **string** |  | [optional] 
-**PublicKey** | **string** |  | [optional] 
-**CpuLogicalCount** | **int32** |  | [optional] 
 **Owner** | **string** |  | [optional] 
 **CpuFrequency** | **string** |  | [optional] 
-**Memory** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+**CpuPhysicalCores** | **int32** |  | [optional] 
+**OperatingSystem** | **string** |  | [optional] 
+**OperatingSystemUptime** | **float32** |  | [optional] 
 **HardwareBaseboard** | **string** |  | [optional] 
 **CpuFamily** | **string** |  | [optional] 
 **ConnectionURL** | **string** |  | [optional] 
-**CpuPhysicalCores** | **int32** |  | [optional] 
+**PublicKey** | **string** |  | [optional] 
 **IpfsInfo** | [**JsonIpfsSystemInfo**](json_IPFSSystemInfo.md) |  | [optional] 
+**Status** | **string** |  | [optional] 
 **Processors** | **[]string** |  | [optional] 
-**OperatingSystemUptime** | **float32** |  | [optional] 
-**OperatingSystem** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
