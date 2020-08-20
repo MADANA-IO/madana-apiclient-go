@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**CreateNewRequest**](RequestServiceApi.md#CreateNewRequest) | **Post** /requests | Endpoint used to create a new Analysis Request.
 [**GetActions**](RequestServiceApi.md#GetActions) | **Get** /requests/actions | 
 [**GetAgent**](RequestServiceApi.md#GetAgent) | **Get** /requests/{uuid}/agent | Is called from the APE to request all parked datasets.
-[**GetAllRequests2**](RequestServiceApi.md#GetAllRequests2) | **Get** /requests | Returns UUIDs of existing analyses.
+[**GetAllRequests**](RequestServiceApi.md#GetAllRequests) | **Get** /requests | Returns UUIDs of existing analyses.
 [**GetData**](RequestServiceApi.md#GetData) | **Get** /requests/{uuid}/data | Is called from the APE to request all parked datasets.
 [**GetRequest**](RequestServiceApi.md#GetRequest) | **Get** /requests/{uuid} | Returns the details for certain Request.
 [**GetResult**](RequestServiceApi.md#GetResult) | **Get** /requests/{uuid}/result | Can be called from creator to request the AnalysisResult.
@@ -244,9 +244,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAllRequests2
+## GetAllRequests
 
-> *os.File GetAllRequests2(ctx, optional)
+> *os.File GetAllRequests(ctx, optional)
 
 Returns UUIDs of existing analyses.
 
@@ -258,11 +258,11 @@ Returns UUIDs of existing analyses.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetAllRequests2Opts** | optional parameters | nil if no parameters
+ **optional** | ***GetAllRequestsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a GetAllRequests2Opts struct
+Optional parameters are passed through a pointer to a GetAllRequestsOpts struct
 
 
 Name | Type | Description  | Notes

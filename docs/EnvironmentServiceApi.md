@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteEnvironment**](EnvironmentServiceApi.md#DeleteEnvironment) | **Delete** /environments/{uuid} | 
 [**DeleteEnvironmentSubscription**](EnvironmentServiceApi.md#DeleteEnvironmentSubscription) | **Delete** /environments/{uuid}/subscribe | 
-[**GetAllRequests**](EnvironmentServiceApi.md#GetAllRequests) | **Get** /environments | Returns UUIDs of existing analyses.
 [**GetEnvironment**](EnvironmentServiceApi.md#GetEnvironment) | **Get** /environments/{uuid} | 
+[**GetEnvironments**](EnvironmentServiceApi.md#GetEnvironments) | **Get** /environments | Returns UUIDs of existing analyses.
 [**GetPublishedEnvironments**](EnvironmentServiceApi.md#GetPublishedEnvironments) | **Get** /environments/published | 
 [**GetSubscribedEnvironments**](EnvironmentServiceApi.md#GetSubscribedEnvironments) | **Get** /environments/subscriptions | 
 [**PublishEnvironment**](EnvironmentServiceApi.md#PublishEnvironment) | **Post** /environments | 
@@ -80,13 +80,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAllRequests
+## GetEnvironment
 
-> *os.File GetAllRequests(ctx, optional)
+> *os.File GetEnvironment(ctx, uuid)
 
-Returns UUIDs of existing analyses.
 
-Returns UUIDs of existing analyses.
 
 ### Required Parameters
 
@@ -94,20 +92,7 @@ Returns UUIDs of existing analyses.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetAllRequestsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetAllRequestsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **created** | **optional.String**| - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to true]
- **limit** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 30]
- **name** | **optional.String**|  | 
- **offset** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 0]
+**uuid** | **string**|  | 
 
 ### Return type
 
@@ -127,11 +112,13 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetEnvironment
+## GetEnvironments
 
-> *os.File GetEnvironment(ctx, uuid)
+> *os.File GetEnvironments(ctx, optional)
 
+Returns UUIDs of existing analyses.
 
+Returns UUIDs of existing analyses.
 
 ### Required Parameters
 
@@ -139,7 +126,20 @@ No authorization required
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+ **optional** | ***GetEnvironmentsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEnvironmentsOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **created** | **optional.String**| - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to true]
+ **limit** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 30]
+ **name** | **optional.String**|  | 
+ **offset** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 0]
 
 ### Return type
 
