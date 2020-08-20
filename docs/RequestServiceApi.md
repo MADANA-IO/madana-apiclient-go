@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+ **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+ **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
 
 ### Return type
 
@@ -137,7 +137,7 @@ Optional parameters are passed through a pointer to a CreateNewRequestOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+ **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
 
 ### Return type
 
@@ -296,7 +296,7 @@ No authorization required
 
 ## GetData
 
-> JsonSignedData GetData(ctx, uuid, optional)
+> JsonSignedDataUtils GetData(ctx, uuid, optional)
 
 Is called from the APE to request all parked datasets.
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonSignedData**](json_SignedData.md)
+[**JsonSignedDataUtils**](json_SignedData_utils.md)
 
 ### Authorization
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+ **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
 
 ### Return type
 

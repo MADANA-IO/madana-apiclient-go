@@ -4,6 +4,7 @@ All URIs are relative to *http://api.madana.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddHistory**](EnclaveServiceApi.md#AddHistory) | **Post** /enclaves/{uuid}/history | 
 [**ApproveEnclave**](EnclaveServiceApi.md#ApproveEnclave) | **Post** /enclaves/{uuid}/approval | 
 [**AssignEnclaveAgent**](EnclaveServiceApi.md#AssignEnclaveAgent) | **Post** /enclaves/{uuid}/assign | 
 [**AttestateEnclave**](EnclaveServiceApi.md#AttestateEnclave) | **Post** /enclaves/{uuid}/attestation | 
@@ -13,6 +14,49 @@ Method | HTTP request | Description
 [**GetEnclaves**](EnclaveServiceApi.md#GetEnclaves) | **Get** /enclaves | Returns UUIDs of existing analyses.
 [**KillEnclave**](EnclaveServiceApi.md#KillEnclave) | **Post** /enclaves/{uuid}/kill | 
 
+
+
+## AddHistory
+
+> *os.File AddHistory(ctx, uuid, optional)
+
+
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**uuid** | **string**|  | 
+ **optional** | ***AddHistoryOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a AddHistoryOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## ApproveEnclave

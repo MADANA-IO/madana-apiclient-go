@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**StartupTime** | **string** |  | [optional] 
+**RemoteControlServer** | **string** |  | [optional] 
+**EnclaveIdent** | **string** |  | [optional] 
+**InternalIdent** | **string** |  | [optional] 
+**StartupCMD** | **string** |  | [optional] 
 **SignerIdent** | **string** |  | [optional] 
-**EnclaveInputstream** | [**map[string]interface{}**](.md) |  | [optional] 
+**WireguardPublicKey** | **string** |  | [optional] 
+**Environment** | [**JsonEnvironment**](json_Environment.md) |  | [optional] 
+**InternalRemoteControlServer** | **string** |  | [optional] 
+**Process** | [**JsonProcess**](json_Process.md) |  | [optional] 
+**AttestationServer** | **string** |  | [optional] 
+**InternalAttesationServer** | **string** |  | [optional] 
+**ConsoleOutput** | **string** |  | [optional] 
+**EndingTime** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **WgInterface** | [**JsonWireguardInterface**](json_WireguardInterface.md) |  | [optional] 
-**InternalIdent** | **string** |  | [optional] 
-**WireguardPublicKey** | **string** |  | [optional] 
-**ConsoleOutput** | **string** |  | [optional] 
-**StartupTime** | **string** |  | [optional] 
-**InternalRemoteControlServer** | **string** |  | [optional] 
-**RemoteControlServer** | **string** |  | [optional] 
-**InternalAttesationServer** | **string** |  | [optional] 
-**Environment** | [**JsonEnvironment**](json_Environment.md) |  | [optional] 
-**Process** | [**JsonProcess**](json_Process.md) |  | [optional] 
-**EndingTime** | **string** |  | [optional] 
-**EnclaveIdent** | **string** |  | [optional] 
-**AttestationServer** | **string** |  | [optional] 
-**StartupCMD** | **string** |  | [optional] 
+**EnclaveInputstream** | [**map[string]interface{}**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

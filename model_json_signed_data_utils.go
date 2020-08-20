@@ -8,10 +8,12 @@
  */
 
 package madanaapiclient
-// JsonMdnOAuthToken 
-type JsonMdnOAuthToken struct {
+// JsonSignedDataUtils 
+type JsonSignedDataUtils struct {
 	// 
-	Token string `json:"token,omitempty"`
+	Fingerpint string `json:"fingerpint,omitempty"`
 	// 
-	Verifier string `json:"verifier,omitempty"`
+	Signature string `json:"signature,omitempty"`
+	// 
+	Data string `json:"data,omitempty"`
 }
