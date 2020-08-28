@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**DeleteObject_0**](UserServiceApi.md#DeleteObject_0) | **Delete** /users/{username}/social/{platform}/{ident} | Deletes linked account from the user and securitycontext.
 [**GetAvatars**](UserServiceApi.md#GetAvatars) | **Get** /users/{username}/avatars | 
 [**GetCertificates**](UserServiceApi.md#GetCertificates) | **Get** /users/{username}/certificates | 
+[**GetEnclaveHistory**](UserServiceApi.md#GetEnclaveHistory) | **Get** /users/{username}/enclavehistory | 
 [**GetObject2**](UserServiceApi.md#GetObject2) | **Get** /users/{username} | 
 [**SetAvatar**](UserServiceApi.md#SetAvatar) | **Post** /users/{username}/avatars | 
 [**SetSettings**](UserServiceApi.md#SetSettings) | **Post** /users/{username}/settings | 
@@ -175,6 +176,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **username** | **string**|  | 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetEnclaveHistory
+
+> *os.File GetEnclaveHistory(ctx, username, optional)
+
+
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**username** | **string**|  | 
+ **optional** | ***GetEnclaveHistoryOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a GetEnclaveHistoryOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.String**|  | [default to 30]
+ **offset** | **optional.String**|  | [default to 0]
 
 ### Return type
 
