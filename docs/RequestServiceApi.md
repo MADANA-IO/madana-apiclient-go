@@ -23,31 +23,59 @@ Method | HTTP request | Description
 
 ## AddData
 
-> *os.File AddData(ctx, uuid, optional)
+> *os.File AddData(ctx, uuid).Authorization(authorization).Body(body).Execute()
 
 Is used to upload and park the data till the AnalysisRequest gets processed.
 
-Is used to upload and park the data till the AnalysisRequest gets processed
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    body := openapiclient.json_SignedData_utils{Signature: "Signature_example", Fingerpint: "Fingerpint_example", Data: "Data_example"} // JsonSignedDataUtils |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.AddData(context.Background(), uuid).Authorization(authorization).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.AddData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AddData`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.AddData`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***AddDataOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AddDataOpts struct
+Other parameters are passed through a pointer to a apiAddDataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
 
 ### Return type
 
@@ -69,31 +97,59 @@ No authorization required
 
 ## CancelProcessing
 
-> *os.File CancelProcessing(ctx, uuid, optional)
+> *os.File CancelProcessing(ctx, uuid).Authorization(authorization).Body(body).Execute()
 
 Endpoint is called from the Analysis Processing entity to submit the result.
 
-Endpoint is called from the Analysis Processing entity to submit the result
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    body := openapiclient.json_SignedData_utils{Signature: "Signature_example", Fingerpint: "Fingerpint_example", Data: "Data_example"} // JsonSignedDataUtils |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.CancelProcessing(context.Background(), uuid).Authorization(authorization).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.CancelProcessing``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CancelProcessing`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.CancelProcessing`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***CancelProcessingOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a CancelProcessingOpts struct
+Other parameters are passed through a pointer to a apiCancelProcessingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
 
 ### Return type
 
@@ -115,29 +171,53 @@ No authorization required
 
 ## CreateNewRequest
 
-> string CreateNewRequest(ctx, optional)
+> string CreateNewRequest(ctx).Authorization(authorization).Body(body).Execute()
 
 Endpoint used to create a new Analysis Request.
 
-Endpoint used to create a new Analysis Request
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    body :=  // JsonSignedDataUtils |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.CreateNewRequest(context.Background(), ).Authorization(authorization).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.CreateNewRequest``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateNewRequest`: string
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.CreateNewRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateNewRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateNewRequestOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a CreateNewRequestOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
 
 ### Return type
 
@@ -159,27 +239,51 @@ No authorization required
 
 ## GetActions
 
-> *os.File GetActions(ctx, optional)
+> *os.File GetActions(ctx).Limit(limit).Offset(offset).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    limit := "limit_example" // string |  (optional) (default to "30")
+    offset := "offset_example" // string |  (optional) (default to "0")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetActions(context.Background(), ).Limit(limit).Offset(offset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetActions`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetActions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetActionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetActionsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetActionsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **optional.String**|  | [default to 30]
- **offset** | **optional.String**|  | [default to 0]
+ **limit** | **string** |  | [default to &quot;30&quot;]
+ **offset** | **string** |  | [default to &quot;0&quot;]
 
 ### Return type
 
@@ -201,30 +305,57 @@ No authorization required
 
 ## GetAgent
 
-> *os.File GetAgent(ctx, uuid, optional)
+> *os.File GetAgent(ctx, uuid).Authorization(authorization).Execute()
 
 Is called from the APE to request all parked datasets.
 
-Is called from the APE to request all parked datasets. Returns the transmitted data for certain Request. When requesting the data, the status of the request is automatically set to processing.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetAgent(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetAgent``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAgent`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetAgent`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***GetAgentOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetAgentOpts struct
+Other parameters are passed through a pointer to a apiGetAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -246,35 +377,65 @@ No authorization required
 
 ## GetAllRequests
 
-> *os.File GetAllRequests(ctx, optional)
+> *os.File GetAllRequests(ctx).Authorization(authorization).Created(created).History(history).Limit(limit).New(new).Offset(offset).Preview(preview).Ready(ready).Execute()
 
 Returns UUIDs of existing analyses.
 
-Returns UUIDs of existing analyses.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    created := "created_example" // string | - if Queryparam \"created=true\" only the UUIDs of own Requests are shown (optional) (default to "false")
+    history := "history_example" // string | - if queryparam \"history\" is set to true, endpoint returns all user actions. False per default. (optional) (default to "false")
+    limit := "limit_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "30")
+    new := "new_example" // string | -  if Queryparam \"new=true\" only the UUIDs of new Requests ( Requests the user has not participated in and still allow participation) are shown (optional) (default to "true")
+    offset := "offset_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "0")
+    preview := "preview_example" // string |  (optional) (default to "false")
+    ready := "ready_example" // string |  (optional) (default to "false")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetAllRequests(context.Background(), ).Authorization(authorization).Created(created).History(history).Limit(limit).New(new).Offset(offset).Preview(preview).Ready(ready).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetAllRequests``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAllRequests`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetAllRequests`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllRequestsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetAllRequestsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetAllRequestsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **created** | **optional.String**| - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to false]
- **history** | **optional.String**| - if queryparam \&quot;history\&quot; is set to true, endpoint returns all user actions. False per default. | [default to false]
- **limit** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 30]
- **new** | **optional.String**| -  if Queryparam \&quot;new&#x3D;true\&quot; only the UUIDs of new Requests ( Requests the user has not participated in and still allow participation) are shown | [default to true]
- **offset** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 0]
- **preview** | **optional.String**|  | [default to false]
- **ready** | **optional.String**|  | [default to false]
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **created** | **string** | - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to &quot;false&quot;]
+ **history** | **string** | - if queryparam \&quot;history\&quot; is set to true, endpoint returns all user actions. False per default. | [default to &quot;false&quot;]
+ **limit** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;30&quot;]
+ **new** | **string** | -  if Queryparam \&quot;new&#x3D;true\&quot; only the UUIDs of new Requests ( Requests the user has not participated in and still allow participation) are shown | [default to &quot;true&quot;]
+ **offset** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;0&quot;]
+ **preview** | **string** |  | [default to &quot;false&quot;]
+ **ready** | **string** |  | [default to &quot;false&quot;]
 
 ### Return type
 
@@ -296,30 +457,57 @@ No authorization required
 
 ## GetData
 
-> JsonSignedDataUtils GetData(ctx, uuid, optional)
+> JsonSignedDataUtils GetData(ctx, uuid).Authorization(authorization).Execute()
 
 Is called from the APE to request all parked datasets.
 
-Is called from the APE to request all parked datasets. Returns the transmitted data for certain Request. When requesting the data, the status of the request is automatically set to processing.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetData(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetData``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetData`: JsonSignedDataUtils
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetData`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***GetDataOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetDataOpts struct
+Other parameters are passed through a pointer to a apiGetDataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -341,30 +529,57 @@ No authorization required
 
 ## GetRequest
 
-> *os.File GetRequest(ctx, uuid, optional)
+> *os.File GetRequest(ctx, uuid).Authorization(authorization).Execute()
 
 Returns the details for certain Request.
 
-Returns the details for certain Request. When requesting an analysis a view of the analysis is stored in the database
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetRequest(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetRequest``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetRequest`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***GetRequestOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetRequestOpts struct
+Other parameters are passed through a pointer to a apiGetRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -386,30 +601,57 @@ No authorization required
 
 ## GetResult
 
-> *os.File GetResult(ctx, uuid, optional)
+> *os.File GetResult(ctx, uuid).Authorization(authorization).Execute()
 
 Can be called from creator to request the AnalysisResult.
 
-Can be called from creator to request the AnalysisResult.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetResult(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetResult``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetResult`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***GetResultOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetResultOpts struct
+Other parameters are passed through a pointer to a apiGetResultRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -431,13 +673,44 @@ No authorization required
 
 ## GetStatus
 
-> *os.File GetStatus(ctx, )
+> *os.File GetStatus(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GetStatus(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetStatus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetStatus`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStatusRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -459,30 +732,57 @@ No authorization required
 
 ## GiveConsent
 
-> *os.File GiveConsent(ctx, uuid, optional)
+> *os.File GiveConsent(ctx, uuid).Authorization(authorization).Execute()
 
 Used to give consent for request.
 
-Used to give consent for request. If the Endpoint is called from the creator of the Analysis, the status of the request is set to completed. If called by another is interpreted as giving consent to participate.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.GiveConsent(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GiveConsent``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GiveConsent`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GiveConsent`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***GiveConsentOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GiveConsentOpts struct
+Other parameters are passed through a pointer to a apiGiveConsentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -504,31 +804,59 @@ No authorization required
 
 ## InitRequestParameters
 
-> string InitRequestParameters(ctx, uuid, optional)
+> string InitRequestParameters(ctx, uuid).Authorization(authorization).Body(body).Execute()
 
 Endpoint used initialized addition datacollection parameters for requester.
 
-Endpoint used initialized addition datacollection parameters for requester
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    body := "body_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.InitRequestParameters(context.Background(), uuid).Authorization(authorization).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.InitRequestParameters``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `InitRequestParameters`: string
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.InitRequestParameters`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***InitRequestParametersOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a InitRequestParametersOpts struct
+Other parameters are passed through a pointer to a apiInitRequestParametersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | **optional.String**|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **body** | **string** |  | 
 
 ### Return type
 
@@ -550,30 +878,57 @@ No authorization required
 
 ## SetAgent
 
-> *os.File SetAgent(ctx, uuid, optional)
+> *os.File SetAgent(ctx, uuid).Authorization(authorization).Execute()
 
 Is called from the APE to request all parked datasets.
 
-Is called from the APE to request all parked datasets. Returns the transmitted data for certain Request. When requesting the data, the status of the request is automatically set to processing.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.SetAgent(context.Background(), uuid).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.SetAgent``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetAgent`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.SetAgent`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***SetAgentOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SetAgentOpts struct
+Other parameters are passed through a pointer to a apiSetAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
@@ -595,31 +950,59 @@ No authorization required
 
 ## SetResult
 
-> *os.File SetResult(ctx, uuid, optional)
+> *os.File SetResult(ctx, uuid).Authorization(authorization).Body(body).Execute()
 
 Endpoint is called from the Analysis Processing entity to submit the result.
 
-Endpoint is called from the Analysis Processing entity to submit the result
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    body :=  // JsonSignedDataUtils |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.RequestServiceApi.SetResult(context.Background(), uuid).Authorization(authorization).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.SetResult``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetResult`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.SetResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***SetResultOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SetResultOpts struct
+Other parameters are passed through a pointer to a apiSetResultRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**optional.Interface of JsonSignedDataUtils**](JsonSignedDataUtils.md)|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
 
 ### Return type
 

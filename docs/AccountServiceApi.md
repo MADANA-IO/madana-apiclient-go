@@ -13,17 +13,53 @@ Method | HTTP request | Description
 
 ## ActivateUser
 
-> *os.File ActivateUser(ctx, token)
+> *os.File ActivateUser(ctx, token).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    token := "token_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AccountServiceApi.ActivateUser(context.Background(), token).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.ActivateUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ActivateUser`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AccountServiceApi.ActivateUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**token** | **string**|  | 
+**token** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActivateUserRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -45,28 +81,51 @@ No authorization required
 
 ## CreatePasswordReset
 
-> *os.File CreatePasswordReset(ctx, optional)
+> *os.File CreatePasswordReset(ctx).Body(body).Execute()
 
 Sends an Password reset mail to the given MailAddress.
 
-Sends an Password reset mail to the given MailAddress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_MDN_MailAddress{Mail: "Mail_example"} // JsonMDNMailAddress | - the MaiAddress under which the user has signed up (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AccountServiceApi.CreatePasswordReset(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.CreatePasswordReset``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreatePasswordReset`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AccountServiceApi.CreatePasswordReset`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePasswordResetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreatePasswordResetOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a CreatePasswordResetOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnMailAddress**](JsonMdnMailAddress.md)| - the MaiAddress under which the user has signed up | 
+ **body** | [**JsonMDNMailAddress**](JsonMDNMailAddress.md) | - the MaiAddress under which the user has signed up | 
 
 ### Return type
 
@@ -88,15 +147,46 @@ No authorization required
 
 ## RequestVerificationMail
 
-> map[string]map[string]interface{} RequestVerificationMail(ctx, )
+> map[string]map[string]interface{} RequestVerificationMail(ctx).Execute()
 
 Used to request a new  activation-mail for the user.
 
-Used to request a new  activation-mail for the user
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AccountServiceApi.RequestVerificationMail(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.RequestVerificationMail``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RequestVerificationMail`: map[string]map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AccountServiceApi.RequestVerificationMail`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRequestVerificationMailRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -118,28 +208,51 @@ No authorization required
 
 ## UpdatePassword
 
-> *os.File UpdatePassword(ctx, optional)
+> *os.File UpdatePassword(ctx).Body(body).Execute()
 
 Receives the Password reset and tries to set the provided password for the user.
 
-Receives the Password reset and tries to set the provided password for the user. The Password will only be set if a valid token is provided
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_MDN_PasswordReset{Token: "Token_example", Password: "Password_example", Mail: "Mail_example"} // JsonMDNPasswordReset | - the MDN_PasswordReset Object (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AccountServiceApi.UpdatePassword(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.UpdatePassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdatePassword`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AccountServiceApi.UpdatePassword`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePasswordRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***UpdatePasswordOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a UpdatePasswordOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnPasswordReset**](JsonMdnPasswordReset.md)| - the MDN_PasswordReset Object | 
+ **body** | [**JsonMDNPasswordReset**](JsonMDNPasswordReset.md) | - the MDN_PasswordReset Object | 
 
 ### Return type
 

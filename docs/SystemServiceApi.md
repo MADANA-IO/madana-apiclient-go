@@ -11,13 +11,44 @@ Method | HTTP request | Description
 
 ## GetAllObjects
 
-> *os.File GetAllObjects(ctx, )
+> *os.File GetAllObjects(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SystemServiceApi.GetAllObjects(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemServiceApi.GetAllObjects``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAllObjects`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SystemServiceApi.GetAllObjects`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllObjectsRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -39,15 +70,46 @@ No authorization required
 
 ## GetApplication
 
-> map[string]map[string]interface{} GetApplication(ctx, )
+> map[string]map[string]interface{} GetApplication(ctx).Execute()
 
 Return the current application usage.
 
-Return the current application usage
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SystemServiceApi.GetApplication(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemServiceApi.GetApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetApplication`: map[string]map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `SystemServiceApi.GetApplication`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApplicationRequest struct via the builder pattern
+
 
 ### Return type
 

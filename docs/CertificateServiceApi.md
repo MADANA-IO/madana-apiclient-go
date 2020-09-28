@@ -12,32 +12,55 @@ Method | HTTP request | Description
 
 ## AuthenticateCertificate
 
-> JsonMdnCertificate AuthenticateCertificate(ctx, optional)
+> JsonMDNCertificate AuthenticateCertificate(ctx).Body(body).Execute()
 
 Issues certificates for logged-in users.
 
-Issues certificates for logged-in users
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_MDN_Data{Data: "Data_example"} // JsonMDNData |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.CertificateServiceApi.AuthenticateCertificate(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.AuthenticateCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AuthenticateCertificate`: JsonMDNCertificate
+    fmt.Fprintf(os.Stdout, "Response from `CertificateServiceApi.AuthenticateCertificate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthenticateCertificateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***AuthenticateCertificateOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a AuthenticateCertificateOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnData**](JsonMdnData.md)|  | 
+ **body** | [**JsonMDNData**](JsonMDNData.md) |  | 
 
 ### Return type
 
-[**JsonMdnCertificate**](json_MDN_Certificate.md)
+[**JsonMDNCertificate**](json_MDN_Certificate.md)
 
 ### Authorization
 
@@ -55,17 +78,53 @@ No authorization required
 
 ## GetCertificateByFingerprint
 
-> *os.File GetCertificateByFingerprint(ctx, fingerprint)
+> *os.File GetCertificateByFingerprint(ctx, fingerprint).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    fingerprint := "fingerprint_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.CertificateServiceApi.GetCertificateByFingerprint(context.Background(), fingerprint).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.GetCertificateByFingerprint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCertificateByFingerprint`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `CertificateServiceApi.GetCertificateByFingerprint`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fingerprint** | **string**|  | 
+**fingerprint** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCertificateByFingerprintRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -87,13 +146,44 @@ No authorization required
 
 ## GetRootCertificate
 
-> *os.File GetRootCertificate(ctx, )
+> *os.File GetRootCertificate(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.CertificateServiceApi.GetRootCertificate(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.GetRootCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetRootCertificate`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `CertificateServiceApi.GetRootCertificate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRootCertificateRequest struct via the builder pattern
+
 
 ### Return type
 

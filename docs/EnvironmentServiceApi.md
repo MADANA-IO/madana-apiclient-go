@@ -18,17 +18,53 @@ Method | HTTP request | Description
 
 ## DeleteEnvironment
 
-> *os.File DeleteEnvironment(ctx, uuid)
+> *os.File DeleteEnvironment(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.DeleteEnvironment(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.DeleteEnvironment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteEnvironment`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.DeleteEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteEnvironmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -50,17 +86,53 @@ No authorization required
 
 ## DeleteEnvironmentSubscription
 
-> *os.File DeleteEnvironmentSubscription(ctx, uuid)
+> *os.File DeleteEnvironmentSubscription(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.DeleteEnvironmentSubscription(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.DeleteEnvironmentSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteEnvironmentSubscription`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.DeleteEnvironmentSubscription`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteEnvironmentSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -82,17 +154,53 @@ No authorization required
 
 ## GetEnvironment
 
-> *os.File GetEnvironment(ctx, uuid)
+> *os.File GetEnvironment(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.GetEnvironment(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetEnvironment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnvironment`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.GetEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEnvironmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -114,32 +222,59 @@ No authorization required
 
 ## GetEnvironments
 
-> *os.File GetEnvironments(ctx, optional)
+> *os.File GetEnvironments(ctx).Authorization(authorization).Created(created).Limit(limit).Name(name).Offset(offset).Execute()
 
 Returns UUIDs of existing analyses.
 
-Returns UUIDs of existing analyses.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    created := "created_example" // string | - if Queryparam \"created=true\" only the UUIDs of own Requests are shown (optional) (default to "true")
+    limit := "limit_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "30")
+    name := "name_example" // string |  (optional)
+    offset := "offset_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "0")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.GetEnvironments(context.Background(), ).Authorization(authorization).Created(created).Limit(limit).Name(name).Offset(offset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetEnvironments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnvironments`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.GetEnvironments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEnvironmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetEnvironmentsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetEnvironmentsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **created** | **optional.String**| - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to true]
- **limit** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 30]
- **name** | **optional.String**|  | 
- **offset** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 0]
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **created** | **string** | - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to &quot;true&quot;]
+ **limit** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;30&quot;]
+ **name** | **string** |  | 
+ **offset** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;0&quot;]
 
 ### Return type
 
@@ -161,28 +296,53 @@ No authorization required
 
 ## GetPublishedEnvironments
 
-> *os.File GetPublishedEnvironments(ctx, optional)
+> *os.File GetPublishedEnvironments(ctx).Limit(limit).Name(name).Offset(offset).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    limit := "limit_example" // string |  (optional) (default to "30")
+    name := "name_example" // string |  (optional)
+    offset := "offset_example" // string |  (optional) (default to "0")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.GetPublishedEnvironments(context.Background(), ).Limit(limit).Name(name).Offset(offset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetPublishedEnvironments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetPublishedEnvironments`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.GetPublishedEnvironments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPublishedEnvironmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetPublishedEnvironmentsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetPublishedEnvironmentsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **optional.String**|  | [default to 30]
- **name** | **optional.String**|  | 
- **offset** | **optional.String**|  | [default to 0]
+ **limit** | **string** |  | [default to &quot;30&quot;]
+ **name** | **string** |  | 
+ **offset** | **string** |  | [default to &quot;0&quot;]
 
 ### Return type
 
@@ -204,27 +364,51 @@ No authorization required
 
 ## GetSubscribedEnvironments
 
-> *os.File GetSubscribedEnvironments(ctx, optional)
+> *os.File GetSubscribedEnvironments(ctx).Limit(limit).Offset(offset).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    limit := "limit_example" // string |  (optional) (default to "30")
+    offset := "offset_example" // string |  (optional) (default to "0")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.GetSubscribedEnvironments(context.Background(), ).Limit(limit).Offset(offset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetSubscribedEnvironments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSubscribedEnvironments`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.GetSubscribedEnvironments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSubscribedEnvironmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetSubscribedEnvironmentsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetSubscribedEnvironmentsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **optional.String**|  | [default to 30]
- **offset** | **optional.String**|  | [default to 0]
+ **limit** | **string** |  | [default to &quot;30&quot;]
+ **offset** | **string** |  | [default to &quot;0&quot;]
 
 ### Return type
 
@@ -246,26 +430,49 @@ No authorization required
 
 ## PublishEnvironment
 
-> *os.File PublishEnvironment(ctx, optional)
+> *os.File PublishEnvironment(ctx).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_EnvironmentPublishingRequest{Packages: "Packages_example", Size: "Size_example", IpfsHash: "IpfsHash_example", Name: "Name_example", Content: "Content_example", IsPublic: "IsPublic_example", Uuid: "Uuid_example", Description: "Description_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example"} // JsonEnvironmentPublishingRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.PublishEnvironment(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.PublishEnvironment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PublishEnvironment`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.PublishEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPublishEnvironmentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***PublishEnvironmentOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a PublishEnvironmentOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonEnvironmentPublishingRequest**](JsonEnvironmentPublishingRequest.md)|  | 
+ **body** | [**JsonEnvironmentPublishingRequest**](JsonEnvironmentPublishingRequest.md) |  | 
 
 ### Return type
 
@@ -287,17 +494,53 @@ No authorization required
 
 ## SubscribeEnvironment
 
-> *os.File SubscribeEnvironment(ctx, uuid)
+> *os.File SubscribeEnvironment(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.SubscribeEnvironment(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.SubscribeEnvironment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SubscribeEnvironment`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.SubscribeEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscribeEnvironmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -319,28 +562,55 @@ No authorization required
 
 ## UpdateEnvironment
 
-> *os.File UpdateEnvironment(ctx, uuid, optional)
+> *os.File UpdateEnvironment(ctx, uuid).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    body := openapiclient.json_Environment{Roothash: "Roothash_example", Name: "Name_example", RootHashOffset: "RootHashOffset_example", Published: false, IpfsHash: "IpfsHash_example", Uuid: "Uuid_example", Content: []string{"Content_example"), Size: "Size_example", Description: "Description_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Disk: "Disk_example", RoothashOffset: 123, Roothash: "Roothash_example", Readonly: false})}, Packages: []string{"Packages_example")} // JsonEnvironment |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnvironmentServiceApi.UpdateEnvironment(context.Background(), uuid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.UpdateEnvironment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateEnvironment`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnvironmentServiceApi.UpdateEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***UpdateEnvironmentOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a UpdateEnvironmentOpts struct
+Other parameters are passed through a pointer to a apiUpdateEnvironmentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonEnvironment**](JsonEnvironment.md)|  | 
+ **body** | [**JsonEnvironment**](JsonEnvironment.md) |  | 
 
 ### Return type
 

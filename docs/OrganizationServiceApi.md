@@ -10,13 +10,44 @@ Method | HTTP request | Description
 
 ## GetNodes3
 
-> *os.File GetNodes3(ctx, )
+> *os.File GetNodes3(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.OrganizationServiceApi.GetNodes3(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrganizationServiceApi.GetNodes3``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNodes3`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `OrganizationServiceApi.GetNodes3`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNodes3Request struct via the builder pattern
+
 
 ### Return type
 

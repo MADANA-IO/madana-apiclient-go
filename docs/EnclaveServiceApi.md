@@ -18,28 +18,55 @@ Method | HTTP request | Description
 
 ## AddHistory
 
-> *os.File AddHistory(ctx, uuid, optional)
+> *os.File AddHistory(ctx, uuid).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    body := openapiclient.json_SignedData{Fingerpint: "Fingerpint_example", Signature: "Signature_example", Data: "Data_example"} // JsonSignedData |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.AddHistory(context.Background(), uuid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AddHistory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AddHistory`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.AddHistory`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***AddHistoryOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AddHistoryOpts struct
+Other parameters are passed through a pointer to a apiAddHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonSignedData**](JsonSignedData.md)|  | 
+ **body** | [**JsonSignedData**](JsonSignedData.md) |  | 
 
 ### Return type
 
@@ -61,28 +88,55 @@ No authorization required
 
 ## ApproveEnclave
 
-> *os.File ApproveEnclave(ctx, uuid, optional)
+> *os.File ApproveEnclave(ctx, uuid).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    body := openapiclient.json_EnclaveRunningAttestationApproval{NodeInfo: openapiclient.json_NodeInfo{OperatingSystemUptime: 123, CpuFamily: "CpuFamily_example", PublicKey: "PublicKey_example", Processors: []string{"Processors_example"), Owner: "Owner_example", Status: "Status_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", SwarmConnection: "SwarmConnection_example", PublicKey: "PublicKey_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example"}, CpuLogicalCount: 123, HardwareBaseboard: "HardwareBaseboard_example", HardwareFirmware: "HardwareFirmware_example", CpuPhysicalCores: 123, CpuFrequency: "CpuFrequency_example", OperatingSystem: "OperatingSystem_example", Memory: "Memory_example", CpuModel: "CpuModel_example", ConnectionURL: "ConnectionURL_example"}, EnclaveProcess: openapiclient.json_EnclaveProcess{WireguardPublicKey: "WireguardPublicKey_example", PublicIdent: "PublicIdent_example", EnclaveInputstream: 123, Status: "Status_example", InternalIdent: "InternalIdent_example", InternalRemoteControlServer: "InternalRemoteControlServer_example", InternalWireguardServer: "InternalWireguardServer_example", EndingTime: "EndingTime_example", StartupCMD: "StartupCMD_example", EnclaveIdent: "EnclaveIdent_example", RemoteControlServer: "RemoteControlServer_example", WireguardServer: "WireguardServer_example", StartupTime: "StartupTime_example", ConsoleOutput: "ConsoleOutput_example", Environment: openapiclient.json_Environment{Roothash: "Roothash_example", Name: "Name_example", RootHashOffset: "RootHashOffset_example", Published: false, IpfsHash: "IpfsHash_example", Uuid: "Uuid_example", Content: []string{"Content_example"), Size: "Size_example", Description: "Description_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Disk: "Disk_example", RoothashOffset: 123, Roothash: "Roothash_example", Readonly: false})}, Packages: []string{"Packages_example")}, Process: openapiclient.json_Process{Alive: false, InputStream: 123, OutputStream: 123, ErrorStream: 123}, WgInterface: openapiclient.json_WireguardInterface{Address: "Address_example", Name: "Name_example", Port: "Port_example"}, InternalAttesationServer: "InternalAttesationServer_example", SignerIdent: "SignerIdent_example", AttestationServer: "AttestationServer_example"}, Approved: "Approved_example"} // JsonEnclaveRunningAttestationApproval |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.ApproveEnclave(context.Background(), uuid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.ApproveEnclave``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApproveEnclave`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.ApproveEnclave`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***ApproveEnclaveOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ApproveEnclaveOpts struct
+Other parameters are passed through a pointer to a apiApproveEnclaveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonEnclaveRunningAttestationApproval**](JsonEnclaveRunningAttestationApproval.md)|  | 
+ **body** | [**JsonEnclaveRunningAttestationApproval**](JsonEnclaveRunningAttestationApproval.md) |  | 
 
 ### Return type
 
@@ -104,28 +158,55 @@ No authorization required
 
 ## AssignEnclaveAgent
 
-> *os.File AssignEnclaveAgent(ctx, uuid, optional)
+> *os.File AssignEnclaveAgent(ctx, uuid).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    body := openapiclient.json_NodeInfo{OperatingSystemUptime: 123, CpuFamily: "CpuFamily_example", PublicKey: "PublicKey_example", Processors: []string{"Processors_example"), Owner: "Owner_example", Status: "Status_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", SwarmConnection: "SwarmConnection_example", PublicKey: "PublicKey_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example"}, CpuLogicalCount: 123, HardwareBaseboard: "HardwareBaseboard_example", HardwareFirmware: "HardwareFirmware_example", CpuPhysicalCores: 123, CpuFrequency: "CpuFrequency_example", OperatingSystem: "OperatingSystem_example", Memory: "Memory_example", CpuModel: "CpuModel_example", ConnectionURL: "ConnectionURL_example"} // JsonNodeInfo |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.AssignEnclaveAgent(context.Background(), uuid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AssignEnclaveAgent``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AssignEnclaveAgent`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.AssignEnclaveAgent`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***AssignEnclaveAgentOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AssignEnclaveAgentOpts struct
+Other parameters are passed through a pointer to a apiAssignEnclaveAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonNodeInfo**](JsonNodeInfo.md)|  | 
+ **body** | [**JsonNodeInfo**](JsonNodeInfo.md) |  | 
 
 ### Return type
 
@@ -147,28 +228,55 @@ No authorization required
 
 ## AttestateEnclave
 
-> *os.File AttestateEnclave(ctx, uuid, optional)
+> *os.File AttestateEnclave(ctx, uuid).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+    body := openapiclient.json_EnclaveRunningAttestation{NodeInfo: , EnclaveProcess: openapiclient.json_EnclaveProcess{WireguardPublicKey: "WireguardPublicKey_example", PublicIdent: "PublicIdent_example", EnclaveInputstream: 123, Status: "Status_example", InternalIdent: "InternalIdent_example", InternalRemoteControlServer: "InternalRemoteControlServer_example", InternalWireguardServer: "InternalWireguardServer_example", EndingTime: "EndingTime_example", StartupCMD: "StartupCMD_example", EnclaveIdent: "EnclaveIdent_example", RemoteControlServer: "RemoteControlServer_example", WireguardServer: "WireguardServer_example", StartupTime: "StartupTime_example", ConsoleOutput: "ConsoleOutput_example", Environment: openapiclient.json_Environment{Roothash: "Roothash_example", Name: "Name_example", RootHashOffset: "RootHashOffset_example", Published: false, IpfsHash: "IpfsHash_example", Uuid: "Uuid_example", Content: []string{"Content_example"), Size: "Size_example", Description: "Description_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Disk: "Disk_example", RoothashOffset: 123, Roothash: "Roothash_example", Readonly: false})}, Packages: []string{"Packages_example")}, Process: openapiclient.json_Process{Alive: false, InputStream: 123, OutputStream: 123, ErrorStream: 123}, WgInterface: openapiclient.json_WireguardInterface{Address: "Address_example", Name: "Name_example", Port: "Port_example"}, InternalAttesationServer: "InternalAttesationServer_example", SignerIdent: "SignerIdent_example", AttestationServer: "AttestationServer_example"}} // JsonEnclaveRunningAttestation |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.AttestateEnclave(context.Background(), uuid).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AttestateEnclave``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AttestateEnclave`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.AttestateEnclave`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
- **optional** | ***AttestateEnclaveOpts** | optional parameters | nil if no parameters
+**uuid** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AttestateEnclaveOpts struct
+Other parameters are passed through a pointer to a apiAttestateEnclaveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonEnclaveRunningAttestation**](JsonEnclaveRunningAttestation.md)|  | 
+ **body** | [**JsonEnclaveRunningAttestation**](JsonEnclaveRunningAttestation.md) |  | 
 
 ### Return type
 
@@ -190,26 +298,49 @@ No authorization required
 
 ## CreateEnclaveRunRequest
 
-> *os.File CreateEnclaveRunRequest(ctx, optional)
+> *os.File CreateEnclaveRunRequest(ctx).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_EnclaveRunRequest{EnclaveExecutionType: "EnclaveExecutionType_example", EnvironmentUUID: "EnvironmentUUID_example", UsingDefaultRunConfig: false, WireguardPublicKey: "WireguardPublicKey_example"} // JsonEnclaveRunRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.CreateEnclaveRunRequest(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.CreateEnclaveRunRequest``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateEnclaveRunRequest`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.CreateEnclaveRunRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateEnclaveRunRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateEnclaveRunRequestOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a CreateEnclaveRunRequestOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonEnclaveRunRequest**](JsonEnclaveRunRequest.md)|  | 
+ **body** | [**JsonEnclaveRunRequest**](JsonEnclaveRunRequest.md) |  | 
 
 ### Return type
 
@@ -231,17 +362,53 @@ No authorization required
 
 ## GetEnclave
 
-> *os.File GetEnclave(ctx, uuid)
+> *os.File GetEnclave(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.GetEnclave(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclave``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnclave`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.GetEnclave`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEnclaveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -263,13 +430,44 @@ No authorization required
 
 ## GetEnclaveTypes
 
-> *os.File GetEnclaveTypes(ctx, )
+> *os.File GetEnclaveTypes(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.GetEnclaveTypes(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaveTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnclaveTypes`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.GetEnclaveTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEnclaveTypesRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -291,32 +489,59 @@ No authorization required
 
 ## GetEnclaves
 
-> *os.File GetEnclaves(ctx, optional)
+> *os.File GetEnclaves(ctx).Authorization(authorization).Created(created).Limit(limit).Offset(offset).Status(status).Execute()
 
 Returns UUIDs of existing analyses.
 
-Returns UUIDs of existing analyses.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+    created := "created_example" // string | - if Queryparam \"created=true\" only the UUIDs of own Requests are shown (optional) (default to "true")
+    limit := "limit_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "30")
+    offset := "offset_example" // string | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit=20&offset=100. This query would return the 20 rows starting with the 100th row (optional) (default to "0")
+    status := "status_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.GetEnclaves(context.Background(), ).Authorization(authorization).Created(created).Limit(limit).Offset(offset).Status(status).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaves``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnclaves`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.GetEnclaves`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEnclavesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetEnclavesOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetEnclavesOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **created** | **optional.String**| - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to true]
- **limit** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 30]
- **offset** | **optional.String**| Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to 0]
- **status** | **optional.String**|  | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **created** | **string** | - if Queryparam \&quot;created&#x3D;true\&quot; only the UUIDs of own Requests are shown | [default to &quot;true&quot;]
+ **limit** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;30&quot;]
+ **offset** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;0&quot;]
+ **status** | **string** |  | 
 
 ### Return type
 
@@ -338,17 +563,53 @@ No authorization required
 
 ## KillEnclave
 
-> *os.File KillEnclave(ctx, uuid)
+> *os.File KillEnclave(ctx, uuid).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    uuid := "uuid_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.KillEnclave(context.Background(), uuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.KillEnclave``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `KillEnclave`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.KillEnclave`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uuid** | **string**|  | 
+**uuid** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKillEnclaveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 

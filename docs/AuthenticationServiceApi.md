@@ -20,32 +20,55 @@ Method | HTTP request | Description
 
 ## AuthenticateApplication
 
-> JsonMdnToken AuthenticateApplication(ctx, optional)
+> JsonMDNToken AuthenticateApplication(ctx).Body(body).Execute()
 
 Authenticates a new application and returns the token.
 
-Authenticates a new application and returns the token
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_MDN_Certificate{Pem: "Pem_example"} // JsonMDNCertificate | the credentials used to validate the user (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateApplication(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AuthenticateApplication`: JsonMDNToken
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.AuthenticateApplication`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthenticateApplicationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***AuthenticateApplicationOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a AuthenticateApplicationOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnCertificate**](JsonMdnCertificate.md)| the credentials used to validate the user | 
+ **body** | [**JsonMDNCertificate**](JsonMDNCertificate.md) | the credentials used to validate the user | 
 
 ### Return type
 
-[**JsonMdnToken**](json_MDN_Token.md)
+[**JsonMDNToken**](json_MDN_Token.md)
 
 ### Authorization
 
@@ -63,28 +86,55 @@ No authorization required
 
 ## AuthenticateEthereumWallet
 
-> *os.File AuthenticateEthereumWallet(ctx, wallet, optional)
+> *os.File AuthenticateEthereumWallet(ctx, wallet).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    wallet := "wallet_example" // string | the wallet which should be authenticated
+    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateEthereumWallet(context.Background(), wallet).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateEthereumWallet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AuthenticateEthereumWallet`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.AuthenticateEthereumWallet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wallet** | **string**| the wallet which should be authenticated | 
- **optional** | ***AuthenticateEthereumWalletOpts** | optional parameters | nil if no parameters
+**wallet** | **string** | the wallet which should be authenticated | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AuthenticateEthereumWalletOpts struct
+Other parameters are passed through a pointer to a apiAuthenticateEthereumWalletRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonMdnOAuthToken**](JsonMdnOAuthToken.md)| Token containing nonce and signate | 
+ **body** | [**JsonMDNOAuthToken**](JsonMDNOAuthToken.md) | Token containing nonce and signate | 
 
 ### Return type
 
@@ -106,32 +156,55 @@ No authorization required
 
 ## AuthenticateUser
 
-> JsonMdnToken AuthenticateUser(ctx, optional)
+> JsonMDNToken AuthenticateUser(ctx).Body(body).Execute()
 
 Authenticates a new user and returns the token (  forbidden if the credentials cannot be validated ).
 
-Authenticates a new user and returns the token (  forbidden if the credentials cannot be validated )
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"} // JsonMDNUserCredentials | the credentials used to validate the user (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateUser(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AuthenticateUser`: JsonMDNToken
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.AuthenticateUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthenticateUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***AuthenticateUserOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a AuthenticateUserOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnUserCredentials**](JsonMdnUserCredentials.md)| the credentials used to validate the user | 
+ **body** | [**JsonMDNUserCredentials**](JsonMDNUserCredentials.md) | the credentials used to validate the user | 
 
 ### Return type
 
-[**JsonMdnToken**](json_MDN_Token.md)
+[**JsonMDNToken**](json_MDN_Token.md)
 
 ### Authorization
 
@@ -149,28 +222,55 @@ No authorization required
 
 ## AuthenticateWithEthereumChallenge
 
-> *os.File AuthenticateWithEthereumChallenge(ctx, wallet, optional)
+> *os.File AuthenticateWithEthereumChallenge(ctx, wallet).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    wallet := "wallet_example" // string | the wallet which should be authenticated
+    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateWithEthereumChallenge(context.Background(), wallet).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateWithEthereumChallenge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AuthenticateWithEthereumChallenge`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.AuthenticateWithEthereumChallenge`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wallet** | **string**| the wallet which should be authenticated | 
- **optional** | ***AuthenticateWithEthereumChallengeOpts** | optional parameters | nil if no parameters
+**wallet** | **string** | the wallet which should be authenticated | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a AuthenticateWithEthereumChallengeOpts struct
+Other parameters are passed through a pointer to a apiAuthenticateWithEthereumChallengeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonMdnOAuthToken**](JsonMdnOAuthToken.md)| Token containing nonce and signate | 
+ **body** | [**JsonMDNOAuthToken**](JsonMDNOAuthToken.md) | Token containing nonce and signate | 
 
 ### Return type
 
@@ -192,15 +292,46 @@ No authorization required
 
 ## GetFractalAuthenticationURL
 
-> *os.File GetFractalAuthenticationURL(ctx, )
+> *os.File GetFractalAuthenticationURL(ctx).Execute()
 
 Returns the AUthorization URL to verify a Twitter Accounts.
 
-Returns the AUthorization URL to verify a Twitter Accounts
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.GetFractalAuthenticationURL(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetFractalAuthenticationURL``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFractalAuthenticationURL`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.GetFractalAuthenticationURL`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFractalAuthenticationURLRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -222,34 +353,61 @@ No authorization required
 
 ## GetNonceForEthereumWallet
 
-> JsonMdnToken GetNonceForEthereumWallet(ctx, wallet, optional)
+> JsonMDNToken GetNonceForEthereumWallet(ctx, wallet).Authorization(authorization).Execute()
 
 Returns a nonce for the client which is used as content for the to be created signature.
 
-Returns a nonce for the client which is used as content for the to be created signature
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    wallet := "wallet_example" // string | - wallet address as String * @HTTP 417 If the address is not valid
+    authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.GetNonceForEthereumWallet(context.Background(), wallet).Authorization(authorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetNonceForEthereumWallet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNonceForEthereumWallet`: JsonMDNToken
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.GetNonceForEthereumWallet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wallet** | **string**| - wallet address as String * @HTTP 417 If the address is not valid | 
- **optional** | ***GetNonceForEthereumWalletOpts** | optional parameters | nil if no parameters
+**wallet** | **string** | - wallet address as String * @HTTP 417 If the address is not valid | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetNonceForEthereumWalletOpts struct
+Other parameters are passed through a pointer to a apiGetNonceForEthereumWalletRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **authorization** | **optional.String**| Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
+ **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
 
 ### Return type
 
-[**JsonMdnToken**](json_MDN_Token.md)
+[**JsonMDNToken**](json_MDN_Token.md)
 
 ### Authorization
 
@@ -267,15 +425,46 @@ No authorization required
 
 ## GetObject
 
-> map[string]map[string]interface{} GetObject(ctx, )
+> map[string]map[string]interface{} GetObject(ctx).Execute()
 
 Used to validate the active connection with the API.
 
-Used to validate the active connection with the API
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.GetObject(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetObject``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetObject`: map[string]map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.GetObject`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetObjectRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -297,15 +486,46 @@ No authorization required
 
 ## GetTwitterAuthenticationURL
 
-> *os.File GetTwitterAuthenticationURL(ctx, )
+> *os.File GetTwitterAuthenticationURL(ctx).Execute()
 
 Returns the AUthorization URL to verify a Twitter Accounts.
 
-Returns the AUthorization URL to verify a Twitter Accounts
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.GetTwitterAuthenticationURL(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetTwitterAuthenticationURL``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTwitterAuthenticationURL`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.GetTwitterAuthenticationURL`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTwitterAuthenticationURLRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -327,28 +547,51 @@ No authorization required
 
 ## SetFacebookUID
 
-> *os.File SetFacebookUID(ctx, optional)
+> *os.File SetFacebookUID(ctx).Body(body).Execute()
 
 Used as Callback URL when users have successfully authorized their facbeook account.
 
-Used as Callback URL when users have successfully authorized their facbeook account
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := "body_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.SetFacebookUID(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFacebookUID``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetFacebookUID`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.SetFacebookUID`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetFacebookUIDRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***SetFacebookUIDOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a SetFacebookUIDOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **optional.String**|  | 
+ **body** | **string** |  | 
 
 ### Return type
 
@@ -370,26 +613,49 @@ No authorization required
 
 ## SetFractalUID
 
-> *os.File SetFractalUID(ctx, optional)
+> *os.File SetFractalUID(ctx).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := "body_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.SetFractalUID(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFractalUID``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetFractalUID`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.SetFractalUID`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetFractalUIDRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***SetFractalUIDOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a SetFractalUIDOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **optional.String**|  | 
+ **body** | **string** |  | 
 
 ### Return type
 
@@ -411,26 +677,49 @@ No authorization required
 
 ## SetTwitterUID
 
-> *os.File SetTwitterUID(ctx, optional)
+> *os.File SetTwitterUID(ctx).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body :=  // JsonMDNOAuthToken |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthenticationServiceApi.SetTwitterUID(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetTwitterUID``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetTwitterUID`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `AuthenticationServiceApi.SetTwitterUID`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetTwitterUIDRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***SetTwitterUIDOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a SetTwitterUIDOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonMdnOAuthToken**](JsonMdnOAuthToken.md)|  | 
+ **body** | [**JsonMDNOAuthToken**](JsonMDNOAuthToken.md) |  | 
 
 ### Return type
 

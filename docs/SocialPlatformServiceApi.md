@@ -12,28 +12,51 @@ Method | HTTP request | Description
 
 ## GetPlatforms
 
-> *os.File GetPlatforms(ctx, optional)
+> *os.File GetPlatforms(ctx).Body(body).Execute()
 
 Used to Handle Incoming Webhooks from Facebook.
 
-Used to Handle Incoming Webhooks from Facebook
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := "body_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SocialPlatformServiceApi.GetPlatforms(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SocialPlatformServiceApi.GetPlatforms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetPlatforms`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SocialPlatformServiceApi.GetPlatforms`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPlatformsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetPlatformsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetPlatformsOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **optional.String**|  | 
+ **body** | **string** |  | 
 
 ### Return type
 
@@ -55,28 +78,51 @@ No authorization required
 
 ## ListenTwitterWebhook
 
-> *os.File ListenTwitterWebhook(ctx, optional)
+> *os.File ListenTwitterWebhook(ctx).Body(body).Execute()
 
 Used to Handle Incoming Webhooks from Facebook.
 
-Used to Handle Incoming Webhooks from Facebook
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := "body_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SocialPlatformServiceApi.ListenTwitterWebhook(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SocialPlatformServiceApi.ListenTwitterWebhook``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListenTwitterWebhook`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SocialPlatformServiceApi.ListenTwitterWebhook`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListenTwitterWebhookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListenTwitterWebhookOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a ListenTwitterWebhookOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **optional.String**|  | 
+ **body** | **string** |  | 
 
 ### Return type
 
@@ -98,28 +144,51 @@ No authorization required
 
 ## RegisterTwitterWebhook
 
-> *os.File RegisterTwitterWebhook(ctx, optional)
+> *os.File RegisterTwitterWebhook(ctx).CrcToken(crcToken).Execute()
 
 Used to Handle Incoming Webhooks from Twitter.
 
-Used to Handle Incoming Webhooks from Twitter
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    crcToken := "crcToken_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SocialPlatformServiceApi.RegisterTwitterWebhook(context.Background(), ).CrcToken(crcToken).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SocialPlatformServiceApi.RegisterTwitterWebhook``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RegisterTwitterWebhook`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SocialPlatformServiceApi.RegisterTwitterWebhook`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRegisterTwitterWebhookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***RegisterTwitterWebhookOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a RegisterTwitterWebhookOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **crcToken** | **optional.String**|  | 
+ **crcToken** | **string** |  | 
 
 ### Return type
 

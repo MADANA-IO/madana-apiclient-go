@@ -4,24 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttestationServer** | **string** |  | [optional] 
-**ConsoleOutput** | **string** |  | [optional] 
-**EnclaveIdent** | **string** |  | [optional] 
-**EnclaveInputstream** | [**XmlNs0InputStream**](xml_ns0_inputStream.md) |  | [optional] 
-**EndingTime** | **string** |  | [optional] 
-**Environment** | [**XmlNs0Environment**](xml_ns0_environment.md) |  | [optional] 
-**InternalAttesationServer** | **string** |  | [optional] 
-**InternalIdent** | **string** |  | [optional] 
-**InternalRemoteControlServer** | **string** |  | [optional] 
-**Process** | [**XmlNs0Process**](xml_ns0_process.md) |  | [optional] 
-**PublicIdent** | **string** |  | [optional] 
-**RemoteControlServer** | **string** |  | [optional] 
-**SignerIdent** | **string** |  | [optional] 
-**StartupCMD** | **string** |  | [optional] 
-**StartupTime** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
-**WgInterface** | [**XmlNs0WireguardInterface**](xml_ns0_wireguardInterface.md) |  | [optional] 
-**WireguardPublicKey** | **string** |  | [optional] 
+
+## Methods
+
+### NewXmlNs0EnclaveProcess
+
+`func NewXmlNs0EnclaveProcess() *XmlNs0EnclaveProcess`
+
+NewXmlNs0EnclaveProcess instantiates a new XmlNs0EnclaveProcess object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewXmlNs0EnclaveProcessWithDefaults
+
+`func NewXmlNs0EnclaveProcessWithDefaults() *XmlNs0EnclaveProcess`
+
+NewXmlNs0EnclaveProcessWithDefaults instantiates a new XmlNs0EnclaveProcess object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

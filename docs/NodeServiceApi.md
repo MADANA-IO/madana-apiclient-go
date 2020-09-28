@@ -12,13 +12,44 @@ Method | HTTP request | Description
 
 ## GetBootstrap
 
-> *os.File GetBootstrap(ctx, )
+> *os.File GetBootstrap(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NodeServiceApi.GetBootstrap(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.GetBootstrap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetBootstrap`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `NodeServiceApi.GetBootstrap`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBootstrapRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -40,26 +71,49 @@ No authorization required
 
 ## GetNodes2
 
-> *os.File GetNodes2(ctx, optional)
+> *os.File GetNodes2(ctx).Owner(owner).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    owner := "owner_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NodeServiceApi.GetNodes2(context.Background(), ).Owner(owner).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.GetNodes2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNodes2`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `NodeServiceApi.GetNodes2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNodes2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetNodes2Opts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a GetNodes2Opts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **owner** | **optional.String**|  | 
+ **owner** | **string** |  | 
 
 ### Return type
 
@@ -81,26 +135,49 @@ No authorization required
 
 ## PostNodeInfo
 
-> *os.File PostNodeInfo(ctx, optional)
+> *os.File PostNodeInfo(ctx).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := openapiclient.json_NodeInfo{OperatingSystemUptime: 123, CpuFamily: "CpuFamily_example", PublicKey: "PublicKey_example", Processors: []string{"Processors_example"), Owner: "Owner_example", Status: "Status_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", SwarmConnection: "SwarmConnection_example", PublicKey: "PublicKey_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example"}, CpuLogicalCount: 123, HardwareBaseboard: "HardwareBaseboard_example", HardwareFirmware: "HardwareFirmware_example", CpuPhysicalCores: 123, CpuFrequency: "CpuFrequency_example", OperatingSystem: "OperatingSystem_example", Memory: "Memory_example", CpuModel: "CpuModel_example", ConnectionURL: "ConnectionURL_example"} // JsonNodeInfo |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NodeServiceApi.PostNodeInfo(context.Background(), ).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.PostNodeInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PostNodeInfo`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `NodeServiceApi.PostNodeInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostNodeInfoRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***PostNodeInfoOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a PostNodeInfoOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of JsonNodeInfo**](JsonNodeInfo.md)|  | 
+ **body** | [**JsonNodeInfo**](JsonNodeInfo.md) |  | 
 
 ### Return type
 

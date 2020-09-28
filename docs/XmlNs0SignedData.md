@@ -4,9 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | **string** |  | [optional] 
-**Fingerpint** | **string** |  | [optional] 
-**Signature** | **string** |  | [optional] 
+
+## Methods
+
+### NewXmlNs0SignedData
+
+`func NewXmlNs0SignedData() *XmlNs0SignedData`
+
+NewXmlNs0SignedData instantiates a new XmlNs0SignedData object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewXmlNs0SignedDataWithDefaults
+
+`func NewXmlNs0SignedDataWithDefaults() *XmlNs0SignedData`
+
+NewXmlNs0SignedDataWithDefaults instantiates a new XmlNs0SignedData object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

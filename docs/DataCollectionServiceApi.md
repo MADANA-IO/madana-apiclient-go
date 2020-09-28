@@ -12,17 +12,53 @@ Method | HTTP request | Description
 
 ## GetMethodsForType
 
-> *os.File GetMethodsForType(ctx, name)
+> *os.File GetMethodsForType(ctx, name).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DataCollectionServiceApi.GetMethodsForType(context.Background(), name).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DataCollectionServiceApi.GetMethodsForType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetMethodsForType`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `DataCollectionServiceApi.GetMethodsForType`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string**|  | 
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMethodsForTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -44,13 +80,44 @@ No authorization required
 
 ## GetNodes
 
-> *os.File GetNodes(ctx, )
+> *os.File GetNodes(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DataCollectionServiceApi.GetNodes(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DataCollectionServiceApi.GetNodes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNodes`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `DataCollectionServiceApi.GetNodes`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNodesRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -72,13 +139,44 @@ No authorization required
 
 ## GetTypes
 
-> *os.File GetTypes(ctx, )
+> *os.File GetTypes(ctx).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DataCollectionServiceApi.GetTypes(context.Background(), ).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DataCollectionServiceApi.GetTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTypes`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `DataCollectionServiceApi.GetTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTypesRequest struct via the builder pattern
+
 
 ### Return type
 

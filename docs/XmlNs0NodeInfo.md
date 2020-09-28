@@ -4,22 +4,26 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionURL** | **string** |  | [optional] 
-**CpuFamily** | **string** |  | [optional] 
-**CpuFrequency** | **string** |  | [optional] 
-**CpuLogicalCount** | **int32** |  | [optional] 
-**CpuModel** | **string** |  | [optional] 
-**CpuPhysicalCores** | **int32** |  | [optional] 
-**HardwareBaseboard** | **string** |  | [optional] 
-**HardwareFirmware** | **string** |  | [optional] 
-**IpfsInfo** | [**XmlNs0IpfsSystemInfo**](xml_ns0_IPFSSystemInfo.md) |  | [optional] 
-**Memory** | **string** |  | [optional] 
-**OperatingSystem** | **string** |  | [optional] 
-**OperatingSystemUptime** | **int64** |  | [optional] 
-**Owner** | **string** |  | [optional] 
-**Processors** | **[]string** |  | [optional] 
-**PublicKey** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+
+## Methods
+
+### NewXmlNs0NodeInfo
+
+`func NewXmlNs0NodeInfo() *XmlNs0NodeInfo`
+
+NewXmlNs0NodeInfo instantiates a new XmlNs0NodeInfo object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewXmlNs0NodeInfoWithDefaults
+
+`func NewXmlNs0NodeInfoWithDefaults() *XmlNs0NodeInfo`
+
+NewXmlNs0NodeInfoWithDefaults instantiates a new XmlNs0NodeInfo object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

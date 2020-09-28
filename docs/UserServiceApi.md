@@ -19,29 +19,53 @@ Method | HTTP request | Description
 
 ## CreateObject
 
-> *os.File CreateObject(ctx, optional)
+> *os.File CreateObject(ctx).Referrer(referrer).Body(body).Execute()
 
 Creates a new user object.
 
-Creates a new user object
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    referrer := "referrer_example" // string |  (optional)
+    body := openapiclient.json_MDN_User{Image: "Image_example", Created: "Created_example", UserName: "UserName_example", LastActive: "LastActive_example", Activated: "Activated_example", LastName: "LastName_example", Mail: "Mail_example", Guid: "Guid_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Image: "Image_example", Platform: "Platform_example"}), FirstName: "FirstName_example", Settings: []JsonMDNUserSetting{openapiclient.json_MDN_UserSetting{Description: "Description_example", Id: "Id_example", Name: "Name_example", Value: "Value_example"})} // JsonMDNUser | provided user object inheriting properties and credentials (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.CreateObject(context.Background(), ).Referrer(referrer).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.CreateObject``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateObject`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.CreateObject`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateObjectRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateObjectOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a CreateObjectOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **referrer** | **optional.String**|  | 
- **body** | [**optional.Interface of JsonMdnUser**](JsonMdnUser.md)| provided user object inheriting properties and credentials | 
+ **referrer** | **string** |  | 
+ **body** | [**JsonMDNUser**](JsonMDNUser.md) | provided user object inheriting properties and credentials | 
 
 ### Return type
 
@@ -63,19 +87,55 @@ No authorization required
 
 ## DeleteObject
 
-> *os.File DeleteObject(ctx, username)
+> *os.File DeleteObject(ctx, username).Execute()
 
 Deletes an User based on the provided id and securitycontext.
 
-Deletes an User based on the provided id and securitycontext
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.DeleteObject(context.Background(), username).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.DeleteObject``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteObject`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.DeleteObject`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteObjectRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -97,21 +157,61 @@ No authorization required
 
 ## DeleteObject_0
 
-> *os.File DeleteObject_0(ctx, ident, platform, username)
+> *os.File DeleteObject_0(ctx, ident, platform, username).Execute()
 
 Deletes linked account from the user and securitycontext.
 
-Deletes linked account from the user and securitycontext
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    ident := "ident_example" // string | 
+    platform := "platform_example" // string | 
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.DeleteObject_0(context.Background(), ident, platform, username).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.DeleteObject_0``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeleteObject_0`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.DeleteObject_0`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ident** | **string**|  | 
-**platform** | **string**|  | 
-**username** | **string**|  | 
+**ident** | **string** |  | 
+**platform** | **string** |  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteObject_1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -133,17 +233,53 @@ No authorization required
 
 ## GetAvatars
 
-> *os.File GetAvatars(ctx, username)
+> *os.File GetAvatars(ctx, username).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.GetAvatars(context.Background(), username).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetAvatars``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAvatars`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.GetAvatars`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAvatarsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -165,17 +301,53 @@ No authorization required
 
 ## GetCertificates
 
-> *os.File GetCertificates(ctx, username)
+> *os.File GetCertificates(ctx, username).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.GetCertificates(context.Background(), username).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCertificates`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.GetCertificates`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCertificatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -197,29 +369,57 @@ No authorization required
 
 ## GetEnclaveHistory
 
-> *os.File GetEnclaveHistory(ctx, username, optional)
+> *os.File GetEnclaveHistory(ctx, username).Limit(limit).Offset(offset).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+    limit := "limit_example" // string |  (optional) (default to "30")
+    offset := "offset_example" // string |  (optional) (default to "0")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.GetEnclaveHistory(context.Background(), username).Limit(limit).Offset(offset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetEnclaveHistory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetEnclaveHistory`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.GetEnclaveHistory`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
- **optional** | ***GetEnclaveHistoryOpts** | optional parameters | nil if no parameters
+**username** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a GetEnclaveHistoryOpts struct
+Other parameters are passed through a pointer to a apiGetEnclaveHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **optional.String**|  | [default to 30]
- **offset** | **optional.String**|  | [default to 0]
+ **limit** | **string** |  | [default to &quot;30&quot;]
+ **offset** | **string** |  | [default to &quot;0&quot;]
 
 ### Return type
 
@@ -241,17 +441,53 @@ No authorization required
 
 ## GetObject2
 
-> *os.File GetObject2(ctx, username)
+> *os.File GetObject2(ctx, username).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.GetObject2(context.Background(), username).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetObject2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetObject2`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.GetObject2`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetObject2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -273,28 +509,55 @@ No authorization required
 
 ## SetAvatar
 
-> *os.File SetAvatar(ctx, username, optional)
+> *os.File SetAvatar(ctx, username).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+    body := openapiclient.json_MDN_UserProfileImage{Image: "Image_example", Id: "Id_example"} // JsonMDNUserProfileImage |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.SetAvatar(context.Background(), username).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.SetAvatar``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetAvatar`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.SetAvatar`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
- **optional** | ***SetAvatarOpts** | optional parameters | nil if no parameters
+**username** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SetAvatarOpts struct
+Other parameters are passed through a pointer to a apiSetAvatarRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonMdnUserProfileImage**](JsonMdnUserProfileImage.md)|  | 
+ **body** | [**JsonMDNUserProfileImage**](JsonMDNUserProfileImage.md) |  | 
 
 ### Return type
 
@@ -316,28 +579,55 @@ No authorization required
 
 ## SetSettings
 
-> *os.File SetSettings(ctx, username, optional)
+> *os.File SetSettings(ctx, username).Body(body).Execute()
 
 
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+    body := openapiclient.json_MDN_UserSetting{Description: "Description_example", Id: "Id_example", Name: "Name_example", Value: "Value_example"} // JsonMDNUserSetting |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.SetSettings(context.Background(), username).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.SetSettings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetSettings`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.SetSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
- **optional** | ***SetSettingsOpts** | optional parameters | nil if no parameters
+**username** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SetSettingsOpts struct
+Other parameters are passed through a pointer to a apiSetSettingsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonMdnUserSetting**](JsonMdnUserSetting.md)|  | 
+ **body** | [**JsonMDNUserSetting**](JsonMDNUserSetting.md) |  | 
 
 ### Return type
 
@@ -359,30 +649,57 @@ No authorization required
 
 ## UpdateObject
 
-> *os.File UpdateObject(ctx, username, optional)
+> *os.File UpdateObject(ctx, username).Body(body).Execute()
 
 Updates Userproperties based on the provided user object.
 
-Updates Userproperties based on the provided user object
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    username := "username_example" // string | 
+    body := openapiclient.json_MDN_User{Image: "Image_example", Created: "Created_example", UserName: "UserName_example", LastActive: "LastActive_example", Activated: "Activated_example", LastName: "LastName_example", Mail: "Mail_example", Guid: "Guid_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Image: "Image_example", Platform: "Platform_example"}), FirstName: "FirstName_example", Settings: []JsonMDNUserSetting{)} // JsonMDNUser | the new user object inherting all properties that should be change (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.UpdateObject(context.Background(), username).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.UpdateObject``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateObject`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.UpdateObject`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**username** | **string**|  | 
- **optional** | ***UpdateObjectOpts** | optional parameters | nil if no parameters
+**username** | **string** |  | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a UpdateObjectOpts struct
+Other parameters are passed through a pointer to a apiUpdateObjectRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**optional.Interface of JsonMdnUser**](JsonMdnUser.md)| the new user object inherting all properties that should be change | 
+ **body** | [**JsonMDNUser**](JsonMDNUser.md) | the new user object inherting all properties that should be change | 
 
 ### Return type
 
