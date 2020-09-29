@@ -39,7 +39,7 @@ import (
 
 func main() {
     referrer := "referrer_example" // string |  (optional)
-    body := openapiclient.json_MDN_User{Image: "Image_example", Created: "Created_example", UserName: "UserName_example", LastActive: "LastActive_example", Activated: "Activated_example", LastName: "LastName_example", Mail: "Mail_example", Guid: "Guid_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Image: "Image_example", Platform: "Platform_example"}), FirstName: "FirstName_example", Settings: []JsonMDNUserSetting{openapiclient.json_MDN_UserSetting{Description: "Description_example", Id: "Id_example", Name: "Name_example", Value: "Value_example"})} // JsonMDNUser | provided user object inheriting properties and credentials (optional)
+    body := openapiclient.json_MDN_User{UserName: "UserName_example", Activated: "Activated_example", Created: "Created_example", LastActive: "LastActive_example", Image: "Image_example", Credentials: openapiclient.json_MDN_UserCredentials{Username: "Username_example", Password: "Password_example"}, Guid: "Guid_example", Settings: []JsonMDNUserSetting{openapiclient.json_MDN_UserSetting{Id: "Id_example", Name: "Name_example", Description: "Description_example", Value: "Value_example"}), LastName: "LastName_example", Mail: "Mail_example", SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Platform: "Platform_example", Image: "Image_example"}), FirstName: "FirstName_example"} // JsonMDNUser | provided user object inheriting properties and credentials (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -597,7 +597,7 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := openapiclient.json_MDN_UserSetting{Description: "Description_example", Id: "Id_example", Name: "Name_example", Value: "Value_example"} // JsonMDNUserSetting |  (optional)
+    body := openapiclient.json_MDN_UserSetting{Id: "Id_example", Name: "Name_example", Description: "Description_example", Value: "Value_example"} // JsonMDNUserSetting |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -669,7 +669,7 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := openapiclient.json_MDN_User{Image: "Image_example", Created: "Created_example", UserName: "UserName_example", LastActive: "LastActive_example", Activated: "Activated_example", LastName: "LastName_example", Mail: "Mail_example", Guid: "Guid_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Image: "Image_example", Platform: "Platform_example"}), FirstName: "FirstName_example", Settings: []JsonMDNUserSetting{)} // JsonMDNUser | the new user object inherting all properties that should be change (optional)
+    body := openapiclient.json_MDN_User{UserName: "UserName_example", Activated: "Activated_example", Created: "Created_example", LastActive: "LastActive_example", Image: "Image_example", Credentials: openapiclient.json_MDN_UserCredentials{Username: "Username_example", Password: "Password_example"}, Guid: "Guid_example", Settings: []JsonMDNUserSetting{), LastName: "LastName_example", Mail: "Mail_example", SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Ident: "Ident_example", Platform: "Platform_example", Image: "Image_example"}), FirstName: "FirstName_example"} // JsonMDNUser | the new user object inherting all properties that should be change (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

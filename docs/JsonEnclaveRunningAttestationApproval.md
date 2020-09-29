@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NodeInfo** | Pointer to [**JsonNodeInfo**](json_NodeInfo.md) |  | [optional] 
 **EnclaveProcess** | Pointer to [**JsonEnclaveProcess**](json_EnclaveProcess.md) |  | [optional] 
+**NodeInfo** | Pointer to [**JsonNodeInfo**](json_NodeInfo.md) |  | [optional] 
 **Approved** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewJsonEnclaveRunningAttestationApprovalWithDefaults instantiates a new JsonEnclaveRunningAttestationApproval object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetNodeInfo
-
-`func (o *JsonEnclaveRunningAttestationApproval) GetNodeInfo() JsonNodeInfo`
-
-GetNodeInfo returns the NodeInfo field if non-nil, zero value otherwise.
-
-### GetNodeInfoOk
-
-`func (o *JsonEnclaveRunningAttestationApproval) GetNodeInfoOk() (*JsonNodeInfo, bool)`
-
-GetNodeInfoOk returns a tuple with the NodeInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeInfo
-
-`func (o *JsonEnclaveRunningAttestationApproval) SetNodeInfo(v JsonNodeInfo)`
-
-SetNodeInfo sets NodeInfo field to given value.
-
-### HasNodeInfo
-
-`func (o *JsonEnclaveRunningAttestationApproval) HasNodeInfo() bool`
-
-HasNodeInfo returns a boolean if a field has been set.
 
 ### GetEnclaveProcess
 
@@ -76,6 +51,31 @@ SetEnclaveProcess sets EnclaveProcess field to given value.
 `func (o *JsonEnclaveRunningAttestationApproval) HasEnclaveProcess() bool`
 
 HasEnclaveProcess returns a boolean if a field has been set.
+
+### GetNodeInfo
+
+`func (o *JsonEnclaveRunningAttestationApproval) GetNodeInfo() JsonNodeInfo`
+
+GetNodeInfo returns the NodeInfo field if non-nil, zero value otherwise.
+
+### GetNodeInfoOk
+
+`func (o *JsonEnclaveRunningAttestationApproval) GetNodeInfoOk() (*JsonNodeInfo, bool)`
+
+GetNodeInfoOk returns a tuple with the NodeInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeInfo
+
+`func (o *JsonEnclaveRunningAttestationApproval) SetNodeInfo(v JsonNodeInfo)`
+
+SetNodeInfo sets NodeInfo field to given value.
+
+### HasNodeInfo
+
+`func (o *JsonEnclaveRunningAttestationApproval) HasNodeInfo() bool`
+
+HasNodeInfo returns a boolean if a field has been set.
 
 ### GetApproved
 
