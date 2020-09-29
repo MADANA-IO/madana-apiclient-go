@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 **EnclaveExecutionType** | Pointer to **string** |  | [optional] 
 **WireguardPublicKey** | Pointer to **string** |  | [optional] 
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 **UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
+
+GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
+
+### GetEnvironmentUUIDOk
+
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
+
+GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
+
+SetEnvironmentUUID sets EnvironmentUUID field to given value.
+
+### HasEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
+
+HasEnvironmentUUID returns a boolean if a field has been set.
 
 ### GetEnclaveExecutionType
 
@@ -77,31 +102,6 @@ SetWireguardPublicKey sets WireguardPublicKey field to given value.
 `func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
 
 HasWireguardPublicKey returns a boolean if a field has been set.
-
-### GetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
-
-GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
-
-### GetEnvironmentUUIDOk
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
-
-GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
-
-SetEnvironmentUUID sets EnvironmentUUID field to given value.
-
-### HasEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
-
-HasEnvironmentUUID returns a boolean if a field has been set.
 
 ### GetUsingDefaultRunConfig
 

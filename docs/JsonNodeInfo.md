@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Processors** | Pointer to **[]string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**IpfsInfo** | Pointer to [**JsonIPFSSystemInfo**](json_IPFSSystemInfo.md) |  | [optional] 
 **OperatingSystemUptime** | Pointer to **float32** |  | [optional] 
-**CpuPhysicalCores** | Pointer to **int32** |  | [optional] 
-**CpuFamily** | Pointer to **string** |  | [optional] 
-**PublicKey** | Pointer to **string** |  | [optional] 
-**OperatingSystem** | Pointer to **string** |  | [optional] 
-**CpuModel** | Pointer to **string** |  | [optional] 
 **ConnectionURL** | Pointer to **string** |  | [optional] 
+**OperatingSystem** | Pointer to **string** |  | [optional] 
+**CpuFamily** | Pointer to **string** |  | [optional] 
 **HardwareBaseboard** | Pointer to **string** |  | [optional] 
-**CpuLogicalCount** | Pointer to **int32** |  | [optional] 
-**CpuFrequency** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **string** |  | [optional] 
+**PublicKey** | Pointer to **string** |  | [optional] 
 **Memory** | Pointer to **string** |  | [optional] 
+**CpuPhysicalCores** | Pointer to **int32** |  | [optional] 
+**CpuLogicalCount** | Pointer to **int32** |  | [optional] 
 **HardwareFirmware** | Pointer to **string** |  | [optional] 
+**CpuFrequency** | Pointer to **string** |  | [optional] 
+**IpfsInfo** | Pointer to [**JsonIPFSSystemInfo**](json_IPFSSystemInfo.md) |  | [optional] 
 **Owner** | Pointer to **string** |  | [optional] 
+**CpuModel** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -65,56 +65,6 @@ SetProcessors sets Processors field to given value.
 
 HasProcessors returns a boolean if a field has been set.
 
-### GetStatus
-
-`func (o *JsonNodeInfo) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *JsonNodeInfo) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *JsonNodeInfo) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *JsonNodeInfo) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
-
-### GetIpfsInfo
-
-`func (o *JsonNodeInfo) GetIpfsInfo() JsonIPFSSystemInfo`
-
-GetIpfsInfo returns the IpfsInfo field if non-nil, zero value otherwise.
-
-### GetIpfsInfoOk
-
-`func (o *JsonNodeInfo) GetIpfsInfoOk() (*JsonIPFSSystemInfo, bool)`
-
-GetIpfsInfoOk returns a tuple with the IpfsInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpfsInfo
-
-`func (o *JsonNodeInfo) SetIpfsInfo(v JsonIPFSSystemInfo)`
-
-SetIpfsInfo sets IpfsInfo field to given value.
-
-### HasIpfsInfo
-
-`func (o *JsonNodeInfo) HasIpfsInfo() bool`
-
-HasIpfsInfo returns a boolean if a field has been set.
-
 ### GetOperatingSystemUptime
 
 `func (o *JsonNodeInfo) GetOperatingSystemUptime() float32`
@@ -139,131 +89,6 @@ SetOperatingSystemUptime sets OperatingSystemUptime field to given value.
 `func (o *JsonNodeInfo) HasOperatingSystemUptime() bool`
 
 HasOperatingSystemUptime returns a boolean if a field has been set.
-
-### GetCpuPhysicalCores
-
-`func (o *JsonNodeInfo) GetCpuPhysicalCores() int32`
-
-GetCpuPhysicalCores returns the CpuPhysicalCores field if non-nil, zero value otherwise.
-
-### GetCpuPhysicalCoresOk
-
-`func (o *JsonNodeInfo) GetCpuPhysicalCoresOk() (*int32, bool)`
-
-GetCpuPhysicalCoresOk returns a tuple with the CpuPhysicalCores field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCpuPhysicalCores
-
-`func (o *JsonNodeInfo) SetCpuPhysicalCores(v int32)`
-
-SetCpuPhysicalCores sets CpuPhysicalCores field to given value.
-
-### HasCpuPhysicalCores
-
-`func (o *JsonNodeInfo) HasCpuPhysicalCores() bool`
-
-HasCpuPhysicalCores returns a boolean if a field has been set.
-
-### GetCpuFamily
-
-`func (o *JsonNodeInfo) GetCpuFamily() string`
-
-GetCpuFamily returns the CpuFamily field if non-nil, zero value otherwise.
-
-### GetCpuFamilyOk
-
-`func (o *JsonNodeInfo) GetCpuFamilyOk() (*string, bool)`
-
-GetCpuFamilyOk returns a tuple with the CpuFamily field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCpuFamily
-
-`func (o *JsonNodeInfo) SetCpuFamily(v string)`
-
-SetCpuFamily sets CpuFamily field to given value.
-
-### HasCpuFamily
-
-`func (o *JsonNodeInfo) HasCpuFamily() bool`
-
-HasCpuFamily returns a boolean if a field has been set.
-
-### GetPublicKey
-
-`func (o *JsonNodeInfo) GetPublicKey() string`
-
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
-
-### GetPublicKeyOk
-
-`func (o *JsonNodeInfo) GetPublicKeyOk() (*string, bool)`
-
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublicKey
-
-`func (o *JsonNodeInfo) SetPublicKey(v string)`
-
-SetPublicKey sets PublicKey field to given value.
-
-### HasPublicKey
-
-`func (o *JsonNodeInfo) HasPublicKey() bool`
-
-HasPublicKey returns a boolean if a field has been set.
-
-### GetOperatingSystem
-
-`func (o *JsonNodeInfo) GetOperatingSystem() string`
-
-GetOperatingSystem returns the OperatingSystem field if non-nil, zero value otherwise.
-
-### GetOperatingSystemOk
-
-`func (o *JsonNodeInfo) GetOperatingSystemOk() (*string, bool)`
-
-GetOperatingSystemOk returns a tuple with the OperatingSystem field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOperatingSystem
-
-`func (o *JsonNodeInfo) SetOperatingSystem(v string)`
-
-SetOperatingSystem sets OperatingSystem field to given value.
-
-### HasOperatingSystem
-
-`func (o *JsonNodeInfo) HasOperatingSystem() bool`
-
-HasOperatingSystem returns a boolean if a field has been set.
-
-### GetCpuModel
-
-`func (o *JsonNodeInfo) GetCpuModel() string`
-
-GetCpuModel returns the CpuModel field if non-nil, zero value otherwise.
-
-### GetCpuModelOk
-
-`func (o *JsonNodeInfo) GetCpuModelOk() (*string, bool)`
-
-GetCpuModelOk returns a tuple with the CpuModel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCpuModel
-
-`func (o *JsonNodeInfo) SetCpuModel(v string)`
-
-SetCpuModel sets CpuModel field to given value.
-
-### HasCpuModel
-
-`func (o *JsonNodeInfo) HasCpuModel() bool`
-
-HasCpuModel returns a boolean if a field has been set.
 
 ### GetConnectionURL
 
@@ -290,6 +115,56 @@ SetConnectionURL sets ConnectionURL field to given value.
 
 HasConnectionURL returns a boolean if a field has been set.
 
+### GetOperatingSystem
+
+`func (o *JsonNodeInfo) GetOperatingSystem() string`
+
+GetOperatingSystem returns the OperatingSystem field if non-nil, zero value otherwise.
+
+### GetOperatingSystemOk
+
+`func (o *JsonNodeInfo) GetOperatingSystemOk() (*string, bool)`
+
+GetOperatingSystemOk returns a tuple with the OperatingSystem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperatingSystem
+
+`func (o *JsonNodeInfo) SetOperatingSystem(v string)`
+
+SetOperatingSystem sets OperatingSystem field to given value.
+
+### HasOperatingSystem
+
+`func (o *JsonNodeInfo) HasOperatingSystem() bool`
+
+HasOperatingSystem returns a boolean if a field has been set.
+
+### GetCpuFamily
+
+`func (o *JsonNodeInfo) GetCpuFamily() string`
+
+GetCpuFamily returns the CpuFamily field if non-nil, zero value otherwise.
+
+### GetCpuFamilyOk
+
+`func (o *JsonNodeInfo) GetCpuFamilyOk() (*string, bool)`
+
+GetCpuFamilyOk returns a tuple with the CpuFamily field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuFamily
+
+`func (o *JsonNodeInfo) SetCpuFamily(v string)`
+
+SetCpuFamily sets CpuFamily field to given value.
+
+### HasCpuFamily
+
+`func (o *JsonNodeInfo) HasCpuFamily() bool`
+
+HasCpuFamily returns a boolean if a field has been set.
+
 ### GetHardwareBaseboard
 
 `func (o *JsonNodeInfo) GetHardwareBaseboard() string`
@@ -315,55 +190,55 @@ SetHardwareBaseboard sets HardwareBaseboard field to given value.
 
 HasHardwareBaseboard returns a boolean if a field has been set.
 
-### GetCpuLogicalCount
+### GetStatus
 
-`func (o *JsonNodeInfo) GetCpuLogicalCount() int32`
+`func (o *JsonNodeInfo) GetStatus() string`
 
-GetCpuLogicalCount returns the CpuLogicalCount field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetCpuLogicalCountOk
+### GetStatusOk
 
-`func (o *JsonNodeInfo) GetCpuLogicalCountOk() (*int32, bool)`
+`func (o *JsonNodeInfo) GetStatusOk() (*string, bool)`
 
-GetCpuLogicalCountOk returns a tuple with the CpuLogicalCount field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCpuLogicalCount
+### SetStatus
 
-`func (o *JsonNodeInfo) SetCpuLogicalCount(v int32)`
+`func (o *JsonNodeInfo) SetStatus(v string)`
 
-SetCpuLogicalCount sets CpuLogicalCount field to given value.
+SetStatus sets Status field to given value.
 
-### HasCpuLogicalCount
+### HasStatus
 
-`func (o *JsonNodeInfo) HasCpuLogicalCount() bool`
+`func (o *JsonNodeInfo) HasStatus() bool`
 
-HasCpuLogicalCount returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
-### GetCpuFrequency
+### GetPublicKey
 
-`func (o *JsonNodeInfo) GetCpuFrequency() string`
+`func (o *JsonNodeInfo) GetPublicKey() string`
 
-GetCpuFrequency returns the CpuFrequency field if non-nil, zero value otherwise.
+GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
 
-### GetCpuFrequencyOk
+### GetPublicKeyOk
 
-`func (o *JsonNodeInfo) GetCpuFrequencyOk() (*string, bool)`
+`func (o *JsonNodeInfo) GetPublicKeyOk() (*string, bool)`
 
-GetCpuFrequencyOk returns a tuple with the CpuFrequency field if it's non-nil, zero value otherwise
+GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCpuFrequency
+### SetPublicKey
 
-`func (o *JsonNodeInfo) SetCpuFrequency(v string)`
+`func (o *JsonNodeInfo) SetPublicKey(v string)`
 
-SetCpuFrequency sets CpuFrequency field to given value.
+SetPublicKey sets PublicKey field to given value.
 
-### HasCpuFrequency
+### HasPublicKey
 
-`func (o *JsonNodeInfo) HasCpuFrequency() bool`
+`func (o *JsonNodeInfo) HasPublicKey() bool`
 
-HasCpuFrequency returns a boolean if a field has been set.
+HasPublicKey returns a boolean if a field has been set.
 
 ### GetMemory
 
@@ -390,6 +265,56 @@ SetMemory sets Memory field to given value.
 
 HasMemory returns a boolean if a field has been set.
 
+### GetCpuPhysicalCores
+
+`func (o *JsonNodeInfo) GetCpuPhysicalCores() int32`
+
+GetCpuPhysicalCores returns the CpuPhysicalCores field if non-nil, zero value otherwise.
+
+### GetCpuPhysicalCoresOk
+
+`func (o *JsonNodeInfo) GetCpuPhysicalCoresOk() (*int32, bool)`
+
+GetCpuPhysicalCoresOk returns a tuple with the CpuPhysicalCores field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuPhysicalCores
+
+`func (o *JsonNodeInfo) SetCpuPhysicalCores(v int32)`
+
+SetCpuPhysicalCores sets CpuPhysicalCores field to given value.
+
+### HasCpuPhysicalCores
+
+`func (o *JsonNodeInfo) HasCpuPhysicalCores() bool`
+
+HasCpuPhysicalCores returns a boolean if a field has been set.
+
+### GetCpuLogicalCount
+
+`func (o *JsonNodeInfo) GetCpuLogicalCount() int32`
+
+GetCpuLogicalCount returns the CpuLogicalCount field if non-nil, zero value otherwise.
+
+### GetCpuLogicalCountOk
+
+`func (o *JsonNodeInfo) GetCpuLogicalCountOk() (*int32, bool)`
+
+GetCpuLogicalCountOk returns a tuple with the CpuLogicalCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuLogicalCount
+
+`func (o *JsonNodeInfo) SetCpuLogicalCount(v int32)`
+
+SetCpuLogicalCount sets CpuLogicalCount field to given value.
+
+### HasCpuLogicalCount
+
+`func (o *JsonNodeInfo) HasCpuLogicalCount() bool`
+
+HasCpuLogicalCount returns a boolean if a field has been set.
+
 ### GetHardwareFirmware
 
 `func (o *JsonNodeInfo) GetHardwareFirmware() string`
@@ -415,6 +340,56 @@ SetHardwareFirmware sets HardwareFirmware field to given value.
 
 HasHardwareFirmware returns a boolean if a field has been set.
 
+### GetCpuFrequency
+
+`func (o *JsonNodeInfo) GetCpuFrequency() string`
+
+GetCpuFrequency returns the CpuFrequency field if non-nil, zero value otherwise.
+
+### GetCpuFrequencyOk
+
+`func (o *JsonNodeInfo) GetCpuFrequencyOk() (*string, bool)`
+
+GetCpuFrequencyOk returns a tuple with the CpuFrequency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuFrequency
+
+`func (o *JsonNodeInfo) SetCpuFrequency(v string)`
+
+SetCpuFrequency sets CpuFrequency field to given value.
+
+### HasCpuFrequency
+
+`func (o *JsonNodeInfo) HasCpuFrequency() bool`
+
+HasCpuFrequency returns a boolean if a field has been set.
+
+### GetIpfsInfo
+
+`func (o *JsonNodeInfo) GetIpfsInfo() JsonIPFSSystemInfo`
+
+GetIpfsInfo returns the IpfsInfo field if non-nil, zero value otherwise.
+
+### GetIpfsInfoOk
+
+`func (o *JsonNodeInfo) GetIpfsInfoOk() (*JsonIPFSSystemInfo, bool)`
+
+GetIpfsInfoOk returns a tuple with the IpfsInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpfsInfo
+
+`func (o *JsonNodeInfo) SetIpfsInfo(v JsonIPFSSystemInfo)`
+
+SetIpfsInfo sets IpfsInfo field to given value.
+
+### HasIpfsInfo
+
+`func (o *JsonNodeInfo) HasIpfsInfo() bool`
+
+HasIpfsInfo returns a boolean if a field has been set.
+
 ### GetOwner
 
 `func (o *JsonNodeInfo) GetOwner() string`
@@ -439,6 +414,31 @@ SetOwner sets Owner field to given value.
 `func (o *JsonNodeInfo) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
+
+### GetCpuModel
+
+`func (o *JsonNodeInfo) GetCpuModel() string`
+
+GetCpuModel returns the CpuModel field if non-nil, zero value otherwise.
+
+### GetCpuModelOk
+
+`func (o *JsonNodeInfo) GetCpuModelOk() (*string, bool)`
+
+GetCpuModelOk returns a tuple with the CpuModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuModel
+
+`func (o *JsonNodeInfo) SetCpuModel(v string)`
+
+SetCpuModel sets CpuModel field to given value.
+
+### HasCpuModel
+
+`func (o *JsonNodeInfo) HasCpuModel() bool`
+
+HasCpuModel returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

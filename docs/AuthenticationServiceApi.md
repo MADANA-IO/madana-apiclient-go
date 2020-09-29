@@ -104,7 +104,7 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := openapiclient.json_MDN_OAuthToken{Token: "Token_example", Verifier: "Verifier_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -240,7 +240,7 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := openapiclient.json_MDN_OAuthToken{Token: "Token_example", Verifier: "Verifier_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
