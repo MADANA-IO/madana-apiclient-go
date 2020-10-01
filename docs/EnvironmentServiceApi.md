@@ -447,7 +447,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_EnvironmentPublishingRequest{IpfsHash: "IpfsHash_example", Name: "Name_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example", Content: "Content_example", Size: "Size_example", IsPublic: "IsPublic_example", Description: "Description_example", Packages: "Packages_example", Uuid: "Uuid_example"} // JsonEnvironmentPublishingRequest |  (optional)
+    body := openapiclient.json_EnvironmentPublishingRequest{IsPublic: "IsPublic_example", Name: "Name_example", Uuid: "Uuid_example", Content: "Content_example", Size: "Size_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example", Packages: "Packages_example", IpfsHash: "IpfsHash_example", Description: "Description_example"} // JsonEnvironmentPublishingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -580,7 +580,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_Environment{IpfsHash: "IpfsHash_example", Size: "Size_example", Content: []string{"Content_example"), Roothash: "Roothash_example", Packages: []string{"Packages_example"), Name: "Name_example", RootHashOffset: "RootHashOffset_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{RoothashOffset: 123, Readonly: false, Roothash: "Roothash_example", Disk: "Disk_example"}), Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example")}, Description: "Description_example", Published: false, Uuid: "Uuid_example"} // JsonEnvironment |  (optional)
+    body := openapiclient.json_Environment{Size: "Size_example", Published: false, DefaultRunConfiguration: openapiclient.json_RunConfig{Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Readonly: false, Disk: "Disk_example", RoothashOffset: 123, Roothash: "Roothash_example"}), Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }}, Content: []string{"Content_example"), Name: "Name_example", Uuid: "Uuid_example", Packages: []string{"Packages_example"), RootHashOffset: "RootHashOffset_example", IpfsHash: "IpfsHash_example", Roothash: "Roothash_example", Description: "Description_example"} // JsonEnvironment |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

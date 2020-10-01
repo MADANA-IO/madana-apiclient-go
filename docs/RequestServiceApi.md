@@ -44,7 +44,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := openapiclient.json_SignedData_utils{Fingerpint: "Fingerpint_example", Signature: "Signature_example", Data: "Data_example"} // JsonSignedDataUtils |  (optional)
+    body := openapiclient.json_SignedData_utils{Signature: "Signature_example", Data: "Data_example", Fingerpint: "Fingerpint_example"} // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -118,7 +118,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := openapiclient.json_SignedData_utils{Fingerpint: "Fingerpint_example", Signature: "Signature_example", Data: "Data_example"} // JsonSignedDataUtils |  (optional)
+    body := openapiclient.json_SignedData_utils{Signature: "Signature_example", Data: "Data_example", Fingerpint: "Fingerpint_example"} // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

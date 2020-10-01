@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Created** | Pointer to **string** |  | [optional] 
-**Image** | Pointer to **string** |  | [optional] 
-**Activated** | Pointer to **string** |  | [optional] 
-**LastActive** | Pointer to **string** |  | [optional] 
 **UserName** | Pointer to **string** |  | [optional] 
+**Activated** | Pointer to **string** |  | [optional] 
+**Created** | Pointer to **string** |  | [optional] 
+**LastActive** | Pointer to **string** |  | [optional] 
+**Image** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,55 +29,30 @@ NewJsonMDNAUserObjectWithDefaults instantiates a new JsonMDNAUserObject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCreated
+### GetUserName
 
-`func (o *JsonMDNAUserObject) GetCreated() string`
+`func (o *JsonMDNAUserObject) GetUserName() string`
 
-GetCreated returns the Created field if non-nil, zero value otherwise.
+GetUserName returns the UserName field if non-nil, zero value otherwise.
 
-### GetCreatedOk
+### GetUserNameOk
 
-`func (o *JsonMDNAUserObject) GetCreatedOk() (*string, bool)`
+`func (o *JsonMDNAUserObject) GetUserNameOk() (*string, bool)`
 
-GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreated
+### SetUserName
 
-`func (o *JsonMDNAUserObject) SetCreated(v string)`
+`func (o *JsonMDNAUserObject) SetUserName(v string)`
 
-SetCreated sets Created field to given value.
+SetUserName sets UserName field to given value.
 
-### HasCreated
+### HasUserName
 
-`func (o *JsonMDNAUserObject) HasCreated() bool`
+`func (o *JsonMDNAUserObject) HasUserName() bool`
 
-HasCreated returns a boolean if a field has been set.
-
-### GetImage
-
-`func (o *JsonMDNAUserObject) GetImage() string`
-
-GetImage returns the Image field if non-nil, zero value otherwise.
-
-### GetImageOk
-
-`func (o *JsonMDNAUserObject) GetImageOk() (*string, bool)`
-
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImage
-
-`func (o *JsonMDNAUserObject) SetImage(v string)`
-
-SetImage sets Image field to given value.
-
-### HasImage
-
-`func (o *JsonMDNAUserObject) HasImage() bool`
-
-HasImage returns a boolean if a field has been set.
+HasUserName returns a boolean if a field has been set.
 
 ### GetActivated
 
@@ -104,6 +79,31 @@ SetActivated sets Activated field to given value.
 
 HasActivated returns a boolean if a field has been set.
 
+### GetCreated
+
+`func (o *JsonMDNAUserObject) GetCreated() string`
+
+GetCreated returns the Created field if non-nil, zero value otherwise.
+
+### GetCreatedOk
+
+`func (o *JsonMDNAUserObject) GetCreatedOk() (*string, bool)`
+
+GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreated
+
+`func (o *JsonMDNAUserObject) SetCreated(v string)`
+
+SetCreated sets Created field to given value.
+
+### HasCreated
+
+`func (o *JsonMDNAUserObject) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
+
 ### GetLastActive
 
 `func (o *JsonMDNAUserObject) GetLastActive() string`
@@ -129,30 +129,30 @@ SetLastActive sets LastActive field to given value.
 
 HasLastActive returns a boolean if a field has been set.
 
-### GetUserName
+### GetImage
 
-`func (o *JsonMDNAUserObject) GetUserName() string`
+`func (o *JsonMDNAUserObject) GetImage() string`
 
-GetUserName returns the UserName field if non-nil, zero value otherwise.
+GetImage returns the Image field if non-nil, zero value otherwise.
 
-### GetUserNameOk
+### GetImageOk
 
-`func (o *JsonMDNAUserObject) GetUserNameOk() (*string, bool)`
+`func (o *JsonMDNAUserObject) GetImageOk() (*string, bool)`
 
-GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserName
+### SetImage
 
-`func (o *JsonMDNAUserObject) SetUserName(v string)`
+`func (o *JsonMDNAUserObject) SetImage(v string)`
 
-SetUserName sets UserName field to given value.
+SetImage sets Image field to given value.
 
-### HasUserName
+### HasImage
 
-`func (o *JsonMDNAUserObject) HasUserName() bool`
+`func (o *JsonMDNAUserObject) HasImage() bool`
 
-HasUserName returns a boolean if a field has been set.
+HasImage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
