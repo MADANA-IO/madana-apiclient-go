@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Mail** | Pointer to **string** |  | [optional] 
-**Password** | Pointer to **string** |  | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **string** |  | [optional] 
+**Mail** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonMDNPasswordResetWithDefaults instantiates a new JsonMDNPasswordReset obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMail
+### GetToken
 
-`func (o *JsonMDNPasswordReset) GetMail() string`
+`func (o *JsonMDNPasswordReset) GetToken() string`
 
-GetMail returns the Mail field if non-nil, zero value otherwise.
+GetToken returns the Token field if non-nil, zero value otherwise.
 
-### GetMailOk
+### GetTokenOk
 
-`func (o *JsonMDNPasswordReset) GetMailOk() (*string, bool)`
+`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
 
-GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMail
+### SetToken
 
-`func (o *JsonMDNPasswordReset) SetMail(v string)`
+`func (o *JsonMDNPasswordReset) SetToken(v string)`
 
-SetMail sets Mail field to given value.
+SetToken sets Token field to given value.
 
-### HasMail
+### HasToken
 
-`func (o *JsonMDNPasswordReset) HasMail() bool`
+`func (o *JsonMDNPasswordReset) HasToken() bool`
 
-HasMail returns a boolean if a field has been set.
+HasToken returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -77,30 +77,30 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
-### GetToken
+### GetMail
 
-`func (o *JsonMDNPasswordReset) GetToken() string`
+`func (o *JsonMDNPasswordReset) GetMail() string`
 
-GetToken returns the Token field if non-nil, zero value otherwise.
+GetMail returns the Mail field if non-nil, zero value otherwise.
 
-### GetTokenOk
+### GetMailOk
 
-`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
+`func (o *JsonMDNPasswordReset) GetMailOk() (*string, bool)`
 
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetToken
+### SetMail
 
-`func (o *JsonMDNPasswordReset) SetToken(v string)`
+`func (o *JsonMDNPasswordReset) SetMail(v string)`
 
-SetToken sets Token field to given value.
+SetMail sets Mail field to given value.
 
-### HasToken
+### HasMail
 
-`func (o *JsonMDNPasswordReset) HasToken() bool`
+`func (o *JsonMDNPasswordReset) HasMail() bool`
 
-HasToken returns a boolean if a field has been set.
+HasMail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

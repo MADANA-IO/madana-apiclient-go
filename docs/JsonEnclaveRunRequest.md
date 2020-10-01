@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EnclaveExecutionType** | Pointer to **string** |  | [optional] 
-**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 **WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
+**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
 
 HasEnclaveExecutionType returns a boolean if a field has been set.
 
-### GetUsingDefaultRunConfig
+### GetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
 
-GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
 
-### GetUsingDefaultRunConfigOk
+### GetWireguardPublicKeyOk
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
 
-GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsingDefaultRunConfig
+### SetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
 
-SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+SetWireguardPublicKey sets WireguardPublicKey field to given value.
 
-### HasUsingDefaultRunConfig
+### HasWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
 
-HasUsingDefaultRunConfig returns a boolean if a field has been set.
+HasWireguardPublicKey returns a boolean if a field has been set.
 
 ### GetEnvironmentUUID
 
@@ -103,30 +103,30 @@ SetEnvironmentUUID sets EnvironmentUUID field to given value.
 
 HasEnvironmentUUID returns a boolean if a field has been set.
 
-### GetWireguardPublicKey
+### GetUsingDefaultRunConfig
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
 
-GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
 
-### GetWireguardPublicKeyOk
+### GetUsingDefaultRunConfigOk
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
 
-GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardPublicKey
+### SetUsingDefaultRunConfig
 
-`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
+`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
 
-SetWireguardPublicKey sets WireguardPublicKey field to given value.
+SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
 
-### HasWireguardPublicKey
+### HasUsingDefaultRunConfig
 
-`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
+`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
 
-HasWireguardPublicKey returns a boolean if a field has been set.
+HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
