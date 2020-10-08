@@ -227,7 +227,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_MDN_PasswordReset{Token: "Token_example", Mail: "Mail_example", Password: "Password_example"} // JsonMDNPasswordReset | - the MDN_PasswordReset Object (optional)
+    body := openapiclient.json_MDN_PasswordReset{Password: "Password_example", Mail: "Mail_example", Token: "Token_example"} // JsonMDNPasswordReset | - the MDN_PasswordReset Object (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

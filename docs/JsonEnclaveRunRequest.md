@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
 **EnclaveExecutionType** | Pointer to **string** |  | [optional] 
 **UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,30 +28,30 @@ NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEnvironmentUUID
+### GetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
 
-GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
+GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
 
-### GetEnvironmentUUIDOk
+### GetWireguardPublicKeyOk
 
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
 
-GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
+GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnvironmentUUID
+### SetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
+`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
 
-SetEnvironmentUUID sets EnvironmentUUID field to given value.
+SetWireguardPublicKey sets WireguardPublicKey field to given value.
 
-### HasEnvironmentUUID
+### HasWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
+`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
 
-HasEnvironmentUUID returns a boolean if a field has been set.
+HasWireguardPublicKey returns a boolean if a field has been set.
 
 ### GetEnclaveExecutionType
 
@@ -103,30 +103,30 @@ SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
 
 HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
-### GetWireguardPublicKey
+### GetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
 
-GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
 
-### GetWireguardPublicKeyOk
+### GetEnvironmentUUIDOk
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
 
-GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardPublicKey
+### SetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
+`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
 
-SetWireguardPublicKey sets WireguardPublicKey field to given value.
+SetEnvironmentUUID sets EnvironmentUUID field to given value.
 
-### HasWireguardPublicKey
+### HasEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
+`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
 
-HasWireguardPublicKey returns a boolean if a field has been set.
+HasEnvironmentUUID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

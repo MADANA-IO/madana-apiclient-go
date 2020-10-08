@@ -152,7 +152,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_NodeInfo{ConnectionURL: "ConnectionURL_example", PublicKey: "PublicKey_example", CpuPhysicalCores: 123, HardwareFirmware: "HardwareFirmware_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{SwarmConnection: "SwarmConnection_example", PublicKey: "PublicKey_example", AgentVersion: "AgentVersion_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example"}, Owner: "Owner_example", Processors: []string{"Processors_example"), CpuModel: "CpuModel_example", Status: "Status_example", CpuFrequency: "CpuFrequency_example", HardwareBaseboard: "HardwareBaseboard_example", Memory: "Memory_example", CpuLogicalCount: 123, OperatingSystem: "OperatingSystem_example", OperatingSystemUptime: 123, CpuFamily: "CpuFamily_example"} // JsonNodeInfo |  (optional)
+    body := openapiclient.json_NodeInfo{CpuModel: "CpuModel_example", CpuLogicalCount: 123, Owner: "Owner_example", OperatingSystemUptime: 123, OperatingSystem: "OperatingSystem_example", PublicKey: "PublicKey_example", ConnectionURL: "ConnectionURL_example", Memory: "Memory_example", HardwareBaseboard: "HardwareBaseboard_example", HardwareFirmware: "HardwareFirmware_example", CpuFrequency: "CpuFrequency_example", Status: "Status_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{SwarmConnection: "SwarmConnection_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example", AgentVersion: "AgentVersion_example", PublicKey: "PublicKey_example"}, Processors: []string{"Processors_example"), CpuFamily: "CpuFamily_example", CpuPhysicalCores: 123} // JsonNodeInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
