@@ -175,7 +175,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_MDN_UserCredentials{Username: "Username_example", Password: "Password_example"} // JsonMDNUserCredentials | the credentials used to validate the user (optional)
+    body := openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"} // JsonMDNUserCredentials | the credentials used to validate the user (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
