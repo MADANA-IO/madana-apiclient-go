@@ -152,7 +152,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_NodeInfo{CpuModel: "CpuModel_example", CpuLogicalCount: 123, Owner: "Owner_example", OperatingSystemUptime: 123, OperatingSystem: "OperatingSystem_example", PublicKey: "PublicKey_example", ConnectionURL: "ConnectionURL_example", Memory: "Memory_example", HardwareBaseboard: "HardwareBaseboard_example", HardwareFirmware: "HardwareFirmware_example", CpuFrequency: "CpuFrequency_example", Status: "Status_example", IpfsInfo: openapiclient.json_IPFSSystemInfo{SwarmConnection: "SwarmConnection_example", Id: "Id_example", ProtocolVersion: "ProtocolVersion_example", AgentVersion: "AgentVersion_example", PublicKey: "PublicKey_example"}, Processors: []string{"Processors_example"), CpuFamily: "CpuFamily_example", CpuPhysicalCores: 123} // JsonNodeInfo |  (optional)
+    body := openapiclient.json_NodeInfo{CpuPhysicalCores: 123, CpuModel: "CpuModel_example", CpuFrequency: "CpuFrequency_example", PublicKey: "PublicKey_example", OperatingSystem: "OperatingSystem_example", OperatingSystemUptime: 123, CpuLogicalCount: 123, IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", ProtocolVersion: "ProtocolVersion_example", PublicKey: "PublicKey_example", SwarmConnection: "SwarmConnection_example", Id: "Id_example"}, Status: "Status_example", Processors: []string{"Processors_example"), Owner: "Owner_example", HardwareFirmware: "HardwareFirmware_example", ConnectionURL: "ConnectionURL_example", HardwareBaseboard: "HardwareBaseboard_example", CpuFamily: "CpuFamily_example", Memory: "Memory_example"} // JsonNodeInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

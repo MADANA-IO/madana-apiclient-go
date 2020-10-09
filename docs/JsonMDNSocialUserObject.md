@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Platform** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**Platform** | Pointer to **string** |  | [optional] 
 **Ident** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewJsonMDNSocialUserObjectWithDefaults instantiates a new JsonMDNSocialUserObject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPlatform
-
-`func (o *JsonMDNSocialUserObject) GetPlatform() string`
-
-GetPlatform returns the Platform field if non-nil, zero value otherwise.
-
-### GetPlatformOk
-
-`func (o *JsonMDNSocialUserObject) GetPlatformOk() (*string, bool)`
-
-GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlatform
-
-`func (o *JsonMDNSocialUserObject) SetPlatform(v string)`
-
-SetPlatform sets Platform field to given value.
-
-### HasPlatform
-
-`func (o *JsonMDNSocialUserObject) HasPlatform() bool`
-
-HasPlatform returns a boolean if a field has been set.
 
 ### GetImage
 
@@ -76,6 +51,31 @@ SetImage sets Image field to given value.
 `func (o *JsonMDNSocialUserObject) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
+
+### GetPlatform
+
+`func (o *JsonMDNSocialUserObject) GetPlatform() string`
+
+GetPlatform returns the Platform field if non-nil, zero value otherwise.
+
+### GetPlatformOk
+
+`func (o *JsonMDNSocialUserObject) GetPlatformOk() (*string, bool)`
+
+GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlatform
+
+`func (o *JsonMDNSocialUserObject) SetPlatform(v string)`
+
+SetPlatform sets Platform field to given value.
+
+### HasPlatform
+
+`func (o *JsonMDNSocialUserObject) HasPlatform() bool`
+
+HasPlatform returns a boolean if a field has been set.
 
 ### GetIdent
 

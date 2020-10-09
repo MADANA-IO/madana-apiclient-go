@@ -447,7 +447,7 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_EnvironmentPublishingRequest{Content: "Content_example", Uuid: "Uuid_example", Size: "Size_example", IsPublic: "IsPublic_example", Name: "Name_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Packages: "Packages_example"} // JsonEnvironmentPublishingRequest |  (optional)
+    body := openapiclient.json_EnvironmentPublishingRequest{Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Content: "Content_example", IsPublic: "IsPublic_example", Size: "Size_example", Packages: "Packages_example", Name: "Name_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example"} // JsonEnvironmentPublishingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -580,7 +580,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_Environment{Uuid: "Uuid_example", Packages: []string{"Packages_example"), Content: []string{"Content_example"), Roothash: "Roothash_example", Description: "Description_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Args: []string{"Args_example"), Environment: map[string]string{ "Key" = "Value" }, DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Roothash: "Roothash_example", Readonly: false, RoothashOffset: 123, Disk: "Disk_example"}), Run: "Run_example"}, IpfsHash: "IpfsHash_example", Size: "Size_example", Name: "Name_example", Published: false, RootHashOffset: "RootHashOffset_example"} // JsonEnvironment |  (optional)
+    body := openapiclient.json_Environment{Name: "Name_example", Content: []string{"Content_example"), Roothash: "Roothash_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Roothash: "Roothash_example", RoothashOffset: 123, Readonly: false, Disk: "Disk_example"})}, Published: false, Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Packages: []string{"Packages_example"), RootHashOffset: "RootHashOffset_example", Size: "Size_example"} // JsonEnvironment |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

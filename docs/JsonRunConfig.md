@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Args** | Pointer to **[]string** |  | [optional] 
-**Environment** | Pointer to **map[string]string** |  | [optional] 
-**DiskConfig** | Pointer to [**[]JsonDiskConfig**](json_Disk_config.md) |  | [optional] 
 **Run** | Pointer to **string** |  | [optional] 
+**Environment** | Pointer to **map[string]string** |  | [optional] 
+**Args** | Pointer to **[]string** |  | [optional] 
+**DiskConfig** | Pointer to [**[]JsonDiskConfig**](json_Disk_config.md) |  | [optional] 
 
 ## Methods
 
@@ -28,30 +28,30 @@ NewJsonRunConfigWithDefaults instantiates a new JsonRunConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetArgs
+### GetRun
 
-`func (o *JsonRunConfig) GetArgs() []string`
+`func (o *JsonRunConfig) GetRun() string`
 
-GetArgs returns the Args field if non-nil, zero value otherwise.
+GetRun returns the Run field if non-nil, zero value otherwise.
 
-### GetArgsOk
+### GetRunOk
 
-`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
+`func (o *JsonRunConfig) GetRunOk() (*string, bool)`
 
-GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+GetRunOk returns a tuple with the Run field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetArgs
+### SetRun
 
-`func (o *JsonRunConfig) SetArgs(v []string)`
+`func (o *JsonRunConfig) SetRun(v string)`
 
-SetArgs sets Args field to given value.
+SetRun sets Run field to given value.
 
-### HasArgs
+### HasRun
 
-`func (o *JsonRunConfig) HasArgs() bool`
+`func (o *JsonRunConfig) HasRun() bool`
 
-HasArgs returns a boolean if a field has been set.
+HasRun returns a boolean if a field has been set.
 
 ### GetEnvironment
 
@@ -78,6 +78,31 @@ SetEnvironment sets Environment field to given value.
 
 HasEnvironment returns a boolean if a field has been set.
 
+### GetArgs
+
+`func (o *JsonRunConfig) GetArgs() []string`
+
+GetArgs returns the Args field if non-nil, zero value otherwise.
+
+### GetArgsOk
+
+`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
+
+GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArgs
+
+`func (o *JsonRunConfig) SetArgs(v []string)`
+
+SetArgs sets Args field to given value.
+
+### HasArgs
+
+`func (o *JsonRunConfig) HasArgs() bool`
+
+HasArgs returns a boolean if a field has been set.
+
 ### GetDiskConfig
 
 `func (o *JsonRunConfig) GetDiskConfig() []JsonDiskConfig`
@@ -102,31 +127,6 @@ SetDiskConfig sets DiskConfig field to given value.
 `func (o *JsonRunConfig) HasDiskConfig() bool`
 
 HasDiskConfig returns a boolean if a field has been set.
-
-### GetRun
-
-`func (o *JsonRunConfig) GetRun() string`
-
-GetRun returns the Run field if non-nil, zero value otherwise.
-
-### GetRunOk
-
-`func (o *JsonRunConfig) GetRunOk() (*string, bool)`
-
-GetRunOk returns a tuple with the Run field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRun
-
-`func (o *JsonRunConfig) SetRun(v string)`
-
-SetRun sets Run field to given value.
-
-### HasRun
-
-`func (o *JsonRunConfig) HasRun() bool`
-
-HasRun returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
