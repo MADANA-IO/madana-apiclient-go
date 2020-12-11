@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RootHashOffset** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
+**Roothash** | Pointer to **string** |  | [optional] 
 **DefaultRunConfiguration** | Pointer to [**JsonRunConfig**](json_RunConfig.md) |  | [optional] 
+**Published** | Pointer to **bool** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**RootHashOffset** | Pointer to **string** |  | [optional] 
 **Content** | Pointer to **[]string** |  | [optional] 
 **Size** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Uuid** | Pointer to **string** |  | [optional] 
-**Roothash** | Pointer to **string** |  | [optional] 
 **IpfsHash** | Pointer to **string** |  | [optional] 
 **Packages** | Pointer to **[]string** |  | [optional] 
-**Published** | Pointer to **bool** |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -35,30 +35,105 @@ NewJsonEnvironmentWithDefaults instantiates a new JsonEnvironment object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRootHashOffset
+### GetDescription
 
-`func (o *JsonEnvironment) GetRootHashOffset() string`
+`func (o *JsonEnvironment) GetDescription() string`
 
-GetRootHashOffset returns the RootHashOffset field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetRootHashOffsetOk
+### GetDescriptionOk
 
-`func (o *JsonEnvironment) GetRootHashOffsetOk() (*string, bool)`
+`func (o *JsonEnvironment) GetDescriptionOk() (*string, bool)`
 
-GetRootHashOffsetOk returns a tuple with the RootHashOffset field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRootHashOffset
+### SetDescription
 
-`func (o *JsonEnvironment) SetRootHashOffset(v string)`
+`func (o *JsonEnvironment) SetDescription(v string)`
 
-SetRootHashOffset sets RootHashOffset field to given value.
+SetDescription sets Description field to given value.
 
-### HasRootHashOffset
+### HasDescription
 
-`func (o *JsonEnvironment) HasRootHashOffset() bool`
+`func (o *JsonEnvironment) HasDescription() bool`
 
-HasRootHashOffset returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
+
+### GetRoothash
+
+`func (o *JsonEnvironment) GetRoothash() string`
+
+GetRoothash returns the Roothash field if non-nil, zero value otherwise.
+
+### GetRoothashOk
+
+`func (o *JsonEnvironment) GetRoothashOk() (*string, bool)`
+
+GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoothash
+
+`func (o *JsonEnvironment) SetRoothash(v string)`
+
+SetRoothash sets Roothash field to given value.
+
+### HasRoothash
+
+`func (o *JsonEnvironment) HasRoothash() bool`
+
+HasRoothash returns a boolean if a field has been set.
+
+### GetDefaultRunConfiguration
+
+`func (o *JsonEnvironment) GetDefaultRunConfiguration() JsonRunConfig`
+
+GetDefaultRunConfiguration returns the DefaultRunConfiguration field if non-nil, zero value otherwise.
+
+### GetDefaultRunConfigurationOk
+
+`func (o *JsonEnvironment) GetDefaultRunConfigurationOk() (*JsonRunConfig, bool)`
+
+GetDefaultRunConfigurationOk returns a tuple with the DefaultRunConfiguration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultRunConfiguration
+
+`func (o *JsonEnvironment) SetDefaultRunConfiguration(v JsonRunConfig)`
+
+SetDefaultRunConfiguration sets DefaultRunConfiguration field to given value.
+
+### HasDefaultRunConfiguration
+
+`func (o *JsonEnvironment) HasDefaultRunConfiguration() bool`
+
+HasDefaultRunConfiguration returns a boolean if a field has been set.
+
+### GetPublished
+
+`func (o *JsonEnvironment) GetPublished() bool`
+
+GetPublished returns the Published field if non-nil, zero value otherwise.
+
+### GetPublishedOk
+
+`func (o *JsonEnvironment) GetPublishedOk() (*bool, bool)`
+
+GetPublishedOk returns a tuple with the Published field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublished
+
+`func (o *JsonEnvironment) SetPublished(v bool)`
+
+SetPublished sets Published field to given value.
+
+### HasPublished
+
+`func (o *JsonEnvironment) HasPublished() bool`
+
+HasPublished returns a boolean if a field has been set.
 
 ### GetName
 
@@ -85,30 +160,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetDefaultRunConfiguration
+### GetRootHashOffset
 
-`func (o *JsonEnvironment) GetDefaultRunConfiguration() JsonRunConfig`
+`func (o *JsonEnvironment) GetRootHashOffset() string`
 
-GetDefaultRunConfiguration returns the DefaultRunConfiguration field if non-nil, zero value otherwise.
+GetRootHashOffset returns the RootHashOffset field if non-nil, zero value otherwise.
 
-### GetDefaultRunConfigurationOk
+### GetRootHashOffsetOk
 
-`func (o *JsonEnvironment) GetDefaultRunConfigurationOk() (*JsonRunConfig, bool)`
+`func (o *JsonEnvironment) GetRootHashOffsetOk() (*string, bool)`
 
-GetDefaultRunConfigurationOk returns a tuple with the DefaultRunConfiguration field if it's non-nil, zero value otherwise
+GetRootHashOffsetOk returns a tuple with the RootHashOffset field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDefaultRunConfiguration
+### SetRootHashOffset
 
-`func (o *JsonEnvironment) SetDefaultRunConfiguration(v JsonRunConfig)`
+`func (o *JsonEnvironment) SetRootHashOffset(v string)`
 
-SetDefaultRunConfiguration sets DefaultRunConfiguration field to given value.
+SetRootHashOffset sets RootHashOffset field to given value.
 
-### HasDefaultRunConfiguration
+### HasRootHashOffset
 
-`func (o *JsonEnvironment) HasDefaultRunConfiguration() bool`
+`func (o *JsonEnvironment) HasRootHashOffset() bool`
 
-HasDefaultRunConfiguration returns a boolean if a field has been set.
+HasRootHashOffset returns a boolean if a field has been set.
 
 ### GetContent
 
@@ -160,81 +235,6 @@ SetSize sets Size field to given value.
 
 HasSize returns a boolean if a field has been set.
 
-### GetDescription
-
-`func (o *JsonEnvironment) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *JsonEnvironment) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *JsonEnvironment) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *JsonEnvironment) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetUuid
-
-`func (o *JsonEnvironment) GetUuid() string`
-
-GetUuid returns the Uuid field if non-nil, zero value otherwise.
-
-### GetUuidOk
-
-`func (o *JsonEnvironment) GetUuidOk() (*string, bool)`
-
-GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUuid
-
-`func (o *JsonEnvironment) SetUuid(v string)`
-
-SetUuid sets Uuid field to given value.
-
-### HasUuid
-
-`func (o *JsonEnvironment) HasUuid() bool`
-
-HasUuid returns a boolean if a field has been set.
-
-### GetRoothash
-
-`func (o *JsonEnvironment) GetRoothash() string`
-
-GetRoothash returns the Roothash field if non-nil, zero value otherwise.
-
-### GetRoothashOk
-
-`func (o *JsonEnvironment) GetRoothashOk() (*string, bool)`
-
-GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoothash
-
-`func (o *JsonEnvironment) SetRoothash(v string)`
-
-SetRoothash sets Roothash field to given value.
-
-### HasRoothash
-
-`func (o *JsonEnvironment) HasRoothash() bool`
-
-HasRoothash returns a boolean if a field has been set.
-
 ### GetIpfsHash
 
 `func (o *JsonEnvironment) GetIpfsHash() string`
@@ -285,30 +285,30 @@ SetPackages sets Packages field to given value.
 
 HasPackages returns a boolean if a field has been set.
 
-### GetPublished
+### GetUuid
 
-`func (o *JsonEnvironment) GetPublished() bool`
+`func (o *JsonEnvironment) GetUuid() string`
 
-GetPublished returns the Published field if non-nil, zero value otherwise.
+GetUuid returns the Uuid field if non-nil, zero value otherwise.
 
-### GetPublishedOk
+### GetUuidOk
 
-`func (o *JsonEnvironment) GetPublishedOk() (*bool, bool)`
+`func (o *JsonEnvironment) GetUuidOk() (*string, bool)`
 
-GetPublishedOk returns a tuple with the Published field if it's non-nil, zero value otherwise
+GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPublished
+### SetUuid
 
-`func (o *JsonEnvironment) SetPublished(v bool)`
+`func (o *JsonEnvironment) SetUuid(v string)`
 
-SetPublished sets Published field to given value.
+SetUuid sets Uuid field to given value.
 
-### HasPublished
+### HasUuid
 
-`func (o *JsonEnvironment) HasPublished() bool`
+`func (o *JsonEnvironment) HasUuid() bool`
 
-HasPublished returns a boolean if a field has been set.
+HasUuid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

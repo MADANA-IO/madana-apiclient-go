@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ProtocolVersion** | Pointer to **string** |  | [optional] 
 **AgentVersion** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**ProtocolVersion** | Pointer to **string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
 **SwarmConnection** | Pointer to **string** |  | [optional] 
 
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewJsonIPFSSystemInfoWithDefaults instantiates a new JsonIPFSSystemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) GetProtocolVersion() string`
+
+GetProtocolVersion returns the ProtocolVersion field if non-nil, zero value otherwise.
+
+### GetProtocolVersionOk
+
+`func (o *JsonIPFSSystemInfo) GetProtocolVersionOk() (*string, bool)`
+
+GetProtocolVersionOk returns a tuple with the ProtocolVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) SetProtocolVersion(v string)`
+
+SetProtocolVersion sets ProtocolVersion field to given value.
+
+### HasProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) HasProtocolVersion() bool`
+
+HasProtocolVersion returns a boolean if a field has been set.
 
 ### GetAgentVersion
 
@@ -78,31 +103,6 @@ SetId sets Id field to given value.
 `func (o *JsonIPFSSystemInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) GetProtocolVersion() string`
-
-GetProtocolVersion returns the ProtocolVersion field if non-nil, zero value otherwise.
-
-### GetProtocolVersionOk
-
-`func (o *JsonIPFSSystemInfo) GetProtocolVersionOk() (*string, bool)`
-
-GetProtocolVersionOk returns a tuple with the ProtocolVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) SetProtocolVersion(v string)`
-
-SetProtocolVersion sets ProtocolVersion field to given value.
-
-### HasProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) HasProtocolVersion() bool`
-
-HasProtocolVersion returns a boolean if a field has been set.
 
 ### GetPublicKey
 
