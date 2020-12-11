@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Owner** | Pointer to **string** |  | [optional] 
 **Processors** | Pointer to **[]string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
+**SgxInfo** | Pointer to [**XmlNs0SGXInfo**](xml_ns0_SGXInfo.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -414,6 +415,31 @@ SetPublicKey sets PublicKey field to given value.
 `func (o *XmlNs0NodeInfoAllOf) HasPublicKey() bool`
 
 HasPublicKey returns a boolean if a field has been set.
+
+### GetSgxInfo
+
+`func (o *XmlNs0NodeInfoAllOf) GetSgxInfo() XmlNs0SGXInfo`
+
+GetSgxInfo returns the SgxInfo field if non-nil, zero value otherwise.
+
+### GetSgxInfoOk
+
+`func (o *XmlNs0NodeInfoAllOf) GetSgxInfoOk() (*XmlNs0SGXInfo, bool)`
+
+GetSgxInfoOk returns a tuple with the SgxInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSgxInfo
+
+`func (o *XmlNs0NodeInfoAllOf) SetSgxInfo(v XmlNs0SGXInfo)`
+
+SetSgxInfo sets SgxInfo field to given value.
+
+### HasSgxInfo
+
+`func (o *XmlNs0NodeInfoAllOf) HasSgxInfo() bool`
+
+HasSgxInfo returns a boolean if a field has been set.
 
 ### GetStatus
 

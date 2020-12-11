@@ -100,7 +100,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DataCollectionServiceApi.GetNodes(context.Background(), ).Execute()
+    resp, r, err := api_client.DataCollectionServiceApi.GetNodes(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DataCollectionServiceApi.GetNodes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,7 +159,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DataCollectionServiceApi.GetTypes(context.Background(), ).Execute()
+    resp, r, err := api_client.DataCollectionServiceApi.GetTypes(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DataCollectionServiceApi.GetTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

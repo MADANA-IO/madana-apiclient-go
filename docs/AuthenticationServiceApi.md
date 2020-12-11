@@ -39,11 +39,11 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_MDN_Certificate{Pem: "Pem_example"} // JsonMDNCertificate | the credentials used to validate the user (optional)
+    body := *openapiclient.Newjson_MDN_Certificate() // JsonMDNCertificate | the credentials used to validate the user (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateApplication(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateApplication(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,7 +104,7 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -175,11 +175,11 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"} // JsonMDNUserCredentials | the credentials used to validate the user (optional)
+    body := *openapiclient.Newjson_MDN_UserCredentials() // JsonMDNUserCredentials | the credentials used to validate the user (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateUser(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.AuthenticateUser(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,7 +240,7 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := openapiclient.json_MDN_OAuthToken{Verifier: "Verifier_example", Token: "Token_example"} // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -314,7 +314,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.GetFractalAuthenticationURL(context.Background(), ).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.GetFractalAuthenticationURL(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetFractalAuthenticationURL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,7 +447,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.GetObject(context.Background(), ).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.GetObject(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -508,7 +508,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.GetTwitterAuthenticationURL(context.Background(), ).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.GetTwitterAuthenticationURL(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetTwitterAuthenticationURL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,7 +570,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.SetFacebookUID(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.SetFacebookUID(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFacebookUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -634,7 +634,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.SetFractalUID(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.SetFractalUID(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFractalUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -694,11 +694,11 @@ import (
 )
 
 func main() {
-    body :=  // JsonMDNOAuthToken |  (optional)
+    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AuthenticationServiceApi.SetTwitterUID(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.AuthenticationServiceApi.SetTwitterUID(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetTwitterUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

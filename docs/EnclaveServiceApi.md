@@ -36,7 +36,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_SignedData{Data: "Data_example", Signature: "Signature_example", Fingerpint: "Fingerpint_example"} // JsonSignedData |  (optional)
+    body := *openapiclient.Newjson_SignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -106,7 +106,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_EnclaveRunningAttestationApproval{NodeInfo: openapiclient.json_NodeInfo{CpuPhysicalCores: 123, CpuModel: "CpuModel_example", CpuFrequency: "CpuFrequency_example", PublicKey: "PublicKey_example", OperatingSystem: "OperatingSystem_example", OperatingSystemUptime: 123, CpuLogicalCount: 123, IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", ProtocolVersion: "ProtocolVersion_example", PublicKey: "PublicKey_example", SwarmConnection: "SwarmConnection_example", Id: "Id_example"}, Status: "Status_example", Processors: []string{"Processors_example"), Owner: "Owner_example", HardwareFirmware: "HardwareFirmware_example", ConnectionURL: "ConnectionURL_example", HardwareBaseboard: "HardwareBaseboard_example", CpuFamily: "CpuFamily_example", Memory: "Memory_example"}, EnclaveProcess: openapiclient.json_EnclaveProcess{WireguardServer: "WireguardServer_example", WireguardPublicKey: "WireguardPublicKey_example", Environment: openapiclient.json_Environment{Name: "Name_example", Content: []string{"Content_example"), Roothash: "Roothash_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Roothash: "Roothash_example", RoothashOffset: 123, Readonly: false, Disk: "Disk_example"})}, Published: false, Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Packages: []string{"Packages_example"), RootHashOffset: "RootHashOffset_example", Size: "Size_example"}, StartupTime: "StartupTime_example", StartupCMD: "StartupCMD_example", InternalIdent: "InternalIdent_example", Status: "Status_example", SignerIdent: "SignerIdent_example", InternalWireguardServer: "InternalWireguardServer_example", EnclaveInputstream: 123, Process: openapiclient.json_Process{OutputStream: 123, Alive: false, InputStream: 123, ErrorStream: 123}, EndingTime: "EndingTime_example", InternalRemoteControlServer: "InternalRemoteControlServer_example", EnclaveIdent: "EnclaveIdent_example", RemoteControlServer: "RemoteControlServer_example", PublicIdent: "PublicIdent_example", InternalAttesationServer: "InternalAttesationServer_example", ConsoleOutput: "ConsoleOutput_example", WgInterface: openapiclient.json_WireguardInterface{Name: "Name_example", Address: "Address_example", Port: "Port_example"}, AttestationServer: "AttestationServer_example"}, Approved: "Approved_example"} // JsonEnclaveRunningAttestationApproval |  (optional)
+    body := *openapiclient.Newjson_EnclaveRunningAttestationApproval() // JsonEnclaveRunningAttestationApproval |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -176,7 +176,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_NodeInfo{CpuPhysicalCores: 123, CpuModel: "CpuModel_example", CpuFrequency: "CpuFrequency_example", PublicKey: "PublicKey_example", OperatingSystem: "OperatingSystem_example", OperatingSystemUptime: 123, CpuLogicalCount: 123, IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", ProtocolVersion: "ProtocolVersion_example", PublicKey: "PublicKey_example", SwarmConnection: "SwarmConnection_example", Id: "Id_example"}, Status: "Status_example", Processors: []string{"Processors_example"), Owner: "Owner_example", HardwareFirmware: "HardwareFirmware_example", ConnectionURL: "ConnectionURL_example", HardwareBaseboard: "HardwareBaseboard_example", CpuFamily: "CpuFamily_example", Memory: "Memory_example"} // JsonNodeInfo |  (optional)
+    body := *openapiclient.Newjson_NodeInfo() // JsonNodeInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -246,7 +246,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_EnclaveRunningAttestation{NodeInfo: , EnclaveProcess: openapiclient.json_EnclaveProcess{WireguardServer: "WireguardServer_example", WireguardPublicKey: "WireguardPublicKey_example", Environment: openapiclient.json_Environment{Name: "Name_example", Content: []string{"Content_example"), Roothash: "Roothash_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Roothash: "Roothash_example", RoothashOffset: 123, Readonly: false, Disk: "Disk_example"})}, Published: false, Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Packages: []string{"Packages_example"), RootHashOffset: "RootHashOffset_example", Size: "Size_example"}, StartupTime: "StartupTime_example", StartupCMD: "StartupCMD_example", InternalIdent: "InternalIdent_example", Status: "Status_example", SignerIdent: "SignerIdent_example", InternalWireguardServer: "InternalWireguardServer_example", EnclaveInputstream: 123, Process: openapiclient.json_Process{OutputStream: 123, Alive: false, InputStream: 123, ErrorStream: 123}, EndingTime: "EndingTime_example", InternalRemoteControlServer: "InternalRemoteControlServer_example", EnclaveIdent: "EnclaveIdent_example", RemoteControlServer: "RemoteControlServer_example", PublicIdent: "PublicIdent_example", InternalAttesationServer: "InternalAttesationServer_example", ConsoleOutput: "ConsoleOutput_example", WgInterface: openapiclient.json_WireguardInterface{Name: "Name_example", Address: "Address_example", Port: "Port_example"}, AttestationServer: "AttestationServer_example"}} // JsonEnclaveRunningAttestation |  (optional)
+    body := *openapiclient.Newjson_EnclaveRunningAttestation() // JsonEnclaveRunningAttestation |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -315,11 +315,11 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_EnclaveRunRequest{UsingDefaultRunConfig: false, EnvironmentUUID: "EnvironmentUUID_example", EnclaveExecutionType: "EnclaveExecutionType_example", WireguardPublicKey: "WireguardPublicKey_example"} // JsonEnclaveRunRequest |  (optional)
+    body := *openapiclient.Newjson_EnclaveRunRequest() // JsonEnclaveRunRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnclaveServiceApi.CreateEnclaveRunRequest(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.EnclaveServiceApi.CreateEnclaveRunRequest(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.CreateEnclaveRunRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -450,7 +450,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnclaveServiceApi.GetEnclaveTypes(context.Background(), ).Execute()
+    resp, r, err := api_client.EnclaveServiceApi.GetEnclaveTypes(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaveTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -516,7 +516,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnclaveServiceApi.GetEnclaves(context.Background(), ).Authorization(authorization).Created(created).Limit(limit).Offset(offset).Status(status).Execute()
+    resp, r, err := api_client.EnclaveServiceApi.GetEnclaves(context.Background()).Authorization(authorization).Created(created).Limit(limit).Offset(offset).Status(status).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaves``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

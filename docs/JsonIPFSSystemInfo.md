@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AgentVersion** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **ProtocolVersion** | Pointer to **string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
 **SwarmConnection** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,6 +53,31 @@ SetAgentVersion sets AgentVersion field to given value.
 `func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
 
 HasAgentVersion returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *JsonIPFSSystemInfo) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *JsonIPFSSystemInfo) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *JsonIPFSSystemInfo) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *JsonIPFSSystemInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetProtocolVersion
 
@@ -128,31 +153,6 @@ SetSwarmConnection sets SwarmConnection field to given value.
 `func (o *JsonIPFSSystemInfo) HasSwarmConnection() bool`
 
 HasSwarmConnection returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *JsonIPFSSystemInfo) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *JsonIPFSSystemInfo) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *JsonIPFSSystemInfo) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *JsonIPFSSystemInfo) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

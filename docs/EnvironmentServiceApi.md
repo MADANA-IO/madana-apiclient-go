@@ -249,7 +249,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnvironmentServiceApi.GetEnvironments(context.Background(), ).Authorization(authorization).Created(created).Limit(limit).Name(name).Offset(offset).Execute()
+    resp, r, err := api_client.EnvironmentServiceApi.GetEnvironments(context.Background()).Authorization(authorization).Created(created).Limit(limit).Name(name).Offset(offset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetEnvironments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnvironmentServiceApi.GetPublishedEnvironments(context.Background(), ).Limit(limit).Name(name).Offset(offset).Execute()
+    resp, r, err := api_client.EnvironmentServiceApi.GetPublishedEnvironments(context.Background()).Limit(limit).Name(name).Offset(offset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetPublishedEnvironments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -386,7 +386,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnvironmentServiceApi.GetSubscribedEnvironments(context.Background(), ).Limit(limit).Offset(offset).Execute()
+    resp, r, err := api_client.EnvironmentServiceApi.GetSubscribedEnvironments(context.Background()).Limit(limit).Offset(offset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.GetSubscribedEnvironments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,11 +447,11 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_EnvironmentPublishingRequest{Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Content: "Content_example", IsPublic: "IsPublic_example", Size: "Size_example", Packages: "Packages_example", Name: "Name_example", IpfsPrimaryPeer: "IpfsPrimaryPeer_example"} // JsonEnvironmentPublishingRequest |  (optional)
+    body := *openapiclient.Newjson_EnvironmentPublishingRequest() // JsonEnvironmentPublishingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnvironmentServiceApi.PublishEnvironment(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.EnvironmentServiceApi.PublishEnvironment(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentServiceApi.PublishEnvironment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,7 +580,7 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := openapiclient.json_Environment{Name: "Name_example", Content: []string{"Content_example"), Roothash: "Roothash_example", DefaultRunConfiguration: openapiclient.json_RunConfig{Run: "Run_example", Environment: map[string]string{ "Key" = "Value" }, Args: []string{"Args_example"), DiskConfig: []JsonDiskConfig{openapiclient.json_Disk_config{Roothash: "Roothash_example", RoothashOffset: 123, Readonly: false, Disk: "Disk_example"})}, Published: false, Uuid: "Uuid_example", Description: "Description_example", IpfsHash: "IpfsHash_example", Packages: []string{"Packages_example"), RootHashOffset: "RootHashOffset_example", Size: "Size_example"} // JsonEnvironment |  (optional)
+    body := *openapiclient.Newjson_Environment() // JsonEnvironment |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

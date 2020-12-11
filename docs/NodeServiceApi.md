@@ -32,7 +32,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NodeServiceApi.GetBootstrap(context.Background(), ).Execute()
+    resp, r, err := api_client.NodeServiceApi.GetBootstrap(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.GetBootstrap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -92,7 +92,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NodeServiceApi.GetNodes2(context.Background(), ).Owner(owner).Execute()
+    resp, r, err := api_client.NodeServiceApi.GetNodes2(context.Background()).Owner(owner).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.GetNodes2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,11 +152,11 @@ import (
 )
 
 func main() {
-    body := openapiclient.json_NodeInfo{CpuPhysicalCores: 123, CpuModel: "CpuModel_example", CpuFrequency: "CpuFrequency_example", PublicKey: "PublicKey_example", OperatingSystem: "OperatingSystem_example", OperatingSystemUptime: 123, CpuLogicalCount: 123, IpfsInfo: openapiclient.json_IPFSSystemInfo{AgentVersion: "AgentVersion_example", ProtocolVersion: "ProtocolVersion_example", PublicKey: "PublicKey_example", SwarmConnection: "SwarmConnection_example", Id: "Id_example"}, Status: "Status_example", Processors: []string{"Processors_example"), Owner: "Owner_example", HardwareFirmware: "HardwareFirmware_example", ConnectionURL: "ConnectionURL_example", HardwareBaseboard: "HardwareBaseboard_example", CpuFamily: "CpuFamily_example", Memory: "Memory_example"} // JsonNodeInfo |  (optional)
+    body := *openapiclient.Newjson_NodeInfo() // JsonNodeInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NodeServiceApi.PostNodeInfo(context.Background(), ).Body(body).Execute()
+    resp, r, err := api_client.NodeServiceApi.PostNodeInfo(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.PostNodeInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

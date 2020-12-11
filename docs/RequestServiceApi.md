@@ -44,7 +44,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := openapiclient.json_SignedData_utils{Data: "Data_example", Fingerpint: "Fingerpint_example", Signature: "Signature_example"} // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.Newjson_SignedData_utils() // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -118,7 +118,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := openapiclient.json_SignedData_utils{Data: "Data_example", Fingerpint: "Fingerpint_example", Signature: "Signature_example"} // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.Newjson_SignedData_utils() // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -191,11 +191,11 @@ import (
 
 func main() {
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body :=  // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.Newjson_SignedData_utils() // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RequestServiceApi.CreateNewRequest(context.Background(), ).Authorization(authorization).Body(body).Execute()
+    resp, r, err := api_client.RequestServiceApi.CreateNewRequest(context.Background()).Authorization(authorization).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.CreateNewRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,7 +261,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RequestServiceApi.GetActions(context.Background(), ).Limit(limit).Offset(offset).Execute()
+    resp, r, err := api_client.RequestServiceApi.GetActions(context.Background()).Limit(limit).Offset(offset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -407,7 +407,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RequestServiceApi.GetAllRequests(context.Background(), ).Authorization(authorization).Created(created).History(history).Limit(limit).New(new).Offset(offset).Preview(preview).Ready(ready).Execute()
+    resp, r, err := api_client.RequestServiceApi.GetAllRequests(context.Background()).Authorization(authorization).Created(created).History(history).Limit(limit).New(new).Offset(offset).Preview(preview).Ready(ready).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetAllRequests``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -693,7 +693,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RequestServiceApi.GetStatus(context.Background(), ).Execute()
+    resp, r, err := api_client.RequestServiceApi.GetStatus(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -971,7 +971,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body :=  // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.Newjson_SignedData_utils() // JsonSignedDataUtils |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

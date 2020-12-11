@@ -35,7 +35,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SocialServiceApi.GetMyProfile(context.Background(), ).Execute()
+    resp, r, err := api_client.SocialServiceApi.GetMyProfile(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SocialServiceApi.GetMyProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,7 +96,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SocialServiceApi.GetPlatforms2(context.Background(), ).Execute()
+    resp, r, err := api_client.SocialServiceApi.GetPlatforms2(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SocialServiceApi.GetPlatforms2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,7 +159,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SocialServiceApi.GetRanking(context.Background(), ).Limit(limit).Offset(offset).Execute()
+    resp, r, err := api_client.SocialServiceApi.GetRanking(context.Background()).Limit(limit).Offset(offset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SocialServiceApi.GetRanking``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

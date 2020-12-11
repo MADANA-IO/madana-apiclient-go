@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **InternalIdent** | Pointer to **string** |  | [optional] 
 **InternalRemoteControlServer** | Pointer to **string** |  | [optional] 
 **InternalWireguardServer** | Pointer to **string** |  | [optional] 
+**PortMapping** | Pointer to **map[string]interface{}** |  | [optional] 
+**Ports** | Pointer to [**[]XmlNs0EnclavePort**](xml_ns0_enclavePort.md) |  | [optional] 
 **Process** | Pointer to [**XmlNs0Process**](xml_ns0_process.md) |  | [optional] 
 **PublicIdent** | Pointer to **string** |  | [optional] 
 **RemoteControlServer** | Pointer to **string** |  | [optional] 
@@ -293,6 +295,56 @@ SetInternalWireguardServer sets InternalWireguardServer field to given value.
 `func (o *XmlNs0EnclaveProcessAllOf) HasInternalWireguardServer() bool`
 
 HasInternalWireguardServer returns a boolean if a field has been set.
+
+### GetPortMapping
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetPortMapping() map[string]interface{}`
+
+GetPortMapping returns the PortMapping field if non-nil, zero value otherwise.
+
+### GetPortMappingOk
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetPortMappingOk() (*map[string]interface{}, bool)`
+
+GetPortMappingOk returns a tuple with the PortMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortMapping
+
+`func (o *XmlNs0EnclaveProcessAllOf) SetPortMapping(v map[string]interface{})`
+
+SetPortMapping sets PortMapping field to given value.
+
+### HasPortMapping
+
+`func (o *XmlNs0EnclaveProcessAllOf) HasPortMapping() bool`
+
+HasPortMapping returns a boolean if a field has been set.
+
+### GetPorts
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetPorts() []XmlNs0EnclavePort`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetPortsOk() (*[]XmlNs0EnclavePort, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *XmlNs0EnclaveProcessAllOf) SetPorts(v []XmlNs0EnclavePort)`
+
+SetPorts sets Ports field to given value.
+
+### HasPorts
+
+`func (o *XmlNs0EnclaveProcessAllOf) HasPorts() bool`
+
+HasPorts returns a boolean if a field has been set.
 
 ### GetProcess
 

@@ -39,11 +39,11 @@ import (
 
 func main() {
     referrer := "referrer_example" // string |  (optional)
-    body := openapiclient.json_MDN_User{UserName: "UserName_example", Created: "Created_example", LastActive: "LastActive_example", Activated: "Activated_example", Image: "Image_example", SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Image: "Image_example", Platform: "Platform_example", Ident: "Ident_example"}), FirstName: "FirstName_example", Guid: "Guid_example", LastName: "LastName_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, Settings: []JsonMDNUserSetting{openapiclient.json_MDN_UserSetting{Name: "Name_example", Id: "Id_example", Description: "Description_example", Value: "Value_example"}), Mail: "Mail_example"} // JsonMDNUser | provided user object inheriting properties and credentials (optional)
+    body := *openapiclient.Newjson_MDN_User() // JsonMDNUser | provided user object inheriting properties and credentials (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UserServiceApi.CreateObject(context.Background(), ).Referrer(referrer).Body(body).Execute()
+    resp, r, err := api_client.UserServiceApi.CreateObject(context.Background()).Referrer(referrer).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.CreateObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,7 +527,7 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := openapiclient.json_MDN_UserProfileImage{Id: "Id_example", Image: "Image_example"} // JsonMDNUserProfileImage |  (optional)
+    body := *openapiclient.Newjson_MDN_UserProfileImage() // JsonMDNUserProfileImage |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -597,7 +597,7 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := openapiclient.json_MDN_UserSetting{Name: "Name_example", Id: "Id_example", Description: "Description_example", Value: "Value_example"} // JsonMDNUserSetting |  (optional)
+    body := *openapiclient.Newjson_MDN_UserSetting() // JsonMDNUserSetting |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -669,7 +669,7 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := openapiclient.json_MDN_User{UserName: "UserName_example", Created: "Created_example", LastActive: "LastActive_example", Activated: "Activated_example", Image: "Image_example", SocialAccounts: []JsonMDNSocialUserObject{openapiclient.json_MDN_SocialUserObject{Image: "Image_example", Platform: "Platform_example", Ident: "Ident_example"}), FirstName: "FirstName_example", Guid: "Guid_example", LastName: "LastName_example", Credentials: openapiclient.json_MDN_UserCredentials{Password: "Password_example", Username: "Username_example"}, Settings: []JsonMDNUserSetting{), Mail: "Mail_example"} // JsonMDNUser | the new user object inherting all properties that should be change (optional)
+    body := *openapiclient.Newjson_MDN_User() // JsonMDNUser | the new user object inherting all properties that should be change (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
