@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
 **Ports** | Pointer to [**[]JsonEnclavePort**](json_EnclavePort.md) |  | [optional] 
 **UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,55 +29,30 @@ NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEnclaveExecutionType
+### GetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
 
-GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
+GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
 
-### GetEnclaveExecutionTypeOk
+### GetWireguardPublicKeyOk
 
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
 
-GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
+GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclaveExecutionType
+### SetWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
+`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
 
-SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
+SetWireguardPublicKey sets WireguardPublicKey field to given value.
 
-### HasEnclaveExecutionType
+### HasWireguardPublicKey
 
-`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
+`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
 
-HasEnclaveExecutionType returns a boolean if a field has been set.
-
-### GetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
-
-GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
-
-### GetEnvironmentUUIDOk
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
-
-GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
-
-SetEnvironmentUUID sets EnvironmentUUID field to given value.
-
-### HasEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
-
-HasEnvironmentUUID returns a boolean if a field has been set.
+HasWireguardPublicKey returns a boolean if a field has been set.
 
 ### GetPorts
 
@@ -129,30 +104,55 @@ SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
 
 HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
-### GetWireguardPublicKey
+### GetEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
 
-GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
 
-### GetWireguardPublicKeyOk
+### GetEnclaveExecutionTypeOk
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
 
-GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardPublicKey
+### SetEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
+`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
 
-SetWireguardPublicKey sets WireguardPublicKey field to given value.
+SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
 
-### HasWireguardPublicKey
+### HasEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
+`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
 
-HasWireguardPublicKey returns a boolean if a field has been set.
+HasEnclaveExecutionType returns a boolean if a field has been set.
+
+### GetEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
+
+GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
+
+### GetEnvironmentUUIDOk
+
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
+
+GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
+
+SetEnvironmentUUID sets EnvironmentUUID field to given value.
+
+### HasEnvironmentUUID
+
+`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
+
+HasEnvironmentUUID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
