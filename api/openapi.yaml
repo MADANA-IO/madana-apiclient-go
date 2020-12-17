@@ -15,7 +15,7 @@ info:
     \ and api-license token. For more information visit <a href=\"https://www.madana.io\"\
     >www.madana.io</a> </p>    \n  <br>"
   title: madana-api
-  version: 0.5.0-master.2
+  version: 0.5.0-master.6
 servers:
 - url: //api.madana.io/rest/
 tags:
@@ -2209,40 +2209,40 @@ components:
     json_Disk_config:
       description: ""
       example:
-        readonly: true
         roothash: '...'
-        roothash_offset: 12345
         disk: '...'
+        readonly: true
+        roothash_offset: 12345
       properties:
-        readonly:
-          description: ""
-          type: boolean
         roothash:
           description: ""
           type: string
+        disk:
+          description: ""
+          type: string
+        readonly:
+          description: ""
+          type: boolean
         roothash_offset:
           description: ""
           format: int32
           type: integer
-        disk:
-          description: ""
-          type: string
       title: Disk_config
       type: object
     json_EnclavePort:
       description: ""
       example:
         name: '...'
-        port: '...'
         protocol: '...'
+        port: '...'
       properties:
         name:
           description: ""
           type: string
-        port:
+        protocol:
           description: ""
           type: string
-        protocol:
+        port:
           description: ""
           type: string
       title: EnclavePort
@@ -2250,44 +2250,44 @@ components:
     json_EnclaveProcess:
       description: ""
       example:
-        process:
-          outputStream: {}
-          errorStream: {}
-          inputStream: {}
-          alive: true
-        portMapping:
-          property1: '...'
-          property2: '...'
-        status: '...'
+        consoleOutput: '...'
+        startupTime: '...'
+        startupCMD: '...'
         ports:
         - name: '...'
-          port: '...'
           protocol: '...'
+          port: '...'
         - name: '...'
-          port: '...'
           protocol: '...'
-        enclaveInputstream: {}
-        consoleOutput: '...'
-        internalAttesationServer: '...'
+          port: '...'
         internalWireguardServer: '...'
+        enclaveInputstream: {}
+        status: '...'
+        internalRemoteControlServer: '...'
+        process:
+          outputStream: {}
+          alive: true
+          inputStream: {}
+          errorStream: {}
+        internalAttesationServer: '...'
+        signerIdent: '...'
+        publicIdent: '...'
         wgInterface:
           port: '...'
-          address: '...'
           name: '...'
-        internalIdent: '...'
-        startupTime: '...'
-        remoteControlServer: '...'
-        startupCMD: '...'
-        endingTime: '...'
-        publicIdent: '...'
-        wireguardServer: '...'
-        attestationServer: '...'
-        internalRemoteControlServer: '...'
-        enclaveIdent: '...'
-        signerIdent: '...'
-        wireguardPublicKey: '...'
+          address: '...'
         environment:
-          description: '...'
+          rootHashOffset: '...'
+          name: '...'
+          published: true
+          ipfsHash: '...'
+          packages:
+          - '...'
+          - '...'
+          content:
+          - '...'
+          - '...'
+          uuid: '...'
           roothash: '...'
           defaultRunConfiguration:
             args:
@@ -2296,124 +2296,124 @@ components:
             environment:
               property1: '...'
               property2: '...'
+            run: '...'
             disk_config:
             - {}
             - {}
-            run: '...'
-          published: true
-          name: '...'
-          rootHashOffset: '...'
-          content:
-          - '...'
-          - '...'
           size: '...'
-          ipfsHash: '...'
-          packages:
-          - '...'
-          - '...'
-          uuid: '...'
-      properties:
-        process:
-          $ref: '#/components/schemas/json_Process'
+          description: '...'
+        enclaveIdent: '...'
+        internalIdent: '...'
+        remoteControlServer: '...'
+        attestationServer: '...'
+        endingTime: '...'
+        wireguardServer: '...'
+        wireguardPublicKey: '...'
         portMapping:
-          additionalProperties:
-            type: string
-          description: ""
-          type: object
-        status:
-          description: ""
-          type: string
-        ports:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_EnclavePort'
-          type: array
-        enclaveInputstream:
-          description: ""
-          example: {}
-          title: InputStream
-          type: object
+          property1: '...'
+          property2: '...'
+      properties:
         consoleOutput:
-          description: ""
-          type: string
-        internalAttesationServer:
-          description: ""
-          type: string
-        internalWireguardServer:
-          description: ""
-          type: string
-        wgInterface:
-          $ref: '#/components/schemas/json_WireguardInterface'
-        internalIdent:
           description: ""
           type: string
         startupTime:
           description: ""
           type: string
-        remoteControlServer:
-          description: ""
-          type: string
         startupCMD:
           description: ""
           type: string
-        endingTime:
-          description: ""
-          type: string
-        publicIdent:
-          description: ""
-          type: string
-        wireguardServer:
-          description: ""
-          type: string
-        attestationServer:
-          description: ""
-          type: string
-        internalRemoteControlServer:
-          description: ""
-          type: string
-        enclaveIdent:
-          description: ""
-          type: string
-        signerIdent:
-          description: ""
-          type: string
-        wireguardPublicKey:
-          description: ""
-          type: string
-        environment:
-          $ref: '#/components/schemas/json_Environment'
-      title: EnclaveProcess
-      type: object
-    json_EnclaveRunRequest:
-      description: ""
-      example:
-        ports:
-        - name: '...'
-          port: '...'
-          protocol: '...'
-        - name: '...'
-          port: '...'
-          protocol: '...'
-        environmentUUID: '...'
-        usingDefaultRunConfig: true
-        enclaveExecutionType: '...'
-        wireguardPublicKey: '...'
-      properties:
         ports:
           description: ""
           items:
             $ref: '#/components/schemas/json_EnclavePort'
           type: array
-        environmentUUID:
+        internalWireguardServer:
           description: ""
           type: string
+        enclaveInputstream:
+          description: ""
+          example: {}
+          title: InputStream
+          type: object
+        status:
+          description: ""
+          type: string
+        internalRemoteControlServer:
+          description: ""
+          type: string
+        process:
+          $ref: '#/components/schemas/json_Process'
+        internalAttesationServer:
+          description: ""
+          type: string
+        signerIdent:
+          description: ""
+          type: string
+        publicIdent:
+          description: ""
+          type: string
+        wgInterface:
+          $ref: '#/components/schemas/json_WireguardInterface'
+        environment:
+          $ref: '#/components/schemas/json_Environment'
+        enclaveIdent:
+          description: ""
+          type: string
+        internalIdent:
+          description: ""
+          type: string
+        remoteControlServer:
+          description: ""
+          type: string
+        attestationServer:
+          description: ""
+          type: string
+        endingTime:
+          description: ""
+          type: string
+        wireguardServer:
+          description: ""
+          type: string
+        wireguardPublicKey:
+          description: ""
+          type: string
+        portMapping:
+          additionalProperties:
+            type: string
+          description: ""
+          type: object
+      title: EnclaveProcess
+      type: object
+    json_EnclaveRunRequest:
+      description: ""
+      example:
+        wireguardPublicKey: '...'
+        ports:
+        - name: '...'
+          protocol: '...'
+          port: '...'
+        - name: '...'
+          protocol: '...'
+          port: '...'
+        usingDefaultRunConfig: true
+        enclaveExecutionType: '...'
+        environmentUUID: '...'
+      properties:
+        wireguardPublicKey:
+          description: ""
+          type: string
+        ports:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_EnclavePort'
+          type: array
         usingDefaultRunConfig:
           description: ""
           type: boolean
         enclaveExecutionType:
           description: ""
           type: string
-        wireguardPublicKey:
+        environmentUUID:
           description: ""
           type: string
       title: EnclaveRunRequest
@@ -2422,85 +2422,85 @@ components:
       description: ""
       example:
         nodeInfo:
-          operatingSystemUptime: 12345
-          sgxInfo:
-            status: '...'
-            version: '...'
-          ipfsInfo:
-            protocolVersion: '...'
-            agentVersion: '...'
-            id: '...'
-            publicKey: '...'
-            swarmConnection: '...'
-          status: '...'
-          owner: '...'
-          cpuLogicalCount: 12345
-          hardwareFirmware: '...'
-          hardwareBaseboard: '...'
-          operatingSystem: '...'
-          cpuFamily: '...'
-          publicKey: '...'
-          cpuFrequency: '...'
           connectionURL: '...'
+          cpuFamily: '...'
+          cpuFrequency: '...'
+          cpuModel: '...'
+          publicKey: '...'
+          hardwareBaseboard: '...'
+          operatingSystemUptime: 12345
+          cpuLogicalCount: 12345
           memory: '...'
+          operatingSystem: '...'
           processors:
           - '...'
           - '...'
-          cpuModel: '...'
+          sgxInfo:
+            status: '...'
+            version: '...'
           cpuPhysicalCores: 12345
-        enclaveProcess:
-          process:
-            outputStream: {}
-            errorStream: {}
-            inputStream: {}
-            alive: true
-          portMapping:
-            property1: '...'
-            property2: '...'
+          ipfsInfo:
+            publicKey: '...'
+            swarmConnection: '...'
+            id: '...'
+            agentVersion: '...'
+            protocolVersion: '...'
+          owner: '...'
           status: '...'
+          hardwareFirmware: '...'
+        enclaveProcess:
+          consoleOutput: '...'
+          startupTime: '...'
+          startupCMD: '...'
           ports:
           - name: '...'
-            port: '...'
             protocol: '...'
+            port: '...'
           - name: '...'
-            port: '...'
             protocol: '...'
-          enclaveInputstream: {}
-          consoleOutput: '...'
-          internalAttesationServer: '...'
+            port: '...'
           internalWireguardServer: '...'
+          enclaveInputstream: {}
+          status: '...'
+          internalRemoteControlServer: '...'
+          process:
+            outputStream: {}
+            alive: true
+            inputStream: {}
+            errorStream: {}
+          internalAttesationServer: '...'
+          signerIdent: '...'
+          publicIdent: '...'
           wgInterface:
             port: '...'
+            name: '...'
             address: '...'
-            name: '...'
-          internalIdent: '...'
-          startupTime: '...'
-          remoteControlServer: '...'
-          startupCMD: '...'
-          endingTime: '...'
-          publicIdent: '...'
-          wireguardServer: '...'
-          attestationServer: '...'
-          internalRemoteControlServer: '...'
-          enclaveIdent: '...'
-          signerIdent: '...'
-          wireguardPublicKey: '...'
           environment:
-            description: '...'
-            roothash: '...'
-            defaultRunConfiguration: {}
-            published: true
-            name: '...'
             rootHashOffset: '...'
-            content:
-            - '...'
-            - '...'
-            size: '...'
+            name: '...'
+            published: true
             ipfsHash: '...'
             packages:
             - '...'
             - '...'
+            content:
+            - '...'
+            - '...'
             uuid: '...'
+            roothash: '...'
+            defaultRunConfiguration: {}
+            size: '...'
+            description: '...'
+          enclaveIdent: '...'
+          internalIdent: '...'
+          remoteControlServer: '...'
+          attestationServer: '...'
+          endingTime: '...'
+          wireguardServer: '...'
+          wireguardPublicKey: '...'
+          portMapping:
+            property1: '...'
+            property2: '...'
       properties:
         nodeInfo:
           $ref: '#/components/schemas/json_NodeInfo'
@@ -2517,7 +2517,17 @@ components:
     json_Environment:
       description: ""
       example:
-        description: '...'
+        rootHashOffset: '...'
+        name: '...'
+        published: true
+        ipfsHash: '...'
+        packages:
+        - '...'
+        - '...'
+        content:
+        - '...'
+        - '...'
+        uuid: '...'
         roothash: '...'
         defaultRunConfiguration:
           args:
@@ -2526,54 +2536,28 @@ components:
           environment:
             property1: '...'
             property2: '...'
-          disk_config:
-          - readonly: true
-            roothash: '...'
-            roothash_offset: 12345
-            disk: '...'
-          - readonly: true
-            roothash: '...'
-            roothash_offset: 12345
-            disk: '...'
           run: '...'
-        published: true
-        name: '...'
-        rootHashOffset: '...'
-        content:
-        - '...'
-        - '...'
+          disk_config:
+          - roothash: '...'
+            disk: '...'
+            readonly: true
+            roothash_offset: 12345
+          - roothash: '...'
+            disk: '...'
+            readonly: true
+            roothash_offset: 12345
         size: '...'
-        ipfsHash: '...'
-        packages:
-        - '...'
-        - '...'
-        uuid: '...'
+        description: '...'
       properties:
-        description:
-          description: ""
-          type: string
-        roothash:
-          description: ""
-          type: string
-        defaultRunConfiguration:
-          $ref: '#/components/schemas/json_RunConfig'
-        published:
-          description: ""
-          type: boolean
-        name:
-          description: ""
-          type: string
         rootHashOffset:
           description: ""
           type: string
-        content:
-          description: ""
-          items:
-            type: string
-          type: array
-        size:
+        name:
           description: ""
           type: string
+        published:
+          description: ""
+          type: boolean
         ipfsHash:
           description: ""
           type: string
@@ -2582,7 +2566,23 @@ components:
           items:
             type: string
           type: array
+        content:
+          description: ""
+          items:
+            type: string
+          type: array
         uuid:
+          description: ""
+          type: string
+        roothash:
+          description: ""
+          type: string
+        defaultRunConfiguration:
+          $ref: '#/components/schemas/json_RunConfig'
+        size:
+          description: ""
+          type: string
+        description:
           description: ""
           type: string
       title: Environment
@@ -2591,22 +2591,16 @@ components:
       description: ""
       example:
         name: '...'
-        isPublic: '...'
-        content: '...'
         size: '...'
         ipfsPrimaryPeer: '...'
-        uuid: '...'
+        description: '...'
         packages: '...'
         ipfsHash: '...'
-        description: '...'
+        content: '...'
+        isPublic: '...'
+        uuid: '...'
       properties:
         name:
-          description: ""
-          type: string
-        isPublic:
-          description: ""
-          type: string
-        content:
           description: ""
           type: string
         size:
@@ -2615,7 +2609,7 @@ components:
         ipfsPrimaryPeer:
           description: ""
           type: string
-        uuid:
+        description:
           description: ""
           type: string
         packages:
@@ -2624,7 +2618,13 @@ components:
         ipfsHash:
           description: ""
           type: string
-        description:
+        content:
+          description: ""
+          type: string
+        isPublic:
+          description: ""
+          type: string
+        uuid:
           description: ""
           type: string
       title: EnvironmentPublishingRequest
@@ -2632,25 +2632,25 @@ components:
     json_IPFSSystemInfo:
       description: ""
       example:
-        protocolVersion: '...'
-        agentVersion: '...'
-        id: '...'
         publicKey: '...'
         swarmConnection: '...'
+        id: '...'
+        agentVersion: '...'
+        protocolVersion: '...'
       properties:
-        protocolVersion:
+        publicKey:
           description: ""
           type: string
-        agentVersion:
+        swarmConnection:
           description: ""
           type: string
         id:
           description: ""
           type: string
-        publicKey:
+        agentVersion:
           description: ""
           type: string
-        swarmConnection:
+        protocolVersion:
           description: ""
           type: string
       title: IPFSSystemInfo
@@ -2663,25 +2663,25 @@ components:
     json_MDN_A_UserObject:
       description: ""
       example:
-        lastActive: '...'
-        created: '...'
         image: '...'
-        userName: '...'
         activated: '...'
+        created: '...'
+        lastActive: '...'
+        userName: '...'
       properties:
-        lastActive:
+        image:
+          description: ""
+          type: string
+        activated:
           description: ""
           type: string
         created:
           description: ""
           type: string
-        image:
+        lastActive:
           description: ""
           type: string
         userName:
-          description: ""
-          type: string
-        activated:
           description: ""
           type: string
       title: MDN_A_UserObject
@@ -2719,13 +2719,13 @@ components:
     json_MDN_OAuthToken:
       description: ""
       example:
-        verifier: '...'
         token: '...'
+        verifier: '...'
       properties:
-        verifier:
+        token:
           description: ""
           type: string
-        token:
+        verifier:
           description: ""
           type: string
       title: MDN_OAuthToken
@@ -2733,17 +2733,17 @@ components:
     json_MDN_PasswordReset:
       description: ""
       example:
-        token: '...'
         mail: '...'
         password: '...'
+        token: '...'
       properties:
-        token:
-          description: ""
-          type: string
         mail:
           description: ""
           type: string
         password:
+          description: ""
+          type: string
+        token:
           description: ""
           type: string
       title: MDN_PasswordReset
@@ -2752,16 +2752,16 @@ components:
       description: ""
       example:
         description: '...'
-        name: '...'
         id: '...'
+        name: '...'
       properties:
         description:
           description: ""
           type: string
-        name:
+        id:
           description: ""
           type: string
-        id:
+        name:
           description: ""
           type: string
       title: MDN_Setting
@@ -2817,13 +2817,13 @@ components:
     json_MDN_UserProfileImage:
       description: ""
       example:
-        image: '...'
         id: '...'
+        image: '...'
       properties:
-        image:
+        id:
           description: ""
           type: string
-        id:
+        image:
           description: ""
           type: string
       title: MDN_UserProfileImage
@@ -2837,13 +2837,13 @@ components:
     json_NetworkInterface:
       description: ""
       example:
-        address: '...'
         name: '...'
+        address: '...'
       properties:
-        address:
+        name:
           description: ""
           type: string
-        name:
+        address:
           description: ""
           type: string
       title: NetworkInterface
@@ -2851,72 +2851,62 @@ components:
     json_NodeInfo:
       description: ""
       example:
-        operatingSystemUptime: 12345
-        sgxInfo:
-          status: '...'
-          version: '...'
-        ipfsInfo:
-          protocolVersion: '...'
-          agentVersion: '...'
-          id: '...'
-          publicKey: '...'
-          swarmConnection: '...'
-        status: '...'
-        owner: '...'
-        cpuLogicalCount: 12345
-        hardwareFirmware: '...'
-        hardwareBaseboard: '...'
-        operatingSystem: '...'
-        cpuFamily: '...'
-        publicKey: '...'
-        cpuFrequency: '...'
         connectionURL: '...'
+        cpuFamily: '...'
+        cpuFrequency: '...'
+        cpuModel: '...'
+        publicKey: '...'
+        hardwareBaseboard: '...'
+        operatingSystemUptime: 12345
+        cpuLogicalCount: 12345
         memory: '...'
+        operatingSystem: '...'
         processors:
         - '...'
         - '...'
-        cpuModel: '...'
-        cpuPhysicalCores: 12345
-      properties:
-        operatingSystemUptime:
-          description: ""
-          type: number
         sgxInfo:
-          $ref: '#/components/schemas/json_SGXInfo'
+          status: '...'
+          version: '...'
+        cpuPhysicalCores: 12345
         ipfsInfo:
-          $ref: '#/components/schemas/json_IPFSSystemInfo'
-        status:
-          description: ""
-          type: string
-        owner:
-          description: ""
-          type: string
-        cpuLogicalCount:
-          description: ""
-          format: int32
-          type: integer
-        hardwareFirmware:
-          description: ""
-          type: string
-        hardwareBaseboard:
-          description: ""
-          type: string
-        operatingSystem:
+          publicKey: '...'
+          swarmConnection: '...'
+          id: '...'
+          agentVersion: '...'
+          protocolVersion: '...'
+        owner: '...'
+        status: '...'
+        hardwareFirmware: '...'
+      properties:
+        connectionURL:
           description: ""
           type: string
         cpuFamily:
           description: ""
           type: string
-        publicKey:
-          description: ""
-          type: string
         cpuFrequency:
           description: ""
           type: string
-        connectionURL:
+        cpuModel:
           description: ""
           type: string
+        publicKey:
+          description: ""
+          type: string
+        hardwareBaseboard:
+          description: ""
+          type: string
+        operatingSystemUptime:
+          description: ""
+          type: number
+        cpuLogicalCount:
+          description: ""
+          format: int32
+          type: integer
         memory:
+          description: ""
+          type: string
+        operatingSystem:
           description: ""
           type: string
         processors:
@@ -2924,13 +2914,23 @@ components:
           items:
             type: string
           type: array
-        cpuModel:
-          description: ""
-          type: string
+        sgxInfo:
+          $ref: '#/components/schemas/json_SGXInfo'
         cpuPhysicalCores:
           description: ""
           format: int32
           type: integer
+        ipfsInfo:
+          $ref: '#/components/schemas/json_IPFSSystemInfo'
+        owner:
+          description: ""
+          type: string
+        status:
+          description: ""
+          type: string
+        hardwareFirmware:
+          description: ""
+          type: string
       title: NodeInfo
       type: object
     json_OutputStream:
@@ -2942,28 +2942,28 @@ components:
       description: ""
       example:
         outputStream: {}
-        errorStream: {}
-        inputStream: {}
         alive: true
+        inputStream: {}
+        errorStream: {}
       properties:
         outputStream:
           description: ""
           example: {}
           title: OutputStream
           type: object
-        errorStream:
+        alive:
           description: ""
-          example: {}
-          title: InputStream
-          type: object
+          type: boolean
         inputStream:
           description: ""
           example: {}
           title: InputStream
           type: object
-        alive:
+        errorStream:
           description: ""
-          type: boolean
+          example: {}
+          title: InputStream
+          type: object
       title: Process
       type: object
     json_RunConfig:
@@ -2975,16 +2975,16 @@ components:
         environment:
           property1: '...'
           property2: '...'
-        disk_config:
-        - readonly: true
-          roothash: '...'
-          roothash_offset: 12345
-          disk: '...'
-        - readonly: true
-          roothash: '...'
-          roothash_offset: 12345
-          disk: '...'
         run: '...'
+        disk_config:
+        - roothash: '...'
+          disk: '...'
+          readonly: true
+          roothash_offset: 12345
+        - roothash: '...'
+          disk: '...'
+          readonly: true
+          roothash_offset: 12345
       properties:
         args:
           description: ""
@@ -2996,14 +2996,14 @@ components:
             type: string
           description: ""
           type: object
+        run:
+          description: ""
+          type: string
         disk_config:
           description: ""
           items:
             $ref: '#/components/schemas/json_Disk_config'
           type: array
-        run:
-          description: ""
-          type: string
       title: RunConfig
       type: object
     json_SGXInfo:
@@ -3041,17 +3041,17 @@ components:
     json_SignedData_utils:
       description: ""
       example:
-        fingerpint: '...'
         data: '...'
         signature: '...'
+        fingerpint: '...'
       properties:
-        fingerpint:
-          description: ""
-          type: string
         data:
           description: ""
           type: string
         signature:
+          description: ""
+          type: string
+        fingerpint:
           description: ""
           type: string
       title: SignedData
@@ -3168,22 +3168,22 @@ components:
           items:
             $ref: '#/components/schemas/json_MDN_UserSetting'
           type: array
-        credentials:
-          $ref: '#/components/schemas/json_MDN_UserCredentials'
         firstName:
-          description: ""
-          type: string
-        lastName:
           description: ""
           type: string
         mail:
           description: ""
           type: string
+        credentials:
+          $ref: '#/components/schemas/json_MDN_UserCredentials'
         socialAccounts:
           description: ""
           items:
             $ref: '#/components/schemas/json_MDN_SocialUserObject'
           type: array
+        lastName:
+          description: ""
+          type: string
         guid:
           description: ""
           type: string

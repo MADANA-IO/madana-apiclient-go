@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**IsPublic** | Pointer to **string** |  | [optional] 
-**Content** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **string** |  | [optional] 
 **IpfsPrimaryPeer** | Pointer to **string** |  | [optional] 
-**Uuid** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Packages** | Pointer to **string** |  | [optional] 
 **IpfsHash** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Content** | Pointer to **string** |  | [optional] 
+**IsPublic** | Pointer to **string** |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -57,56 +57,6 @@ SetName sets Name field to given value.
 `func (o *JsonEnvironmentPublishingRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) GetIsPublic() string`
-
-GetIsPublic returns the IsPublic field if non-nil, zero value otherwise.
-
-### GetIsPublicOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetIsPublicOk() (*string, bool)`
-
-GetIsPublicOk returns a tuple with the IsPublic field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) SetIsPublic(v string)`
-
-SetIsPublic sets IsPublic field to given value.
-
-### HasIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) HasIsPublic() bool`
-
-HasIsPublic returns a boolean if a field has been set.
-
-### GetContent
-
-`func (o *JsonEnvironmentPublishingRequest) GetContent() string`
-
-GetContent returns the Content field if non-nil, zero value otherwise.
-
-### GetContentOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetContentOk() (*string, bool)`
-
-GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContent
-
-`func (o *JsonEnvironmentPublishingRequest) SetContent(v string)`
-
-SetContent sets Content field to given value.
-
-### HasContent
-
-`func (o *JsonEnvironmentPublishingRequest) HasContent() bool`
-
-HasContent returns a boolean if a field has been set.
 
 ### GetSize
 
@@ -158,30 +108,30 @@ SetIpfsPrimaryPeer sets IpfsPrimaryPeer field to given value.
 
 HasIpfsPrimaryPeer returns a boolean if a field has been set.
 
-### GetUuid
+### GetDescription
 
-`func (o *JsonEnvironmentPublishingRequest) GetUuid() string`
+`func (o *JsonEnvironmentPublishingRequest) GetDescription() string`
 
-GetUuid returns the Uuid field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetUuidOk
+### GetDescriptionOk
 
-`func (o *JsonEnvironmentPublishingRequest) GetUuidOk() (*string, bool)`
+`func (o *JsonEnvironmentPublishingRequest) GetDescriptionOk() (*string, bool)`
 
-GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUuid
+### SetDescription
 
-`func (o *JsonEnvironmentPublishingRequest) SetUuid(v string)`
+`func (o *JsonEnvironmentPublishingRequest) SetDescription(v string)`
 
-SetUuid sets Uuid field to given value.
+SetDescription sets Description field to given value.
 
-### HasUuid
+### HasDescription
 
-`func (o *JsonEnvironmentPublishingRequest) HasUuid() bool`
+`func (o *JsonEnvironmentPublishingRequest) HasDescription() bool`
 
-HasUuid returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
 
 ### GetPackages
 
@@ -233,30 +183,80 @@ SetIpfsHash sets IpfsHash field to given value.
 
 HasIpfsHash returns a boolean if a field has been set.
 
-### GetDescription
+### GetContent
 
-`func (o *JsonEnvironmentPublishingRequest) GetDescription() string`
+`func (o *JsonEnvironmentPublishingRequest) GetContent() string`
 
-GetDescription returns the Description field if non-nil, zero value otherwise.
+GetContent returns the Content field if non-nil, zero value otherwise.
 
-### GetDescriptionOk
+### GetContentOk
 
-`func (o *JsonEnvironmentPublishingRequest) GetDescriptionOk() (*string, bool)`
+`func (o *JsonEnvironmentPublishingRequest) GetContentOk() (*string, bool)`
 
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDescription
+### SetContent
 
-`func (o *JsonEnvironmentPublishingRequest) SetDescription(v string)`
+`func (o *JsonEnvironmentPublishingRequest) SetContent(v string)`
 
-SetDescription sets Description field to given value.
+SetContent sets Content field to given value.
 
-### HasDescription
+### HasContent
 
-`func (o *JsonEnvironmentPublishingRequest) HasDescription() bool`
+`func (o *JsonEnvironmentPublishingRequest) HasContent() bool`
 
-HasDescription returns a boolean if a field has been set.
+HasContent returns a boolean if a field has been set.
+
+### GetIsPublic
+
+`func (o *JsonEnvironmentPublishingRequest) GetIsPublic() string`
+
+GetIsPublic returns the IsPublic field if non-nil, zero value otherwise.
+
+### GetIsPublicOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetIsPublicOk() (*string, bool)`
+
+GetIsPublicOk returns a tuple with the IsPublic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPublic
+
+`func (o *JsonEnvironmentPublishingRequest) SetIsPublic(v string)`
+
+SetIsPublic sets IsPublic field to given value.
+
+### HasIsPublic
+
+`func (o *JsonEnvironmentPublishingRequest) HasIsPublic() bool`
+
+HasIsPublic returns a boolean if a field has been set.
+
+### GetUuid
+
+`func (o *JsonEnvironmentPublishingRequest) GetUuid() string`
+
+GetUuid returns the Uuid field if non-nil, zero value otherwise.
+
+### GetUuidOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetUuidOk() (*string, bool)`
+
+GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUuid
+
+`func (o *JsonEnvironmentPublishingRequest) SetUuid(v string)`
+
+SetUuid sets Uuid field to given value.
+
+### HasUuid
+
+`func (o *JsonEnvironmentPublishingRequest) HasUuid() bool`
+
+HasUuid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
