@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Roothash** | Pointer to **string** |  | [optional] 
-**Disk** | Pointer to **string** |  | [optional] 
 **Readonly** | Pointer to **bool** |  | [optional] 
+**Disk** | Pointer to **string** |  | [optional] 
+**Roothash** | Pointer to **string** |  | [optional] 
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -28,30 +28,30 @@ NewJsonDiskConfigWithDefaults instantiates a new JsonDiskConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRoothash
+### GetReadonly
 
-`func (o *JsonDiskConfig) GetRoothash() string`
+`func (o *JsonDiskConfig) GetReadonly() bool`
 
-GetRoothash returns the Roothash field if non-nil, zero value otherwise.
+GetReadonly returns the Readonly field if non-nil, zero value otherwise.
 
-### GetRoothashOk
+### GetReadonlyOk
 
-`func (o *JsonDiskConfig) GetRoothashOk() (*string, bool)`
+`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
 
-GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
+GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoothash
+### SetReadonly
 
-`func (o *JsonDiskConfig) SetRoothash(v string)`
+`func (o *JsonDiskConfig) SetReadonly(v bool)`
 
-SetRoothash sets Roothash field to given value.
+SetReadonly sets Readonly field to given value.
 
-### HasRoothash
+### HasReadonly
 
-`func (o *JsonDiskConfig) HasRoothash() bool`
+`func (o *JsonDiskConfig) HasReadonly() bool`
 
-HasRoothash returns a boolean if a field has been set.
+HasReadonly returns a boolean if a field has been set.
 
 ### GetDisk
 
@@ -78,30 +78,30 @@ SetDisk sets Disk field to given value.
 
 HasDisk returns a boolean if a field has been set.
 
-### GetReadonly
+### GetRoothash
 
-`func (o *JsonDiskConfig) GetReadonly() bool`
+`func (o *JsonDiskConfig) GetRoothash() string`
 
-GetReadonly returns the Readonly field if non-nil, zero value otherwise.
+GetRoothash returns the Roothash field if non-nil, zero value otherwise.
 
-### GetReadonlyOk
+### GetRoothashOk
 
-`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
+`func (o *JsonDiskConfig) GetRoothashOk() (*string, bool)`
 
-GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
+GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetReadonly
+### SetRoothash
 
-`func (o *JsonDiskConfig) SetReadonly(v bool)`
+`func (o *JsonDiskConfig) SetRoothash(v string)`
 
-SetReadonly sets Readonly field to given value.
+SetRoothash sets Roothash field to given value.
 
-### HasReadonly
+### HasRoothash
 
-`func (o *JsonDiskConfig) HasReadonly() bool`
+`func (o *JsonDiskConfig) HasRoothash() bool`
 
-HasReadonly returns a boolean if a field has been set.
+HasRoothash returns a boolean if a field has been set.
 
 ### GetRoothashOffset
 
