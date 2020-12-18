@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**GetEnclaveTypes**](EnclaveServiceApi.md#GetEnclaveTypes) | **Get** /enclaves/types | 
 [**GetEnclaves**](EnclaveServiceApi.md#GetEnclaves) | **Get** /enclaves | Returns UUIDs of existing analyses.
 [**KillEnclave**](EnclaveServiceApi.md#KillEnclave) | **Post** /enclaves/{uuid}/kill | 
-[**RedistTest**](EnclaveServiceApi.md#RedistTest) | **Get** /enclaves/test/redis | 
 
 
 
@@ -610,65 +609,6 @@ Other parameters are passed through a pointer to a apiKillEnclaveRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[***os.File**](*os.File.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## RedistTest
-
-> *os.File RedistTest(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EnclaveServiceApi.RedistTest(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.RedistTest``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RedistTest`: *os.File
-    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.RedistTest`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRedistTestRequest struct via the builder pattern
 
 
 ### Return type

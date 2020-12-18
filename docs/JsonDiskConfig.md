@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Readonly** | Pointer to **bool** |  | [optional] 
+**Disk** | Pointer to **string** |  | [optional] 
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
 **Roothash** | Pointer to **string** |  | [optional] 
-**Disk** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +52,31 @@ SetReadonly sets Readonly field to given value.
 `func (o *JsonDiskConfig) HasReadonly() bool`
 
 HasReadonly returns a boolean if a field has been set.
+
+### GetDisk
+
+`func (o *JsonDiskConfig) GetDisk() string`
+
+GetDisk returns the Disk field if non-nil, zero value otherwise.
+
+### GetDiskOk
+
+`func (o *JsonDiskConfig) GetDiskOk() (*string, bool)`
+
+GetDiskOk returns a tuple with the Disk field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisk
+
+`func (o *JsonDiskConfig) SetDisk(v string)`
+
+SetDisk sets Disk field to given value.
+
+### HasDisk
+
+`func (o *JsonDiskConfig) HasDisk() bool`
+
+HasDisk returns a boolean if a field has been set.
 
 ### GetRoothashOffset
 
@@ -102,31 +127,6 @@ SetRoothash sets Roothash field to given value.
 `func (o *JsonDiskConfig) HasRoothash() bool`
 
 HasRoothash returns a boolean if a field has been set.
-
-### GetDisk
-
-`func (o *JsonDiskConfig) GetDisk() string`
-
-GetDisk returns the Disk field if non-nil, zero value otherwise.
-
-### GetDiskOk
-
-`func (o *JsonDiskConfig) GetDiskOk() (*string, bool)`
-
-GetDiskOk returns a tuple with the Disk field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisk
-
-`func (o *JsonDiskConfig) SetDisk(v string)`
-
-SetDisk sets Disk field to given value.
-
-### HasDisk
-
-`func (o *JsonDiskConfig) HasDisk() bool`
-
-HasDisk returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
