@@ -14,8 +14,9 @@ Name | Type | Description | Notes
 **InternalIdent** | Pointer to **string** |  | [optional] 
 **InternalRemoteControlServer** | Pointer to **string** |  | [optional] 
 **InternalWireguardServer** | Pointer to **string** |  | [optional] 
+**KubernetesEnclave** | Pointer to [**XmlNs0KubernetesEnclave**](xml_ns0_kubernetesEnclave.md) |  | [optional] 
 **PortMapping** | Pointer to **map[string]interface{}** |  | [optional] 
-**Ports** | Pointer to [**[]XmlNs0EnclavePort**](xml_ns0_enclavePort.md) |  | [optional] 
+**Ports** | Pointer to [**[]XmlNs0EnclavePort**](XmlNs0EnclavePort.md) |  | [optional] 
 **Process** | Pointer to [**XmlNs0Process**](xml_ns0_process.md) |  | [optional] 
 **PublicIdent** | Pointer to **string** |  | [optional] 
 **RemoteControlServer** | Pointer to **string** |  | [optional] 
@@ -295,6 +296,31 @@ SetInternalWireguardServer sets InternalWireguardServer field to given value.
 `func (o *XmlNs0EnclaveProcessAllOf) HasInternalWireguardServer() bool`
 
 HasInternalWireguardServer returns a boolean if a field has been set.
+
+### GetKubernetesEnclave
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetKubernetesEnclave() XmlNs0KubernetesEnclave`
+
+GetKubernetesEnclave returns the KubernetesEnclave field if non-nil, zero value otherwise.
+
+### GetKubernetesEnclaveOk
+
+`func (o *XmlNs0EnclaveProcessAllOf) GetKubernetesEnclaveOk() (*XmlNs0KubernetesEnclave, bool)`
+
+GetKubernetesEnclaveOk returns a tuple with the KubernetesEnclave field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKubernetesEnclave
+
+`func (o *XmlNs0EnclaveProcessAllOf) SetKubernetesEnclave(v XmlNs0KubernetesEnclave)`
+
+SetKubernetesEnclave sets KubernetesEnclave field to given value.
+
+### HasKubernetesEnclave
+
+`func (o *XmlNs0EnclaveProcessAllOf) HasKubernetesEnclave() bool`
+
+HasKubernetesEnclave returns a boolean if a field has been set.
 
 ### GetPortMapping
 

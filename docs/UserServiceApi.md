@@ -39,12 +39,12 @@ import (
 
 func main() {
     referrer := "referrer_example" // string |  (optional)
-    body := *openapiclient.Newjson_MDN_User() // JsonMDNUser | provided user object inheriting properties and credentials (optional)
+    body := *openapiclient.NewJsonMDNUser() // JsonMDNUser | provided user object inheriting properties and credentials (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.CreateObject(context.Background()).Referrer(referrer).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.CreateObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -111,7 +111,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.DeleteObject(context.Background(), username).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.DeleteObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -183,7 +183,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.DeleteObject_0(context.Background(), ident, platform, username).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.DeleteObject_0``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -255,7 +255,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.GetAvatars(context.Background(), username).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetAvatars``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -323,7 +323,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.GetCertificates(context.Background(), username).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -393,7 +393,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.GetEnclaveHistory(context.Background(), username).Limit(limit).Offset(offset).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetEnclaveHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -463,7 +463,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.GetObject2(context.Background(), username).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.GetObject2``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -527,12 +527,12 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := *openapiclient.Newjson_MDN_UserProfileImage() // JsonMDNUserProfileImage |  (optional)
+    body := *openapiclient.NewJsonMDNUserProfileImage() // JsonMDNUserProfileImage |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.SetAvatar(context.Background(), username).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.SetAvatar``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -597,12 +597,12 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := *openapiclient.Newjson_MDN_UserSetting() // JsonMDNUserSetting |  (optional)
+    body := *openapiclient.NewJsonMDNUserSetting() // JsonMDNUserSetting |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.SetSettings(context.Background(), username).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.SetSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -669,12 +669,12 @@ import (
 
 func main() {
     username := "username_example" // string | 
-    body := *openapiclient.Newjson_MDN_User() // JsonMDNUser | the new user object inherting all properties that should be change (optional)
+    body := *openapiclient.NewJsonMDNUser() // JsonMDNUser | the new user object inherting all properties that should be change (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.UserServiceApi.UpdateObject(context.Background(), username).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.UpdateObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }

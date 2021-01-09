@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
-**OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
-**Alive** | Pointer to **bool** |  | [optional] 
 **InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**Alive** | Pointer to **bool** |  | [optional] 
+**OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewJsonProcessWithDefaults instantiates a new JsonProcess object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetInputStream
+
+`func (o *JsonProcess) GetInputStream() map[string]interface{}`
+
+GetInputStream returns the InputStream field if non-nil, zero value otherwise.
+
+### GetInputStreamOk
+
+`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
+
+GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputStream
+
+`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
+
+SetInputStream sets InputStream field to given value.
+
+### HasInputStream
+
+`func (o *JsonProcess) HasInputStream() bool`
+
+HasInputStream returns a boolean if a field has been set.
 
 ### GetErrorStream
 
@@ -53,31 +78,6 @@ SetErrorStream sets ErrorStream field to given value.
 
 HasErrorStream returns a boolean if a field has been set.
 
-### GetOutputStream
-
-`func (o *JsonProcess) GetOutputStream() map[string]interface{}`
-
-GetOutputStream returns the OutputStream field if non-nil, zero value otherwise.
-
-### GetOutputStreamOk
-
-`func (o *JsonProcess) GetOutputStreamOk() (*map[string]interface{}, bool)`
-
-GetOutputStreamOk returns a tuple with the OutputStream field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOutputStream
-
-`func (o *JsonProcess) SetOutputStream(v map[string]interface{})`
-
-SetOutputStream sets OutputStream field to given value.
-
-### HasOutputStream
-
-`func (o *JsonProcess) HasOutputStream() bool`
-
-HasOutputStream returns a boolean if a field has been set.
-
 ### GetAlive
 
 `func (o *JsonProcess) GetAlive() bool`
@@ -103,30 +103,30 @@ SetAlive sets Alive field to given value.
 
 HasAlive returns a boolean if a field has been set.
 
-### GetInputStream
+### GetOutputStream
 
-`func (o *JsonProcess) GetInputStream() map[string]interface{}`
+`func (o *JsonProcess) GetOutputStream() map[string]interface{}`
 
-GetInputStream returns the InputStream field if non-nil, zero value otherwise.
+GetOutputStream returns the OutputStream field if non-nil, zero value otherwise.
 
-### GetInputStreamOk
+### GetOutputStreamOk
 
-`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
+`func (o *JsonProcess) GetOutputStreamOk() (*map[string]interface{}, bool)`
 
-GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
+GetOutputStreamOk returns a tuple with the OutputStream field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInputStream
+### SetOutputStream
 
-`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
+`func (o *JsonProcess) SetOutputStream(v map[string]interface{})`
 
-SetInputStream sets InputStream field to given value.
+SetOutputStream sets OutputStream field to given value.
 
-### HasInputStream
+### HasOutputStream
 
-`func (o *JsonProcess) HasInputStream() bool`
+`func (o *JsonProcess) HasOutputStream() bool`
 
-HasInputStream returns a boolean if a field has been set.
+HasOutputStream returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

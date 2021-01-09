@@ -39,12 +39,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_Certificate() // JsonMDNCertificate | the credentials used to validate the user (optional)
+    body := *openapiclient.NewJsonMDNCertificate() // JsonMDNCertificate | the credentials used to validate the user (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.AuthenticateApplication(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -104,12 +104,12 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := *openapiclient.NewJsonMDNOAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.AuthenticateEthereumWallet(context.Background(), wallet).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateEthereumWallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -175,12 +175,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_UserCredentials() // JsonMDNUserCredentials | the credentials used to validate the user (optional)
+    body := *openapiclient.NewJsonMDNUserCredentials() // JsonMDNUserCredentials | the credentials used to validate the user (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.AuthenticateUser(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -240,12 +240,12 @@ import (
 
 func main() {
     wallet := "wallet_example" // string | the wallet which should be authenticated
-    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
+    body := *openapiclient.NewJsonMDNOAuthToken() // JsonMDNOAuthToken | Token containing nonce and signate (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.AuthenticateWithEthereumChallenge(context.Background(), wallet).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.AuthenticateWithEthereumChallenge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -315,7 +315,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.GetFractalAuthenticationURL(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetFractalAuthenticationURL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -378,7 +378,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.GetNonceForEthereumWallet(context.Background(), wallet).Authorization(authorization).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetNonceForEthereumWallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -448,7 +448,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.GetObject(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -509,7 +509,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.GetTwitterAuthenticationURL(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.GetTwitterAuthenticationURL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -571,7 +571,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.SetFacebookUID(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFacebookUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -635,7 +635,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.SetFractalUID(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetFractalUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -694,12 +694,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_OAuthToken() // JsonMDNOAuthToken |  (optional)
+    body := *openapiclient.NewJsonMDNOAuthToken() // JsonMDNOAuthToken |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AuthenticationServiceApi.SetTwitterUID(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationServiceApi.SetTwitterUID``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }

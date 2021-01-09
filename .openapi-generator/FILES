@@ -34,6 +34,8 @@ docs/JsonEnclaveRunningAttestationApprovalAllOf.md
 docs/JsonEnvironment.md
 docs/JsonEnvironmentPublishingRequest.md
 docs/JsonIPFSSystemInfo.md
+docs/JsonKubernetesEnclave.md
+docs/JsonKubernetesEnclaveAllOf.md
 docs/JsonMDNAUserObject.md
 docs/JsonMDNCertificate.md
 docs/JsonMDNData.md
@@ -56,6 +58,15 @@ docs/JsonRunConfig.md
 docs/JsonSGXInfo.md
 docs/JsonSignedData.md
 docs/JsonSignedDataUtils.md
+docs/JsonV1Event.md
+docs/JsonV1EventList.md
+docs/JsonV1EventSeries.md
+docs/JsonV1EventSource.md
+docs/JsonV1ListMeta.md
+docs/JsonV1ManagedFieldsEntry.md
+docs/JsonV1ObjectMeta.md
+docs/JsonV1ObjectReference.md
+docs/JsonV1OwnerReference.md
 docs/JsonWireguardInterface.md
 docs/JsonWireguardInterfaceAllOf.md
 docs/NodeServiceApi.md
@@ -80,6 +91,8 @@ docs/XmlNs0EnvironmentAllOf.md
 docs/XmlNs0IPFSSystemInfo.md
 docs/XmlNs0IPFSSystemInfoAllOf.md
 docs/XmlNs0InputStream.md
+docs/XmlNs0KubernetesEnclave.md
+docs/XmlNs0KubernetesEnclaveAllOf.md
 docs/XmlNs0MDNSetting.md
 docs/XmlNs0MDNSettingAllOf.md
 docs/XmlNs0MDNUserProfileImage.md
@@ -112,6 +125,8 @@ model_json_enclave_running_attestation_approval_all_of.go
 model_json_environment.go
 model_json_environment_publishing_request.go
 model_json_ipfs_system_info.go
+model_json_kubernetes_enclave.go
+model_json_kubernetes_enclave_all_of.go
 model_json_mdn_a_user_object.go
 model_json_mdn_certificate.go
 model_json_mdn_data.go
@@ -134,6 +149,15 @@ model_json_run_config.go
 model_json_sgx_info.go
 model_json_signed_data.go
 model_json_signed_data_utils.go
+model_json_v1_event.go
+model_json_v1_event_list.go
+model_json_v1_event_series.go
+model_json_v1_event_source.go
+model_json_v1_list_meta.go
+model_json_v1_managed_fields_entry.go
+model_json_v1_object_meta.go
+model_json_v1_object_reference.go
+model_json_v1_owner_reference.go
 model_json_wireguard_interface.go
 model_json_wireguard_interface_all_of.go
 model_xml_ns0_disk_config.go
@@ -151,6 +175,8 @@ model_xml_ns0_environment_all_of.go
 model_xml_ns0_input_stream.go
 model_xml_ns0_ipfs_system_info.go
 model_xml_ns0_ipfs_system_info_all_of.go
+model_xml_ns0_kubernetes_enclave.go
+model_xml_ns0_kubernetes_enclave_all_of.go
 model_xml_ns0_mdn_setting.go
 model_xml_ns0_mdn_setting_all_of.go
 model_xml_ns0_mdn_user_profile_image.go

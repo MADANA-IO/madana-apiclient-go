@@ -31,12 +31,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_Data() // JsonMDNData |  (optional)
+    body := *openapiclient.NewJsonMDNData() // JsonMDNData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.CertificateServiceApi.AuthenticateCertificate(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.AuthenticateCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -100,7 +100,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.CertificateServiceApi.GetCertificateByFingerprint(context.Background(), fingerprint).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.GetCertificateByFingerprint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -167,7 +167,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.CertificateServiceApi.GetRootCertificate(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateServiceApi.GetRootCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }

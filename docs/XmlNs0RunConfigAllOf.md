@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Args** | Pointer to **[]string** |  | [optional] 
-**DiskConfig** | Pointer to [**[]XmlNs0DiskConfig**](xml_ns0_disk_config.md) |  | [optional] 
+**DiskConfig** | Pointer to [**[]XmlNs0DiskConfig**](XmlNs0DiskConfig.md) |  | [optional] 
 **Environment** | Pointer to **map[string]interface{}** |  | [optional] 
 **Run** | Pointer to **string** |  | [optional] 
 

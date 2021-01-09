@@ -35,7 +35,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AccountServiceApi.ActivateUser(context.Background(), token).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.ActivateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -100,12 +100,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_MailAddress() // JsonMDNMailAddress | - the MaiAddress under which the user has signed up (optional)
+    body := *openapiclient.NewJsonMDNMailAddress() // JsonMDNMailAddress | - the MaiAddress under which the user has signed up (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AccountServiceApi.CreatePasswordReset(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.CreatePasswordReset``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -170,7 +170,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AccountServiceApi.RequestVerificationMail(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.RequestVerificationMail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -227,12 +227,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_MDN_PasswordReset() // JsonMDNPasswordReset | - the MDN_PasswordReset Object (optional)
+    body := *openapiclient.NewJsonMDNPasswordReset() // JsonMDNPasswordReset | - the MDN_PasswordReset Object (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.AccountServiceApi.UpdatePassword(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `AccountServiceApi.UpdatePassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }

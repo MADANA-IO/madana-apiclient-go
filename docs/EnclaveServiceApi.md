@@ -36,12 +36,12 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := *openapiclient.Newjson_SignedData() // JsonSignedData |  (optional)
+    body := *openapiclient.NewJsonSignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.AddHistory(context.Background(), uuid).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AddHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -106,12 +106,12 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := *openapiclient.Newjson_EnclaveRunningAttestationApproval() // JsonEnclaveRunningAttestationApproval |  (optional)
+    body := *openapiclient.NewJsonEnclaveRunningAttestationApproval() // JsonEnclaveRunningAttestationApproval |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.ApproveEnclave(context.Background(), uuid).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.ApproveEnclave``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -176,12 +176,12 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := *openapiclient.Newjson_NodeInfo() // JsonNodeInfo |  (optional)
+    body := *openapiclient.NewJsonNodeInfo() // JsonNodeInfo |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.AssignEnclaveAgent(context.Background(), uuid).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AssignEnclaveAgent``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -246,12 +246,12 @@ import (
 
 func main() {
     uuid := "uuid_example" // string | 
-    body := *openapiclient.Newjson_EnclaveRunningAttestation() // JsonEnclaveRunningAttestation |  (optional)
+    body := *openapiclient.NewJsonEnclaveRunningAttestation() // JsonEnclaveRunningAttestation |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.AttestateEnclave(context.Background(), uuid).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.AttestateEnclave``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -315,12 +315,12 @@ import (
 )
 
 func main() {
-    body := *openapiclient.Newjson_EnclaveRunRequest() // JsonEnclaveRunRequest |  (optional)
+    body := *openapiclient.NewJsonEnclaveRunRequest() // JsonEnclaveRunRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.CreateEnclaveRunRequest(context.Background()).Body(body).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.CreateEnclaveRunRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -384,7 +384,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.GetEnclave(context.Background(), uuid).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclave``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -451,7 +451,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.GetEnclaveTypes(context.Background()).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaveTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -517,7 +517,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.GetEnclaves(context.Background()).Authorization(authorization).Created(created).Limit(limit).Offset(offset).Status(status).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetEnclaves``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
@@ -585,7 +585,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.EnclaveServiceApi.KillEnclave(context.Background(), uuid).Execute()
-    if err != nil {
+    if err.Error() != "" {
         fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.KillEnclave``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
