@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Activated** | Pointer to **string** |  | [optional] 
 **LastActive** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **string** |  | [optional] 
-**Activated** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **UserName** | Pointer to **string** |  | [optional] 
+**Credentials** | Pointer to [**JsonMDNUserCredentials**](json_MDN_UserCredentials.md) |  | [optional] 
 **SocialAccounts** | Pointer to [**[]JsonMDNSocialUserObject**](JsonMDNSocialUserObject.md) |  | [optional] 
-**FirstName** | Pointer to **string** |  | [optional] 
+**Mail** | Pointer to **string** |  | [optional] 
 **Settings** | Pointer to [**[]JsonMDNUserSetting**](JsonMDNUserSetting.md) |  | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
-**Credentials** | Pointer to [**JsonMDNUserCredentials**](json_MDN_UserCredentials.md) |  | [optional] 
+**FirstName** | Pointer to **string** |  | [optional] 
 **Guid** | Pointer to **string** |  | [optional] 
-**Mail** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -35,6 +35,31 @@ will change when the set of required properties is changed
 NewJsonMDNUserWithDefaults instantiates a new JsonMDNUser object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetActivated
+
+`func (o *JsonMDNUser) GetActivated() string`
+
+GetActivated returns the Activated field if non-nil, zero value otherwise.
+
+### GetActivatedOk
+
+`func (o *JsonMDNUser) GetActivatedOk() (*string, bool)`
+
+GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivated
+
+`func (o *JsonMDNUser) SetActivated(v string)`
+
+SetActivated sets Activated field to given value.
+
+### HasActivated
+
+`func (o *JsonMDNUser) HasActivated() bool`
+
+HasActivated returns a boolean if a field has been set.
 
 ### GetLastActive
 
@@ -86,31 +111,6 @@ SetCreated sets Created field to given value.
 
 HasCreated returns a boolean if a field has been set.
 
-### GetActivated
-
-`func (o *JsonMDNUser) GetActivated() string`
-
-GetActivated returns the Activated field if non-nil, zero value otherwise.
-
-### GetActivatedOk
-
-`func (o *JsonMDNUser) GetActivatedOk() (*string, bool)`
-
-GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivated
-
-`func (o *JsonMDNUser) SetActivated(v string)`
-
-SetActivated sets Activated field to given value.
-
-### HasActivated
-
-`func (o *JsonMDNUser) HasActivated() bool`
-
-HasActivated returns a boolean if a field has been set.
-
 ### GetImage
 
 `func (o *JsonMDNUser) GetImage() string`
@@ -161,6 +161,31 @@ SetUserName sets UserName field to given value.
 
 HasUserName returns a boolean if a field has been set.
 
+### GetCredentials
+
+`func (o *JsonMDNUser) GetCredentials() JsonMDNUserCredentials`
+
+GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+
+### GetCredentialsOk
+
+`func (o *JsonMDNUser) GetCredentialsOk() (*JsonMDNUserCredentials, bool)`
+
+GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentials
+
+`func (o *JsonMDNUser) SetCredentials(v JsonMDNUserCredentials)`
+
+SetCredentials sets Credentials field to given value.
+
+### HasCredentials
+
+`func (o *JsonMDNUser) HasCredentials() bool`
+
+HasCredentials returns a boolean if a field has been set.
+
 ### GetSocialAccounts
 
 `func (o *JsonMDNUser) GetSocialAccounts() []JsonMDNSocialUserObject`
@@ -186,30 +211,30 @@ SetSocialAccounts sets SocialAccounts field to given value.
 
 HasSocialAccounts returns a boolean if a field has been set.
 
-### GetFirstName
+### GetMail
 
-`func (o *JsonMDNUser) GetFirstName() string`
+`func (o *JsonMDNUser) GetMail() string`
 
-GetFirstName returns the FirstName field if non-nil, zero value otherwise.
+GetMail returns the Mail field if non-nil, zero value otherwise.
 
-### GetFirstNameOk
+### GetMailOk
 
-`func (o *JsonMDNUser) GetFirstNameOk() (*string, bool)`
+`func (o *JsonMDNUser) GetMailOk() (*string, bool)`
 
-GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
+GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFirstName
+### SetMail
 
-`func (o *JsonMDNUser) SetFirstName(v string)`
+`func (o *JsonMDNUser) SetMail(v string)`
 
-SetFirstName sets FirstName field to given value.
+SetMail sets Mail field to given value.
 
-### HasFirstName
+### HasMail
 
-`func (o *JsonMDNUser) HasFirstName() bool`
+`func (o *JsonMDNUser) HasMail() bool`
 
-HasFirstName returns a boolean if a field has been set.
+HasMail returns a boolean if a field has been set.
 
 ### GetSettings
 
@@ -261,30 +286,30 @@ SetLastName sets LastName field to given value.
 
 HasLastName returns a boolean if a field has been set.
 
-### GetCredentials
+### GetFirstName
 
-`func (o *JsonMDNUser) GetCredentials() JsonMDNUserCredentials`
+`func (o *JsonMDNUser) GetFirstName() string`
 
-GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+GetFirstName returns the FirstName field if non-nil, zero value otherwise.
 
-### GetCredentialsOk
+### GetFirstNameOk
 
-`func (o *JsonMDNUser) GetCredentialsOk() (*JsonMDNUserCredentials, bool)`
+`func (o *JsonMDNUser) GetFirstNameOk() (*string, bool)`
 
-GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCredentials
+### SetFirstName
 
-`func (o *JsonMDNUser) SetCredentials(v JsonMDNUserCredentials)`
+`func (o *JsonMDNUser) SetFirstName(v string)`
 
-SetCredentials sets Credentials field to given value.
+SetFirstName sets FirstName field to given value.
 
-### HasCredentials
+### HasFirstName
 
-`func (o *JsonMDNUser) HasCredentials() bool`
+`func (o *JsonMDNUser) HasFirstName() bool`
 
-HasCredentials returns a boolean if a field has been set.
+HasFirstName returns a boolean if a field has been set.
 
 ### GetGuid
 
@@ -310,31 +335,6 @@ SetGuid sets Guid field to given value.
 `func (o *JsonMDNUser) HasGuid() bool`
 
 HasGuid returns a boolean if a field has been set.
-
-### GetMail
-
-`func (o *JsonMDNUser) GetMail() string`
-
-GetMail returns the Mail field if non-nil, zero value otherwise.
-
-### GetMailOk
-
-`func (o *JsonMDNUser) GetMailOk() (*string, bool)`
-
-GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMail
-
-`func (o *JsonMDNUser) SetMail(v string)`
-
-SetMail sets Mail field to given value.
-
-### HasMail
-
-`func (o *JsonMDNUser) HasMail() bool`
-
-HasMail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

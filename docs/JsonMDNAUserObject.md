@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Activated** | Pointer to **string** |  | [optional] 
 **LastActive** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **string** |  | [optional] 
-**Activated** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **UserName** | Pointer to **string** |  | [optional] 
 
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewJsonMDNAUserObjectWithDefaults instantiates a new JsonMDNAUserObject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetActivated
+
+`func (o *JsonMDNAUserObject) GetActivated() string`
+
+GetActivated returns the Activated field if non-nil, zero value otherwise.
+
+### GetActivatedOk
+
+`func (o *JsonMDNAUserObject) GetActivatedOk() (*string, bool)`
+
+GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivated
+
+`func (o *JsonMDNAUserObject) SetActivated(v string)`
+
+SetActivated sets Activated field to given value.
+
+### HasActivated
+
+`func (o *JsonMDNAUserObject) HasActivated() bool`
+
+HasActivated returns a boolean if a field has been set.
 
 ### GetLastActive
 
@@ -78,31 +103,6 @@ SetCreated sets Created field to given value.
 `func (o *JsonMDNAUserObject) HasCreated() bool`
 
 HasCreated returns a boolean if a field has been set.
-
-### GetActivated
-
-`func (o *JsonMDNAUserObject) GetActivated() string`
-
-GetActivated returns the Activated field if non-nil, zero value otherwise.
-
-### GetActivatedOk
-
-`func (o *JsonMDNAUserObject) GetActivatedOk() (*string, bool)`
-
-GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivated
-
-`func (o *JsonMDNAUserObject) SetActivated(v string)`
-
-SetActivated sets Activated field to given value.
-
-### HasActivated
-
-`func (o *JsonMDNAUserObject) HasActivated() bool`
-
-HasActivated returns a boolean if a field has been set.
 
 ### GetImage
 
