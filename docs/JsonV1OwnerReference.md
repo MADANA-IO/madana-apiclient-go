@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
+**Controller** | Pointer to **bool** |  | [optional] 
 **BlockOwnerDeletion** | Pointer to **bool** |  | [optional] 
-**Uid** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Controller** | Pointer to **bool** |  | [optional] 
+**Uid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -55,6 +55,31 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
+### GetController
+
+`func (o *JsonV1OwnerReference) GetController() bool`
+
+GetController returns the Controller field if non-nil, zero value otherwise.
+
+### GetControllerOk
+
+`func (o *JsonV1OwnerReference) GetControllerOk() (*bool, bool)`
+
+GetControllerOk returns a tuple with the Controller field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetController
+
+`func (o *JsonV1OwnerReference) SetController(v bool)`
+
+SetController sets Controller field to given value.
+
+### HasController
+
+`func (o *JsonV1OwnerReference) HasController() bool`
+
+HasController returns a boolean if a field has been set.
+
 ### GetBlockOwnerDeletion
 
 `func (o *JsonV1OwnerReference) GetBlockOwnerDeletion() bool`
@@ -79,31 +104,6 @@ SetBlockOwnerDeletion sets BlockOwnerDeletion field to given value.
 `func (o *JsonV1OwnerReference) HasBlockOwnerDeletion() bool`
 
 HasBlockOwnerDeletion returns a boolean if a field has been set.
-
-### GetUid
-
-`func (o *JsonV1OwnerReference) GetUid() string`
-
-GetUid returns the Uid field if non-nil, zero value otherwise.
-
-### GetUidOk
-
-`func (o *JsonV1OwnerReference) GetUidOk() (*string, bool)`
-
-GetUidOk returns a tuple with the Uid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUid
-
-`func (o *JsonV1OwnerReference) SetUid(v string)`
-
-SetUid sets Uid field to given value.
-
-### HasUid
-
-`func (o *JsonV1OwnerReference) HasUid() bool`
-
-HasUid returns a boolean if a field has been set.
 
 ### GetApiVersion
 
@@ -155,30 +155,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetController
+### GetUid
 
-`func (o *JsonV1OwnerReference) GetController() bool`
+`func (o *JsonV1OwnerReference) GetUid() string`
 
-GetController returns the Controller field if non-nil, zero value otherwise.
+GetUid returns the Uid field if non-nil, zero value otherwise.
 
-### GetControllerOk
+### GetUidOk
 
-`func (o *JsonV1OwnerReference) GetControllerOk() (*bool, bool)`
+`func (o *JsonV1OwnerReference) GetUidOk() (*string, bool)`
 
-GetControllerOk returns a tuple with the Controller field if it's non-nil, zero value otherwise
+GetUidOk returns a tuple with the Uid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetController
+### SetUid
 
-`func (o *JsonV1OwnerReference) SetController(v bool)`
+`func (o *JsonV1OwnerReference) SetUid(v string)`
 
-SetController sets Controller field to given value.
+SetUid sets Uid field to given value.
 
-### HasController
+### HasUid
 
-`func (o *JsonV1OwnerReference) HasController() bool`
+`func (o *JsonV1OwnerReference) HasUid() bool`
 
-HasController returns a boolean if a field has been set.
+HasUid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
