@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Password** | Pointer to **string** |  | [optional] 
-**Mail** | Pointer to **string** |  | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
+**Mail** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,31 +52,6 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
-### GetMail
-
-`func (o *JsonMDNPasswordReset) GetMail() string`
-
-GetMail returns the Mail field if non-nil, zero value otherwise.
-
-### GetMailOk
-
-`func (o *JsonMDNPasswordReset) GetMailOk() (*string, bool)`
-
-GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMail
-
-`func (o *JsonMDNPasswordReset) SetMail(v string)`
-
-SetMail sets Mail field to given value.
-
-### HasMail
-
-`func (o *JsonMDNPasswordReset) HasMail() bool`
-
-HasMail returns a boolean if a field has been set.
-
 ### GetToken
 
 `func (o *JsonMDNPasswordReset) GetToken() string`
@@ -101,6 +76,31 @@ SetToken sets Token field to given value.
 `func (o *JsonMDNPasswordReset) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+### GetMail
+
+`func (o *JsonMDNPasswordReset) GetMail() string`
+
+GetMail returns the Mail field if non-nil, zero value otherwise.
+
+### GetMailOk
+
+`func (o *JsonMDNPasswordReset) GetMailOk() (*string, bool)`
+
+GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMail
+
+`func (o *JsonMDNPasswordReset) SetMail(v string)`
+
+SetMail sets Mail field to given value.
+
+### HasMail
+
+`func (o *JsonMDNPasswordReset) HasMail() bool`
+
+HasMail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

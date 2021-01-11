@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Operation** | Pointer to **string** |  | [optional] 
-**Time** | Pointer to **float32** |  | [optional] 
+**FieldsType** | Pointer to **string** |  | [optional] 
 **Manager** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
+**Operation** | Pointer to **string** |  | [optional] 
 **FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
-**FieldsType** | Pointer to **string** |  | [optional] 
+**Time** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -30,55 +30,30 @@ NewJsonV1ManagedFieldsEntryWithDefaults instantiates a new JsonV1ManagedFieldsEn
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetOperation
+### GetFieldsType
 
-`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
+`func (o *JsonV1ManagedFieldsEntry) GetFieldsType() string`
 
-GetOperation returns the Operation field if non-nil, zero value otherwise.
+GetFieldsType returns the FieldsType field if non-nil, zero value otherwise.
 
-### GetOperationOk
+### GetFieldsTypeOk
 
-`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
+`func (o *JsonV1ManagedFieldsEntry) GetFieldsTypeOk() (*string, bool)`
 
-GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
+GetFieldsTypeOk returns a tuple with the FieldsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOperation
+### SetFieldsType
 
-`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
+`func (o *JsonV1ManagedFieldsEntry) SetFieldsType(v string)`
 
-SetOperation sets Operation field to given value.
+SetFieldsType sets FieldsType field to given value.
 
-### HasOperation
+### HasFieldsType
 
-`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
+`func (o *JsonV1ManagedFieldsEntry) HasFieldsType() bool`
 
-HasOperation returns a boolean if a field has been set.
-
-### GetTime
-
-`func (o *JsonV1ManagedFieldsEntry) GetTime() float32`
-
-GetTime returns the Time field if non-nil, zero value otherwise.
-
-### GetTimeOk
-
-`func (o *JsonV1ManagedFieldsEntry) GetTimeOk() (*float32, bool)`
-
-GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTime
-
-`func (o *JsonV1ManagedFieldsEntry) SetTime(v float32)`
-
-SetTime sets Time field to given value.
-
-### HasTime
-
-`func (o *JsonV1ManagedFieldsEntry) HasTime() bool`
-
-HasTime returns a boolean if a field has been set.
+HasFieldsType returns a boolean if a field has been set.
 
 ### GetManager
 
@@ -130,6 +105,31 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
+### GetOperation
+
+`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
+
+GetOperation returns the Operation field if non-nil, zero value otherwise.
+
+### GetOperationOk
+
+`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
+
+GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperation
+
+`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
+
+SetOperation sets Operation field to given value.
+
+### HasOperation
+
+`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
+
+HasOperation returns a boolean if a field has been set.
+
 ### GetFieldsV1
 
 `func (o *JsonV1ManagedFieldsEntry) GetFieldsV1() map[string]interface{}`
@@ -155,30 +155,30 @@ SetFieldsV1 sets FieldsV1 field to given value.
 
 HasFieldsV1 returns a boolean if a field has been set.
 
-### GetFieldsType
+### GetTime
 
-`func (o *JsonV1ManagedFieldsEntry) GetFieldsType() string`
+`func (o *JsonV1ManagedFieldsEntry) GetTime() float32`
 
-GetFieldsType returns the FieldsType field if non-nil, zero value otherwise.
+GetTime returns the Time field if non-nil, zero value otherwise.
 
-### GetFieldsTypeOk
+### GetTimeOk
 
-`func (o *JsonV1ManagedFieldsEntry) GetFieldsTypeOk() (*string, bool)`
+`func (o *JsonV1ManagedFieldsEntry) GetTimeOk() (*float32, bool)`
 
-GetFieldsTypeOk returns a tuple with the FieldsType field if it's non-nil, zero value otherwise
+GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFieldsType
+### SetTime
 
-`func (o *JsonV1ManagedFieldsEntry) SetFieldsType(v string)`
+`func (o *JsonV1ManagedFieldsEntry) SetTime(v float32)`
 
-SetFieldsType sets FieldsType field to given value.
+SetTime sets Time field to given value.
 
-### HasFieldsType
+### HasTime
 
-`func (o *JsonV1ManagedFieldsEntry) HasFieldsType() bool`
+`func (o *JsonV1ManagedFieldsEntry) HasTime() bool`
 
-HasFieldsType returns a boolean if a field has been set.
+HasTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
