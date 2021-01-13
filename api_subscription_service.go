@@ -24,32 +24,26 @@ var (
 	_ _context.Context
 )
 
-// SocialPlatformServiceApiService SocialPlatformServiceApi service
-type SocialPlatformServiceApiService service
+// SubscriptionServiceApiService SubscriptionServiceApi service
+type SubscriptionServiceApiService service
 
-type ApiGetPlatformsRequest struct {
+type ApiAddFreeSubscriptionRequest struct {
 	ctx _context.Context
-	ApiService *SocialPlatformServiceApiService
-	body *string
+	ApiService *SubscriptionServiceApiService
 }
 
-func (r ApiGetPlatformsRequest) Body(body string) ApiGetPlatformsRequest {
-	r.body = &body
-	return r
-}
 
-func (r ApiGetPlatformsRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
-	return r.ApiService.GetPlatformsExecute(r)
+func (r ApiAddFreeSubscriptionRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+	return r.ApiService.AddFreeSubscriptionExecute(r)
 }
 
 /*
- * GetPlatforms Used to Handle Incoming Webhooks from Facebook.
- * Used to Handle Incoming Webhooks from Facebook
+ * AddFreeSubscription Method for AddFreeSubscription
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiGetPlatformsRequest
+ * @return ApiAddFreeSubscriptionRequest
  */
-func (a *SocialPlatformServiceApiService) GetPlatforms(ctx _context.Context) ApiGetPlatformsRequest {
-	return ApiGetPlatformsRequest{
+func (a *SubscriptionServiceApiService) AddFreeSubscription(ctx _context.Context) ApiAddFreeSubscriptionRequest {
+	return ApiAddFreeSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -59,9 +53,9 @@ func (a *SocialPlatformServiceApiService) GetPlatforms(ctx _context.Context) Api
  * Execute executes the request
  * @return *os.File
  */
-func (a *SocialPlatformServiceApiService) GetPlatformsExecute(r ApiGetPlatformsRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+func (a *SubscriptionServiceApiService) AddFreeSubscriptionExecute(r ApiAddFreeSubscriptionRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -70,20 +64,20 @@ func (a *SocialPlatformServiceApiService) GetPlatformsExecute(r ApiGetPlatformsR
 		localVarReturnValue  *os.File
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SocialPlatformServiceApiService.GetPlatforms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionServiceApiService.AddFreeSubscription")
 	if err != nil {
 		executionError.error = err.Error()
 		return localVarReturnValue, nil, executionError
 	}
 
-	localVarPath := localBasePath + "/platforms"
+	localVarPath := localBasePath + "/subscriptions/free"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "application/xml"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -99,8 +93,6 @@ func (a *SocialPlatformServiceApiService) GetPlatformsExecute(r ApiGetPlatformsR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		executionError.error = err.Error()
@@ -141,29 +133,23 @@ func (a *SocialPlatformServiceApiService) GetPlatformsExecute(r ApiGetPlatformsR
 	return localVarReturnValue, localVarHTTPResponse, executionError
 }
 
-type ApiListenTwitterWebhookRequest struct {
+type ApiGetApplicationRequest struct {
 	ctx _context.Context
-	ApiService *SocialPlatformServiceApiService
-	body *string
+	ApiService *SubscriptionServiceApiService
 }
 
-func (r ApiListenTwitterWebhookRequest) Body(body string) ApiListenTwitterWebhookRequest {
-	r.body = &body
-	return r
-}
 
-func (r ApiListenTwitterWebhookRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
-	return r.ApiService.ListenTwitterWebhookExecute(r)
+func (r ApiGetApplicationRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+	return r.ApiService.GetApplicationExecute(r)
 }
 
 /*
- * ListenTwitterWebhook Used to Handle Incoming Webhooks from Facebook.
- * Used to Handle Incoming Webhooks from Facebook
+ * GetApplication Method for GetApplication
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiListenTwitterWebhookRequest
+ * @return ApiGetApplicationRequest
  */
-func (a *SocialPlatformServiceApiService) ListenTwitterWebhook(ctx _context.Context) ApiListenTwitterWebhookRequest {
-	return ApiListenTwitterWebhookRequest{
+func (a *SubscriptionServiceApiService) GetApplication(ctx _context.Context) ApiGetApplicationRequest {
+	return ApiGetApplicationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -173,121 +159,7 @@ func (a *SocialPlatformServiceApiService) ListenTwitterWebhook(ctx _context.Cont
  * Execute executes the request
  * @return *os.File
  */
-func (a *SocialPlatformServiceApiService) ListenTwitterWebhookExecute(r ApiListenTwitterWebhookRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
-	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		executionError       GenericOpenAPIError
-		localVarReturnValue  *os.File
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SocialPlatformServiceApiService.ListenTwitterWebhook")
-	if err != nil {
-		executionError.error = err.Error()
-		return localVarReturnValue, nil, executionError
-	}
-
-	localVarPath := localBasePath + "/platforms/twitter"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := _neturl.Values{}
-	localVarFormParams := _neturl.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json", "application/xml"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		executionError.error = err.Error()
-		return localVarReturnValue, nil, executionError
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		executionError.error = err.Error()
-		return localVarReturnValue, localVarHTTPResponse, executionError
-	}
-
-	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		executionError.error = err.Error()
-		return localVarReturnValue, localVarHTTPResponse, executionError
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, executionError
-}
-
-type ApiRegisterTwitterWebhookRequest struct {
-	ctx _context.Context
-	ApiService *SocialPlatformServiceApiService
-	crcToken *string
-}
-
-func (r ApiRegisterTwitterWebhookRequest) CrcToken(crcToken string) ApiRegisterTwitterWebhookRequest {
-	r.crcToken = &crcToken
-	return r
-}
-
-func (r ApiRegisterTwitterWebhookRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
-	return r.ApiService.RegisterTwitterWebhookExecute(r)
-}
-
-/*
- * RegisterTwitterWebhook Used to Handle Incoming Webhooks from Twitter.
- * Used to Handle Incoming Webhooks from Twitter
- * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiRegisterTwitterWebhookRequest
- */
-func (a *SocialPlatformServiceApiService) RegisterTwitterWebhook(ctx _context.Context) ApiRegisterTwitterWebhookRequest {
-	return ApiRegisterTwitterWebhookRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-/*
- * Execute executes the request
- * @return *os.File
- */
-func (a *SocialPlatformServiceApiService) RegisterTwitterWebhookExecute(r ApiRegisterTwitterWebhookRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+func (a *SubscriptionServiceApiService) GetApplicationExecute(r ApiGetApplicationRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -298,21 +170,18 @@ func (a *SocialPlatformServiceApiService) RegisterTwitterWebhookExecute(r ApiReg
 		localVarReturnValue  *os.File
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SocialPlatformServiceApiService.RegisterTwitterWebhook")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionServiceApiService.GetApplication")
 	if err != nil {
 		executionError.error = err.Error()
 		return localVarReturnValue, nil, executionError
 	}
 
-	localVarPath := localBasePath + "/platforms/twitter"
+	localVarPath := localBasePath + "/subscriptions/active"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
-	if r.crcToken != nil {
-		localVarQueryParams.Add("crc_token", parameterToString(*r.crcToken, ""))
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

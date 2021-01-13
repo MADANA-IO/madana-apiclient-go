@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Signature** | Pointer to **string** |  | [optional] 
-**Fingerpint** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
+**Fingerpint** | Pointer to **string** |  | [optional] 
+**Signature** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonSignedDataUtilsWithDefaults instantiates a new JsonSignedDataUtils object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSignature
+### GetData
 
-`func (o *JsonSignedDataUtils) GetSignature() string`
+`func (o *JsonSignedDataUtils) GetData() string`
 
-GetSignature returns the Signature field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetSignatureOk
+### GetDataOk
 
-`func (o *JsonSignedDataUtils) GetSignatureOk() (*string, bool)`
+`func (o *JsonSignedDataUtils) GetDataOk() (*string, bool)`
 
-GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSignature
+### SetData
 
-`func (o *JsonSignedDataUtils) SetSignature(v string)`
+`func (o *JsonSignedDataUtils) SetData(v string)`
 
-SetSignature sets Signature field to given value.
+SetData sets Data field to given value.
 
-### HasSignature
+### HasData
 
-`func (o *JsonSignedDataUtils) HasSignature() bool`
+`func (o *JsonSignedDataUtils) HasData() bool`
 
-HasSignature returns a boolean if a field has been set.
+HasData returns a boolean if a field has been set.
 
 ### GetFingerpint
 
@@ -77,30 +77,30 @@ SetFingerpint sets Fingerpint field to given value.
 
 HasFingerpint returns a boolean if a field has been set.
 
-### GetData
+### GetSignature
 
-`func (o *JsonSignedDataUtils) GetData() string`
+`func (o *JsonSignedDataUtils) GetSignature() string`
 
-GetData returns the Data field if non-nil, zero value otherwise.
+GetSignature returns the Signature field if non-nil, zero value otherwise.
 
-### GetDataOk
+### GetSignatureOk
 
-`func (o *JsonSignedDataUtils) GetDataOk() (*string, bool)`
+`func (o *JsonSignedDataUtils) GetSignatureOk() (*string, bool)`
 
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetData
+### SetSignature
 
-`func (o *JsonSignedDataUtils) SetData(v string)`
+`func (o *JsonSignedDataUtils) SetSignature(v string)`
 
-SetData sets Data field to given value.
+SetSignature sets Signature field to given value.
 
-### HasData
+### HasSignature
 
-`func (o *JsonSignedDataUtils) HasData() bool`
+`func (o *JsonSignedDataUtils) HasSignature() bool`
 
-HasData returns a boolean if a field has been set.
+HasSignature returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

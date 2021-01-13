@@ -14,6 +14,7 @@ api_organization_service.go
 api_request_service.go
 api_social_platform_service.go
 api_social_service.go
+api_subscription_service.go
 api_system_service.go
 api_user_service.go
 client.go
@@ -74,6 +75,7 @@ docs/OrganizationServiceApi.md
 docs/RequestServiceApi.md
 docs/SocialPlatformServiceApi.md
 docs/SocialServiceApi.md
+docs/SubscriptionServiceApi.md
 docs/SystemServiceApi.md
 docs/UserServiceApi.md
 docs/XmlNs0DiskConfig.md

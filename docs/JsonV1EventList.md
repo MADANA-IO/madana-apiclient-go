@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Metadata** | Pointer to [**JsonV1ListMeta**](json_V1ListMeta.md) |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]JsonV1Event**](JsonV1Event.md) |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
-### GetApiVersion
-
-`func (o *JsonV1EventList) GetApiVersion() string`
-
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
-
-### GetApiVersionOk
-
-`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
-
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiVersion
-
-`func (o *JsonV1EventList) SetApiVersion(v string)`
-
-SetApiVersion sets ApiVersion field to given value.
-
-### HasApiVersion
-
-`func (o *JsonV1EventList) HasApiVersion() bool`
-
-HasApiVersion returns a boolean if a field has been set.
-
 ### GetKind
 
 `func (o *JsonV1EventList) GetKind() string`
@@ -102,6 +77,31 @@ SetKind sets Kind field to given value.
 `func (o *JsonV1EventList) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *JsonV1EventList) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *JsonV1EventList) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *JsonV1EventList) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetItems
 

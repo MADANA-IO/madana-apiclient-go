@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Disk** | Pointer to **string** |  | [optional] 
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
+**Disk** | Pointer to **string** |  | [optional] 
 **Readonly** | Pointer to **bool** |  | [optional] 
 **Roothash** | Pointer to **string** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonDiskConfigWithDefaults instantiates a new JsonDiskConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDisk
-
-`func (o *JsonDiskConfig) GetDisk() string`
-
-GetDisk returns the Disk field if non-nil, zero value otherwise.
-
-### GetDiskOk
-
-`func (o *JsonDiskConfig) GetDiskOk() (*string, bool)`
-
-GetDiskOk returns a tuple with the Disk field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisk
-
-`func (o *JsonDiskConfig) SetDisk(v string)`
-
-SetDisk sets Disk field to given value.
-
-### HasDisk
-
-`func (o *JsonDiskConfig) HasDisk() bool`
-
-HasDisk returns a boolean if a field has been set.
 
 ### GetRoothashOffset
 
@@ -77,6 +52,31 @@ SetRoothashOffset sets RoothashOffset field to given value.
 `func (o *JsonDiskConfig) HasRoothashOffset() bool`
 
 HasRoothashOffset returns a boolean if a field has been set.
+
+### GetDisk
+
+`func (o *JsonDiskConfig) GetDisk() string`
+
+GetDisk returns the Disk field if non-nil, zero value otherwise.
+
+### GetDiskOk
+
+`func (o *JsonDiskConfig) GetDiskOk() (*string, bool)`
+
+GetDiskOk returns a tuple with the Disk field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisk
+
+`func (o *JsonDiskConfig) SetDisk(v string)`
+
+SetDisk sets Disk field to given value.
+
+### HasDisk
+
+`func (o *JsonDiskConfig) HasDisk() bool`
+
+HasDisk returns a boolean if a field has been set.
 
 ### GetReadonly
 

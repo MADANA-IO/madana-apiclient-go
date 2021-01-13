@@ -1,17 +1,17 @@
-# \SystemServiceApi
+# \SubscriptionServiceApi
 
 All URIs are relative to *http://api.madana.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllObjects**](SystemServiceApi.md#GetAllObjects) | **Get** /system/health | 
-[**GetApplication2**](SystemServiceApi.md#GetApplication2) | **Get** /system/usage | Return the current application usage.
+[**AddFreeSubscription**](SubscriptionServiceApi.md#AddFreeSubscription) | **Post** /subscriptions/free | 
+[**GetApplication**](SubscriptionServiceApi.md#GetApplication) | **Get** /subscriptions/active | 
 
 
 
-## GetAllObjects
+## AddFreeSubscription
 
-> *os.File GetAllObjects(ctx).Execute()
+> *os.File AddFreeSubscription(ctx).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SystemServiceApi.GetAllObjects(context.Background()).Execute()
+    resp, r, err := api_client.SubscriptionServiceApi.AddFreeSubscription(context.Background()).Execute()
     if err.Error() != "" {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemServiceApi.GetAllObjects``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionServiceApi.AddFreeSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAllObjects`: *os.File
-    fmt.Fprintf(os.Stdout, "Response from `SystemServiceApi.GetAllObjects`: %v\n", resp)
+    // response from `AddFreeSubscription`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SubscriptionServiceApi.AddFreeSubscription`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAllObjectsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddFreeSubscriptionRequest struct via the builder pattern
 
 
 ### Return type
@@ -68,11 +68,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApplication2
+## GetApplication
 
-> map[string]map[string]interface{} GetApplication2(ctx).Execute()
-
-Return the current application usage.
+> *os.File GetApplication(ctx).Execute()
 
 
 
@@ -92,13 +90,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SystemServiceApi.GetApplication2(context.Background()).Execute()
+    resp, r, err := api_client.SubscriptionServiceApi.GetApplication(context.Background()).Execute()
     if err.Error() != "" {
-        fmt.Fprintf(os.Stderr, "Error when calling `SystemServiceApi.GetApplication2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionServiceApi.GetApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApplication2`: map[string]map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `SystemServiceApi.GetApplication2`: %v\n", resp)
+    // response from `GetApplication`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `SubscriptionServiceApi.GetApplication`: %v\n", resp)
 }
 ```
 
@@ -108,12 +106,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApplication2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApplicationRequest struct via the builder pattern
 
 
 ### Return type
 
-**map[string]map[string]interface{}**
+[***os.File**](*os.File.md)
 
 ### Authorization
 
