@@ -9,6 +9,7 @@ api_certificate_service.go
 api_data_collection_service.go
 api_enclave_service.go
 api_environment_service.go
+api_invoice_service.go
 api_node_service.go
 api_organization_service.go
 api_request_service.go
@@ -25,6 +26,7 @@ docs/CertificateServiceApi.md
 docs/DataCollectionServiceApi.md
 docs/EnclaveServiceApi.md
 docs/EnvironmentServiceApi.md
+docs/InvoiceServiceApi.md
 docs/JsonDiskConfig.md
 docs/JsonEnclavePort.md
 docs/JsonEnclaveProcess.md

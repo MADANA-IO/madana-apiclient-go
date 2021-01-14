@@ -24,26 +24,31 @@ var (
 	_ _context.Context
 )
 
-// OrganizationServiceApiService OrganizationServiceApi service
-type OrganizationServiceApiService service
+// InvoiceServiceApiService InvoiceServiceApi service
+type InvoiceServiceApiService service
 
-type ApiGetNodes3Request struct {
+type ApiGetActiveSaaSSubscriptionsRequest struct {
 	ctx _context.Context
-	ApiService *OrganizationServiceApiService
+	ApiService *InvoiceServiceApiService
+	dayssince *string
 }
 
+func (r ApiGetActiveSaaSSubscriptionsRequest) Dayssince(dayssince string) ApiGetActiveSaaSSubscriptionsRequest {
+	r.dayssince = &dayssince
+	return r
+}
 
-func (r ApiGetNodes3Request) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
-	return r.ApiService.GetNodes3Execute(r)
+func (r ApiGetActiveSaaSSubscriptionsRequest) Execute() (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+	return r.ApiService.GetActiveSaaSSubscriptionsExecute(r)
 }
 
 /*
- * GetNodes3 Method for GetNodes3
+ * GetActiveSaaSSubscriptions Method for GetActiveSaaSSubscriptions
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiGetNodes3Request
+ * @return ApiGetActiveSaaSSubscriptionsRequest
  */
-func (a *OrganizationServiceApiService) GetNodes3(ctx _context.Context) ApiGetNodes3Request {
-	return ApiGetNodes3Request{
+func (a *InvoiceServiceApiService) GetActiveSaaSSubscriptions(ctx _context.Context) ApiGetActiveSaaSSubscriptionsRequest {
+	return ApiGetActiveSaaSSubscriptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +58,7 @@ func (a *OrganizationServiceApiService) GetNodes3(ctx _context.Context) ApiGetNo
  * Execute executes the request
  * @return *os.File
  */
-func (a *OrganizationServiceApiService) GetNodes3Execute(r ApiGetNodes3Request) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
+func (a *InvoiceServiceApiService) GetActiveSaaSSubscriptionsExecute(r ApiGetActiveSaaSSubscriptionsRequest) (*os.File, *_nethttp.Response, GenericOpenAPIError) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -64,18 +69,21 @@ func (a *OrganizationServiceApiService) GetNodes3Execute(r ApiGetNodes3Request) 
 		localVarReturnValue  *os.File
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationServiceApiService.GetNodes3")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvoiceServiceApiService.GetActiveSaaSSubscriptions")
 	if err != nil {
 		executionError.error = err.Error()
 		return localVarReturnValue, nil, executionError
 	}
 
-	localVarPath := localBasePath + "/organizations"
+	localVarPath := localBasePath + "/invoices"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
+	if r.dayssince != nil {
+		localVarQueryParams.Add("dayssince", parameterToString(*r.dayssince, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
