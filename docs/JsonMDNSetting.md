@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonMDNSettingWithDefaults instantiates a new JsonMDNSetting object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDescription
+### GetId
 
-`func (o *JsonMDNSetting) GetDescription() string`
+`func (o *JsonMDNSetting) GetId() string`
 
-GetDescription returns the Description field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetDescriptionOk
+### GetIdOk
 
-`func (o *JsonMDNSetting) GetDescriptionOk() (*string, bool)`
+`func (o *JsonMDNSetting) GetIdOk() (*string, bool)`
 
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDescription
+### SetId
 
-`func (o *JsonMDNSetting) SetDescription(v string)`
+`func (o *JsonMDNSetting) SetId(v string)`
 
-SetDescription sets Description field to given value.
+SetId sets Id field to given value.
 
-### HasDescription
+### HasId
 
-`func (o *JsonMDNSetting) HasDescription() bool`
+`func (o *JsonMDNSetting) HasId() bool`
 
-HasDescription returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -77,30 +77,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetId
+### GetDescription
 
-`func (o *JsonMDNSetting) GetId() string`
+`func (o *JsonMDNSetting) GetDescription() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetDescriptionOk
 
-`func (o *JsonMDNSetting) GetIdOk() (*string, bool)`
+`func (o *JsonMDNSetting) GetDescriptionOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetDescription
 
-`func (o *JsonMDNSetting) SetId(v string)`
+`func (o *JsonMDNSetting) SetDescription(v string)`
 
-SetId sets Id field to given value.
+SetDescription sets Description field to given value.
 
-### HasId
+### HasDescription
 
-`func (o *JsonMDNSetting) HasId() bool`
+`func (o *JsonMDNSetting) HasDescription() bool`
 
-HasId returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

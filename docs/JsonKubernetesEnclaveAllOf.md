@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PodPhase** | Pointer to **string** |  | [optional] 
-**WireguardPort** | Pointer to **int32** |  | [optional] 
-**RemoteControlIP** | Pointer to **string** |  | [optional] 
 **EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**DebugInfo** | Pointer to **string** |  | [optional] 
+**RemoteControlIP** | Pointer to **string** |  | [optional] 
 **EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
 **AttestationPort** | Pointer to **int32** |  | [optional] 
+**DebugInfo** | Pointer to **string** |  | [optional] 
+**PodPhase** | Pointer to **string** |  | [optional] 
+**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
+**WireguardPort** | Pointer to **int32** |  | [optional] 
+**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 
 ## Methods
 
@@ -32,81 +32,6 @@ will change when the set of required properties is changed
 NewJsonKubernetesEnclaveAllOfWithDefaults instantiates a new JsonKubernetesEnclaveAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPodPhase
-
-`func (o *JsonKubernetesEnclaveAllOf) GetPodPhase() string`
-
-GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
-
-### GetPodPhaseOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetPodPhaseOk() (*string, bool)`
-
-GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPodPhase
-
-`func (o *JsonKubernetesEnclaveAllOf) SetPodPhase(v string)`
-
-SetPodPhase sets PodPhase field to given value.
-
-### HasPodPhase
-
-`func (o *JsonKubernetesEnclaveAllOf) HasPodPhase() bool`
-
-HasPodPhase returns a boolean if a field has been set.
-
-### GetWireguardPort
-
-`func (o *JsonKubernetesEnclaveAllOf) GetWireguardPort() int32`
-
-GetWireguardPort returns the WireguardPort field if non-nil, zero value otherwise.
-
-### GetWireguardPortOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetWireguardPortOk() (*int32, bool)`
-
-GetWireguardPortOk returns a tuple with the WireguardPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWireguardPort
-
-`func (o *JsonKubernetesEnclaveAllOf) SetWireguardPort(v int32)`
-
-SetWireguardPort sets WireguardPort field to given value.
-
-### HasWireguardPort
-
-`func (o *JsonKubernetesEnclaveAllOf) HasWireguardPort() bool`
-
-HasWireguardPort returns a boolean if a field has been set.
-
-### GetRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIP() string`
-
-GetRemoteControlIP returns the RemoteControlIP field if non-nil, zero value otherwise.
-
-### GetRemoteControlIPOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIPOk() (*string, bool)`
-
-GetRemoteControlIPOk returns a tuple with the RemoteControlIP field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) SetRemoteControlIP(v string)`
-
-SetRemoteControlIP sets RemoteControlIP field to given value.
-
-### HasRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) HasRemoteControlIP() bool`
-
-HasRemoteControlIP returns a boolean if a field has been set.
 
 ### GetEnclavePodEvents
 
@@ -133,30 +58,30 @@ SetEnclavePodEvents sets EnclavePodEvents field to given value.
 
 HasEnclavePodEvents returns a boolean if a field has been set.
 
-### GetDebugInfo
+### GetRemoteControlIP
 
-`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfo() string`
+`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIP() string`
 
-GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
+GetRemoteControlIP returns the RemoteControlIP field if non-nil, zero value otherwise.
 
-### GetDebugInfoOk
+### GetRemoteControlIPOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfoOk() (*string, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIPOk() (*string, bool)`
 
-GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
+GetRemoteControlIPOk returns a tuple with the RemoteControlIP field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDebugInfo
+### SetRemoteControlIP
 
-`func (o *JsonKubernetesEnclaveAllOf) SetDebugInfo(v string)`
+`func (o *JsonKubernetesEnclaveAllOf) SetRemoteControlIP(v string)`
 
-SetDebugInfo sets DebugInfo field to given value.
+SetRemoteControlIP sets RemoteControlIP field to given value.
 
-### HasDebugInfo
+### HasRemoteControlIP
 
-`func (o *JsonKubernetesEnclaveAllOf) HasDebugInfo() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasRemoteControlIP() bool`
 
-HasDebugInfo returns a boolean if a field has been set.
+HasRemoteControlIP returns a boolean if a field has been set.
 
 ### GetEnclaveReplicaSetEvents
 
@@ -183,30 +108,80 @@ SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
 
 HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
 
-### GetEnclaveDeploymentEvents
+### GetAttestationPort
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
+`func (o *JsonKubernetesEnclaveAllOf) GetAttestationPort() int32`
 
-GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
+GetAttestationPort returns the AttestationPort field if non-nil, zero value otherwise.
 
-### GetEnclaveDeploymentEventsOk
+### GetAttestationPortOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetAttestationPortOk() (*int32, bool)`
 
-GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
+GetAttestationPortOk returns a tuple with the AttestationPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclaveDeploymentEvents
+### SetAttestationPort
 
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
+`func (o *JsonKubernetesEnclaveAllOf) SetAttestationPort(v int32)`
 
-SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
+SetAttestationPort sets AttestationPort field to given value.
 
-### HasEnclaveDeploymentEvents
+### HasAttestationPort
 
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasAttestationPort() bool`
 
-HasEnclaveDeploymentEvents returns a boolean if a field has been set.
+HasAttestationPort returns a boolean if a field has been set.
+
+### GetDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfo() string`
+
+GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
+
+### GetDebugInfoOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfoOk() (*string, bool)`
+
+GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) SetDebugInfo(v string)`
+
+SetDebugInfo sets DebugInfo field to given value.
+
+### HasDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) HasDebugInfo() bool`
+
+HasDebugInfo returns a boolean if a field has been set.
+
+### GetPodPhase
+
+`func (o *JsonKubernetesEnclaveAllOf) GetPodPhase() string`
+
+GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
+
+### GetPodPhaseOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetPodPhaseOk() (*string, bool)`
+
+GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPodPhase
+
+`func (o *JsonKubernetesEnclaveAllOf) SetPodPhase(v string)`
+
+SetPodPhase sets PodPhase field to given value.
+
+### HasPodPhase
+
+`func (o *JsonKubernetesEnclaveAllOf) HasPodPhase() bool`
+
+HasPodPhase returns a boolean if a field has been set.
 
 ### GetIsUsingInitContainer
 
@@ -233,30 +208,55 @@ SetIsUsingInitContainer sets IsUsingInitContainer field to given value.
 
 HasIsUsingInitContainer returns a boolean if a field has been set.
 
-### GetAttestationPort
+### GetWireguardPort
 
-`func (o *JsonKubernetesEnclaveAllOf) GetAttestationPort() int32`
+`func (o *JsonKubernetesEnclaveAllOf) GetWireguardPort() int32`
 
-GetAttestationPort returns the AttestationPort field if non-nil, zero value otherwise.
+GetWireguardPort returns the WireguardPort field if non-nil, zero value otherwise.
 
-### GetAttestationPortOk
+### GetWireguardPortOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetAttestationPortOk() (*int32, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetWireguardPortOk() (*int32, bool)`
 
-GetAttestationPortOk returns a tuple with the AttestationPort field if it's non-nil, zero value otherwise
+GetWireguardPortOk returns a tuple with the WireguardPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttestationPort
+### SetWireguardPort
 
-`func (o *JsonKubernetesEnclaveAllOf) SetAttestationPort(v int32)`
+`func (o *JsonKubernetesEnclaveAllOf) SetWireguardPort(v int32)`
 
-SetAttestationPort sets AttestationPort field to given value.
+SetWireguardPort sets WireguardPort field to given value.
 
-### HasAttestationPort
+### HasWireguardPort
 
-`func (o *JsonKubernetesEnclaveAllOf) HasAttestationPort() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasWireguardPort() bool`
 
-HasAttestationPort returns a boolean if a field has been set.
+HasWireguardPort returns a boolean if a field has been set.
+
+### GetEnclaveDeploymentEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
+
+GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
+
+### GetEnclaveDeploymentEventsOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
+
+GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveDeploymentEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
+
+SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
+
+### HasEnclaveDeploymentEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
+
+HasEnclaveDeploymentEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
