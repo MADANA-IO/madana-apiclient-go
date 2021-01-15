@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
-**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
 **Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
+**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
+**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,55 +29,30 @@ NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUsingDefaultRunConfig
+### GetPorts
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) GetPorts() []JsonEnclavePort`
 
-GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+GetPorts returns the Ports field if non-nil, zero value otherwise.
 
-### GetUsingDefaultRunConfigOk
+### GetPortsOk
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+`func (o *JsonEnclaveRunRequest) GetPortsOk() (*[]JsonEnclavePort, bool)`
 
-GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsingDefaultRunConfig
+### SetPorts
 
-`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+`func (o *JsonEnclaveRunRequest) SetPorts(v []JsonEnclavePort)`
 
-SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+SetPorts sets Ports field to given value.
 
-### HasUsingDefaultRunConfig
+### HasPorts
 
-`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) HasPorts() bool`
 
-HasUsingDefaultRunConfig returns a boolean if a field has been set.
-
-### GetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
-
-GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
-
-### GetEnvironmentUUIDOk
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
-
-GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
-
-SetEnvironmentUUID sets EnvironmentUUID field to given value.
-
-### HasEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
-
-HasEnvironmentUUID returns a boolean if a field has been set.
+HasPorts returns a boolean if a field has been set.
 
 ### GetEnclaveExecutionType
 
@@ -104,6 +79,31 @@ SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
 
 HasEnclaveExecutionType returns a boolean if a field has been set.
 
+### GetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+
+GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+
+### GetUsingDefaultRunConfigOk
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+
+GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+
+SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+
+### HasUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+
+HasUsingDefaultRunConfig returns a boolean if a field has been set.
+
 ### GetWireguardPublicKey
 
 `func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
@@ -129,30 +129,30 @@ SetWireguardPublicKey sets WireguardPublicKey field to given value.
 
 HasWireguardPublicKey returns a boolean if a field has been set.
 
-### GetPorts
+### GetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) GetPorts() []JsonEnclavePort`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
 
-GetPorts returns the Ports field if non-nil, zero value otherwise.
+GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
 
-### GetPortsOk
+### GetEnvironmentUUIDOk
 
-`func (o *JsonEnclaveRunRequest) GetPortsOk() (*[]JsonEnclavePort, bool)`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
 
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPorts
+### SetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) SetPorts(v []JsonEnclavePort)`
+`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
 
-SetPorts sets Ports field to given value.
+SetEnvironmentUUID sets EnvironmentUUID field to given value.
 
-### HasPorts
+### HasEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) HasPorts() bool`
+`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
 
-HasPorts returns a boolean if a field has been set.
+HasEnvironmentUUID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

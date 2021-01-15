@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Environment** | Pointer to **map[string]string** |  | [optional] 
-**DiskConfig** | Pointer to [**[]JsonDiskConfig**](JsonDiskConfig.md) |  | [optional] 
 **Run** | Pointer to **string** |  | [optional] 
+**DiskConfig** | Pointer to [**[]JsonDiskConfig**](JsonDiskConfig.md) |  | [optional] 
 **Args** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetEnvironment sets Environment field to given value.
 
 HasEnvironment returns a boolean if a field has been set.
 
-### GetDiskConfig
-
-`func (o *JsonRunConfig) GetDiskConfig() []JsonDiskConfig`
-
-GetDiskConfig returns the DiskConfig field if non-nil, zero value otherwise.
-
-### GetDiskConfigOk
-
-`func (o *JsonRunConfig) GetDiskConfigOk() (*[]JsonDiskConfig, bool)`
-
-GetDiskConfigOk returns a tuple with the DiskConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDiskConfig
-
-`func (o *JsonRunConfig) SetDiskConfig(v []JsonDiskConfig)`
-
-SetDiskConfig sets DiskConfig field to given value.
-
-### HasDiskConfig
-
-`func (o *JsonRunConfig) HasDiskConfig() bool`
-
-HasDiskConfig returns a boolean if a field has been set.
-
 ### GetRun
 
 `func (o *JsonRunConfig) GetRun() string`
@@ -102,6 +77,31 @@ SetRun sets Run field to given value.
 `func (o *JsonRunConfig) HasRun() bool`
 
 HasRun returns a boolean if a field has been set.
+
+### GetDiskConfig
+
+`func (o *JsonRunConfig) GetDiskConfig() []JsonDiskConfig`
+
+GetDiskConfig returns the DiskConfig field if non-nil, zero value otherwise.
+
+### GetDiskConfigOk
+
+`func (o *JsonRunConfig) GetDiskConfigOk() (*[]JsonDiskConfig, bool)`
+
+GetDiskConfigOk returns a tuple with the DiskConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiskConfig
+
+`func (o *JsonRunConfig) SetDiskConfig(v []JsonDiskConfig)`
+
+SetDiskConfig sets DiskConfig field to given value.
+
+### HasDiskConfig
+
+`func (o *JsonRunConfig) HasDiskConfig() bool`
+
+HasDiskConfig returns a boolean if a field has been set.
 
 ### GetArgs
 
