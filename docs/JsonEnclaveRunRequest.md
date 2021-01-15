@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
-**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
 **UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
 **WireguardPublicKey** | Pointer to **string** |  | [optional] 
 **EnvironmentUUID** | Pointer to **string** |  | [optional] 
+**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,31 +53,6 @@ SetPorts sets Ports field to given value.
 `func (o *JsonEnclaveRunRequest) HasPorts() bool`
 
 HasPorts returns a boolean if a field has been set.
-
-### GetEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
-
-GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
-
-### GetEnclaveExecutionTypeOk
-
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
-
-GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
-
-SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
-
-### HasEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
-
-HasEnclaveExecutionType returns a boolean if a field has been set.
 
 ### GetUsingDefaultRunConfig
 
@@ -153,6 +128,31 @@ SetEnvironmentUUID sets EnvironmentUUID field to given value.
 `func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
 
 HasEnvironmentUUID returns a boolean if a field has been set.
+
+### GetEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
+
+GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
+
+### GetEnclaveExecutionTypeOk
+
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
+
+GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
+
+SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
+
+### HasEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
+
+HasEnclaveExecutionType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ResourceVersion** | Pointer to **string** |  | [optional] 
 **Continue** | Pointer to **string** |  | [optional] 
 **SelfLink** | Pointer to **string** |  | [optional] 
-**ResourceVersion** | Pointer to **string** |  | [optional] 
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewJsonV1ListMetaWithDefaults instantiates a new JsonV1ListMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetResourceVersion
+
+`func (o *JsonV1ListMeta) GetResourceVersion() string`
+
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
+
+### GetResourceVersionOk
+
+`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
+
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceVersion
+
+`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
+
+SetResourceVersion sets ResourceVersion field to given value.
+
+### HasResourceVersion
+
+`func (o *JsonV1ListMeta) HasResourceVersion() bool`
+
+HasResourceVersion returns a boolean if a field has been set.
 
 ### GetContinue
 
@@ -77,31 +102,6 @@ SetSelfLink sets SelfLink field to given value.
 `func (o *JsonV1ListMeta) HasSelfLink() bool`
 
 HasSelfLink returns a boolean if a field has been set.
-
-### GetResourceVersion
-
-`func (o *JsonV1ListMeta) GetResourceVersion() string`
-
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
-
-### GetResourceVersionOk
-
-`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
-
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceVersion
-
-`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
-
-SetResourceVersion sets ResourceVersion field to given value.
-
-### HasResourceVersion
-
-`func (o *JsonV1ListMeta) HasResourceVersion() bool`
-
-HasResourceVersion returns a boolean if a field has been set.
 
 ### GetRemainingItemCount
 
