@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Operation** | Pointer to **string** |  | [optional] 
 **FieldsType** | Pointer to **string** |  | [optional] 
 **Time** | Pointer to **float32** |  | [optional] 
 **Manager** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
-**Operation** | Pointer to **string** |  | [optional] 
 **FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,6 +29,31 @@ will change when the set of required properties is changed
 NewJsonV1ManagedFieldsEntryWithDefaults instantiates a new JsonV1ManagedFieldsEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetOperation
+
+`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
+
+GetOperation returns the Operation field if non-nil, zero value otherwise.
+
+### GetOperationOk
+
+`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
+
+GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperation
+
+`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
+
+SetOperation sets Operation field to given value.
+
+### HasOperation
+
+`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
+
+HasOperation returns a boolean if a field has been set.
 
 ### GetFieldsType
 
@@ -105,56 +130,6 @@ SetManager sets Manager field to given value.
 
 HasManager returns a boolean if a field has been set.
 
-### GetApiVersion
-
-`func (o *JsonV1ManagedFieldsEntry) GetApiVersion() string`
-
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
-
-### GetApiVersionOk
-
-`func (o *JsonV1ManagedFieldsEntry) GetApiVersionOk() (*string, bool)`
-
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiVersion
-
-`func (o *JsonV1ManagedFieldsEntry) SetApiVersion(v string)`
-
-SetApiVersion sets ApiVersion field to given value.
-
-### HasApiVersion
-
-`func (o *JsonV1ManagedFieldsEntry) HasApiVersion() bool`
-
-HasApiVersion returns a boolean if a field has been set.
-
-### GetOperation
-
-`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
-
-GetOperation returns the Operation field if non-nil, zero value otherwise.
-
-### GetOperationOk
-
-`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
-
-GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOperation
-
-`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
-
-SetOperation sets Operation field to given value.
-
-### HasOperation
-
-`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
-
-HasOperation returns a boolean if a field has been set.
-
 ### GetFieldsV1
 
 `func (o *JsonV1ManagedFieldsEntry) GetFieldsV1() map[string]interface{}`
@@ -179,6 +154,31 @@ SetFieldsV1 sets FieldsV1 field to given value.
 `func (o *JsonV1ManagedFieldsEntry) HasFieldsV1() bool`
 
 HasFieldsV1 returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *JsonV1ManagedFieldsEntry) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *JsonV1ManagedFieldsEntry) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *JsonV1ManagedFieldsEntry) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *JsonV1ManagedFieldsEntry) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProtocolVersion** | Pointer to **string** |  | [optional] 
 **SwarmConnection** | Pointer to **string** |  | [optional] 
-**PublicKey** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
 **AgentVersion** | Pointer to **string** |  | [optional] 
+**ProtocolVersion** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**PublicKey** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewJsonIPFSSystemInfoWithDefaults instantiates a new JsonIPFSSystemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) GetProtocolVersion() string`
-
-GetProtocolVersion returns the ProtocolVersion field if non-nil, zero value otherwise.
-
-### GetProtocolVersionOk
-
-`func (o *JsonIPFSSystemInfo) GetProtocolVersionOk() (*string, bool)`
-
-GetProtocolVersionOk returns a tuple with the ProtocolVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) SetProtocolVersion(v string)`
-
-SetProtocolVersion sets ProtocolVersion field to given value.
-
-### HasProtocolVersion
-
-`func (o *JsonIPFSSystemInfo) HasProtocolVersion() bool`
-
-HasProtocolVersion returns a boolean if a field has been set.
 
 ### GetSwarmConnection
 
@@ -79,30 +54,55 @@ SetSwarmConnection sets SwarmConnection field to given value.
 
 HasSwarmConnection returns a boolean if a field has been set.
 
-### GetPublicKey
+### GetAgentVersion
 
-`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
+`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
 
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
+GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
 
-### GetPublicKeyOk
+### GetAgentVersionOk
 
-`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
+`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
 
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
+GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPublicKey
+### SetAgentVersion
 
-`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
+`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
 
-SetPublicKey sets PublicKey field to given value.
+SetAgentVersion sets AgentVersion field to given value.
 
-### HasPublicKey
+### HasAgentVersion
 
-`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
+`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
 
-HasPublicKey returns a boolean if a field has been set.
+HasAgentVersion returns a boolean if a field has been set.
+
+### GetProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) GetProtocolVersion() string`
+
+GetProtocolVersion returns the ProtocolVersion field if non-nil, zero value otherwise.
+
+### GetProtocolVersionOk
+
+`func (o *JsonIPFSSystemInfo) GetProtocolVersionOk() (*string, bool)`
+
+GetProtocolVersionOk returns a tuple with the ProtocolVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) SetProtocolVersion(v string)`
+
+SetProtocolVersion sets ProtocolVersion field to given value.
+
+### HasProtocolVersion
+
+`func (o *JsonIPFSSystemInfo) HasProtocolVersion() bool`
+
+HasProtocolVersion returns a boolean if a field has been set.
 
 ### GetId
 
@@ -129,30 +129,30 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetAgentVersion
+### GetPublicKey
 
-`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
+`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
 
-GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
+GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
 
-### GetAgentVersionOk
+### GetPublicKeyOk
 
-`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
+`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
 
-GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
+GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAgentVersion
+### SetPublicKey
 
-`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
+`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
 
-SetAgentVersion sets AgentVersion field to given value.
+SetPublicKey sets PublicKey field to given value.
 
-### HasAgentVersion
+### HasPublicKey
 
-`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
+`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
 
-HasAgentVersion returns a boolean if a field has been set.
+HasPublicKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

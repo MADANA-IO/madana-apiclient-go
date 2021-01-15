@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 **OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 **ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 **Alive** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonProcessWithDefaults instantiates a new JsonProcess object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetInputStream
-
-`func (o *JsonProcess) GetInputStream() map[string]interface{}`
-
-GetInputStream returns the InputStream field if non-nil, zero value otherwise.
-
-### GetInputStreamOk
-
-`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
-
-GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInputStream
-
-`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
-
-SetInputStream sets InputStream field to given value.
-
-### HasInputStream
-
-`func (o *JsonProcess) HasInputStream() bool`
-
-HasInputStream returns a boolean if a field has been set.
 
 ### GetOutputStream
 
@@ -102,6 +77,31 @@ SetErrorStream sets ErrorStream field to given value.
 `func (o *JsonProcess) HasErrorStream() bool`
 
 HasErrorStream returns a boolean if a field has been set.
+
+### GetInputStream
+
+`func (o *JsonProcess) GetInputStream() map[string]interface{}`
+
+GetInputStream returns the InputStream field if non-nil, zero value otherwise.
+
+### GetInputStreamOk
+
+`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
+
+GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputStream
+
+`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
+
+SetInputStream sets InputStream field to given value.
+
+### HasInputStream
+
+`func (o *JsonProcess) HasInputStream() bool`
+
+HasInputStream returns a boolean if a field has been set.
 
 ### GetAlive
 
