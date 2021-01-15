@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublicKey** | Pointer to **string** |  | [optional] 
 **ProtocolVersion** | Pointer to **string** |  | [optional] 
-**AgentVersion** | Pointer to **string** |  | [optional] 
 **SwarmConnection** | Pointer to **string** |  | [optional] 
+**PublicKey** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**AgentVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewJsonIPFSSystemInfoWithDefaults instantiates a new JsonIPFSSystemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublicKey
-
-`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
-
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
-
-### GetPublicKeyOk
-
-`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
-
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublicKey
-
-`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
-
-SetPublicKey sets PublicKey field to given value.
-
-### HasPublicKey
-
-`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
-
-HasPublicKey returns a boolean if a field has been set.
 
 ### GetProtocolVersion
 
@@ -79,31 +54,6 @@ SetProtocolVersion sets ProtocolVersion field to given value.
 
 HasProtocolVersion returns a boolean if a field has been set.
 
-### GetAgentVersion
-
-`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
-
-GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
-
-### GetAgentVersionOk
-
-`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
-
-GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAgentVersion
-
-`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
-
-SetAgentVersion sets AgentVersion field to given value.
-
-### HasAgentVersion
-
-`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
-
-HasAgentVersion returns a boolean if a field has been set.
-
 ### GetSwarmConnection
 
 `func (o *JsonIPFSSystemInfo) GetSwarmConnection() string`
@@ -129,6 +79,31 @@ SetSwarmConnection sets SwarmConnection field to given value.
 
 HasSwarmConnection returns a boolean if a field has been set.
 
+### GetPublicKey
+
+`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
+
+GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
+
+### GetPublicKeyOk
+
+`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
+
+GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicKey
+
+`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
+
+SetPublicKey sets PublicKey field to given value.
+
+### HasPublicKey
+
+`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
+
+HasPublicKey returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *JsonIPFSSystemInfo) GetId() string`
@@ -153,6 +128,31 @@ SetId sets Id field to given value.
 `func (o *JsonIPFSSystemInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetAgentVersion
+
+`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
+
+GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
+
+### GetAgentVersionOk
+
+`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
+
+GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAgentVersion
+
+`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
+
+SetAgentVersion sets AgentVersion field to given value.
+
+### HasAgentVersion
+
+`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
+
+HasAgentVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
