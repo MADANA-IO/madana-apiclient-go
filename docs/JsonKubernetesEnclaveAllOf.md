@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
+**EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
+**RemoteControlIP** | Pointer to **string** |  | [optional] 
+**EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 **AttestationPort** | Pointer to **int32** |  | [optional] 
 **DebugInfo** | Pointer to **string** |  | [optional] 
 **PodPhase** | Pointer to **string** |  | [optional] 
 **IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
 **WireguardPort** | Pointer to **int32** |  | [optional] 
-**EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**RemoteControlIP** | Pointer to **string** |  | [optional] 
+**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 
 ## Methods
 
@@ -33,30 +33,80 @@ NewJsonKubernetesEnclaveAllOfWithDefaults instantiates a new JsonKubernetesEncla
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEnclaveDeploymentEvents
+### GetEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEvents() JsonV1EventList`
 
-GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
+GetEnclavePodEvents returns the EnclavePodEvents field if non-nil, zero value otherwise.
 
-### GetEnclaveDeploymentEventsOk
+### GetEnclavePodEventsOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEventsOk() (*JsonV1EventList, bool)`
 
-GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
+GetEnclavePodEventsOk returns a tuple with the EnclavePodEvents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclaveDeploymentEvents
+### SetEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclavePodEvents(v JsonV1EventList)`
 
-SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
+SetEnclavePodEvents sets EnclavePodEvents field to given value.
 
-### HasEnclaveDeploymentEvents
+### HasEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclavePodEvents() bool`
 
-HasEnclaveDeploymentEvents returns a boolean if a field has been set.
+HasEnclavePodEvents returns a boolean if a field has been set.
+
+### GetRemoteControlIP
+
+`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIP() string`
+
+GetRemoteControlIP returns the RemoteControlIP field if non-nil, zero value otherwise.
+
+### GetRemoteControlIPOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIPOk() (*string, bool)`
+
+GetRemoteControlIPOk returns a tuple with the RemoteControlIP field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemoteControlIP
+
+`func (o *JsonKubernetesEnclaveAllOf) SetRemoteControlIP(v string)`
+
+SetRemoteControlIP sets RemoteControlIP field to given value.
+
+### HasRemoteControlIP
+
+`func (o *JsonKubernetesEnclaveAllOf) HasRemoteControlIP() bool`
+
+HasRemoteControlIP returns a boolean if a field has been set.
+
+### GetEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveReplicaSetEvents() JsonV1EventList`
+
+GetEnclaveReplicaSetEvents returns the EnclaveReplicaSetEvents field if non-nil, zero value otherwise.
+
+### GetEnclaveReplicaSetEventsOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveReplicaSetEventsOk() (*JsonV1EventList, bool)`
+
+GetEnclaveReplicaSetEventsOk returns a tuple with the EnclaveReplicaSetEvents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveReplicaSetEvents(v JsonV1EventList)`
+
+SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
+
+### HasEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveReplicaSetEvents() bool`
+
+HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
 
 ### GetAttestationPort
 
@@ -183,80 +233,30 @@ SetWireguardPort sets WireguardPort field to given value.
 
 HasWireguardPort returns a boolean if a field has been set.
 
-### GetEnclavePodEvents
+### GetEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEvents() JsonV1EventList`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
 
-GetEnclavePodEvents returns the EnclavePodEvents field if non-nil, zero value otherwise.
+GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
 
-### GetEnclavePodEventsOk
+### GetEnclaveDeploymentEventsOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEventsOk() (*JsonV1EventList, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
 
-GetEnclavePodEventsOk returns a tuple with the EnclavePodEvents field if it's non-nil, zero value otherwise
+GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclavePodEvents
+### SetEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclavePodEvents(v JsonV1EventList)`
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
 
-SetEnclavePodEvents sets EnclavePodEvents field to given value.
+SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
 
-### HasEnclavePodEvents
+### HasEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclavePodEvents() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
 
-HasEnclavePodEvents returns a boolean if a field has been set.
-
-### GetEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveReplicaSetEvents() JsonV1EventList`
-
-GetEnclaveReplicaSetEvents returns the EnclaveReplicaSetEvents field if non-nil, zero value otherwise.
-
-### GetEnclaveReplicaSetEventsOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveReplicaSetEventsOk() (*JsonV1EventList, bool)`
-
-GetEnclaveReplicaSetEventsOk returns a tuple with the EnclaveReplicaSetEvents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveReplicaSetEvents(v JsonV1EventList)`
-
-SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
-
-### HasEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveReplicaSetEvents() bool`
-
-HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
-
-### GetRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIP() string`
-
-GetRemoteControlIP returns the RemoteControlIP field if non-nil, zero value otherwise.
-
-### GetRemoteControlIPOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetRemoteControlIPOk() (*string, bool)`
-
-GetRemoteControlIPOk returns a tuple with the RemoteControlIP field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) SetRemoteControlIP(v string)`
-
-SetRemoteControlIP sets RemoteControlIP field to given value.
-
-### HasRemoteControlIP
-
-`func (o *JsonKubernetesEnclaveAllOf) HasRemoteControlIP() bool`
-
-HasRemoteControlIP returns a boolean if a field has been set.
+HasEnclaveDeploymentEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

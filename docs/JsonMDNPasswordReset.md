@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Password** | Pointer to **string** |  | [optional] 
-**Token** | Pointer to **string** |  | [optional] 
 **Mail** | Pointer to **string** |  | [optional] 
+**Token** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,31 +52,6 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
-### GetToken
-
-`func (o *JsonMDNPasswordReset) GetToken() string`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *JsonMDNPasswordReset) SetToken(v string)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *JsonMDNPasswordReset) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
-
 ### GetMail
 
 `func (o *JsonMDNPasswordReset) GetMail() string`
@@ -101,6 +76,31 @@ SetMail sets Mail field to given value.
 `func (o *JsonMDNPasswordReset) HasMail() bool`
 
 HasMail returns a boolean if a field has been set.
+
+### GetToken
+
+`func (o *JsonMDNPasswordReset) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *JsonMDNPasswordReset) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *JsonMDNPasswordReset) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

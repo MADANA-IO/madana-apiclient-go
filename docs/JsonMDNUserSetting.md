@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonMDNUserSettingWithDefaults instantiates a new JsonMDNUserSetting object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *JsonMDNUserSetting) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *JsonMDNUserSetting) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *JsonMDNUserSetting) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *JsonMDNUserSetting) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetId
 
@@ -77,6 +52,31 @@ SetId sets Id field to given value.
 `func (o *JsonMDNUserSetting) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *JsonMDNUserSetting) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *JsonMDNUserSetting) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *JsonMDNUserSetting) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *JsonMDNUserSetting) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
