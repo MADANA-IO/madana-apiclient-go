@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ident** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**Ident** | Pointer to **string** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewJsonMDNSocialUserObjectWithDefaults instantiates a new JsonMDNSocialUserObject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIdent
-
-`func (o *JsonMDNSocialUserObject) GetIdent() string`
-
-GetIdent returns the Ident field if non-nil, zero value otherwise.
-
-### GetIdentOk
-
-`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
-
-GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdent
-
-`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
-
-SetIdent sets Ident field to given value.
-
-### HasIdent
-
-`func (o *JsonMDNSocialUserObject) HasIdent() bool`
-
-HasIdent returns a boolean if a field has been set.
 
 ### GetImage
 
@@ -76,6 +51,31 @@ SetImage sets Image field to given value.
 `func (o *JsonMDNSocialUserObject) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
+
+### GetIdent
+
+`func (o *JsonMDNSocialUserObject) GetIdent() string`
+
+GetIdent returns the Ident field if non-nil, zero value otherwise.
+
+### GetIdentOk
+
+`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
+
+GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdent
+
+`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
+
+SetIdent sets Ident field to given value.
+
+### HasIdent
+
+`func (o *JsonMDNSocialUserObject) HasIdent() bool`
+
+HasIdent returns a boolean if a field has been set.
 
 ### GetPlatform
 
