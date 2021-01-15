@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SelfLink** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
-**Continue** | Pointer to **string** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,30 +28,30 @@ NewJsonV1ListMetaWithDefaults instantiates a new JsonV1ListMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSelfLink
+### GetContinue
 
-`func (o *JsonV1ListMeta) GetSelfLink() string`
+`func (o *JsonV1ListMeta) GetContinue() string`
 
-GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
+GetContinue returns the Continue field if non-nil, zero value otherwise.
 
-### GetSelfLinkOk
+### GetContinueOk
 
-`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
 
-GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
+GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSelfLink
+### SetContinue
 
-`func (o *JsonV1ListMeta) SetSelfLink(v string)`
+`func (o *JsonV1ListMeta) SetContinue(v string)`
 
-SetSelfLink sets SelfLink field to given value.
+SetContinue sets Continue field to given value.
 
-### HasSelfLink
+### HasContinue
 
-`func (o *JsonV1ListMeta) HasSelfLink() bool`
+`func (o *JsonV1ListMeta) HasContinue() bool`
 
-HasSelfLink returns a boolean if a field has been set.
+HasContinue returns a boolean if a field has been set.
 
 ### GetRemainingItemCount
 
@@ -103,30 +103,30 @@ SetResourceVersion sets ResourceVersion field to given value.
 
 HasResourceVersion returns a boolean if a field has been set.
 
-### GetContinue
+### GetSelfLink
 
-`func (o *JsonV1ListMeta) GetContinue() string`
+`func (o *JsonV1ListMeta) GetSelfLink() string`
 
-GetContinue returns the Continue field if non-nil, zero value otherwise.
+GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
 
-### GetContinueOk
+### GetSelfLinkOk
 
-`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
 
-GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContinue
+### SetSelfLink
 
-`func (o *JsonV1ListMeta) SetContinue(v string)`
+`func (o *JsonV1ListMeta) SetSelfLink(v string)`
 
-SetContinue sets Continue field to given value.
+SetSelfLink sets SelfLink field to given value.
 
-### HasContinue
+### HasSelfLink
 
-`func (o *JsonV1ListMeta) HasContinue() bool`
+`func (o *JsonV1ListMeta) HasSelfLink() bool`
 
-HasContinue returns a boolean if a field has been set.
+HasSelfLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

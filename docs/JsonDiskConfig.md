@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
-**Readonly** | Pointer to **bool** |  | [optional] 
 **Disk** | Pointer to **string** |  | [optional] 
+**Readonly** | Pointer to **bool** |  | [optional] 
 **Roothash** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetRoothashOffset sets RoothashOffset field to given value.
 
 HasRoothashOffset returns a boolean if a field has been set.
 
-### GetReadonly
-
-`func (o *JsonDiskConfig) GetReadonly() bool`
-
-GetReadonly returns the Readonly field if non-nil, zero value otherwise.
-
-### GetReadonlyOk
-
-`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
-
-GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadonly
-
-`func (o *JsonDiskConfig) SetReadonly(v bool)`
-
-SetReadonly sets Readonly field to given value.
-
-### HasReadonly
-
-`func (o *JsonDiskConfig) HasReadonly() bool`
-
-HasReadonly returns a boolean if a field has been set.
-
 ### GetDisk
 
 `func (o *JsonDiskConfig) GetDisk() string`
@@ -102,6 +77,31 @@ SetDisk sets Disk field to given value.
 `func (o *JsonDiskConfig) HasDisk() bool`
 
 HasDisk returns a boolean if a field has been set.
+
+### GetReadonly
+
+`func (o *JsonDiskConfig) GetReadonly() bool`
+
+GetReadonly returns the Readonly field if non-nil, zero value otherwise.
+
+### GetReadonlyOk
+
+`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
+
+GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadonly
+
+`func (o *JsonDiskConfig) SetReadonly(v bool)`
+
+SetReadonly sets Readonly field to given value.
+
+### HasReadonly
+
+`func (o *JsonDiskConfig) HasReadonly() bool`
+
+HasReadonly returns a boolean if a field has been set.
 
 ### GetRoothash
 
