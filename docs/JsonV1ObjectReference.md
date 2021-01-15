@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Namespace** | Pointer to **string** |  | [optional] 
-**Kind** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **FieldPath** | Pointer to **string** |  | [optional] 
 **Uid** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -31,30 +31,30 @@ NewJsonV1ObjectReferenceWithDefaults instantiates a new JsonV1ObjectReference ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetNamespace
+### GetResourceVersion
 
-`func (o *JsonV1ObjectReference) GetNamespace() string`
+`func (o *JsonV1ObjectReference) GetResourceVersion() string`
 
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
 
-### GetNamespaceOk
+### GetResourceVersionOk
 
-`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetResourceVersionOk() (*string, bool)`
 
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNamespace
+### SetResourceVersion
 
-`func (o *JsonV1ObjectReference) SetNamespace(v string)`
+`func (o *JsonV1ObjectReference) SetResourceVersion(v string)`
 
-SetNamespace sets Namespace field to given value.
+SetResourceVersion sets ResourceVersion field to given value.
 
-### HasNamespace
+### HasResourceVersion
 
-`func (o *JsonV1ObjectReference) HasNamespace() bool`
+`func (o *JsonV1ObjectReference) HasResourceVersion() bool`
 
-HasNamespace returns a boolean if a field has been set.
+HasResourceVersion returns a boolean if a field has been set.
 
 ### GetKind
 
@@ -81,55 +81,55 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetApiVersion
+### GetName
 
-`func (o *JsonV1ObjectReference) GetApiVersion() string`
+`func (o *JsonV1ObjectReference) GetName() string`
 
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetApiVersionOk
+### GetNameOk
 
-`func (o *JsonV1ObjectReference) GetApiVersionOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetNameOk() (*string, bool)`
 
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiVersion
+### SetName
 
-`func (o *JsonV1ObjectReference) SetApiVersion(v string)`
+`func (o *JsonV1ObjectReference) SetName(v string)`
 
-SetApiVersion sets ApiVersion field to given value.
+SetName sets Name field to given value.
 
-### HasApiVersion
+### HasName
 
-`func (o *JsonV1ObjectReference) HasApiVersion() bool`
+`func (o *JsonV1ObjectReference) HasName() bool`
 
-HasApiVersion returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
-### GetResourceVersion
+### GetNamespace
 
-`func (o *JsonV1ObjectReference) GetResourceVersion() string`
+`func (o *JsonV1ObjectReference) GetNamespace() string`
 
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
 
-### GetResourceVersionOk
+### GetNamespaceOk
 
-`func (o *JsonV1ObjectReference) GetResourceVersionOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
 
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceVersion
+### SetNamespace
 
-`func (o *JsonV1ObjectReference) SetResourceVersion(v string)`
+`func (o *JsonV1ObjectReference) SetNamespace(v string)`
 
-SetResourceVersion sets ResourceVersion field to given value.
+SetNamespace sets Namespace field to given value.
 
-### HasResourceVersion
+### HasNamespace
 
-`func (o *JsonV1ObjectReference) HasResourceVersion() bool`
+`func (o *JsonV1ObjectReference) HasNamespace() bool`
 
-HasResourceVersion returns a boolean if a field has been set.
+HasNamespace returns a boolean if a field has been set.
 
 ### GetFieldPath
 
@@ -181,30 +181,30 @@ SetUid sets Uid field to given value.
 
 HasUid returns a boolean if a field has been set.
 
-### GetName
+### GetApiVersion
 
-`func (o *JsonV1ObjectReference) GetName() string`
+`func (o *JsonV1ObjectReference) GetApiVersion() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetApiVersionOk
 
-`func (o *JsonV1ObjectReference) GetNameOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetApiVersionOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetApiVersion
 
-`func (o *JsonV1ObjectReference) SetName(v string)`
+`func (o *JsonV1ObjectReference) SetApiVersion(v string)`
 
-SetName sets Name field to given value.
+SetApiVersion sets ApiVersion field to given value.
 
-### HasName
+### HasApiVersion
 
-`func (o *JsonV1ObjectReference) HasName() bool`
+`func (o *JsonV1ObjectReference) HasApiVersion() bool`
 
-HasName returns a boolean if a field has been set.
+HasApiVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
