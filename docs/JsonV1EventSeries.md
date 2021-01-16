@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LastObservedTime** | Pointer to **float32** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
 **Count** | Pointer to **float32** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
+**LastObservedTime** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonV1EventSeriesWithDefaults instantiates a new JsonV1EventSeries object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLastObservedTime
+### GetCount
 
-`func (o *JsonV1EventSeries) GetLastObservedTime() float32`
+`func (o *JsonV1EventSeries) GetCount() float32`
 
-GetLastObservedTime returns the LastObservedTime field if non-nil, zero value otherwise.
+GetCount returns the Count field if non-nil, zero value otherwise.
 
-### GetLastObservedTimeOk
+### GetCountOk
 
-`func (o *JsonV1EventSeries) GetLastObservedTimeOk() (*float32, bool)`
+`func (o *JsonV1EventSeries) GetCountOk() (*float32, bool)`
 
-GetLastObservedTimeOk returns a tuple with the LastObservedTime field if it's non-nil, zero value otherwise
+GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastObservedTime
+### SetCount
 
-`func (o *JsonV1EventSeries) SetLastObservedTime(v float32)`
+`func (o *JsonV1EventSeries) SetCount(v float32)`
 
-SetLastObservedTime sets LastObservedTime field to given value.
+SetCount sets Count field to given value.
 
-### HasLastObservedTime
+### HasCount
 
-`func (o *JsonV1EventSeries) HasLastObservedTime() bool`
+`func (o *JsonV1EventSeries) HasCount() bool`
 
-HasLastObservedTime returns a boolean if a field has been set.
+HasCount returns a boolean if a field has been set.
 
 ### GetState
 
@@ -77,30 +77,30 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
-### GetCount
+### GetLastObservedTime
 
-`func (o *JsonV1EventSeries) GetCount() float32`
+`func (o *JsonV1EventSeries) GetLastObservedTime() float32`
 
-GetCount returns the Count field if non-nil, zero value otherwise.
+GetLastObservedTime returns the LastObservedTime field if non-nil, zero value otherwise.
 
-### GetCountOk
+### GetLastObservedTimeOk
 
-`func (o *JsonV1EventSeries) GetCountOk() (*float32, bool)`
+`func (o *JsonV1EventSeries) GetLastObservedTimeOk() (*float32, bool)`
 
-GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
+GetLastObservedTimeOk returns a tuple with the LastObservedTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCount
+### SetLastObservedTime
 
-`func (o *JsonV1EventSeries) SetCount(v float32)`
+`func (o *JsonV1EventSeries) SetLastObservedTime(v float32)`
 
-SetCount sets Count field to given value.
+SetLastObservedTime sets LastObservedTime field to given value.
 
-### HasCount
+### HasLastObservedTime
 
-`func (o *JsonV1EventSeries) HasCount() bool`
+`func (o *JsonV1EventSeries) HasLastObservedTime() bool`
 
-HasCount returns a boolean if a field has been set.
+HasLastObservedTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ident** | Pointer to **string** |  | [optional] 
-**Image** | Pointer to **string** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
+**Image** | Pointer to **string** |  | [optional] 
+**Ident** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonMDNSocialUserObjectWithDefaults instantiates a new JsonMDNSocialUserObjec
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIdent
+### GetPlatform
 
-`func (o *JsonMDNSocialUserObject) GetIdent() string`
+`func (o *JsonMDNSocialUserObject) GetPlatform() string`
 
-GetIdent returns the Ident field if non-nil, zero value otherwise.
+GetPlatform returns the Platform field if non-nil, zero value otherwise.
 
-### GetIdentOk
+### GetPlatformOk
 
-`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
+`func (o *JsonMDNSocialUserObject) GetPlatformOk() (*string, bool)`
 
-GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
+GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIdent
+### SetPlatform
 
-`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
+`func (o *JsonMDNSocialUserObject) SetPlatform(v string)`
 
-SetIdent sets Ident field to given value.
+SetPlatform sets Platform field to given value.
 
-### HasIdent
+### HasPlatform
 
-`func (o *JsonMDNSocialUserObject) HasIdent() bool`
+`func (o *JsonMDNSocialUserObject) HasPlatform() bool`
 
-HasIdent returns a boolean if a field has been set.
+HasPlatform returns a boolean if a field has been set.
 
 ### GetImage
 
@@ -77,30 +77,30 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
-### GetPlatform
+### GetIdent
 
-`func (o *JsonMDNSocialUserObject) GetPlatform() string`
+`func (o *JsonMDNSocialUserObject) GetIdent() string`
 
-GetPlatform returns the Platform field if non-nil, zero value otherwise.
+GetIdent returns the Ident field if non-nil, zero value otherwise.
 
-### GetPlatformOk
+### GetIdentOk
 
-`func (o *JsonMDNSocialUserObject) GetPlatformOk() (*string, bool)`
+`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
 
-GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
+GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPlatform
+### SetIdent
 
-`func (o *JsonMDNSocialUserObject) SetPlatform(v string)`
+`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
 
-SetPlatform sets Platform field to given value.
+SetIdent sets Ident field to given value.
 
-### HasPlatform
+### HasIdent
 
-`func (o *JsonMDNSocialUserObject) HasPlatform() bool`
+`func (o *JsonMDNSocialUserObject) HasIdent() bool`
 
-HasPlatform returns a boolean if a field has been set.
+HasIdent returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

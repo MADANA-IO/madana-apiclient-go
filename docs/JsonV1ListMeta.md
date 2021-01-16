@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceVersion** | Pointer to **string** |  | [optional] 
-**Continue** | Pointer to **string** |  | [optional] 
 **SelfLink** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetResourceVersion sets ResourceVersion field to given value.
 
 HasResourceVersion returns a boolean if a field has been set.
 
-### GetContinue
-
-`func (o *JsonV1ListMeta) GetContinue() string`
-
-GetContinue returns the Continue field if non-nil, zero value otherwise.
-
-### GetContinueOk
-
-`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
-
-GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContinue
-
-`func (o *JsonV1ListMeta) SetContinue(v string)`
-
-SetContinue sets Continue field to given value.
-
-### HasContinue
-
-`func (o *JsonV1ListMeta) HasContinue() bool`
-
-HasContinue returns a boolean if a field has been set.
-
 ### GetSelfLink
 
 `func (o *JsonV1ListMeta) GetSelfLink() string`
@@ -102,6 +77,31 @@ SetSelfLink sets SelfLink field to given value.
 `func (o *JsonV1ListMeta) HasSelfLink() bool`
 
 HasSelfLink returns a boolean if a field has been set.
+
+### GetContinue
+
+`func (o *JsonV1ListMeta) GetContinue() string`
+
+GetContinue returns the Continue field if non-nil, zero value otherwise.
+
+### GetContinueOk
+
+`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+
+GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContinue
+
+`func (o *JsonV1ListMeta) SetContinue(v string)`
+
+SetContinue sets Continue field to given value.
+
+### HasContinue
+
+`func (o *JsonV1ListMeta) HasContinue() bool`
+
+HasContinue returns a boolean if a field has been set.
 
 ### GetRemainingItemCount
 
