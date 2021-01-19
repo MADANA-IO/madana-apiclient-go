@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WireguardPort** | Pointer to **int32** |  | [optional] 
 **EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
-**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**RemoteControlIP** | Pointer to **string** |  | [optional] 
-**EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**AttestationPort** | Pointer to **int32** |  | [optional] 
 **PodPhase** | Pointer to **string** |  | [optional] 
+**RemoteControlIP** | Pointer to **string** |  | [optional] 
+**EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
+**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
 **DebugInfo** | Pointer to **string** |  | [optional] 
+**AttestationPort** | Pointer to **int32** |  | [optional] 
+**EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 
 ## Methods
 
@@ -83,55 +83,30 @@ SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
 
 HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
 
-### GetIsUsingInitContainer
+### GetPodPhase
 
-`func (o *JsonKubernetesEnclaveAllOf) GetIsUsingInitContainer() bool`
+`func (o *JsonKubernetesEnclaveAllOf) GetPodPhase() string`
 
-GetIsUsingInitContainer returns the IsUsingInitContainer field if non-nil, zero value otherwise.
+GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
 
-### GetIsUsingInitContainerOk
+### GetPodPhaseOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetIsUsingInitContainerOk() (*bool, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetPodPhaseOk() (*string, bool)`
 
-GetIsUsingInitContainerOk returns a tuple with the IsUsingInitContainer field if it's non-nil, zero value otherwise
+GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsUsingInitContainer
+### SetPodPhase
 
-`func (o *JsonKubernetesEnclaveAllOf) SetIsUsingInitContainer(v bool)`
+`func (o *JsonKubernetesEnclaveAllOf) SetPodPhase(v string)`
 
-SetIsUsingInitContainer sets IsUsingInitContainer field to given value.
+SetPodPhase sets PodPhase field to given value.
 
-### HasIsUsingInitContainer
+### HasPodPhase
 
-`func (o *JsonKubernetesEnclaveAllOf) HasIsUsingInitContainer() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasPodPhase() bool`
 
-HasIsUsingInitContainer returns a boolean if a field has been set.
-
-### GetEnclaveDeploymentEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
-
-GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
-
-### GetEnclaveDeploymentEventsOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
-
-GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveDeploymentEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
-
-SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
-
-### HasEnclaveDeploymentEvents
-
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
-
-HasEnclaveDeploymentEvents returns a boolean if a field has been set.
+HasPodPhase returns a boolean if a field has been set.
 
 ### GetRemoteControlIP
 
@@ -158,30 +133,80 @@ SetRemoteControlIP sets RemoteControlIP field to given value.
 
 HasRemoteControlIP returns a boolean if a field has been set.
 
-### GetEnclavePodEvents
+### GetEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEvents() JsonV1EventList`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEvents() JsonV1EventList`
 
-GetEnclavePodEvents returns the EnclavePodEvents field if non-nil, zero value otherwise.
+GetEnclaveDeploymentEvents returns the EnclaveDeploymentEvents field if non-nil, zero value otherwise.
 
-### GetEnclavePodEventsOk
+### GetEnclaveDeploymentEventsOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEventsOk() (*JsonV1EventList, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclaveDeploymentEventsOk() (*JsonV1EventList, bool)`
 
-GetEnclavePodEventsOk returns a tuple with the EnclavePodEvents field if it's non-nil, zero value otherwise
+GetEnclaveDeploymentEventsOk returns a tuple with the EnclaveDeploymentEvents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclavePodEvents
+### SetEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) SetEnclavePodEvents(v JsonV1EventList)`
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclaveDeploymentEvents(v JsonV1EventList)`
 
-SetEnclavePodEvents sets EnclavePodEvents field to given value.
+SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
 
-### HasEnclavePodEvents
+### HasEnclaveDeploymentEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) HasEnclavePodEvents() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclaveDeploymentEvents() bool`
 
-HasEnclavePodEvents returns a boolean if a field has been set.
+HasEnclaveDeploymentEvents returns a boolean if a field has been set.
+
+### GetIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclaveAllOf) GetIsUsingInitContainer() bool`
+
+GetIsUsingInitContainer returns the IsUsingInitContainer field if non-nil, zero value otherwise.
+
+### GetIsUsingInitContainerOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetIsUsingInitContainerOk() (*bool, bool)`
+
+GetIsUsingInitContainerOk returns a tuple with the IsUsingInitContainer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclaveAllOf) SetIsUsingInitContainer(v bool)`
+
+SetIsUsingInitContainer sets IsUsingInitContainer field to given value.
+
+### HasIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclaveAllOf) HasIsUsingInitContainer() bool`
+
+HasIsUsingInitContainer returns a boolean if a field has been set.
+
+### GetDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfo() string`
+
+GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
+
+### GetDebugInfoOk
+
+`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfoOk() (*string, bool)`
+
+GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) SetDebugInfo(v string)`
+
+SetDebugInfo sets DebugInfo field to given value.
+
+### HasDebugInfo
+
+`func (o *JsonKubernetesEnclaveAllOf) HasDebugInfo() bool`
+
+HasDebugInfo returns a boolean if a field has been set.
 
 ### GetAttestationPort
 
@@ -208,55 +233,30 @@ SetAttestationPort sets AttestationPort field to given value.
 
 HasAttestationPort returns a boolean if a field has been set.
 
-### GetPodPhase
+### GetEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) GetPodPhase() string`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEvents() JsonV1EventList`
 
-GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
+GetEnclavePodEvents returns the EnclavePodEvents field if non-nil, zero value otherwise.
 
-### GetPodPhaseOk
+### GetEnclavePodEventsOk
 
-`func (o *JsonKubernetesEnclaveAllOf) GetPodPhaseOk() (*string, bool)`
+`func (o *JsonKubernetesEnclaveAllOf) GetEnclavePodEventsOk() (*JsonV1EventList, bool)`
 
-GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
+GetEnclavePodEventsOk returns a tuple with the EnclavePodEvents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPodPhase
+### SetEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) SetPodPhase(v string)`
+`func (o *JsonKubernetesEnclaveAllOf) SetEnclavePodEvents(v JsonV1EventList)`
 
-SetPodPhase sets PodPhase field to given value.
+SetEnclavePodEvents sets EnclavePodEvents field to given value.
 
-### HasPodPhase
+### HasEnclavePodEvents
 
-`func (o *JsonKubernetesEnclaveAllOf) HasPodPhase() bool`
+`func (o *JsonKubernetesEnclaveAllOf) HasEnclavePodEvents() bool`
 
-HasPodPhase returns a boolean if a field has been set.
-
-### GetDebugInfo
-
-`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfo() string`
-
-GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
-
-### GetDebugInfoOk
-
-`func (o *JsonKubernetesEnclaveAllOf) GetDebugInfoOk() (*string, bool)`
-
-GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDebugInfo
-
-`func (o *JsonKubernetesEnclaveAllOf) SetDebugInfo(v string)`
-
-SetDebugInfo sets DebugInfo field to given value.
-
-### HasDebugInfo
-
-`func (o *JsonKubernetesEnclaveAllOf) HasDebugInfo() bool`
-
-HasDebugInfo returns a boolean if a field has been set.
+HasEnclavePodEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

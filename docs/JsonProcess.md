@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alive** | Pointer to **bool** |  | [optional] 
-**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
-**OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 **ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**Alive** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -28,55 +28,30 @@ NewJsonProcessWithDefaults instantiates a new JsonProcess object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAlive
+### GetErrorStream
 
-`func (o *JsonProcess) GetAlive() bool`
+`func (o *JsonProcess) GetErrorStream() map[string]interface{}`
 
-GetAlive returns the Alive field if non-nil, zero value otherwise.
+GetErrorStream returns the ErrorStream field if non-nil, zero value otherwise.
 
-### GetAliveOk
+### GetErrorStreamOk
 
-`func (o *JsonProcess) GetAliveOk() (*bool, bool)`
+`func (o *JsonProcess) GetErrorStreamOk() (*map[string]interface{}, bool)`
 
-GetAliveOk returns a tuple with the Alive field if it's non-nil, zero value otherwise
+GetErrorStreamOk returns a tuple with the ErrorStream field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAlive
+### SetErrorStream
 
-`func (o *JsonProcess) SetAlive(v bool)`
+`func (o *JsonProcess) SetErrorStream(v map[string]interface{})`
 
-SetAlive sets Alive field to given value.
+SetErrorStream sets ErrorStream field to given value.
 
-### HasAlive
+### HasErrorStream
 
-`func (o *JsonProcess) HasAlive() bool`
+`func (o *JsonProcess) HasErrorStream() bool`
 
-HasAlive returns a boolean if a field has been set.
-
-### GetInputStream
-
-`func (o *JsonProcess) GetInputStream() map[string]interface{}`
-
-GetInputStream returns the InputStream field if non-nil, zero value otherwise.
-
-### GetInputStreamOk
-
-`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
-
-GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInputStream
-
-`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
-
-SetInputStream sets InputStream field to given value.
-
-### HasInputStream
-
-`func (o *JsonProcess) HasInputStream() bool`
-
-HasInputStream returns a boolean if a field has been set.
+HasErrorStream returns a boolean if a field has been set.
 
 ### GetOutputStream
 
@@ -103,30 +78,55 @@ SetOutputStream sets OutputStream field to given value.
 
 HasOutputStream returns a boolean if a field has been set.
 
-### GetErrorStream
+### GetInputStream
 
-`func (o *JsonProcess) GetErrorStream() map[string]interface{}`
+`func (o *JsonProcess) GetInputStream() map[string]interface{}`
 
-GetErrorStream returns the ErrorStream field if non-nil, zero value otherwise.
+GetInputStream returns the InputStream field if non-nil, zero value otherwise.
 
-### GetErrorStreamOk
+### GetInputStreamOk
 
-`func (o *JsonProcess) GetErrorStreamOk() (*map[string]interface{}, bool)`
+`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
 
-GetErrorStreamOk returns a tuple with the ErrorStream field if it's non-nil, zero value otherwise
+GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetErrorStream
+### SetInputStream
 
-`func (o *JsonProcess) SetErrorStream(v map[string]interface{})`
+`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
 
-SetErrorStream sets ErrorStream field to given value.
+SetInputStream sets InputStream field to given value.
 
-### HasErrorStream
+### HasInputStream
 
-`func (o *JsonProcess) HasErrorStream() bool`
+`func (o *JsonProcess) HasInputStream() bool`
 
-HasErrorStream returns a boolean if a field has been set.
+HasInputStream returns a boolean if a field has been set.
+
+### GetAlive
+
+`func (o *JsonProcess) GetAlive() bool`
+
+GetAlive returns the Alive field if non-nil, zero value otherwise.
+
+### GetAliveOk
+
+`func (o *JsonProcess) GetAliveOk() (*bool, bool)`
+
+GetAliveOk returns a tuple with the Alive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlive
+
+`func (o *JsonProcess) SetAlive(v bool)`
+
+SetAlive sets Alive field to given value.
+
+### HasAlive
+
+`func (o *JsonProcess) HasAlive() bool`
+
+HasAlive returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

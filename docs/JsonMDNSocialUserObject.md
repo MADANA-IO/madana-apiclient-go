@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ident** | Pointer to **string** |  | [optional] 
-**Platform** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**Platform** | Pointer to **string** |  | [optional] 
+**Ident** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonMDNSocialUserObjectWithDefaults instantiates a new JsonMDNSocialUserObjec
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIdent
+### GetImage
 
-`func (o *JsonMDNSocialUserObject) GetIdent() string`
+`func (o *JsonMDNSocialUserObject) GetImage() string`
 
-GetIdent returns the Ident field if non-nil, zero value otherwise.
+GetImage returns the Image field if non-nil, zero value otherwise.
 
-### GetIdentOk
+### GetImageOk
 
-`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
+`func (o *JsonMDNSocialUserObject) GetImageOk() (*string, bool)`
 
-GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIdent
+### SetImage
 
-`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
+`func (o *JsonMDNSocialUserObject) SetImage(v string)`
 
-SetIdent sets Ident field to given value.
+SetImage sets Image field to given value.
 
-### HasIdent
+### HasImage
 
-`func (o *JsonMDNSocialUserObject) HasIdent() bool`
+`func (o *JsonMDNSocialUserObject) HasImage() bool`
 
-HasIdent returns a boolean if a field has been set.
+HasImage returns a boolean if a field has been set.
 
 ### GetPlatform
 
@@ -77,30 +77,30 @@ SetPlatform sets Platform field to given value.
 
 HasPlatform returns a boolean if a field has been set.
 
-### GetImage
+### GetIdent
 
-`func (o *JsonMDNSocialUserObject) GetImage() string`
+`func (o *JsonMDNSocialUserObject) GetIdent() string`
 
-GetImage returns the Image field if non-nil, zero value otherwise.
+GetIdent returns the Ident field if non-nil, zero value otherwise.
 
-### GetImageOk
+### GetIdentOk
 
-`func (o *JsonMDNSocialUserObject) GetImageOk() (*string, bool)`
+`func (o *JsonMDNSocialUserObject) GetIdentOk() (*string, bool)`
 
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
+GetIdentOk returns a tuple with the Ident field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetImage
+### SetIdent
 
-`func (o *JsonMDNSocialUserObject) SetImage(v string)`
+`func (o *JsonMDNSocialUserObject) SetIdent(v string)`
 
-SetImage sets Image field to given value.
+SetIdent sets Ident field to given value.
 
-### HasImage
+### HasIdent
 
-`func (o *JsonMDNSocialUserObject) HasImage() bool`
+`func (o *JsonMDNSocialUserObject) HasIdent() bool`
 
-HasImage returns a boolean if a field has been set.
+HasIdent returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

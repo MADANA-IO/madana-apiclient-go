@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Created** | Pointer to **string** |  | [optional] 
-**LastActive** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**Created** | Pointer to **string** |  | [optional] 
 **UserName** | Pointer to **string** |  | [optional] 
+**LastActive** | Pointer to **string** |  | [optional] 
 **Activated** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,56 +28,6 @@ will change when the set of required properties is changed
 NewJsonMDNAUserObjectWithDefaults instantiates a new JsonMDNAUserObject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCreated
-
-`func (o *JsonMDNAUserObject) GetCreated() string`
-
-GetCreated returns the Created field if non-nil, zero value otherwise.
-
-### GetCreatedOk
-
-`func (o *JsonMDNAUserObject) GetCreatedOk() (*string, bool)`
-
-GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreated
-
-`func (o *JsonMDNAUserObject) SetCreated(v string)`
-
-SetCreated sets Created field to given value.
-
-### HasCreated
-
-`func (o *JsonMDNAUserObject) HasCreated() bool`
-
-HasCreated returns a boolean if a field has been set.
-
-### GetLastActive
-
-`func (o *JsonMDNAUserObject) GetLastActive() string`
-
-GetLastActive returns the LastActive field if non-nil, zero value otherwise.
-
-### GetLastActiveOk
-
-`func (o *JsonMDNAUserObject) GetLastActiveOk() (*string, bool)`
-
-GetLastActiveOk returns a tuple with the LastActive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastActive
-
-`func (o *JsonMDNAUserObject) SetLastActive(v string)`
-
-SetLastActive sets LastActive field to given value.
-
-### HasLastActive
-
-`func (o *JsonMDNAUserObject) HasLastActive() bool`
-
-HasLastActive returns a boolean if a field has been set.
 
 ### GetImage
 
@@ -104,6 +54,31 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
+### GetCreated
+
+`func (o *JsonMDNAUserObject) GetCreated() string`
+
+GetCreated returns the Created field if non-nil, zero value otherwise.
+
+### GetCreatedOk
+
+`func (o *JsonMDNAUserObject) GetCreatedOk() (*string, bool)`
+
+GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreated
+
+`func (o *JsonMDNAUserObject) SetCreated(v string)`
+
+SetCreated sets Created field to given value.
+
+### HasCreated
+
+`func (o *JsonMDNAUserObject) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
+
 ### GetUserName
 
 `func (o *JsonMDNAUserObject) GetUserName() string`
@@ -128,6 +103,31 @@ SetUserName sets UserName field to given value.
 `func (o *JsonMDNAUserObject) HasUserName() bool`
 
 HasUserName returns a boolean if a field has been set.
+
+### GetLastActive
+
+`func (o *JsonMDNAUserObject) GetLastActive() string`
+
+GetLastActive returns the LastActive field if non-nil, zero value otherwise.
+
+### GetLastActiveOk
+
+`func (o *JsonMDNAUserObject) GetLastActiveOk() (*string, bool)`
+
+GetLastActiveOk returns a tuple with the LastActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastActive
+
+`func (o *JsonMDNAUserObject) SetLastActive(v string)`
+
+SetLastActive sets LastActive field to given value.
+
+### HasLastActive
+
+`func (o *JsonMDNAUserObject) HasLastActive() bool`
+
+HasLastActive returns a boolean if a field has been set.
 
 ### GetActivated
 
