@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiVersion** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]JsonV1Event**](JsonV1Event.md) |  | [optional] 
 **Metadata** | Pointer to [**JsonV1ListMeta**](json_V1ListMeta.md) |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonV1EventListWithDefaults instantiates a new JsonV1EventList object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetApiVersion
-
-`func (o *JsonV1EventList) GetApiVersion() string`
-
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
-
-### GetApiVersionOk
-
-`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
-
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiVersion
-
-`func (o *JsonV1EventList) SetApiVersion(v string)`
-
-SetApiVersion sets ApiVersion field to given value.
-
-### HasApiVersion
-
-`func (o *JsonV1EventList) HasApiVersion() bool`
-
-HasApiVersion returns a boolean if a field has been set.
 
 ### GetItems
 
@@ -102,6 +77,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *JsonV1EventList) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *JsonV1EventList) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *JsonV1EventList) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *JsonV1EventList) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetKind
 

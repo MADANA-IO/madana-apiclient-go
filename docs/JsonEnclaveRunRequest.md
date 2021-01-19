@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
 **UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
 **EnclaveExecutionType** | Pointer to **string** |  | [optional] 
 **EnvironmentUUID** | Pointer to **string** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,31 +28,6 @@ will change when the set of required properties is changed
 NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPorts
-
-`func (o *JsonEnclaveRunRequest) GetPorts() []JsonEnclavePort`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *JsonEnclaveRunRequest) GetPortsOk() (*[]JsonEnclavePort, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *JsonEnclaveRunRequest) SetPorts(v []JsonEnclavePort)`
-
-SetPorts sets Ports field to given value.
-
-### HasPorts
-
-`func (o *JsonEnclaveRunRequest) HasPorts() bool`
-
-HasPorts returns a boolean if a field has been set.
 
 ### GetUsingDefaultRunConfig
 
@@ -79,30 +54,30 @@ SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
 
 HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
-### GetWireguardPublicKey
+### GetPorts
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
+`func (o *JsonEnclaveRunRequest) GetPorts() []JsonEnclavePort`
 
-GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+GetPorts returns the Ports field if non-nil, zero value otherwise.
 
-### GetWireguardPublicKeyOk
+### GetPortsOk
 
-`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetPortsOk() (*[]JsonEnclavePort, bool)`
 
-GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardPublicKey
+### SetPorts
 
-`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
+`func (o *JsonEnclaveRunRequest) SetPorts(v []JsonEnclavePort)`
 
-SetWireguardPublicKey sets WireguardPublicKey field to given value.
+SetPorts sets Ports field to given value.
 
-### HasWireguardPublicKey
+### HasPorts
 
-`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
+`func (o *JsonEnclaveRunRequest) HasPorts() bool`
 
-HasWireguardPublicKey returns a boolean if a field has been set.
+HasPorts returns a boolean if a field has been set.
 
 ### GetEnclaveExecutionType
 
@@ -153,6 +128,31 @@ SetEnvironmentUUID sets EnvironmentUUID field to given value.
 `func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
 
 HasEnvironmentUUID returns a boolean if a field has been set.
+
+### GetWireguardPublicKey
+
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKey() string`
+
+GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+
+### GetWireguardPublicKeyOk
+
+`func (o *JsonEnclaveRunRequest) GetWireguardPublicKeyOk() (*string, bool)`
+
+GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWireguardPublicKey
+
+`func (o *JsonEnclaveRunRequest) SetWireguardPublicKey(v string)`
+
+SetWireguardPublicKey sets WireguardPublicKey field to given value.
+
+### HasWireguardPublicKey
+
+`func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
+
+HasWireguardPublicKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
