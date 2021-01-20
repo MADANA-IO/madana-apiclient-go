@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoothashOffset** | Pointer to **int32** |  | [optional] 
 **Disk** | Pointer to **string** |  | [optional] 
+**RoothashOffset** | Pointer to **int32** |  | [optional] 
 **Roothash** | Pointer to **string** |  | [optional] 
 **Readonly** | Pointer to **bool** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonDiskConfigWithDefaults instantiates a new JsonDiskConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetRoothashOffset
-
-`func (o *JsonDiskConfig) GetRoothashOffset() int32`
-
-GetRoothashOffset returns the RoothashOffset field if non-nil, zero value otherwise.
-
-### GetRoothashOffsetOk
-
-`func (o *JsonDiskConfig) GetRoothashOffsetOk() (*int32, bool)`
-
-GetRoothashOffsetOk returns a tuple with the RoothashOffset field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoothashOffset
-
-`func (o *JsonDiskConfig) SetRoothashOffset(v int32)`
-
-SetRoothashOffset sets RoothashOffset field to given value.
-
-### HasRoothashOffset
-
-`func (o *JsonDiskConfig) HasRoothashOffset() bool`
-
-HasRoothashOffset returns a boolean if a field has been set.
 
 ### GetDisk
 
@@ -77,6 +52,31 @@ SetDisk sets Disk field to given value.
 `func (o *JsonDiskConfig) HasDisk() bool`
 
 HasDisk returns a boolean if a field has been set.
+
+### GetRoothashOffset
+
+`func (o *JsonDiskConfig) GetRoothashOffset() int32`
+
+GetRoothashOffset returns the RoothashOffset field if non-nil, zero value otherwise.
+
+### GetRoothashOffsetOk
+
+`func (o *JsonDiskConfig) GetRoothashOffsetOk() (*int32, bool)`
+
+GetRoothashOffsetOk returns a tuple with the RoothashOffset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoothashOffset
+
+`func (o *JsonDiskConfig) SetRoothashOffset(v int32)`
+
+SetRoothashOffset sets RoothashOffset field to given value.
+
+### HasRoothashOffset
+
+`func (o *JsonDiskConfig) HasRoothashOffset() bool`
+
+HasRoothashOffset returns a boolean if a field has been set.
 
 ### GetRoothash
 
