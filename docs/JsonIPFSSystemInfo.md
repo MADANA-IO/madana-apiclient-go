@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**PublicKey** | Pointer to **string** |  | [optional] 
 **ProtocolVersion** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **AgentVersion** | Pointer to **string** |  | [optional] 
-**PublicKey** | Pointer to **string** |  | [optional] 
 **SwarmConnection** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewJsonIPFSSystemInfoWithDefaults instantiates a new JsonIPFSSystemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetPublicKey
+
+`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
+
+GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
+
+### GetPublicKeyOk
+
+`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
+
+GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicKey
+
+`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
+
+SetPublicKey sets PublicKey field to given value.
+
+### HasPublicKey
+
+`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
+
+HasPublicKey returns a boolean if a field has been set.
 
 ### GetProtocolVersion
 
@@ -103,31 +128,6 @@ SetAgentVersion sets AgentVersion field to given value.
 `func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
 
 HasAgentVersion returns a boolean if a field has been set.
-
-### GetPublicKey
-
-`func (o *JsonIPFSSystemInfo) GetPublicKey() string`
-
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
-
-### GetPublicKeyOk
-
-`func (o *JsonIPFSSystemInfo) GetPublicKeyOk() (*string, bool)`
-
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublicKey
-
-`func (o *JsonIPFSSystemInfo) SetPublicKey(v string)`
-
-SetPublicKey sets PublicKey field to given value.
-
-### HasPublicKey
-
-`func (o *JsonIPFSSystemInfo) HasPublicKey() bool`
-
-HasPublicKey returns a boolean if a field has been set.
 
 ### GetSwarmConnection
 

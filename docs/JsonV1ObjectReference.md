@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **FieldPath** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 **Uid** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -81,31 +81,6 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *JsonV1ObjectReference) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *JsonV1ObjectReference) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *JsonV1ObjectReference) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *JsonV1ObjectReference) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
 ### GetFieldPath
 
 `func (o *JsonV1ObjectReference) GetFieldPath() string`
@@ -130,31 +105,6 @@ SetFieldPath sets FieldPath field to given value.
 `func (o *JsonV1ObjectReference) HasFieldPath() bool`
 
 HasFieldPath returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *JsonV1ObjectReference) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *JsonV1ObjectReference) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *JsonV1ObjectReference) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetUid
 
@@ -181,6 +131,31 @@ SetUid sets Uid field to given value.
 
 HasUid returns a boolean if a field has been set.
 
+### GetNamespace
+
+`func (o *JsonV1ObjectReference) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *JsonV1ObjectReference) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *JsonV1ObjectReference) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
+
 ### GetResourceVersion
 
 `func (o *JsonV1ObjectReference) GetResourceVersion() string`
@@ -205,6 +180,31 @@ SetResourceVersion sets ResourceVersion field to given value.
 `func (o *JsonV1ObjectReference) HasResourceVersion() bool`
 
 HasResourceVersion returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *JsonV1ObjectReference) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *JsonV1ObjectReference) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *JsonV1ObjectReference) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *JsonV1ObjectReference) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

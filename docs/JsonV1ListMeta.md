@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceVersion** | Pointer to **string** |  | [optional] 
-**Continue** | Pointer to **string** |  | [optional] 
-**SelfLink** | Pointer to **string** |  | [optional] 
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetResourceVersion sets ResourceVersion field to given value.
 
 HasResourceVersion returns a boolean if a field has been set.
 
-### GetContinue
+### GetRemainingItemCount
 
-`func (o *JsonV1ListMeta) GetContinue() string`
+`func (o *JsonV1ListMeta) GetRemainingItemCount() float32`
 
-GetContinue returns the Continue field if non-nil, zero value otherwise.
+GetRemainingItemCount returns the RemainingItemCount field if non-nil, zero value otherwise.
 
-### GetContinueOk
+### GetRemainingItemCountOk
 
-`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetRemainingItemCountOk() (*float32, bool)`
 
-GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+GetRemainingItemCountOk returns a tuple with the RemainingItemCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContinue
+### SetRemainingItemCount
 
-`func (o *JsonV1ListMeta) SetContinue(v string)`
+`func (o *JsonV1ListMeta) SetRemainingItemCount(v float32)`
 
-SetContinue sets Continue field to given value.
+SetRemainingItemCount sets RemainingItemCount field to given value.
 
-### HasContinue
+### HasRemainingItemCount
 
-`func (o *JsonV1ListMeta) HasContinue() bool`
+`func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
 
-HasContinue returns a boolean if a field has been set.
+HasRemainingItemCount returns a boolean if a field has been set.
 
 ### GetSelfLink
 
@@ -103,30 +103,30 @@ SetSelfLink sets SelfLink field to given value.
 
 HasSelfLink returns a boolean if a field has been set.
 
-### GetRemainingItemCount
+### GetContinue
 
-`func (o *JsonV1ListMeta) GetRemainingItemCount() float32`
+`func (o *JsonV1ListMeta) GetContinue() string`
 
-GetRemainingItemCount returns the RemainingItemCount field if non-nil, zero value otherwise.
+GetContinue returns the Continue field if non-nil, zero value otherwise.
 
-### GetRemainingItemCountOk
+### GetContinueOk
 
-`func (o *JsonV1ListMeta) GetRemainingItemCountOk() (*float32, bool)`
+`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
 
-GetRemainingItemCountOk returns a tuple with the RemainingItemCount field if it's non-nil, zero value otherwise
+GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemainingItemCount
+### SetContinue
 
-`func (o *JsonV1ListMeta) SetRemainingItemCount(v float32)`
+`func (o *JsonV1ListMeta) SetContinue(v string)`
 
-SetRemainingItemCount sets RemainingItemCount field to given value.
+SetContinue sets Continue field to given value.
 
-### HasRemainingItemCount
+### HasContinue
 
-`func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
+`func (o *JsonV1ListMeta) HasContinue() bool`
 
-HasRemainingItemCount returns a boolean if a field has been set.
+HasContinue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

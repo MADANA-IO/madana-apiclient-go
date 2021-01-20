@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
-**Kind** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **BlockOwnerDeletion** | Pointer to **bool** |  | [optional] 
 **Uid** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
 **Controller** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -30,55 +30,30 @@ NewJsonV1OwnerReferenceWithDefaults instantiates a new JsonV1OwnerReference obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetApiVersion
 
-`func (o *JsonV1OwnerReference) GetName() string`
+`func (o *JsonV1OwnerReference) GetApiVersion() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetApiVersionOk
 
-`func (o *JsonV1OwnerReference) GetNameOk() (*string, bool)`
+`func (o *JsonV1OwnerReference) GetApiVersionOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetApiVersion
 
-`func (o *JsonV1OwnerReference) SetName(v string)`
+`func (o *JsonV1OwnerReference) SetApiVersion(v string)`
 
-SetName sets Name field to given value.
+SetApiVersion sets ApiVersion field to given value.
 
-### HasName
+### HasApiVersion
 
-`func (o *JsonV1OwnerReference) HasName() bool`
+`func (o *JsonV1OwnerReference) HasApiVersion() bool`
 
-HasName returns a boolean if a field has been set.
-
-### GetKind
-
-`func (o *JsonV1OwnerReference) GetKind() string`
-
-GetKind returns the Kind field if non-nil, zero value otherwise.
-
-### GetKindOk
-
-`func (o *JsonV1OwnerReference) GetKindOk() (*string, bool)`
-
-GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKind
-
-`func (o *JsonV1OwnerReference) SetKind(v string)`
-
-SetKind sets Kind field to given value.
-
-### HasKind
-
-`func (o *JsonV1OwnerReference) HasKind() bool`
-
-HasKind returns a boolean if a field has been set.
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetBlockOwnerDeletion
 
@@ -130,30 +105,55 @@ SetUid sets Uid field to given value.
 
 HasUid returns a boolean if a field has been set.
 
-### GetApiVersion
+### GetName
 
-`func (o *JsonV1OwnerReference) GetApiVersion() string`
+`func (o *JsonV1OwnerReference) GetName() string`
 
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetApiVersionOk
+### GetNameOk
 
-`func (o *JsonV1OwnerReference) GetApiVersionOk() (*string, bool)`
+`func (o *JsonV1OwnerReference) GetNameOk() (*string, bool)`
 
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiVersion
+### SetName
 
-`func (o *JsonV1OwnerReference) SetApiVersion(v string)`
+`func (o *JsonV1OwnerReference) SetName(v string)`
 
-SetApiVersion sets ApiVersion field to given value.
+SetName sets Name field to given value.
 
-### HasApiVersion
+### HasName
 
-`func (o *JsonV1OwnerReference) HasApiVersion() bool`
+`func (o *JsonV1OwnerReference) HasName() bool`
 
-HasApiVersion returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
+
+### GetKind
+
+`func (o *JsonV1OwnerReference) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *JsonV1OwnerReference) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *JsonV1OwnerReference) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *JsonV1OwnerReference) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
 
 ### GetController
 

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Password** | Pointer to **string** |  | [optional] 
-**Mail** | Pointer to **string** |  | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
+**Mail** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonMDNPasswordResetWithDefaults instantiates a new JsonMDNPasswordReset obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPassword
+### GetToken
 
-`func (o *JsonMDNPasswordReset) GetPassword() string`
+`func (o *JsonMDNPasswordReset) GetToken() string`
 
-GetPassword returns the Password field if non-nil, zero value otherwise.
+GetToken returns the Token field if non-nil, zero value otherwise.
 
-### GetPasswordOk
+### GetTokenOk
 
-`func (o *JsonMDNPasswordReset) GetPasswordOk() (*string, bool)`
+`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
 
-GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPassword
+### SetToken
 
-`func (o *JsonMDNPasswordReset) SetPassword(v string)`
+`func (o *JsonMDNPasswordReset) SetToken(v string)`
 
-SetPassword sets Password field to given value.
+SetToken sets Token field to given value.
 
-### HasPassword
+### HasToken
 
-`func (o *JsonMDNPasswordReset) HasPassword() bool`
+`func (o *JsonMDNPasswordReset) HasToken() bool`
 
-HasPassword returns a boolean if a field has been set.
+HasToken returns a boolean if a field has been set.
 
 ### GetMail
 
@@ -77,30 +77,30 @@ SetMail sets Mail field to given value.
 
 HasMail returns a boolean if a field has been set.
 
-### GetToken
+### GetPassword
 
-`func (o *JsonMDNPasswordReset) GetToken() string`
+`func (o *JsonMDNPasswordReset) GetPassword() string`
 
-GetToken returns the Token field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetTokenOk
+### GetPasswordOk
 
-`func (o *JsonMDNPasswordReset) GetTokenOk() (*string, bool)`
+`func (o *JsonMDNPasswordReset) GetPasswordOk() (*string, bool)`
 
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetToken
+### SetPassword
 
-`func (o *JsonMDNPasswordReset) SetToken(v string)`
+`func (o *JsonMDNPasswordReset) SetPassword(v string)`
 
-SetToken sets Token field to given value.
+SetPassword sets Password field to given value.
 
-### HasToken
+### HasPassword
 
-`func (o *JsonMDNPasswordReset) HasToken() bool`
+`func (o *JsonMDNPasswordReset) HasPassword() bool`
 
-HasToken returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
