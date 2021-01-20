@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
-**Protocol** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **string** |  | [optional] 
+**Protocol** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonEnclavePortWithDefaults instantiates a new JsonEnclavePort object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetPort
 
-`func (o *JsonEnclavePort) GetName() string`
+`func (o *JsonEnclavePort) GetPort() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetPort returns the Port field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetPortOk
 
-`func (o *JsonEnclavePort) GetNameOk() (*string, bool)`
+`func (o *JsonEnclavePort) GetPortOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetPort
 
-`func (o *JsonEnclavePort) SetName(v string)`
+`func (o *JsonEnclavePort) SetPort(v string)`
 
-SetName sets Name field to given value.
+SetPort sets Port field to given value.
 
-### HasName
+### HasPort
 
-`func (o *JsonEnclavePort) HasName() bool`
+`func (o *JsonEnclavePort) HasPort() bool`
 
-HasName returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
 ### GetProtocol
 
@@ -77,30 +77,30 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
-### GetPort
+### GetName
 
-`func (o *JsonEnclavePort) GetPort() string`
+`func (o *JsonEnclavePort) GetName() string`
 
-GetPort returns the Port field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetPortOk
+### GetNameOk
 
-`func (o *JsonEnclavePort) GetPortOk() (*string, bool)`
+`func (o *JsonEnclavePort) GetNameOk() (*string, bool)`
 
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPort
+### SetName
 
-`func (o *JsonEnclavePort) SetPort(v string)`
+`func (o *JsonEnclavePort) SetName(v string)`
 
-SetPort sets Port field to given value.
+SetName sets Name field to given value.
 
-### HasPort
+### HasName
 
-`func (o *JsonEnclavePort) HasPort() bool`
+`func (o *JsonEnclavePort) HasName() bool`
 
-HasPort returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
