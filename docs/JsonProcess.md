@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
-**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 **Alive** | Pointer to **bool** |  | [optional] 
 **ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -52,31 +52,6 @@ SetOutputStream sets OutputStream field to given value.
 `func (o *JsonProcess) HasOutputStream() bool`
 
 HasOutputStream returns a boolean if a field has been set.
-
-### GetInputStream
-
-`func (o *JsonProcess) GetInputStream() map[string]interface{}`
-
-GetInputStream returns the InputStream field if non-nil, zero value otherwise.
-
-### GetInputStreamOk
-
-`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
-
-GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInputStream
-
-`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
-
-SetInputStream sets InputStream field to given value.
-
-### HasInputStream
-
-`func (o *JsonProcess) HasInputStream() bool`
-
-HasInputStream returns a boolean if a field has been set.
 
 ### GetAlive
 
@@ -127,6 +102,31 @@ SetErrorStream sets ErrorStream field to given value.
 `func (o *JsonProcess) HasErrorStream() bool`
 
 HasErrorStream returns a boolean if a field has been set.
+
+### GetInputStream
+
+`func (o *JsonProcess) GetInputStream() map[string]interface{}`
+
+GetInputStream returns the InputStream field if non-nil, zero value otherwise.
+
+### GetInputStreamOk
+
+`func (o *JsonProcess) GetInputStreamOk() (*map[string]interface{}, bool)`
+
+GetInputStreamOk returns a tuple with the InputStream field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputStream
+
+`func (o *JsonProcess) SetInputStream(v map[string]interface{})`
+
+SetInputStream sets InputStream field to given value.
+
+### HasInputStream
+
+`func (o *JsonProcess) HasInputStream() bool`
+
+HasInputStream returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

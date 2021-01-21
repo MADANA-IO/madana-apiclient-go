@@ -4,6 +4,7 @@ All URIs are relative to *http://api.madana.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CancelSubscription**](UserServiceApi.md#CancelSubscription) | **Post** /users/{username}/subscriptions/{planname}/cancel | 
 [**CreateObject**](UserServiceApi.md#CreateObject) | **Post** /users | Creates a new user object.
 [**DeleteObject**](UserServiceApi.md#DeleteObject) | **Delete** /users/{username} | Deletes an User based on the provided id and securitycontext.
 [**DeleteObject_0**](UserServiceApi.md#DeleteObject_0) | **Delete** /users/{username}/social/{platform}/{ident} | Deletes linked account from the user and securitycontext.
@@ -15,6 +16,77 @@ Method | HTTP request | Description
 [**SetSettings**](UserServiceApi.md#SetSettings) | **Post** /users/{username}/settings | 
 [**UpdateObject**](UserServiceApi.md#UpdateObject) | **Put** /users/{username} | Updates Userproperties based on the provided user object.
 
+
+
+## CancelSubscription
+
+> *os.File CancelSubscription(ctx, planname, username).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    planname := "planname_example" // string | 
+    username := "username_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.UserServiceApi.CancelSubscription(context.Background(), planname, username).Execute()
+    if err.Error() != "" {
+        fmt.Fprintf(os.Stderr, "Error when calling `UserServiceApi.CancelSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CancelSubscription`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `UserServiceApi.CancelSubscription`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**planname** | **string** |  | 
+**username** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCancelSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CreateObject
