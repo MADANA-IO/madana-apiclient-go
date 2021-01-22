@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
-**EnvironmentUUID** | Pointer to **string** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
-**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
 **EnclaveExecutionType** | Pointer to **string** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
+**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
+**EnvironmentUUID** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,55 +29,30 @@ NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUsingDefaultRunConfig
+### GetEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
 
-GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
 
-### GetUsingDefaultRunConfigOk
+### GetEnclaveExecutionTypeOk
 
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
 
-GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsingDefaultRunConfig
+### SetEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
 
-SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
 
-### HasUsingDefaultRunConfig
+### HasEnclaveExecutionType
 
-`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
 
-HasUsingDefaultRunConfig returns a boolean if a field has been set.
-
-### GetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
-
-GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
-
-### GetEnvironmentUUIDOk
-
-`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
-
-GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
-
-SetEnvironmentUUID sets EnvironmentUUID field to given value.
-
-### HasEnvironmentUUID
-
-`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
-
-HasEnvironmentUUID returns a boolean if a field has been set.
+HasEnclaveExecutionType returns a boolean if a field has been set.
 
 ### GetWireguardPublicKey
 
@@ -104,6 +79,31 @@ SetWireguardPublicKey sets WireguardPublicKey field to given value.
 
 HasWireguardPublicKey returns a boolean if a field has been set.
 
+### GetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+
+GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+
+### GetUsingDefaultRunConfigOk
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+
+GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+
+SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+
+### HasUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+
+HasUsingDefaultRunConfig returns a boolean if a field has been set.
+
 ### GetPorts
 
 `func (o *JsonEnclaveRunRequest) GetPorts() []JsonEnclavePort`
@@ -129,30 +129,30 @@ SetPorts sets Ports field to given value.
 
 HasPorts returns a boolean if a field has been set.
 
-### GetEnclaveExecutionType
+### GetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUID() string`
 
-GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
+GetEnvironmentUUID returns the EnvironmentUUID field if non-nil, zero value otherwise.
 
-### GetEnclaveExecutionTypeOk
+### GetEnvironmentUUIDOk
 
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
+`func (o *JsonEnclaveRunRequest) GetEnvironmentUUIDOk() (*string, bool)`
 
-GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
+GetEnvironmentUUIDOk returns a tuple with the EnvironmentUUID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnclaveExecutionType
+### SetEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
+`func (o *JsonEnclaveRunRequest) SetEnvironmentUUID(v string)`
 
-SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
+SetEnvironmentUUID sets EnvironmentUUID field to given value.
 
-### HasEnclaveExecutionType
+### HasEnvironmentUUID
 
-`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
+`func (o *JsonEnclaveRunRequest) HasEnvironmentUUID() bool`
 
-HasEnclaveExecutionType returns a boolean if a field has been set.
+HasEnvironmentUUID returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

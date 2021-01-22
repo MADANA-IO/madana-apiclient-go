@@ -15,7 +15,7 @@ info:
     \ and api-license token. For more information visit <a href=\"https://www.madana.io\"\
     >www.madana.io</a> </p>    \n  <br>"
   title: madana-api
-  version: 0.5.0-master.43
+  version: 0.5.0-master.44
 servers:
 - url: //api.madana.io/rest/
 tags:
@@ -2357,21 +2357,21 @@ components:
     json_Disk_config:
       description: ""
       example:
-        roothash: '...'
-        disk: '...'
         roothash_offset: 12345
+        disk: '...'
+        roothash: '...'
         readonly: true
       properties:
-        roothash:
-          description: ""
-          type: string
-        disk:
-          description: ""
-          type: string
         roothash_offset:
           description: ""
           format: int32
           type: integer
+        disk:
+          description: ""
+          type: string
+        roothash:
+          description: ""
+          type: string
         readonly:
           description: ""
           type: boolean
@@ -2380,17 +2380,17 @@ components:
     json_EnclavePort:
       description: ""
       example:
-        protocol: '...'
-        name: '...'
         port: '...'
+        name: '...'
+        protocol: '...'
       properties:
-        protocol:
+        port:
           description: ""
           type: string
         name:
           description: ""
           type: string
-        port:
+        protocol:
           description: ""
           type: string
       title: EnclavePort
@@ -2398,208 +2398,162 @@ components:
     json_EnclaveProcess:
       description: ""
       example:
-        internalWireguardServer: '...'
-        wgInterface:
-          port: '...'
-          name: '...'
-          address: '...'
-        ports:
-        - protocol: '...'
-          name: '...'
-          port: '...'
-        - protocol: '...'
-          name: '...'
-          port: '...'
-        publicIdent: '...'
-        internalAttesationServer: '...'
-        process:
-          inputStream: {}
-          outputStream: {}
-          alive: true
-          errorStream: {}
-        startupCMD: '...'
-        enclaveIdent: '...'
-        attestationServer: '...'
-        internalRemoteControlServer: '...'
         environment:
+          description: '...'
+          name: '...'
+          content:
+          - '...'
+          - '...'
+          size: '...'
+          roothash: '...'
+          uuid: '...'
+          published: true
+          rootHashOffset: '...'
+          ipfsHash: '...'
           defaultRunConfiguration:
-            disk_config:
-            - {}
-            - {}
-            run: '...'
             environment:
               property1: '...'
               property2: '...'
             args:
             - '...'
             - '...'
-          size: '...'
-          description: '...'
-          published: true
-          uuid: '...'
+            run: '...'
+            disk_config:
+            - {}
+            - {}
           packages:
           - '...'
           - '...'
-          rootHashOffset: '...'
-          content:
-          - '...'
-          - '...'
-          ipfsHash: '...'
-          name: '...'
-          roothash: '...'
         signerIdent: '...'
-        endingTime: '...'
+        status: '...'
         consoleOutput: '...'
+        attestationServer: '...'
+        enclaveInputstream: {}
+        endingTime: '...'
+        publicIdent: '...'
+        internalWireguardServer: '...'
+        internalRemoteControlServer: '...'
+        process:
+          outputStream: {}
+          errorStream: {}
+          inputStream: {}
+          alive: true
+        wgInterface:
+          port: '...'
+          address: '...'
+          name: '...'
+        wireguardServer: '...'
+        wireguardPublicKey: '...'
+        internalIdent: '...'
+        remoteControlServer: '...'
+        startupTime: '...'
+        startupCMD: '...'
+        internalAttesationServer: '...'
         portMapping:
           property1: '...'
           property2: '...'
-        remoteControlServer: '...'
         kubernetesEnclave:
-          enclaveDeploymentEvents:
-            items:
-            - {}
-            - {}
-            kind: '...'
-            apiVersion: '...'
-            metadata: {}
-          isUsingInitContainer: true
-          wireguardPort: 12345
-          debugInfo: '...'
-          podPhase: '...'
           remoteControlIP: '...'
           enclaveReplicaSetEvents:
             items:
             - {}
             - {}
-            kind: '...'
-            apiVersion: '...'
             metadata: {}
-          attestationPort: 12345
+            apiVersion: '...'
+            kind: '...'
+          podPhase: '...'
+          enclaveDeploymentEvents:
+            items:
+            - {}
+            - {}
+            metadata: {}
+            apiVersion: '...'
+            kind: '...'
           enclavePodEvents:
             items:
             - {}
             - {}
-            kind: '...'
-            apiVersion: '...'
             metadata: {}
-          internalWireguardServer: '...'
-          wgInterface:
-            port: '...'
-            name: '...'
-            address: '...'
-          ports:
-          - protocol: '...'
-            name: '...'
-            port: '...'
-          - protocol: '...'
-            name: '...'
-            port: '...'
-          publicIdent: '...'
-          internalAttesationServer: '...'
-          process:
-            inputStream: {}
-            outputStream: {}
-            alive: true
-            errorStream: {}
-          startupCMD: '...'
-          enclaveIdent: '...'
-          attestationServer: '...'
-          internalRemoteControlServer: '...'
+            apiVersion: '...'
+            kind: '...'
+          debugInfo: '...'
+          isUsingInitContainer: true
+          attestationPort: 12345
+          wireguardPort: 12345
           environment:
-            defaultRunConfiguration: {}
-            size: '...'
             description: '...'
-            published: true
-            uuid: '...'
-            packages:
-            - '...'
-            - '...'
-            rootHashOffset: '...'
+            name: '...'
             content:
             - '...'
             - '...'
-            ipfsHash: '...'
-            name: '...'
+            size: '...'
             roothash: '...'
+            uuid: '...'
+            published: true
+            rootHashOffset: '...'
+            ipfsHash: '...'
+            defaultRunConfiguration: {}
+            packages:
+            - '...'
+            - '...'
           signerIdent: '...'
-          endingTime: '...'
+          status: '...'
           consoleOutput: '...'
+          attestationServer: '...'
+          enclaveInputstream: {}
+          endingTime: '...'
+          publicIdent: '...'
+          internalWireguardServer: '...'
+          internalRemoteControlServer: '...'
+          process:
+            outputStream: {}
+            errorStream: {}
+            inputStream: {}
+            alive: true
+          wgInterface:
+            port: '...'
+            address: '...'
+            name: '...'
+          wireguardServer: '...'
+          wireguardPublicKey: '...'
+          internalIdent: '...'
+          remoteControlServer: '...'
+          startupTime: '...'
+          startupCMD: '...'
+          internalAttesationServer: '...'
           portMapping:
             property1: '...'
             property2: '...'
-          remoteControlServer: '...'
           kubernetesEnclave: {}
-          wireguardPublicKey: '...'
-          wireguardServer: '...'
-          internalIdent: '...'
-          enclaveInputstream: {}
-          status: '...'
-          startupTime: '...'
-        wireguardPublicKey: '...'
-        wireguardServer: '...'
-        internalIdent: '...'
-        enclaveInputstream: {}
-        status: '...'
-        startupTime: '...'
-      properties:
-        internalWireguardServer:
-          description: ""
-          type: string
-        wgInterface:
-          $ref: '#/components/schemas/json_WireguardInterface'
+          ports:
+          - port: '...'
+            name: '...'
+            protocol: '...'
+          - port: '...'
+            name: '...'
+            protocol: '...'
+          enclaveIdent: '...'
         ports:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_EnclavePort'
-          type: array
-        publicIdent:
-          description: ""
-          type: string
-        internalAttesationServer:
-          description: ""
-          type: string
-        process:
-          $ref: '#/components/schemas/json_Process'
-        startupCMD:
-          description: ""
-          type: string
-        enclaveIdent:
-          description: ""
-          type: string
-        attestationServer:
-          description: ""
-          type: string
-        internalRemoteControlServer:
-          description: ""
-          type: string
+        - port: '...'
+          name: '...'
+          protocol: '...'
+        - port: '...'
+          name: '...'
+          protocol: '...'
+        enclaveIdent: '...'
+      properties:
         environment:
           $ref: '#/components/schemas/json_Environment'
         signerIdent:
           description: ""
           type: string
-        endingTime:
+        status:
           description: ""
           type: string
         consoleOutput:
           description: ""
           type: string
-        portMapping:
-          additionalProperties:
-            type: string
-          description: ""
-          type: object
-        remoteControlServer:
-          description: ""
-          type: string
-        kubernetesEnclave:
-          $ref: '#/components/schemas/json_KubernetesEnclave'
-        wireguardPublicKey:
-          description: ""
-          type: string
-        wireguardServer:
-          description: ""
-          type: string
-        internalIdent:
+        attestationServer:
           description: ""
           type: string
         enclaveInputstream:
@@ -2607,10 +2561,56 @@ components:
           example: {}
           title: InputStream
           type: object
-        status:
+        endingTime:
+          description: ""
+          type: string
+        publicIdent:
+          description: ""
+          type: string
+        internalWireguardServer:
+          description: ""
+          type: string
+        internalRemoteControlServer:
+          description: ""
+          type: string
+        process:
+          $ref: '#/components/schemas/json_Process'
+        wgInterface:
+          $ref: '#/components/schemas/json_WireguardInterface'
+        wireguardServer:
+          description: ""
+          type: string
+        wireguardPublicKey:
+          description: ""
+          type: string
+        internalIdent:
+          description: ""
+          type: string
+        remoteControlServer:
           description: ""
           type: string
         startupTime:
+          description: ""
+          type: string
+        startupCMD:
+          description: ""
+          type: string
+        internalAttesationServer:
+          description: ""
+          type: string
+        portMapping:
+          additionalProperties:
+            type: string
+          description: ""
+          type: object
+        kubernetesEnclave:
+          $ref: '#/components/schemas/json_KubernetesEnclave'
+        ports:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_EnclavePort'
+          type: array
+        enclaveIdent:
           description: ""
           type: string
       title: EnclaveProcess
@@ -2618,33 +2618,33 @@ components:
     json_EnclaveRunRequest:
       description: ""
       example:
-        usingDefaultRunConfig: true
-        environmentUUID: '...'
-        wireguardPublicKey: '...'
-        ports:
-        - protocol: '...'
-          name: '...'
-          port: '...'
-        - protocol: '...'
-          name: '...'
-          port: '...'
         enclaveExecutionType: '...'
+        wireguardPublicKey: '...'
+        usingDefaultRunConfig: true
+        ports:
+        - port: '...'
+          name: '...'
+          protocol: '...'
+        - port: '...'
+          name: '...'
+          protocol: '...'
+        environmentUUID: '...'
       properties:
-        usingDefaultRunConfig:
-          description: ""
-          type: boolean
-        environmentUUID:
+        enclaveExecutionType:
           description: ""
           type: string
         wireguardPublicKey:
           description: ""
           type: string
+        usingDefaultRunConfig:
+          description: ""
+          type: boolean
         ports:
           description: ""
           items:
             $ref: '#/components/schemas/json_EnclavePort'
           type: array
-        enclaveExecutionType:
+        environmentUUID:
           description: ""
           type: string
       title: EnclaveRunRequest
@@ -2652,128 +2652,128 @@ components:
     json_EnclaveRunningAttestation:
       description: ""
       example:
-        nodeInfo:
-          processors:
-          - '...'
-          - '...'
-          memory: '...'
-          publicKey: '...'
-          operatingSystem: '...'
-          owner: '...'
-          cpuPhysicalCores: 12345
-          ipfsInfo:
-            protocolVersion: '...'
-            id: '...'
-            agentVersion: '...'
-            publicKey: '...'
-            swarmConnection: '...'
-          hardwareFirmware: '...'
-          hardwareBaseboard: '...'
-          cpuModel: '...'
-          connectionURL: '...'
-          cpuFrequency: '...'
-          sgxInfo:
-            status: '...'
-            version: '...'
-          cpuLogicalCount: 12345
-          status: '...'
-          operatingSystemUptime: 12345
-          cpuFamily: '...'
         enclaveProcess:
-          internalWireguardServer: '...'
-          wgInterface:
-            port: '...'
-            name: '...'
-            address: '...'
-          ports:
-          - protocol: '...'
-            name: '...'
-            port: '...'
-          - protocol: '...'
-            name: '...'
-            port: '...'
-          publicIdent: '...'
-          internalAttesationServer: '...'
-          process:
-            inputStream: {}
-            outputStream: {}
-            alive: true
-            errorStream: {}
-          startupCMD: '...'
-          enclaveIdent: '...'
-          attestationServer: '...'
-          internalRemoteControlServer: '...'
           environment:
-            defaultRunConfiguration: {}
-            size: '...'
             description: '...'
-            published: true
-            uuid: '...'
-            packages:
-            - '...'
-            - '...'
-            rootHashOffset: '...'
+            name: '...'
             content:
             - '...'
             - '...'
-            ipfsHash: '...'
-            name: '...'
+            size: '...'
             roothash: '...'
+            uuid: '...'
+            published: true
+            rootHashOffset: '...'
+            ipfsHash: '...'
+            defaultRunConfiguration: {}
+            packages:
+            - '...'
+            - '...'
           signerIdent: '...'
-          endingTime: '...'
+          status: '...'
           consoleOutput: '...'
+          attestationServer: '...'
+          enclaveInputstream: {}
+          endingTime: '...'
+          publicIdent: '...'
+          internalWireguardServer: '...'
+          internalRemoteControlServer: '...'
+          process:
+            outputStream: {}
+            errorStream: {}
+            inputStream: {}
+            alive: true
+          wgInterface:
+            port: '...'
+            address: '...'
+            name: '...'
+          wireguardServer: '...'
+          wireguardPublicKey: '...'
+          internalIdent: '...'
+          remoteControlServer: '...'
+          startupTime: '...'
+          startupCMD: '...'
+          internalAttesationServer: '...'
           portMapping:
             property1: '...'
             property2: '...'
-          remoteControlServer: '...'
           kubernetesEnclave:
-            enclaveDeploymentEvents: {}
-            isUsingInitContainer: true
-            wireguardPort: 12345
-            debugInfo: '...'
-            podPhase: '...'
             remoteControlIP: '...'
             enclaveReplicaSetEvents: {}
-            attestationPort: 12345
+            podPhase: '...'
+            enclaveDeploymentEvents: {}
             enclavePodEvents: {}
-            internalWireguardServer: '...'
-            wgInterface: {}
-            ports:
-            - {}
-            - {}
-            publicIdent: '...'
-            internalAttesationServer: '...'
-            process: {}
-            startupCMD: '...'
-            enclaveIdent: '...'
-            attestationServer: '...'
-            internalRemoteControlServer: '...'
+            debugInfo: '...'
+            isUsingInitContainer: true
+            attestationPort: 12345
+            wireguardPort: 12345
             environment: {}
             signerIdent: '...'
-            endingTime: '...'
+            status: '...'
             consoleOutput: '...'
+            attestationServer: '...'
+            enclaveInputstream: {}
+            endingTime: '...'
+            publicIdent: '...'
+            internalWireguardServer: '...'
+            internalRemoteControlServer: '...'
+            process: {}
+            wgInterface: {}
+            wireguardServer: '...'
+            wireguardPublicKey: '...'
+            internalIdent: '...'
+            remoteControlServer: '...'
+            startupTime: '...'
+            startupCMD: '...'
+            internalAttesationServer: '...'
             portMapping:
               property1: '...'
               property2: '...'
-            remoteControlServer: '...'
             kubernetesEnclave: {}
-            wireguardPublicKey: '...'
-            wireguardServer: '...'
-            internalIdent: '...'
-            enclaveInputstream: {}
-            status: '...'
-            startupTime: '...'
-          wireguardPublicKey: '...'
-          wireguardServer: '...'
-          internalIdent: '...'
-          enclaveInputstream: {}
-          status: '...'
-          startupTime: '...'
-      properties:
+            ports:
+            - {}
+            - {}
+            enclaveIdent: '...'
+          ports:
+          - port: '...'
+            name: '...'
+            protocol: '...'
+          - port: '...'
+            name: '...'
+            protocol: '...'
+          enclaveIdent: '...'
         nodeInfo:
-          $ref: '#/components/schemas/json_NodeInfo'
+          hardwareFirmware: '...'
+          sgxInfo:
+            version: '...'
+            status: '...'
+          cpuLogicalCount: 12345
+          publicKey: '...'
+          memory: '...'
+          status: '...'
+          ipfsInfo:
+            publicKey: '...'
+            agentVersion: '...'
+            swarmConnection: '...'
+            protocolVersion: '...'
+            id: '...'
+          operatingSystemUptime: 12345
+          cpuModel: '...'
+          cpuPhysicalCores: 12345
+          cpuFrequency: '...'
+          hardwareBaseboard: '...'
+          owner: '...'
+          cpuFamily: '...'
+          operatingSystem: '...'
+          processors:
+          - '...'
+          - '...'
+          connectionURL: '...'
+      properties:
         enclaveProcess:
           $ref: '#/components/schemas/json_EnclaveProcess'
+        nodeInfo:
+          $ref: '#/components/schemas/json_NodeInfo'
       title: EnclaveRunningAttestation
       type: object
     json_EnclaveRunningAttestationApproval:
@@ -2785,58 +2785,42 @@ components:
     json_Environment:
       description: ""
       example:
+        description: '...'
+        name: '...'
+        content:
+        - '...'
+        - '...'
+        size: '...'
+        roothash: '...'
+        uuid: '...'
+        published: true
+        rootHashOffset: '...'
+        ipfsHash: '...'
         defaultRunConfiguration:
-          disk_config:
-          - roothash: '...'
-            disk: '...'
-            roothash_offset: 12345
-            readonly: true
-          - roothash: '...'
-            disk: '...'
-            roothash_offset: 12345
-            readonly: true
-          run: '...'
           environment:
             property1: '...'
             property2: '...'
           args:
           - '...'
           - '...'
-        size: '...'
-        description: '...'
-        published: true
-        uuid: '...'
+          run: '...'
+          disk_config:
+          - roothash_offset: 12345
+            disk: '...'
+            roothash: '...'
+            readonly: true
+          - roothash_offset: 12345
+            disk: '...'
+            roothash: '...'
+            readonly: true
         packages:
         - '...'
         - '...'
-        rootHashOffset: '...'
-        content:
-        - '...'
-        - '...'
-        ipfsHash: '...'
-        name: '...'
-        roothash: '...'
       properties:
-        defaultRunConfiguration:
-          $ref: '#/components/schemas/json_RunConfig'
-        size:
-          description: ""
-          type: string
         description:
           description: ""
           type: string
-        published:
-          description: ""
-          type: boolean
-        uuid:
-          description: ""
-          type: string
-        packages:
-          description: ""
-          items:
-            type: string
-          type: array
-        rootHashOffset:
+        name:
           description: ""
           type: string
         content:
@@ -2844,40 +2828,56 @@ components:
           items:
             type: string
           type: array
-        ipfsHash:
-          description: ""
-          type: string
-        name:
+        size:
           description: ""
           type: string
         roothash:
           description: ""
           type: string
+        uuid:
+          description: ""
+          type: string
+        published:
+          description: ""
+          type: boolean
+        rootHashOffset:
+          description: ""
+          type: string
+        ipfsHash:
+          description: ""
+          type: string
+        defaultRunConfiguration:
+          $ref: '#/components/schemas/json_RunConfig'
+        packages:
+          description: ""
+          items:
+            type: string
+          type: array
       title: Environment
       type: object
     json_EnvironmentPublishingRequest:
       description: ""
       example:
-        size: '...'
-        name: '...'
         content: '...'
+        name: '...'
         ipfsHash: '...'
+        isPublic: '...'
         description: '...'
         packages: '...'
-        isPublic: '...'
-        ipfsPrimaryPeer: '...'
         uuid: '...'
+        ipfsPrimaryPeer: '...'
+        size: '...'
       properties:
-        size:
+        content:
           description: ""
           type: string
         name:
           description: ""
           type: string
-        content:
+        ipfsHash:
           description: ""
           type: string
-        ipfsHash:
+        isPublic:
           description: ""
           type: string
         description:
@@ -2886,13 +2886,13 @@ components:
         packages:
           description: ""
           type: string
-        isPublic:
+        uuid:
           description: ""
           type: string
         ipfsPrimaryPeer:
           description: ""
           type: string
-        uuid:
+        size:
           description: ""
           type: string
       title: EnvironmentPublishingRequest
@@ -2900,25 +2900,25 @@ components:
     json_IPFSSystemInfo:
       description: ""
       example:
+        publicKey: '...'
+        agentVersion: '...'
+        swarmConnection: '...'
         protocolVersion: '...'
         id: '...'
-        agentVersion: '...'
-        publicKey: '...'
-        swarmConnection: '...'
       properties:
-        protocolVersion:
-          description: ""
-          type: string
-        id:
+        publicKey:
           description: ""
           type: string
         agentVersion:
           description: ""
           type: string
-        publicKey:
+        swarmConnection:
           description: ""
           type: string
-        swarmConnection:
+        protocolVersion:
+          description: ""
+          type: string
+        id:
           description: ""
           type: string
       title: IPFSSystemInfo
@@ -2937,25 +2937,25 @@ components:
     json_MDN_A_UserObject:
       description: ""
       example:
-        userName: '...'
-        activated: '...'
         image: '...'
-        created: '...'
         lastActive: '...'
+        activated: '...'
+        userName: '...'
+        created: '...'
       properties:
-        userName:
+        image:
+          description: ""
+          type: string
+        lastActive:
           description: ""
           type: string
         activated:
           description: ""
           type: string
-        image:
+        userName:
           description: ""
           type: string
         created:
-          description: ""
-          type: string
-        lastActive:
           description: ""
           type: string
       title: MDN_A_UserObject
@@ -3007,14 +3007,14 @@ components:
     json_MDN_PasswordReset:
       description: ""
       example:
-        token: '...'
         password: '...'
+        token: '...'
         mail: '...'
       properties:
-        token:
+        password:
           description: ""
           type: string
-        password:
+        token:
           description: ""
           type: string
         mail:
@@ -3026,16 +3026,16 @@ components:
       description: ""
       example:
         id: '...'
-        description: '...'
         name: '...'
+        description: '...'
       properties:
         id:
           description: ""
           type: string
-        description:
+        name:
           description: ""
           type: string
-        name:
+        description:
           description: ""
           type: string
       title: MDN_Setting
@@ -3044,16 +3044,16 @@ components:
       description: ""
       example:
         image: '...'
-        platform: '...'
         ident: '...'
+        platform: '...'
       properties:
         image:
           description: ""
           type: string
-        platform:
+        ident:
           description: ""
           type: string
-        ident:
+        platform:
           description: ""
           type: string
       title: MDN_SocialUserObject
@@ -3111,13 +3111,13 @@ components:
     json_NetworkInterface:
       description: ""
       example:
-        name: '...'
         address: '...'
+        name: '...'
       properties:
-        name:
+        address:
           description: ""
           type: string
-        address:
+        name:
           description: ""
           type: string
       title: NetworkInterface
@@ -3125,69 +3125,34 @@ components:
     json_NodeInfo:
       description: ""
       example:
-        processors:
-        - '...'
-        - '...'
-        memory: '...'
+        hardwareFirmware: '...'
+        sgxInfo:
+          version: '...'
+          status: '...'
+        cpuLogicalCount: 12345
         publicKey: '...'
-        operatingSystem: '...'
-        owner: '...'
-        cpuPhysicalCores: 12345
+        memory: '...'
+        status: '...'
         ipfsInfo:
+          publicKey: '...'
+          agentVersion: '...'
+          swarmConnection: '...'
           protocolVersion: '...'
           id: '...'
-          agentVersion: '...'
-          publicKey: '...'
-          swarmConnection: '...'
-        hardwareFirmware: '...'
-        hardwareBaseboard: '...'
-        cpuModel: '...'
-        connectionURL: '...'
-        cpuFrequency: '...'
-        sgxInfo:
-          status: '...'
-          version: '...'
-        cpuLogicalCount: 12345
-        status: '...'
         operatingSystemUptime: 12345
+        cpuModel: '...'
+        cpuPhysicalCores: 12345
+        cpuFrequency: '...'
+        hardwareBaseboard: '...'
+        owner: '...'
         cpuFamily: '...'
-      properties:
+        operatingSystem: '...'
         processors:
-          description: ""
-          items:
-            type: string
-          type: array
-        memory:
-          description: ""
-          type: string
-        publicKey:
-          description: ""
-          type: string
-        operatingSystem:
-          description: ""
-          type: string
-        owner:
-          description: ""
-          type: string
-        cpuPhysicalCores:
-          description: ""
-          format: int32
-          type: integer
-        ipfsInfo:
-          $ref: '#/components/schemas/json_IPFSSystemInfo'
+        - '...'
+        - '...'
+        connectionURL: '...'
+      properties:
         hardwareFirmware:
-          description: ""
-          type: string
-        hardwareBaseboard:
-          description: ""
-          type: string
-        cpuModel:
-          description: ""
-          type: string
-        connectionURL:
-          description: ""
-          type: string
-        cpuFrequency:
           description: ""
           type: string
         sgxInfo:
@@ -3196,13 +3161,48 @@ components:
           description: ""
           format: int32
           type: integer
+        publicKey:
+          description: ""
+          type: string
+        memory:
+          description: ""
+          type: string
         status:
           description: ""
           type: string
+        ipfsInfo:
+          $ref: '#/components/schemas/json_IPFSSystemInfo'
         operatingSystemUptime:
           description: ""
           type: number
+        cpuModel:
+          description: ""
+          type: string
+        cpuPhysicalCores:
+          description: ""
+          format: int32
+          type: integer
+        cpuFrequency:
+          description: ""
+          type: string
+        hardwareBaseboard:
+          description: ""
+          type: string
+        owner:
+          description: ""
+          type: string
         cpuFamily:
+          description: ""
+          type: string
+        operatingSystem:
+          description: ""
+          type: string
+        processors:
+          description: ""
+          items:
+            type: string
+          type: array
+        connectionURL:
           description: ""
           type: string
       title: NodeInfo
@@ -3215,59 +3215,51 @@ components:
     json_Process:
       description: ""
       example:
-        inputStream: {}
         outputStream: {}
-        alive: true
         errorStream: {}
+        inputStream: {}
+        alive: true
       properties:
-        inputStream:
-          description: ""
-          example: {}
-          title: InputStream
-          type: object
         outputStream:
           description: ""
           example: {}
           title: OutputStream
           type: object
-        alive:
-          description: ""
-          type: boolean
         errorStream:
           description: ""
           example: {}
           title: InputStream
           type: object
+        inputStream:
+          description: ""
+          example: {}
+          title: InputStream
+          type: object
+        alive:
+          description: ""
+          type: boolean
       title: Process
       type: object
     json_RunConfig:
       description: ""
       example:
-        disk_config:
-        - roothash: '...'
-          disk: '...'
-          roothash_offset: 12345
-          readonly: true
-        - roothash: '...'
-          disk: '...'
-          roothash_offset: 12345
-          readonly: true
-        run: '...'
         environment:
           property1: '...'
           property2: '...'
         args:
         - '...'
         - '...'
-      properties:
+        run: '...'
         disk_config:
-          description: ""
-          items:
-            $ref: '#/components/schemas/json_Disk_config'
-          type: array
-        run:
-          description: ""
-          type: string
+        - roothash_offset: 12345
+          disk: '...'
+          roothash: '...'
+          readonly: true
+        - roothash_offset: 12345
+          disk: '...'
+          roothash: '...'
+          readonly: true
+      properties:
         environment:
           additionalProperties:
             type: string
@@ -3278,18 +3270,26 @@ components:
           items:
             type: string
           type: array
+        run:
+          description: ""
+          type: string
+        disk_config:
+          description: ""
+          items:
+            $ref: '#/components/schemas/json_Disk_config'
+          type: array
       title: RunConfig
       type: object
     json_SGXInfo:
       description: ""
       example:
-        status: '...'
         version: '...'
+        status: '...'
       properties:
-        status:
+        version:
           description: ""
           type: string
-        version:
+        status:
           description: ""
           type: string
       title: SGXInfo
@@ -3297,14 +3297,14 @@ components:
     json_SignedData:
       description: ""
       example:
-        fingerpint: '...'
         data: '...'
+        fingerpint: '...'
         signature: '...'
       properties:
-        fingerpint:
+        data:
           description: ""
           type: string
-        data:
+        fingerpint:
           description: ""
           type: string
         signature:
@@ -3315,17 +3315,17 @@ components:
     json_SignedData_utils:
       description: ""
       example:
-        signature: '...'
         data: '...'
         fingerpint: '...'
+        signature: '...'
       properties:
-        signature:
-          description: ""
-          type: string
         data:
           description: ""
           type: string
         fingerpint:
+          description: ""
+          type: string
+        signature:
           description: ""
           type: string
       title: SignedData
@@ -3333,106 +3333,124 @@ components:
     json_V1Event:
       description: ""
       example:
-        reportingComponent: '...'
-        source:
-          host: '...'
-          component: '...'
-        series:
-          state: '...'
-          count: 12345
-          lastObservedTime: 12345
-        eventTime: 12345
-        apiVersion: '...'
-        message: '...'
-        reportingInstance: '...'
-        firstTimestamp: 12345
-        type: '...'
         metadata:
+          deletionTimestamp: 12345
+          name: '...'
+          finalizers:
+          - '...'
+          - '...'
+          generateName: '...'
+          selfLink: '...'
+          uid: '...'
+          namespace: '...'
           labels:
             property1: '...'
             property2: '...'
-          namespace: '...'
-          resourceVersion: '...'
-          deletionTimestamp: 12345
           deletionGracePeriodSeconds: 12345
-          managedFields:
-          - manager: '...'
-            fieldsV1: {}
-            operation: '...'
-            apiVersion: '...'
-            fieldsType: '...'
-            time: 12345
-          - manager: '...'
-            fieldsV1: {}
-            operation: '...'
-            apiVersion: '...'
-            fieldsType: '...'
-            time: 12345
-          ownerReferences:
-          - uid: '...'
-            blockOwnerDeletion: true
-            apiVersion: '...'
-            controller: true
-            name: '...'
-            kind: '...'
-          - uid: '...'
-            blockOwnerDeletion: true
-            apiVersion: '...'
-            controller: true
-            name: '...'
-            kind: '...'
-          uid: '...'
-          generateName: '...'
-          name: '...'
           annotations:
             property1: '...'
             property2: '...'
           creationTimestamp: 12345
-          finalizers:
-          - '...'
-          - '...'
+          resourceVersion: '...'
           clusterName: '...'
           generation: 12345
-          selfLink: '...'
-        lastTimestamp: 12345
-        kind: '...'
-        action: '...'
-        involvedObject:
-          uid: '...'
-          resourceVersion: '...'
-          kind: '...'
-          fieldPath: '...'
-          apiVersion: '...'
-          name: '...'
-          namespace: '...'
-        reason: '...'
-        count: 12345
-        related:
-          uid: '...'
-          resourceVersion: '...'
-          kind: '...'
-          fieldPath: '...'
-          apiVersion: '...'
-          name: '...'
-          namespace: '...'
-      properties:
-        reportingComponent:
-          description: ""
-          type: string
+          managedFields:
+          - fieldsV1: {}
+            apiVersion: '...'
+            time: 12345
+            fieldsType: '...'
+            operation: '...'
+            manager: '...'
+          - fieldsV1: {}
+            apiVersion: '...'
+            time: 12345
+            fieldsType: '...'
+            operation: '...'
+            manager: '...'
+          ownerReferences:
+          - name: '...'
+            controller: true
+            blockOwnerDeletion: true
+            uid: '...'
+            kind: '...'
+            apiVersion: '...'
+          - name: '...'
+            controller: true
+            blockOwnerDeletion: true
+            uid: '...'
+            kind: '...'
+            apiVersion: '...'
+        eventTime: 12345
         source:
-          $ref: '#/components/schemas/json_V1EventSource'
+          host: '...'
+          component: '...'
+        message: '...'
+        related:
+          name: '...'
+          fieldPath: '...'
+          uid: '...'
+          apiVersion: '...'
+          kind: '...'
+          namespace: '...'
+          resourceVersion: '...'
+        reportingInstance: '...'
+        lastTimestamp: 12345
+        reportingComponent: '...'
+        involvedObject:
+          name: '...'
+          fieldPath: '...'
+          uid: '...'
+          apiVersion: '...'
+          kind: '...'
+          namespace: '...'
+          resourceVersion: '...'
+        reason: '...'
+        apiVersion: '...'
         series:
-          $ref: '#/components/schemas/json_V1EventSeries'
+          lastObservedTime: 12345
+          state: '...'
+          count: 12345
+        count: 12345
+        action: '...'
+        firstTimestamp: 12345
+        type: '...'
+        kind: '...'
+      properties:
+        metadata:
+          $ref: '#/components/schemas/json_V1ObjectMeta'
         eventTime:
           description: ""
           type: number
-        apiVersion:
-          description: ""
-          type: string
+        source:
+          $ref: '#/components/schemas/json_V1EventSource'
         message:
           description: ""
           type: string
+        related:
+          $ref: '#/components/schemas/json_V1ObjectReference'
         reportingInstance:
+          description: ""
+          type: string
+        lastTimestamp:
+          description: ""
+          type: number
+        reportingComponent:
+          description: ""
+          type: string
+        involvedObject:
+          $ref: '#/components/schemas/json_V1ObjectReference'
+        reason:
+          description: ""
+          type: string
+        apiVersion:
+          description: ""
+          type: string
+        series:
+          $ref: '#/components/schemas/json_V1EventSeries'
+        count:
+          description: ""
+          type: number
+        action:
           description: ""
           type: string
         firstTimestamp:
@@ -3441,194 +3459,176 @@ components:
         type:
           description: ""
           type: string
-        metadata:
-          $ref: '#/components/schemas/json_V1ObjectMeta'
-        lastTimestamp:
-          description: ""
-          type: number
         kind:
           description: ""
           type: string
-        action:
-          description: ""
-          type: string
-        involvedObject:
-          $ref: '#/components/schemas/json_V1ObjectReference'
-        reason:
-          description: ""
-          type: string
-        count:
-          description: ""
-          type: number
-        related:
-          $ref: '#/components/schemas/json_V1ObjectReference'
       title: V1Event
       type: object
     json_V1EventList:
       description: ""
       example:
         items:
-        - reportingComponent: '...'
-          source:
-            host: '...'
-            component: '...'
-          series:
-            state: '...'
-            count: 12345
-            lastObservedTime: 12345
-          eventTime: 12345
-          apiVersion: '...'
-          message: '...'
-          reportingInstance: '...'
-          firstTimestamp: 12345
-          type: '...'
-          metadata:
+        - metadata:
+            deletionTimestamp: 12345
+            name: '...'
+            finalizers:
+            - '...'
+            - '...'
+            generateName: '...'
+            selfLink: '...'
+            uid: '...'
+            namespace: '...'
             labels:
               property1: '...'
               property2: '...'
-            namespace: '...'
-            resourceVersion: '...'
-            deletionTimestamp: 12345
             deletionGracePeriodSeconds: 12345
+            annotations:
+              property1: '...'
+              property2: '...'
+            creationTimestamp: 12345
+            resourceVersion: '...'
+            clusterName: '...'
+            generation: 12345
             managedFields:
             - {}
             - {}
             ownerReferences:
             - {}
             - {}
-            uid: '...'
-            generateName: '...'
+          eventTime: 12345
+          source:
+            host: '...'
+            component: '...'
+          message: '...'
+          related:
             name: '...'
+            fieldPath: '...'
+            uid: '...'
+            apiVersion: '...'
+            kind: '...'
+            namespace: '...'
+            resourceVersion: '...'
+          reportingInstance: '...'
+          lastTimestamp: 12345
+          reportingComponent: '...'
+          involvedObject:
+            name: '...'
+            fieldPath: '...'
+            uid: '...'
+            apiVersion: '...'
+            kind: '...'
+            namespace: '...'
+            resourceVersion: '...'
+          reason: '...'
+          apiVersion: '...'
+          series:
+            lastObservedTime: 12345
+            state: '...'
+            count: 12345
+          count: 12345
+          action: '...'
+          firstTimestamp: 12345
+          type: '...'
+          kind: '...'
+        - metadata:
+            deletionTimestamp: 12345
+            name: '...'
+            finalizers:
+            - '...'
+            - '...'
+            generateName: '...'
+            selfLink: '...'
+            uid: '...'
+            namespace: '...'
+            labels:
+              property1: '...'
+              property2: '...'
+            deletionGracePeriodSeconds: 12345
             annotations:
               property1: '...'
               property2: '...'
             creationTimestamp: 12345
-            finalizers:
-            - '...'
-            - '...'
+            resourceVersion: '...'
             clusterName: '...'
             generation: 12345
-            selfLink: '...'
-          lastTimestamp: 12345
-          kind: '...'
-          action: '...'
-          involvedObject:
-            uid: '...'
-            resourceVersion: '...'
-            kind: '...'
-            fieldPath: '...'
-            apiVersion: '...'
-            name: '...'
-            namespace: '...'
-          reason: '...'
-          count: 12345
-          related:
-            uid: '...'
-            resourceVersion: '...'
-            kind: '...'
-            fieldPath: '...'
-            apiVersion: '...'
-            name: '...'
-            namespace: '...'
-        - reportingComponent: '...'
-          source:
-            host: '...'
-            component: '...'
-          series:
-            state: '...'
-            count: 12345
-            lastObservedTime: 12345
-          eventTime: 12345
-          apiVersion: '...'
-          message: '...'
-          reportingInstance: '...'
-          firstTimestamp: 12345
-          type: '...'
-          metadata:
-            labels:
-              property1: '...'
-              property2: '...'
-            namespace: '...'
-            resourceVersion: '...'
-            deletionTimestamp: 12345
-            deletionGracePeriodSeconds: 12345
             managedFields:
             - {}
             - {}
             ownerReferences:
             - {}
             - {}
-            uid: '...'
-            generateName: '...'
-            name: '...'
-            annotations:
-              property1: '...'
-              property2: '...'
-            creationTimestamp: 12345
-            finalizers:
-            - '...'
-            - '...'
-            clusterName: '...'
-            generation: 12345
-            selfLink: '...'
-          lastTimestamp: 12345
-          kind: '...'
-          action: '...'
-          involvedObject:
-            uid: '...'
-            resourceVersion: '...'
-            kind: '...'
-            fieldPath: '...'
-            apiVersion: '...'
-            name: '...'
-            namespace: '...'
-          reason: '...'
-          count: 12345
+          eventTime: 12345
+          source:
+            host: '...'
+            component: '...'
+          message: '...'
           related:
-            uid: '...'
-            resourceVersion: '...'
-            kind: '...'
-            fieldPath: '...'
-            apiVersion: '...'
             name: '...'
+            fieldPath: '...'
+            uid: '...'
+            apiVersion: '...'
+            kind: '...'
             namespace: '...'
-        kind: '...'
-        apiVersion: '...'
+            resourceVersion: '...'
+          reportingInstance: '...'
+          lastTimestamp: 12345
+          reportingComponent: '...'
+          involvedObject:
+            name: '...'
+            fieldPath: '...'
+            uid: '...'
+            apiVersion: '...'
+            kind: '...'
+            namespace: '...'
+            resourceVersion: '...'
+          reason: '...'
+          apiVersion: '...'
+          series:
+            lastObservedTime: 12345
+            state: '...'
+            count: 12345
+          count: 12345
+          action: '...'
+          firstTimestamp: 12345
+          type: '...'
+          kind: '...'
         metadata:
+          resourceVersion: '...'
+          remainingItemCount: 12345
           continue: '...'
           selfLink: '...'
-          remainingItemCount: 12345
-          resourceVersion: '...'
+        apiVersion: '...'
+        kind: '...'
       properties:
         items:
           description: ""
           items:
             $ref: '#/components/schemas/json_V1Event'
           type: array
-        kind:
-          description: ""
-          type: string
+        metadata:
+          $ref: '#/components/schemas/json_V1ListMeta'
         apiVersion:
           description: ""
           type: string
-        metadata:
-          $ref: '#/components/schemas/json_V1ListMeta'
+        kind:
+          description: ""
+          type: string
       title: V1EventList
       type: object
     json_V1EventSeries:
       description: ""
       example:
+        lastObservedTime: 12345
         state: '...'
         count: 12345
-        lastObservedTime: 12345
       properties:
+        lastObservedTime:
+          description: ""
+          type: number
         state:
           description: ""
           type: string
         count:
-          description: ""
-          type: number
-        lastObservedTime:
           description: ""
           type: number
       title: V1EventSeries
@@ -3650,21 +3650,21 @@ components:
     json_V1ListMeta:
       description: ""
       example:
+        resourceVersion: '...'
+        remainingItemCount: 12345
         continue: '...'
         selfLink: '...'
-        remainingItemCount: 12345
-        resourceVersion: '...'
       properties:
-        continue:
-          description: ""
-          type: string
-        selfLink:
+        resourceVersion:
           description: ""
           type: string
         remainingItemCount:
           description: ""
           type: number
-        resourceVersion:
+        continue:
+          description: ""
+          type: string
+        selfLink:
           description: ""
           type: string
       title: V1ListMeta
@@ -3672,99 +3672,130 @@ components:
     json_V1ManagedFieldsEntry:
       description: ""
       example:
-        manager: '...'
         fieldsV1: {}
-        operation: '...'
         apiVersion: '...'
-        fieldsType: '...'
         time: 12345
+        fieldsType: '...'
+        operation: '...'
+        manager: '...'
       properties:
-        manager:
-          description: ""
-          type: string
         fieldsV1:
           description: ""
           properties: {}
           type: object
-        operation:
-          description: ""
-          type: string
         apiVersion:
-          description: ""
-          type: string
-        fieldsType:
           description: ""
           type: string
         time:
           description: ""
           type: number
+        fieldsType:
+          description: ""
+          type: string
+        operation:
+          description: ""
+          type: string
+        manager:
+          description: ""
+          type: string
       title: V1ManagedFieldsEntry
       type: object
     json_V1ObjectMeta:
       description: ""
       example:
+        deletionTimestamp: 12345
+        name: '...'
+        finalizers:
+        - '...'
+        - '...'
+        generateName: '...'
+        selfLink: '...'
+        uid: '...'
+        namespace: '...'
         labels:
           property1: '...'
           property2: '...'
-        namespace: '...'
-        resourceVersion: '...'
-        deletionTimestamp: 12345
         deletionGracePeriodSeconds: 12345
-        managedFields:
-        - manager: '...'
-          fieldsV1: {}
-          operation: '...'
-          apiVersion: '...'
-          fieldsType: '...'
-          time: 12345
-        - manager: '...'
-          fieldsV1: {}
-          operation: '...'
-          apiVersion: '...'
-          fieldsType: '...'
-          time: 12345
-        ownerReferences:
-        - uid: '...'
-          blockOwnerDeletion: true
-          apiVersion: '...'
-          controller: true
-          name: '...'
-          kind: '...'
-        - uid: '...'
-          blockOwnerDeletion: true
-          apiVersion: '...'
-          controller: true
-          name: '...'
-          kind: '...'
-        uid: '...'
-        generateName: '...'
-        name: '...'
         annotations:
           property1: '...'
           property2: '...'
         creationTimestamp: 12345
-        finalizers:
-        - '...'
-        - '...'
+        resourceVersion: '...'
         clusterName: '...'
         generation: 12345
-        selfLink: '...'
+        managedFields:
+        - fieldsV1: {}
+          apiVersion: '...'
+          time: 12345
+          fieldsType: '...'
+          operation: '...'
+          manager: '...'
+        - fieldsV1: {}
+          apiVersion: '...'
+          time: 12345
+          fieldsType: '...'
+          operation: '...'
+          manager: '...'
+        ownerReferences:
+        - name: '...'
+          controller: true
+          blockOwnerDeletion: true
+          uid: '...'
+          kind: '...'
+          apiVersion: '...'
+        - name: '...'
+          controller: true
+          blockOwnerDeletion: true
+          uid: '...'
+          kind: '...'
+          apiVersion: '...'
       properties:
+        deletionTimestamp:
+          description: ""
+          type: number
+        name:
+          description: ""
+          type: string
+        finalizers:
+          description: ""
+          items:
+            type: string
+          type: array
+        generateName:
+          description: ""
+          type: string
+        selfLink:
+          description: ""
+          type: string
+        uid:
+          description: ""
+          type: string
+        namespace:
+          description: ""
+          type: string
         labels:
           additionalProperties:
             type: string
           description: ""
           type: object
-        namespace:
+        deletionGracePeriodSeconds:
           description: ""
-          type: string
+          type: number
+        annotations:
+          additionalProperties:
+            type: string
+          description: ""
+          type: object
+        creationTimestamp:
+          description: ""
+          type: number
         resourceVersion:
           description: ""
           type: string
-        deletionTimestamp:
+        clusterName:
           description: ""
-          type: number
-        deletionGracePeriodSeconds:
+          type: string
+        generation:
           description: ""
           type: number
         managedFields:
@@ -3777,69 +3808,38 @@ components:
           items:
             $ref: '#/components/schemas/json_V1OwnerReference'
           type: array
-        uid:
-          description: ""
-          type: string
-        generateName:
-          description: ""
-          type: string
-        name:
-          description: ""
-          type: string
-        annotations:
-          additionalProperties:
-            type: string
-          description: ""
-          type: object
-        creationTimestamp:
-          description: ""
-          type: number
-        finalizers:
-          description: ""
-          items:
-            type: string
-          type: array
-        clusterName:
-          description: ""
-          type: string
-        generation:
-          description: ""
-          type: number
-        selfLink:
-          description: ""
-          type: string
       title: V1ObjectMeta
       type: object
     json_V1ObjectReference:
       description: ""
       example:
-        uid: '...'
-        resourceVersion: '...'
-        kind: '...'
-        fieldPath: '...'
-        apiVersion: '...'
         name: '...'
+        fieldPath: '...'
+        uid: '...'
+        apiVersion: '...'
+        kind: '...'
         namespace: '...'
+        resourceVersion: '...'
       properties:
-        uid:
-          description: ""
-          type: string
-        resourceVersion:
-          description: ""
-          type: string
-        kind:
+        name:
           description: ""
           type: string
         fieldPath:
           description: ""
           type: string
+        uid:
+          description: ""
+          type: string
         apiVersion:
           description: ""
           type: string
-        name:
+        kind:
           description: ""
           type: string
         namespace:
+          description: ""
+          type: string
+        resourceVersion:
           description: ""
           type: string
       title: V1ObjectReference
@@ -3847,29 +3847,29 @@ components:
     json_V1OwnerReference:
       description: ""
       example:
-        uid: '...'
-        blockOwnerDeletion: true
-        apiVersion: '...'
-        controller: true
         name: '...'
+        controller: true
+        blockOwnerDeletion: true
+        uid: '...'
         kind: '...'
+        apiVersion: '...'
       properties:
-        uid:
-          description: ""
-          type: string
-        blockOwnerDeletion:
-          description: ""
-          type: boolean
-        apiVersion:
+        name:
           description: ""
           type: string
         controller:
           description: ""
           type: boolean
-        name:
+        blockOwnerDeletion:
+          description: ""
+          type: boolean
+        uid:
           description: ""
           type: string
         kind:
+          description: ""
+          type: string
+        apiVersion:
           description: ""
           type: string
       title: V1OwnerReference
@@ -3896,6 +3896,11 @@ components:
       - $ref: '#/components/schemas/xml_ns0_MDN_UserSetting_allOf'
       description: ""
       title: MDN_UserSetting
+    xml_ns0_signedData:
+      allOf:
+      - $ref: '#/components/schemas/xml_ns0_signedData_allOf'
+      description: ""
+      title: signedData
     xml_ns0_enclaveProcess:
       allOf:
       - $ref: '#/components/schemas/xml_ns0_enclaveProcess_allOf'
@@ -3937,11 +3942,6 @@ components:
       - $ref: '#/components/schemas/xml_ns0_SGXInfo_allOf'
       description: ""
       title: SGXInfo
-    xml_ns0_signedData:
-      allOf:
-      - $ref: '#/components/schemas/xml_ns0_signedData_allOf'
-      description: ""
-      title: signedData
     xml_ns0_wireguardInterface:
       allOf:
       - $ref: '#/components/schemas/xml_ns0_networkInterface'
@@ -3987,35 +3987,37 @@ components:
       type: object
     json_KubernetesEnclave_allOf:
       properties:
-        enclaveDeploymentEvents:
-          $ref: '#/components/schemas/json_V1EventList'
-        isUsingInitContainer:
-          description: ""
-          type: boolean
-        wireguardPort:
-          description: ""
-          format: int32
-          type: integer
-        debugInfo:
-          description: ""
-          type: string
-        podPhase:
-          description: ""
-          type: string
         remoteControlIP:
           description: ""
           type: string
         enclaveReplicaSetEvents:
           $ref: '#/components/schemas/json_V1EventList'
+        podPhase:
+          description: ""
+          type: string
+        enclaveDeploymentEvents:
+          $ref: '#/components/schemas/json_V1EventList'
+        enclavePodEvents:
+          $ref: '#/components/schemas/json_V1EventList'
+        debugInfo:
+          description: ""
+          type: string
+        isUsingInitContainer:
+          description: ""
+          type: boolean
         attestationPort:
           description: ""
           format: int32
           type: integer
-        enclavePodEvents:
-          $ref: '#/components/schemas/json_V1EventList'
+        wireguardPort:
+          description: ""
+          format: int32
+          type: integer
       type: object
     json_MDN_User_allOf:
       properties:
+        credentials:
+          $ref: '#/components/schemas/json_MDN_UserCredentials'
         socialAccounts:
           description: ""
           items:
@@ -4024,20 +4026,18 @@ components:
         mail:
           description: ""
           type: string
-        lastName:
-          description: ""
-          type: string
         settings:
           description: ""
           items:
             $ref: '#/components/schemas/json_MDN_UserSetting'
           type: array
-        credentials:
-          $ref: '#/components/schemas/json_MDN_UserCredentials'
-        guid:
+        lastName:
           description: ""
           type: string
         firstName:
+          description: ""
+          type: string
+        guid:
           description: ""
           type: string
       type: object
@@ -4087,6 +4087,24 @@ components:
     xml_ns0_MDN_UserSetting_allOf:
       properties:
         value:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+      type: object
+    xml_ns0_signedData_allOf:
+      properties:
+        data:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        fingerpint:
+          description: ""
+          type: string
+          xml:
+            namespace: ""
+        signature:
           description: ""
           type: string
           xml:
@@ -4408,24 +4426,6 @@ components:
           xml:
             namespace: ""
         version:
-          description: ""
-          type: string
-          xml:
-            namespace: ""
-      type: object
-    xml_ns0_signedData_allOf:
-      properties:
-        data:
-          description: ""
-          type: string
-          xml:
-            namespace: ""
-        fingerpint:
-          description: ""
-          type: string
-          xml:
-            namespace: ""
-        signature:
           description: ""
           type: string
           xml:

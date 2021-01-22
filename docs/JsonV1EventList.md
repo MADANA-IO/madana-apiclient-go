@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Items** | Pointer to [**[]JsonV1Event**](JsonV1Event.md) |  | [optional] 
-**Kind** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to [**JsonV1ListMeta**](json_V1ListMeta.md) |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetItems sets Items field to given value.
 
 HasItems returns a boolean if a field has been set.
 
-### GetKind
+### GetMetadata
 
-`func (o *JsonV1EventList) GetKind() string`
+`func (o *JsonV1EventList) GetMetadata() JsonV1ListMeta`
 
-GetKind returns the Kind field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetKindOk
+### GetMetadataOk
 
-`func (o *JsonV1EventList) GetKindOk() (*string, bool)`
+`func (o *JsonV1EventList) GetMetadataOk() (*JsonV1ListMeta, bool)`
 
-GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKind
+### SetMetadata
 
-`func (o *JsonV1EventList) SetKind(v string)`
+`func (o *JsonV1EventList) SetMetadata(v JsonV1ListMeta)`
 
-SetKind sets Kind field to given value.
+SetMetadata sets Metadata field to given value.
 
-### HasKind
+### HasMetadata
 
-`func (o *JsonV1EventList) HasKind() bool`
+`func (o *JsonV1EventList) HasMetadata() bool`
 
-HasKind returns a boolean if a field has been set.
+HasMetadata returns a boolean if a field has been set.
 
 ### GetApiVersion
 
@@ -103,30 +103,30 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetMetadata
+### GetKind
 
-`func (o *JsonV1EventList) GetMetadata() JsonV1ListMeta`
+`func (o *JsonV1EventList) GetKind() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetKind returns the Kind field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetKindOk
 
-`func (o *JsonV1EventList) GetMetadataOk() (*JsonV1ListMeta, bool)`
+`func (o *JsonV1EventList) GetKindOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetKind
 
-`func (o *JsonV1EventList) SetMetadata(v JsonV1ListMeta)`
+`func (o *JsonV1EventList) SetKind(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetKind sets Kind field to given value.
 
-### HasMetadata
+### HasKind
 
-`func (o *JsonV1EventList) HasMetadata() bool`
+`func (o *JsonV1EventList) HasKind() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasKind returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
