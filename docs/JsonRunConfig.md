@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Args** | Pointer to **[]string** |  | [optional] 
-**Run** | Pointer to **string** |  | [optional] 
 **Environment** | Pointer to **map[string]string** |  | [optional] 
+**Run** | Pointer to **string** |  | [optional] 
+**Args** | Pointer to **[]string** |  | [optional] 
 **DiskConfig** | Pointer to [**[]JsonDiskConfig**](JsonDiskConfig.md) |  | [optional] 
 
 ## Methods
@@ -28,30 +28,30 @@ NewJsonRunConfigWithDefaults instantiates a new JsonRunConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetArgs
+### GetEnvironment
 
-`func (o *JsonRunConfig) GetArgs() []string`
+`func (o *JsonRunConfig) GetEnvironment() map[string]string`
 
-GetArgs returns the Args field if non-nil, zero value otherwise.
+GetEnvironment returns the Environment field if non-nil, zero value otherwise.
 
-### GetArgsOk
+### GetEnvironmentOk
 
-`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
+`func (o *JsonRunConfig) GetEnvironmentOk() (*map[string]string, bool)`
 
-GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetArgs
+### SetEnvironment
 
-`func (o *JsonRunConfig) SetArgs(v []string)`
+`func (o *JsonRunConfig) SetEnvironment(v map[string]string)`
 
-SetArgs sets Args field to given value.
+SetEnvironment sets Environment field to given value.
 
-### HasArgs
+### HasEnvironment
 
-`func (o *JsonRunConfig) HasArgs() bool`
+`func (o *JsonRunConfig) HasEnvironment() bool`
 
-HasArgs returns a boolean if a field has been set.
+HasEnvironment returns a boolean if a field has been set.
 
 ### GetRun
 
@@ -78,30 +78,30 @@ SetRun sets Run field to given value.
 
 HasRun returns a boolean if a field has been set.
 
-### GetEnvironment
+### GetArgs
 
-`func (o *JsonRunConfig) GetEnvironment() map[string]string`
+`func (o *JsonRunConfig) GetArgs() []string`
 
-GetEnvironment returns the Environment field if non-nil, zero value otherwise.
+GetArgs returns the Args field if non-nil, zero value otherwise.
 
-### GetEnvironmentOk
+### GetArgsOk
 
-`func (o *JsonRunConfig) GetEnvironmentOk() (*map[string]string, bool)`
+`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
 
-GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
+GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnvironment
+### SetArgs
 
-`func (o *JsonRunConfig) SetEnvironment(v map[string]string)`
+`func (o *JsonRunConfig) SetArgs(v []string)`
 
-SetEnvironment sets Environment field to given value.
+SetArgs sets Args field to given value.
 
-### HasEnvironment
+### HasArgs
 
-`func (o *JsonRunConfig) HasEnvironment() bool`
+`func (o *JsonRunConfig) HasArgs() bool`
 
-HasEnvironment returns a boolean if a field has been set.
+HasArgs returns a boolean if a field has been set.
 
 ### GetDiskConfig
 

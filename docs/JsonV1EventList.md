@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Items** | Pointer to [**[]JsonV1Event**](JsonV1Event.md) |  | [optional] 
-**Kind** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**JsonV1ListMeta**](json_V1ListMeta.md) |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**JsonV1ListMeta**](json_V1ListMeta.md) |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetItems sets Items field to given value.
 
 HasItems returns a boolean if a field has been set.
 
-### GetKind
+### GetApiVersion
 
-`func (o *JsonV1EventList) GetKind() string`
+`func (o *JsonV1EventList) GetApiVersion() string`
 
-GetKind returns the Kind field if non-nil, zero value otherwise.
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
-### GetKindOk
+### GetApiVersionOk
 
-`func (o *JsonV1EventList) GetKindOk() (*string, bool)`
+`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
 
-GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKind
+### SetApiVersion
 
-`func (o *JsonV1EventList) SetKind(v string)`
+`func (o *JsonV1EventList) SetApiVersion(v string)`
 
-SetKind sets Kind field to given value.
+SetApiVersion sets ApiVersion field to given value.
 
-### HasKind
+### HasApiVersion
 
-`func (o *JsonV1EventList) HasKind() bool`
+`func (o *JsonV1EventList) HasApiVersion() bool`
 
-HasKind returns a boolean if a field has been set.
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetMetadata
 
@@ -103,30 +103,30 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
-### GetApiVersion
+### GetKind
 
-`func (o *JsonV1EventList) GetApiVersion() string`
+`func (o *JsonV1EventList) GetKind() string`
 
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+GetKind returns the Kind field if non-nil, zero value otherwise.
 
-### GetApiVersionOk
+### GetKindOk
 
-`func (o *JsonV1EventList) GetApiVersionOk() (*string, bool)`
+`func (o *JsonV1EventList) GetKindOk() (*string, bool)`
 
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiVersion
+### SetKind
 
-`func (o *JsonV1EventList) SetApiVersion(v string)`
+`func (o *JsonV1EventList) SetKind(v string)`
 
-SetApiVersion sets ApiVersion field to given value.
+SetKind sets Kind field to given value.
 
-### HasApiVersion
+### HasKind
 
-`func (o *JsonV1EventList) HasApiVersion() bool`
+`func (o *JsonV1EventList) HasKind() bool`
 
-HasApiVersion returns a boolean if a field has been set.
+HasKind returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

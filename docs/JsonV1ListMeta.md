@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Continue** | Pointer to **string** |  | [optional] 
-**SelfLink** | Pointer to **string** |  | [optional] 
-**RemainingItemCount** | Pointer to **float32** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
+**RemainingItemCount** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -28,30 +28,30 @@ NewJsonV1ListMetaWithDefaults instantiates a new JsonV1ListMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContinue
+### GetResourceVersion
 
-`func (o *JsonV1ListMeta) GetContinue() string`
+`func (o *JsonV1ListMeta) GetResourceVersion() string`
 
-GetContinue returns the Continue field if non-nil, zero value otherwise.
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
 
-### GetContinueOk
+### GetResourceVersionOk
 
-`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
 
-GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContinue
+### SetResourceVersion
 
-`func (o *JsonV1ListMeta) SetContinue(v string)`
+`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
 
-SetContinue sets Continue field to given value.
+SetResourceVersion sets ResourceVersion field to given value.
 
-### HasContinue
+### HasResourceVersion
 
-`func (o *JsonV1ListMeta) HasContinue() bool`
+`func (o *JsonV1ListMeta) HasResourceVersion() bool`
 
-HasContinue returns a boolean if a field has been set.
+HasResourceVersion returns a boolean if a field has been set.
 
 ### GetSelfLink
 
@@ -78,6 +78,31 @@ SetSelfLink sets SelfLink field to given value.
 
 HasSelfLink returns a boolean if a field has been set.
 
+### GetContinue
+
+`func (o *JsonV1ListMeta) GetContinue() string`
+
+GetContinue returns the Continue field if non-nil, zero value otherwise.
+
+### GetContinueOk
+
+`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+
+GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContinue
+
+`func (o *JsonV1ListMeta) SetContinue(v string)`
+
+SetContinue sets Continue field to given value.
+
+### HasContinue
+
+`func (o *JsonV1ListMeta) HasContinue() bool`
+
+HasContinue returns a boolean if a field has been set.
+
 ### GetRemainingItemCount
 
 `func (o *JsonV1ListMeta) GetRemainingItemCount() float32`
@@ -102,31 +127,6 @@ SetRemainingItemCount sets RemainingItemCount field to given value.
 `func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
 
 HasRemainingItemCount returns a boolean if a field has been set.
-
-### GetResourceVersion
-
-`func (o *JsonV1ListMeta) GetResourceVersion() string`
-
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
-
-### GetResourceVersionOk
-
-`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
-
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceVersion
-
-`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
-
-SetResourceVersion sets ResourceVersion field to given value.
-
-### HasResourceVersion
-
-`func (o *JsonV1ListMeta) HasResourceVersion() bool`
-
-HasResourceVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
