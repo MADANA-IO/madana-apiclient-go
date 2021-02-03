@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Fingerpint** | Pointer to **string** |  | [optional] 
-**Signature** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
+**Signature** | Pointer to **string** |  | [optional] 
+**Fingerpint** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonSignedDataUtilsWithDefaults instantiates a new JsonSignedDataUtils object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetFingerpint
+### GetData
 
-`func (o *JsonSignedDataUtils) GetFingerpint() string`
+`func (o *JsonSignedDataUtils) GetData() string`
 
-GetFingerpint returns the Fingerpint field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetFingerpintOk
+### GetDataOk
 
-`func (o *JsonSignedDataUtils) GetFingerpintOk() (*string, bool)`
+`func (o *JsonSignedDataUtils) GetDataOk() (*string, bool)`
 
-GetFingerpintOk returns a tuple with the Fingerpint field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFingerpint
+### SetData
 
-`func (o *JsonSignedDataUtils) SetFingerpint(v string)`
+`func (o *JsonSignedDataUtils) SetData(v string)`
 
-SetFingerpint sets Fingerpint field to given value.
+SetData sets Data field to given value.
 
-### HasFingerpint
+### HasData
 
-`func (o *JsonSignedDataUtils) HasFingerpint() bool`
+`func (o *JsonSignedDataUtils) HasData() bool`
 
-HasFingerpint returns a boolean if a field has been set.
+HasData returns a boolean if a field has been set.
 
 ### GetSignature
 
@@ -77,30 +77,30 @@ SetSignature sets Signature field to given value.
 
 HasSignature returns a boolean if a field has been set.
 
-### GetData
+### GetFingerpint
 
-`func (o *JsonSignedDataUtils) GetData() string`
+`func (o *JsonSignedDataUtils) GetFingerpint() string`
 
-GetData returns the Data field if non-nil, zero value otherwise.
+GetFingerpint returns the Fingerpint field if non-nil, zero value otherwise.
 
-### GetDataOk
+### GetFingerpintOk
 
-`func (o *JsonSignedDataUtils) GetDataOk() (*string, bool)`
+`func (o *JsonSignedDataUtils) GetFingerpintOk() (*string, bool)`
 
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+GetFingerpintOk returns a tuple with the Fingerpint field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetData
+### SetFingerpint
 
-`func (o *JsonSignedDataUtils) SetData(v string)`
+`func (o *JsonSignedDataUtils) SetFingerpint(v string)`
 
-SetData sets Data field to given value.
+SetFingerpint sets Fingerpint field to given value.
 
-### HasData
+### HasFingerpint
 
-`func (o *JsonSignedDataUtils) HasData() bool`
+`func (o *JsonSignedDataUtils) HasFingerpint() bool`
 
-HasData returns a boolean if a field has been set.
+HasFingerpint returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

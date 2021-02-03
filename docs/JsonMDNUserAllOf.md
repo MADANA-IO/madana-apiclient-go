@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**LastName** | Pointer to **string** |  | [optional] 
 **FirstName** | Pointer to **string** |  | [optional] 
 **Guid** | Pointer to **string** |  | [optional] 
 **Settings** | Pointer to [**[]JsonMDNUserSetting**](JsonMDNUserSetting.md) |  | [optional] 
 **SocialAccounts** | Pointer to [**[]JsonMDNSocialUserObject**](JsonMDNSocialUserObject.md) |  | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
-**Credentials** | Pointer to [**JsonMDNUserCredentials**](json_MDN_UserCredentials.md) |  | [optional] 
 **Mail** | Pointer to **string** |  | [optional] 
+**Credentials** | Pointer to [**JsonMDNUserCredentials**](json_MDN_UserCredentials.md) |  | [optional] 
 
 ## Methods
 
@@ -30,6 +30,31 @@ will change when the set of required properties is changed
 NewJsonMDNUserAllOfWithDefaults instantiates a new JsonMDNUserAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetLastName
+
+`func (o *JsonMDNUserAllOf) GetLastName() string`
+
+GetLastName returns the LastName field if non-nil, zero value otherwise.
+
+### GetLastNameOk
+
+`func (o *JsonMDNUserAllOf) GetLastNameOk() (*string, bool)`
+
+GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastName
+
+`func (o *JsonMDNUserAllOf) SetLastName(v string)`
+
+SetLastName sets LastName field to given value.
+
+### HasLastName
+
+`func (o *JsonMDNUserAllOf) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
 
 ### GetFirstName
 
@@ -131,30 +156,30 @@ SetSocialAccounts sets SocialAccounts field to given value.
 
 HasSocialAccounts returns a boolean if a field has been set.
 
-### GetLastName
+### GetMail
 
-`func (o *JsonMDNUserAllOf) GetLastName() string`
+`func (o *JsonMDNUserAllOf) GetMail() string`
 
-GetLastName returns the LastName field if non-nil, zero value otherwise.
+GetMail returns the Mail field if non-nil, zero value otherwise.
 
-### GetLastNameOk
+### GetMailOk
 
-`func (o *JsonMDNUserAllOf) GetLastNameOk() (*string, bool)`
+`func (o *JsonMDNUserAllOf) GetMailOk() (*string, bool)`
 
-GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastName
+### SetMail
 
-`func (o *JsonMDNUserAllOf) SetLastName(v string)`
+`func (o *JsonMDNUserAllOf) SetMail(v string)`
 
-SetLastName sets LastName field to given value.
+SetMail sets Mail field to given value.
 
-### HasLastName
+### HasMail
 
-`func (o *JsonMDNUserAllOf) HasLastName() bool`
+`func (o *JsonMDNUserAllOf) HasMail() bool`
 
-HasLastName returns a boolean if a field has been set.
+HasMail returns a boolean if a field has been set.
 
 ### GetCredentials
 
@@ -180,31 +205,6 @@ SetCredentials sets Credentials field to given value.
 `func (o *JsonMDNUserAllOf) HasCredentials() bool`
 
 HasCredentials returns a boolean if a field has been set.
-
-### GetMail
-
-`func (o *JsonMDNUserAllOf) GetMail() string`
-
-GetMail returns the Mail field if non-nil, zero value otherwise.
-
-### GetMailOk
-
-`func (o *JsonMDNUserAllOf) GetMailOk() (*string, bool)`
-
-GetMailOk returns a tuple with the Mail field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMail
-
-`func (o *JsonMDNUserAllOf) SetMail(v string)`
-
-SetMail sets Mail field to given value.
-
-### HasMail
-
-`func (o *JsonMDNUserAllOf) HasMail() bool`
-
-HasMail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

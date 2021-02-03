@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
-**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
 **EnvironmentUUID** | Pointer to **string** |  | [optional] 
 **Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
 **WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnclaveExecutionType** | Pointer to **string** |  | [optional] 
+**UsingDefaultRunConfig** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -28,56 +28,6 @@ will change when the set of required properties is changed
 NewJsonEnclaveRunRequestWithDefaults instantiates a new JsonEnclaveRunRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
-
-GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
-
-### GetEnclaveExecutionTypeOk
-
-`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
-
-GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
-
-SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
-
-### HasEnclaveExecutionType
-
-`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
-
-HasEnclaveExecutionType returns a boolean if a field has been set.
-
-### GetUsingDefaultRunConfig
-
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
-
-GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
-
-### GetUsingDefaultRunConfigOk
-
-`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
-
-GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsingDefaultRunConfig
-
-`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
-
-SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
-
-### HasUsingDefaultRunConfig
-
-`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
-
-HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
 ### GetEnvironmentUUID
 
@@ -153,6 +103,56 @@ SetWireguardPublicKey sets WireguardPublicKey field to given value.
 `func (o *JsonEnclaveRunRequest) HasWireguardPublicKey() bool`
 
 HasWireguardPublicKey returns a boolean if a field has been set.
+
+### GetEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionType() string`
+
+GetEnclaveExecutionType returns the EnclaveExecutionType field if non-nil, zero value otherwise.
+
+### GetEnclaveExecutionTypeOk
+
+`func (o *JsonEnclaveRunRequest) GetEnclaveExecutionTypeOk() (*string, bool)`
+
+GetEnclaveExecutionTypeOk returns a tuple with the EnclaveExecutionType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) SetEnclaveExecutionType(v string)`
+
+SetEnclaveExecutionType sets EnclaveExecutionType field to given value.
+
+### HasEnclaveExecutionType
+
+`func (o *JsonEnclaveRunRequest) HasEnclaveExecutionType() bool`
+
+HasEnclaveExecutionType returns a boolean if a field has been set.
+
+### GetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfig() bool`
+
+GetUsingDefaultRunConfig returns the UsingDefaultRunConfig field if non-nil, zero value otherwise.
+
+### GetUsingDefaultRunConfigOk
+
+`func (o *JsonEnclaveRunRequest) GetUsingDefaultRunConfigOk() (*bool, bool)`
+
+GetUsingDefaultRunConfigOk returns a tuple with the UsingDefaultRunConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) SetUsingDefaultRunConfig(v bool)`
+
+SetUsingDefaultRunConfig sets UsingDefaultRunConfig field to given value.
+
+### HasUsingDefaultRunConfig
+
+`func (o *JsonEnclaveRunRequest) HasUsingDefaultRunConfig() bool`
+
+HasUsingDefaultRunConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

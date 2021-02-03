@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgentVersion** | Pointer to **string** |  | [optional] 
+**SwarmConnection** | Pointer to **string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
 **ProtocolVersion** | Pointer to **string** |  | [optional] 
-**SwarmConnection** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**AgentVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,30 +29,30 @@ NewJsonIPFSSystemInfoWithDefaults instantiates a new JsonIPFSSystemInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAgentVersion
+### GetSwarmConnection
 
-`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
+`func (o *JsonIPFSSystemInfo) GetSwarmConnection() string`
 
-GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
+GetSwarmConnection returns the SwarmConnection field if non-nil, zero value otherwise.
 
-### GetAgentVersionOk
+### GetSwarmConnectionOk
 
-`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
+`func (o *JsonIPFSSystemInfo) GetSwarmConnectionOk() (*string, bool)`
 
-GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
+GetSwarmConnectionOk returns a tuple with the SwarmConnection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAgentVersion
+### SetSwarmConnection
 
-`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
+`func (o *JsonIPFSSystemInfo) SetSwarmConnection(v string)`
 
-SetAgentVersion sets AgentVersion field to given value.
+SetSwarmConnection sets SwarmConnection field to given value.
 
-### HasAgentVersion
+### HasSwarmConnection
 
-`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
+`func (o *JsonIPFSSystemInfo) HasSwarmConnection() bool`
 
-HasAgentVersion returns a boolean if a field has been set.
+HasSwarmConnection returns a boolean if a field has been set.
 
 ### GetPublicKey
 
@@ -104,31 +104,6 @@ SetProtocolVersion sets ProtocolVersion field to given value.
 
 HasProtocolVersion returns a boolean if a field has been set.
 
-### GetSwarmConnection
-
-`func (o *JsonIPFSSystemInfo) GetSwarmConnection() string`
-
-GetSwarmConnection returns the SwarmConnection field if non-nil, zero value otherwise.
-
-### GetSwarmConnectionOk
-
-`func (o *JsonIPFSSystemInfo) GetSwarmConnectionOk() (*string, bool)`
-
-GetSwarmConnectionOk returns a tuple with the SwarmConnection field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSwarmConnection
-
-`func (o *JsonIPFSSystemInfo) SetSwarmConnection(v string)`
-
-SetSwarmConnection sets SwarmConnection field to given value.
-
-### HasSwarmConnection
-
-`func (o *JsonIPFSSystemInfo) HasSwarmConnection() bool`
-
-HasSwarmConnection returns a boolean if a field has been set.
-
 ### GetId
 
 `func (o *JsonIPFSSystemInfo) GetId() string`
@@ -153,6 +128,31 @@ SetId sets Id field to given value.
 `func (o *JsonIPFSSystemInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetAgentVersion
+
+`func (o *JsonIPFSSystemInfo) GetAgentVersion() string`
+
+GetAgentVersion returns the AgentVersion field if non-nil, zero value otherwise.
+
+### GetAgentVersionOk
+
+`func (o *JsonIPFSSystemInfo) GetAgentVersionOk() (*string, bool)`
+
+GetAgentVersionOk returns a tuple with the AgentVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAgentVersion
+
+`func (o *JsonIPFSSystemInfo) SetAgentVersion(v string)`
+
+SetAgentVersion sets AgentVersion field to given value.
+
+### HasAgentVersion
+
+`func (o *JsonIPFSSystemInfo) HasAgentVersion() bool`
+
+HasAgentVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
