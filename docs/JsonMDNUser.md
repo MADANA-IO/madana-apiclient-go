@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Activated** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
-**LastActive** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **string** |  | [optional] 
+**Activated** | Pointer to **string** |  | [optional] 
 **UserName** | Pointer to **string** |  | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
-**FirstName** | Pointer to **string** |  | [optional] 
-**Guid** | Pointer to **string** |  | [optional] 
+**LastActive** | Pointer to **string** |  | [optional] 
 **Settings** | Pointer to [**[]JsonMDNUserSetting**](JsonMDNUserSetting.md) |  | [optional] 
 **SocialAccounts** | Pointer to [**[]JsonMDNSocialUserObject**](JsonMDNSocialUserObject.md) |  | [optional] 
+**FirstName** | Pointer to **string** |  | [optional] 
+**LastName** | Pointer to **string** |  | [optional] 
+**Guid** | Pointer to **string** |  | [optional] 
 **Mail** | Pointer to **string** |  | [optional] 
 **Credentials** | Pointer to [**JsonMDNUserCredentials**](json_MDN_UserCredentials.md) |  | [optional] 
 
@@ -35,31 +35,6 @@ will change when the set of required properties is changed
 NewJsonMDNUserWithDefaults instantiates a new JsonMDNUser object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetActivated
-
-`func (o *JsonMDNUser) GetActivated() string`
-
-GetActivated returns the Activated field if non-nil, zero value otherwise.
-
-### GetActivatedOk
-
-`func (o *JsonMDNUser) GetActivatedOk() (*string, bool)`
-
-GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivated
-
-`func (o *JsonMDNUser) SetActivated(v string)`
-
-SetActivated sets Activated field to given value.
-
-### HasActivated
-
-`func (o *JsonMDNUser) HasActivated() bool`
-
-HasActivated returns a boolean if a field has been set.
 
 ### GetImage
 
@@ -86,31 +61,6 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
-### GetLastActive
-
-`func (o *JsonMDNUser) GetLastActive() string`
-
-GetLastActive returns the LastActive field if non-nil, zero value otherwise.
-
-### GetLastActiveOk
-
-`func (o *JsonMDNUser) GetLastActiveOk() (*string, bool)`
-
-GetLastActiveOk returns a tuple with the LastActive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastActive
-
-`func (o *JsonMDNUser) SetLastActive(v string)`
-
-SetLastActive sets LastActive field to given value.
-
-### HasLastActive
-
-`func (o *JsonMDNUser) HasLastActive() bool`
-
-HasLastActive returns a boolean if a field has been set.
-
 ### GetCreated
 
 `func (o *JsonMDNUser) GetCreated() string`
@@ -135,6 +85,31 @@ SetCreated sets Created field to given value.
 `func (o *JsonMDNUser) HasCreated() bool`
 
 HasCreated returns a boolean if a field has been set.
+
+### GetActivated
+
+`func (o *JsonMDNUser) GetActivated() string`
+
+GetActivated returns the Activated field if non-nil, zero value otherwise.
+
+### GetActivatedOk
+
+`func (o *JsonMDNUser) GetActivatedOk() (*string, bool)`
+
+GetActivatedOk returns a tuple with the Activated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivated
+
+`func (o *JsonMDNUser) SetActivated(v string)`
+
+SetActivated sets Activated field to given value.
+
+### HasActivated
+
+`func (o *JsonMDNUser) HasActivated() bool`
+
+HasActivated returns a boolean if a field has been set.
 
 ### GetUserName
 
@@ -161,80 +136,30 @@ SetUserName sets UserName field to given value.
 
 HasUserName returns a boolean if a field has been set.
 
-### GetLastName
+### GetLastActive
 
-`func (o *JsonMDNUser) GetLastName() string`
+`func (o *JsonMDNUser) GetLastActive() string`
 
-GetLastName returns the LastName field if non-nil, zero value otherwise.
+GetLastActive returns the LastActive field if non-nil, zero value otherwise.
 
-### GetLastNameOk
+### GetLastActiveOk
 
-`func (o *JsonMDNUser) GetLastNameOk() (*string, bool)`
+`func (o *JsonMDNUser) GetLastActiveOk() (*string, bool)`
 
-GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+GetLastActiveOk returns a tuple with the LastActive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastName
+### SetLastActive
 
-`func (o *JsonMDNUser) SetLastName(v string)`
+`func (o *JsonMDNUser) SetLastActive(v string)`
 
-SetLastName sets LastName field to given value.
+SetLastActive sets LastActive field to given value.
 
-### HasLastName
+### HasLastActive
 
-`func (o *JsonMDNUser) HasLastName() bool`
+`func (o *JsonMDNUser) HasLastActive() bool`
 
-HasLastName returns a boolean if a field has been set.
-
-### GetFirstName
-
-`func (o *JsonMDNUser) GetFirstName() string`
-
-GetFirstName returns the FirstName field if non-nil, zero value otherwise.
-
-### GetFirstNameOk
-
-`func (o *JsonMDNUser) GetFirstNameOk() (*string, bool)`
-
-GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFirstName
-
-`func (o *JsonMDNUser) SetFirstName(v string)`
-
-SetFirstName sets FirstName field to given value.
-
-### HasFirstName
-
-`func (o *JsonMDNUser) HasFirstName() bool`
-
-HasFirstName returns a boolean if a field has been set.
-
-### GetGuid
-
-`func (o *JsonMDNUser) GetGuid() string`
-
-GetGuid returns the Guid field if non-nil, zero value otherwise.
-
-### GetGuidOk
-
-`func (o *JsonMDNUser) GetGuidOk() (*string, bool)`
-
-GetGuidOk returns a tuple with the Guid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGuid
-
-`func (o *JsonMDNUser) SetGuid(v string)`
-
-SetGuid sets Guid field to given value.
-
-### HasGuid
-
-`func (o *JsonMDNUser) HasGuid() bool`
-
-HasGuid returns a boolean if a field has been set.
+HasLastActive returns a boolean if a field has been set.
 
 ### GetSettings
 
@@ -285,6 +210,81 @@ SetSocialAccounts sets SocialAccounts field to given value.
 `func (o *JsonMDNUser) HasSocialAccounts() bool`
 
 HasSocialAccounts returns a boolean if a field has been set.
+
+### GetFirstName
+
+`func (o *JsonMDNUser) GetFirstName() string`
+
+GetFirstName returns the FirstName field if non-nil, zero value otherwise.
+
+### GetFirstNameOk
+
+`func (o *JsonMDNUser) GetFirstNameOk() (*string, bool)`
+
+GetFirstNameOk returns a tuple with the FirstName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstName
+
+`func (o *JsonMDNUser) SetFirstName(v string)`
+
+SetFirstName sets FirstName field to given value.
+
+### HasFirstName
+
+`func (o *JsonMDNUser) HasFirstName() bool`
+
+HasFirstName returns a boolean if a field has been set.
+
+### GetLastName
+
+`func (o *JsonMDNUser) GetLastName() string`
+
+GetLastName returns the LastName field if non-nil, zero value otherwise.
+
+### GetLastNameOk
+
+`func (o *JsonMDNUser) GetLastNameOk() (*string, bool)`
+
+GetLastNameOk returns a tuple with the LastName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastName
+
+`func (o *JsonMDNUser) SetLastName(v string)`
+
+SetLastName sets LastName field to given value.
+
+### HasLastName
+
+`func (o *JsonMDNUser) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
+
+### GetGuid
+
+`func (o *JsonMDNUser) GetGuid() string`
+
+GetGuid returns the Guid field if non-nil, zero value otherwise.
+
+### GetGuidOk
+
+`func (o *JsonMDNUser) GetGuidOk() (*string, bool)`
+
+GetGuidOk returns a tuple with the Guid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuid
+
+`func (o *JsonMDNUser) SetGuid(v string)`
+
+SetGuid sets Guid field to given value.
+
+### HasGuid
+
+`func (o *JsonMDNUser) HasGuid() bool`
+
+HasGuid returns a boolean if a field has been set.
 
 ### GetMail
 

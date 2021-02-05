@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
+**Time** | Pointer to **float32** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Operation** | Pointer to **string** |  | [optional] 
 **FieldsType** | Pointer to **string** |  | [optional] 
-**Time** | Pointer to **float32** |  | [optional] 
-**FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
 **Manager** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -29,6 +29,56 @@ will change when the set of required properties is changed
 NewJsonV1ManagedFieldsEntryWithDefaults instantiates a new JsonV1ManagedFieldsEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFieldsV1
+
+`func (o *JsonV1ManagedFieldsEntry) GetFieldsV1() map[string]interface{}`
+
+GetFieldsV1 returns the FieldsV1 field if non-nil, zero value otherwise.
+
+### GetFieldsV1Ok
+
+`func (o *JsonV1ManagedFieldsEntry) GetFieldsV1Ok() (*map[string]interface{}, bool)`
+
+GetFieldsV1Ok returns a tuple with the FieldsV1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFieldsV1
+
+`func (o *JsonV1ManagedFieldsEntry) SetFieldsV1(v map[string]interface{})`
+
+SetFieldsV1 sets FieldsV1 field to given value.
+
+### HasFieldsV1
+
+`func (o *JsonV1ManagedFieldsEntry) HasFieldsV1() bool`
+
+HasFieldsV1 returns a boolean if a field has been set.
+
+### GetTime
+
+`func (o *JsonV1ManagedFieldsEntry) GetTime() float32`
+
+GetTime returns the Time field if non-nil, zero value otherwise.
+
+### GetTimeOk
+
+`func (o *JsonV1ManagedFieldsEntry) GetTimeOk() (*float32, bool)`
+
+GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTime
+
+`func (o *JsonV1ManagedFieldsEntry) SetTime(v float32)`
+
+SetTime sets Time field to given value.
+
+### HasTime
+
+`func (o *JsonV1ManagedFieldsEntry) HasTime() bool`
+
+HasTime returns a boolean if a field has been set.
 
 ### GetApiVersion
 
@@ -104,56 +154,6 @@ SetFieldsType sets FieldsType field to given value.
 `func (o *JsonV1ManagedFieldsEntry) HasFieldsType() bool`
 
 HasFieldsType returns a boolean if a field has been set.
-
-### GetTime
-
-`func (o *JsonV1ManagedFieldsEntry) GetTime() float32`
-
-GetTime returns the Time field if non-nil, zero value otherwise.
-
-### GetTimeOk
-
-`func (o *JsonV1ManagedFieldsEntry) GetTimeOk() (*float32, bool)`
-
-GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTime
-
-`func (o *JsonV1ManagedFieldsEntry) SetTime(v float32)`
-
-SetTime sets Time field to given value.
-
-### HasTime
-
-`func (o *JsonV1ManagedFieldsEntry) HasTime() bool`
-
-HasTime returns a boolean if a field has been set.
-
-### GetFieldsV1
-
-`func (o *JsonV1ManagedFieldsEntry) GetFieldsV1() map[string]interface{}`
-
-GetFieldsV1 returns the FieldsV1 field if non-nil, zero value otherwise.
-
-### GetFieldsV1Ok
-
-`func (o *JsonV1ManagedFieldsEntry) GetFieldsV1Ok() (*map[string]interface{}, bool)`
-
-GetFieldsV1Ok returns a tuple with the FieldsV1 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldsV1
-
-`func (o *JsonV1ManagedFieldsEntry) SetFieldsV1(v map[string]interface{})`
-
-SetFieldsV1 sets FieldsV1 field to given value.
-
-### HasFieldsV1
-
-`func (o *JsonV1ManagedFieldsEntry) HasFieldsV1() bool`
-
-HasFieldsV1 returns a boolean if a field has been set.
 
 ### GetManager
 

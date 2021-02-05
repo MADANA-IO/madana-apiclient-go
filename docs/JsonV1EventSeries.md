@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**State** | Pointer to **string** |  | [optional] 
-**LastObservedTime** | Pointer to **float32** |  | [optional] 
 **Count** | Pointer to **float32** |  | [optional] 
+**LastObservedTime** | Pointer to **float32** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewJsonV1EventSeriesWithDefaults instantiates a new JsonV1EventSeries object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetState
+### GetCount
 
-`func (o *JsonV1EventSeries) GetState() string`
+`func (o *JsonV1EventSeries) GetCount() float32`
 
-GetState returns the State field if non-nil, zero value otherwise.
+GetCount returns the Count field if non-nil, zero value otherwise.
 
-### GetStateOk
+### GetCountOk
 
-`func (o *JsonV1EventSeries) GetStateOk() (*string, bool)`
+`func (o *JsonV1EventSeries) GetCountOk() (*float32, bool)`
 
-GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetState
+### SetCount
 
-`func (o *JsonV1EventSeries) SetState(v string)`
+`func (o *JsonV1EventSeries) SetCount(v float32)`
 
-SetState sets State field to given value.
+SetCount sets Count field to given value.
 
-### HasState
+### HasCount
 
-`func (o *JsonV1EventSeries) HasState() bool`
+`func (o *JsonV1EventSeries) HasCount() bool`
 
-HasState returns a boolean if a field has been set.
+HasCount returns a boolean if a field has been set.
 
 ### GetLastObservedTime
 
@@ -77,30 +77,30 @@ SetLastObservedTime sets LastObservedTime field to given value.
 
 HasLastObservedTime returns a boolean if a field has been set.
 
-### GetCount
+### GetState
 
-`func (o *JsonV1EventSeries) GetCount() float32`
+`func (o *JsonV1EventSeries) GetState() string`
 
-GetCount returns the Count field if non-nil, zero value otherwise.
+GetState returns the State field if non-nil, zero value otherwise.
 
-### GetCountOk
+### GetStateOk
 
-`func (o *JsonV1EventSeries) GetCountOk() (*float32, bool)`
+`func (o *JsonV1EventSeries) GetStateOk() (*string, bool)`
 
-GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCount
+### SetState
 
-`func (o *JsonV1EventSeries) SetCount(v float32)`
+`func (o *JsonV1EventSeries) SetState(v string)`
 
-SetCount sets Count field to given value.
+SetState sets State field to given value.
 
-### HasCount
+### HasState
 
-`func (o *JsonV1EventSeries) HasCount() bool`
+`func (o *JsonV1EventSeries) HasState() bool`
 
-HasCount returns a boolean if a field has been set.
+HasState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
