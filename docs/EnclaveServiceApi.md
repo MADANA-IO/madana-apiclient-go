@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**GetEnclave**](EnclaveServiceApi.md#GetEnclave) | **Get** /enclaves/{uuid} | 
 [**GetEnclaveTypes**](EnclaveServiceApi.md#GetEnclaveTypes) | **Get** /enclaves/types | 
 [**GetEnclaves**](EnclaveServiceApi.md#GetEnclaves) | **Get** /enclaves | Returns UUIDs of existing analyses.
+[**GetStats**](EnclaveServiceApi.md#GetStats) | **Get** /enclaves/stats | 
 [**KillEnclave**](EnclaveServiceApi.md#KillEnclave) | **Post** /enclaves/{uuid}/kill | 
 
 
@@ -542,6 +543,70 @@ Name | Type | Description  | Notes
  **limit** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;30&quot;]
  **offset** | **string** | Used for offset pagination. Limit/Offset Paging would look like GET /request?limit&#x3D;20&amp;offset&#x3D;100. This query would return the 20 rows starting with the 100th row | [default to &quot;0&quot;]
  **status** | **string** |  | 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStats
+
+> *os.File GetStats(ctx).Dayssince(dayssince).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    dayssince := "dayssince_example" // string |  (optional) (default to "30")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.EnclaveServiceApi.GetStats(context.Background()).Dayssince(dayssince).Execute()
+    if err.Error() != "" {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnclaveServiceApi.GetStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetStats`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `EnclaveServiceApi.GetStats`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStatsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dayssince** | **string** |  | [default to &quot;30&quot;]
 
 ### Return type
 

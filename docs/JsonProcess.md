@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ErrorStream** | Pointer to **map[string]interface{}** |  | [optional] 
-**Alive** | Pointer to **bool** |  | [optional] 
 **OutputStream** | Pointer to **map[string]interface{}** |  | [optional] 
+**Alive** | Pointer to **bool** |  | [optional] 
 **InputStream** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetErrorStream sets ErrorStream field to given value.
 
 HasErrorStream returns a boolean if a field has been set.
 
-### GetAlive
-
-`func (o *JsonProcess) GetAlive() bool`
-
-GetAlive returns the Alive field if non-nil, zero value otherwise.
-
-### GetAliveOk
-
-`func (o *JsonProcess) GetAliveOk() (*bool, bool)`
-
-GetAliveOk returns a tuple with the Alive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlive
-
-`func (o *JsonProcess) SetAlive(v bool)`
-
-SetAlive sets Alive field to given value.
-
-### HasAlive
-
-`func (o *JsonProcess) HasAlive() bool`
-
-HasAlive returns a boolean if a field has been set.
-
 ### GetOutputStream
 
 `func (o *JsonProcess) GetOutputStream() map[string]interface{}`
@@ -102,6 +77,31 @@ SetOutputStream sets OutputStream field to given value.
 `func (o *JsonProcess) HasOutputStream() bool`
 
 HasOutputStream returns a boolean if a field has been set.
+
+### GetAlive
+
+`func (o *JsonProcess) GetAlive() bool`
+
+GetAlive returns the Alive field if non-nil, zero value otherwise.
+
+### GetAliveOk
+
+`func (o *JsonProcess) GetAliveOk() (*bool, bool)`
+
+GetAliveOk returns a tuple with the Alive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlive
+
+`func (o *JsonProcess) SetAlive(v bool)`
+
+SetAlive sets Alive field to given value.
+
+### HasAlive
+
+`func (o *JsonProcess) HasAlive() bool`
+
+HasAlive returns a boolean if a field has been set.
 
 ### GetInputStream
 
