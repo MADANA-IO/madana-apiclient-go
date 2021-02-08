@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Environment** | Pointer to **map[string]string** |  | [optional] 
+**Args** | Pointer to **[]string** |  | [optional] 
 **DiskConfig** | Pointer to [**[]JsonDiskConfig**](JsonDiskConfig.md) |  | [optional] 
 **Run** | Pointer to **string** |  | [optional] 
-**Args** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +52,31 @@ SetEnvironment sets Environment field to given value.
 `func (o *JsonRunConfig) HasEnvironment() bool`
 
 HasEnvironment returns a boolean if a field has been set.
+
+### GetArgs
+
+`func (o *JsonRunConfig) GetArgs() []string`
+
+GetArgs returns the Args field if non-nil, zero value otherwise.
+
+### GetArgsOk
+
+`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
+
+GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArgs
+
+`func (o *JsonRunConfig) SetArgs(v []string)`
+
+SetArgs sets Args field to given value.
+
+### HasArgs
+
+`func (o *JsonRunConfig) HasArgs() bool`
+
+HasArgs returns a boolean if a field has been set.
 
 ### GetDiskConfig
 
@@ -102,31 +127,6 @@ SetRun sets Run field to given value.
 `func (o *JsonRunConfig) HasRun() bool`
 
 HasRun returns a boolean if a field has been set.
-
-### GetArgs
-
-`func (o *JsonRunConfig) GetArgs() []string`
-
-GetArgs returns the Args field if non-nil, zero value otherwise.
-
-### GetArgsOk
-
-`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
-
-GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArgs
-
-`func (o *JsonRunConfig) SetArgs(v []string)`
-
-SetArgs sets Args field to given value.
-
-### HasArgs
-
-`func (o *JsonRunConfig) HasArgs() bool`
-
-HasArgs returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

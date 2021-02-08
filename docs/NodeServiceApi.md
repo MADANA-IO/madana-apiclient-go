@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetBootstrap**](NodeServiceApi.md#GetBootstrap) | **Get** /nodes/bootstrap | 
 [**GetNodes2**](NodeServiceApi.md#GetNodes2) | **Get** /nodes | 
 [**PostNodeInfo**](NodeServiceApi.md#PostNodeInfo) | **Post** /nodes | 
+[**PostNodeInfo_0**](NodeServiceApi.md#PostNodeInfo_0) | **Post** /nodes/create | 
 
 
 
@@ -178,6 +179,70 @@ Other parameters are passed through a pointer to a apiPostNodeInfoRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**JsonNodeInfo**](JsonNodeInfo.md) |  | 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostNodeInfo_0
+
+> *os.File PostNodeInfo_0(ctx).Body(body).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewJsonNodeRunRequest() // JsonNodeRunRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NodeServiceApi.PostNodeInfo_0(context.Background()).Body(body).Execute()
+    if err.Error() != "" {
+        fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.PostNodeInfo_0``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PostNodeInfo_0`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `NodeServiceApi.PostNodeInfo_0`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostNodeInfo_1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**JsonNodeRunRequest**](JsonNodeRunRequest.md) |  | 
 
 ### Return type
 

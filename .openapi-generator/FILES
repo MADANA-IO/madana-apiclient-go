@@ -56,6 +56,7 @@ docs/JsonMDNUserSetting.md
 docs/JsonMDNUserSettingAllOf.md
 docs/JsonNetworkInterface.md
 docs/JsonNodeInfo.md
+docs/JsonNodeRunRequest.md
 docs/JsonProcess.md
 docs/JsonRunConfig.md
 docs/JsonSGXInfo.md
@@ -148,6 +149,7 @@ model_json_mdn_user_setting.go
 model_json_mdn_user_setting_all_of.go
 model_json_network_interface.go
 model_json_node_info.go
+model_json_node_run_request.go
 model_json_process.go
 model_json_run_config.go
 model_json_sgx_info.go
