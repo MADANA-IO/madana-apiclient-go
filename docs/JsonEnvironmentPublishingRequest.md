@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IpfsPrimaryPeer** | Pointer to **string** |  | [optional] 
-**Size** | Pointer to **string** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
-**IsPublic** | Pointer to **string** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
-**IpfsHash** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Packages** | Pointer to **string** |  | [optional] 
+**IsPublic** | Pointer to **string** |  | [optional] 
+**Size** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**IpfsHash** | Pointer to **string** |  | [optional] 
+**IpfsPrimaryPeer** | Pointer to **string** |  | [optional] 
+**Packages** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -32,56 +32,6 @@ will change when the set of required properties is changed
 NewJsonEnvironmentPublishingRequestWithDefaults instantiates a new JsonEnvironmentPublishingRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIpfsPrimaryPeer
-
-`func (o *JsonEnvironmentPublishingRequest) GetIpfsPrimaryPeer() string`
-
-GetIpfsPrimaryPeer returns the IpfsPrimaryPeer field if non-nil, zero value otherwise.
-
-### GetIpfsPrimaryPeerOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetIpfsPrimaryPeerOk() (*string, bool)`
-
-GetIpfsPrimaryPeerOk returns a tuple with the IpfsPrimaryPeer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpfsPrimaryPeer
-
-`func (o *JsonEnvironmentPublishingRequest) SetIpfsPrimaryPeer(v string)`
-
-SetIpfsPrimaryPeer sets IpfsPrimaryPeer field to given value.
-
-### HasIpfsPrimaryPeer
-
-`func (o *JsonEnvironmentPublishingRequest) HasIpfsPrimaryPeer() bool`
-
-HasIpfsPrimaryPeer returns a boolean if a field has been set.
-
-### GetSize
-
-`func (o *JsonEnvironmentPublishingRequest) GetSize() string`
-
-GetSize returns the Size field if non-nil, zero value otherwise.
-
-### GetSizeOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetSizeOk() (*string, bool)`
-
-GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSize
-
-`func (o *JsonEnvironmentPublishingRequest) SetSize(v string)`
-
-SetSize sets Size field to given value.
-
-### HasSize
-
-`func (o *JsonEnvironmentPublishingRequest) HasSize() bool`
-
-HasSize returns a boolean if a field has been set.
 
 ### GetUuid
 
@@ -108,31 +58,6 @@ SetUuid sets Uuid field to given value.
 
 HasUuid returns a boolean if a field has been set.
 
-### GetIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) GetIsPublic() string`
-
-GetIsPublic returns the IsPublic field if non-nil, zero value otherwise.
-
-### GetIsPublicOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetIsPublicOk() (*string, bool)`
-
-GetIsPublicOk returns a tuple with the IsPublic field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) SetIsPublic(v string)`
-
-SetIsPublic sets IsPublic field to given value.
-
-### HasIsPublic
-
-`func (o *JsonEnvironmentPublishingRequest) HasIsPublic() bool`
-
-HasIsPublic returns a boolean if a field has been set.
-
 ### GetContent
 
 `func (o *JsonEnvironmentPublishingRequest) GetContent() string`
@@ -157,31 +82,6 @@ SetContent sets Content field to given value.
 `func (o *JsonEnvironmentPublishingRequest) HasContent() bool`
 
 HasContent returns a boolean if a field has been set.
-
-### GetIpfsHash
-
-`func (o *JsonEnvironmentPublishingRequest) GetIpfsHash() string`
-
-GetIpfsHash returns the IpfsHash field if non-nil, zero value otherwise.
-
-### GetIpfsHashOk
-
-`func (o *JsonEnvironmentPublishingRequest) GetIpfsHashOk() (*string, bool)`
-
-GetIpfsHashOk returns a tuple with the IpfsHash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpfsHash
-
-`func (o *JsonEnvironmentPublishingRequest) SetIpfsHash(v string)`
-
-SetIpfsHash sets IpfsHash field to given value.
-
-### HasIpfsHash
-
-`func (o *JsonEnvironmentPublishingRequest) HasIpfsHash() bool`
-
-HasIpfsHash returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -208,30 +108,55 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetPackages
+### GetIsPublic
 
-`func (o *JsonEnvironmentPublishingRequest) GetPackages() string`
+`func (o *JsonEnvironmentPublishingRequest) GetIsPublic() string`
 
-GetPackages returns the Packages field if non-nil, zero value otherwise.
+GetIsPublic returns the IsPublic field if non-nil, zero value otherwise.
 
-### GetPackagesOk
+### GetIsPublicOk
 
-`func (o *JsonEnvironmentPublishingRequest) GetPackagesOk() (*string, bool)`
+`func (o *JsonEnvironmentPublishingRequest) GetIsPublicOk() (*string, bool)`
 
-GetPackagesOk returns a tuple with the Packages field if it's non-nil, zero value otherwise
+GetIsPublicOk returns a tuple with the IsPublic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPackages
+### SetIsPublic
 
-`func (o *JsonEnvironmentPublishingRequest) SetPackages(v string)`
+`func (o *JsonEnvironmentPublishingRequest) SetIsPublic(v string)`
 
-SetPackages sets Packages field to given value.
+SetIsPublic sets IsPublic field to given value.
 
-### HasPackages
+### HasIsPublic
 
-`func (o *JsonEnvironmentPublishingRequest) HasPackages() bool`
+`func (o *JsonEnvironmentPublishingRequest) HasIsPublic() bool`
 
-HasPackages returns a boolean if a field has been set.
+HasIsPublic returns a boolean if a field has been set.
+
+### GetSize
+
+`func (o *JsonEnvironmentPublishingRequest) GetSize() string`
+
+GetSize returns the Size field if non-nil, zero value otherwise.
+
+### GetSizeOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetSizeOk() (*string, bool)`
+
+GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSize
+
+`func (o *JsonEnvironmentPublishingRequest) SetSize(v string)`
+
+SetSize sets Size field to given value.
+
+### HasSize
+
+`func (o *JsonEnvironmentPublishingRequest) HasSize() bool`
+
+HasSize returns a boolean if a field has been set.
 
 ### GetName
 
@@ -257,6 +182,81 @@ SetName sets Name field to given value.
 `func (o *JsonEnvironmentPublishingRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetIpfsHash
+
+`func (o *JsonEnvironmentPublishingRequest) GetIpfsHash() string`
+
+GetIpfsHash returns the IpfsHash field if non-nil, zero value otherwise.
+
+### GetIpfsHashOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetIpfsHashOk() (*string, bool)`
+
+GetIpfsHashOk returns a tuple with the IpfsHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpfsHash
+
+`func (o *JsonEnvironmentPublishingRequest) SetIpfsHash(v string)`
+
+SetIpfsHash sets IpfsHash field to given value.
+
+### HasIpfsHash
+
+`func (o *JsonEnvironmentPublishingRequest) HasIpfsHash() bool`
+
+HasIpfsHash returns a boolean if a field has been set.
+
+### GetIpfsPrimaryPeer
+
+`func (o *JsonEnvironmentPublishingRequest) GetIpfsPrimaryPeer() string`
+
+GetIpfsPrimaryPeer returns the IpfsPrimaryPeer field if non-nil, zero value otherwise.
+
+### GetIpfsPrimaryPeerOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetIpfsPrimaryPeerOk() (*string, bool)`
+
+GetIpfsPrimaryPeerOk returns a tuple with the IpfsPrimaryPeer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpfsPrimaryPeer
+
+`func (o *JsonEnvironmentPublishingRequest) SetIpfsPrimaryPeer(v string)`
+
+SetIpfsPrimaryPeer sets IpfsPrimaryPeer field to given value.
+
+### HasIpfsPrimaryPeer
+
+`func (o *JsonEnvironmentPublishingRequest) HasIpfsPrimaryPeer() bool`
+
+HasIpfsPrimaryPeer returns a boolean if a field has been set.
+
+### GetPackages
+
+`func (o *JsonEnvironmentPublishingRequest) GetPackages() string`
+
+GetPackages returns the Packages field if non-nil, zero value otherwise.
+
+### GetPackagesOk
+
+`func (o *JsonEnvironmentPublishingRequest) GetPackagesOk() (*string, bool)`
+
+GetPackagesOk returns a tuple with the Packages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPackages
+
+`func (o *JsonEnvironmentPublishingRequest) SetPackages(v string)`
+
+SetPackages sets Packages field to given value.
+
+### HasPackages
+
+`func (o *JsonEnvironmentPublishingRequest) HasPackages() bool`
+
+HasPackages returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
