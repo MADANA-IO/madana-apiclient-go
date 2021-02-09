@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Continue** | Pointer to **string** |  | [optional] 
-**SelfLink** | Pointer to **string** |  | [optional] 
-**ResourceVersion** | Pointer to **string** |  | [optional] 
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
+**ResourceVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,30 +28,30 @@ NewJsonV1ListMetaWithDefaults instantiates a new JsonV1ListMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContinue
+### GetRemainingItemCount
 
-`func (o *JsonV1ListMeta) GetContinue() string`
+`func (o *JsonV1ListMeta) GetRemainingItemCount() float32`
 
-GetContinue returns the Continue field if non-nil, zero value otherwise.
+GetRemainingItemCount returns the RemainingItemCount field if non-nil, zero value otherwise.
 
-### GetContinueOk
+### GetRemainingItemCountOk
 
-`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetRemainingItemCountOk() (*float32, bool)`
 
-GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+GetRemainingItemCountOk returns a tuple with the RemainingItemCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContinue
+### SetRemainingItemCount
 
-`func (o *JsonV1ListMeta) SetContinue(v string)`
+`func (o *JsonV1ListMeta) SetRemainingItemCount(v float32)`
 
-SetContinue sets Continue field to given value.
+SetRemainingItemCount sets RemainingItemCount field to given value.
 
-### HasContinue
+### HasRemainingItemCount
 
-`func (o *JsonV1ListMeta) HasContinue() bool`
+`func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
 
-HasContinue returns a boolean if a field has been set.
+HasRemainingItemCount returns a boolean if a field has been set.
 
 ### GetSelfLink
 
@@ -78,6 +78,31 @@ SetSelfLink sets SelfLink field to given value.
 
 HasSelfLink returns a boolean if a field has been set.
 
+### GetContinue
+
+`func (o *JsonV1ListMeta) GetContinue() string`
+
+GetContinue returns the Continue field if non-nil, zero value otherwise.
+
+### GetContinueOk
+
+`func (o *JsonV1ListMeta) GetContinueOk() (*string, bool)`
+
+GetContinueOk returns a tuple with the Continue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContinue
+
+`func (o *JsonV1ListMeta) SetContinue(v string)`
+
+SetContinue sets Continue field to given value.
+
+### HasContinue
+
+`func (o *JsonV1ListMeta) HasContinue() bool`
+
+HasContinue returns a boolean if a field has been set.
+
 ### GetResourceVersion
 
 `func (o *JsonV1ListMeta) GetResourceVersion() string`
@@ -102,31 +127,6 @@ SetResourceVersion sets ResourceVersion field to given value.
 `func (o *JsonV1ListMeta) HasResourceVersion() bool`
 
 HasResourceVersion returns a boolean if a field has been set.
-
-### GetRemainingItemCount
-
-`func (o *JsonV1ListMeta) GetRemainingItemCount() float32`
-
-GetRemainingItemCount returns the RemainingItemCount field if non-nil, zero value otherwise.
-
-### GetRemainingItemCountOk
-
-`func (o *JsonV1ListMeta) GetRemainingItemCountOk() (*float32, bool)`
-
-GetRemainingItemCountOk returns a tuple with the RemainingItemCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemainingItemCount
-
-`func (o *JsonV1ListMeta) SetRemainingItemCount(v float32)`
-
-SetRemainingItemCount sets RemainingItemCount field to given value.
-
-### HasRemainingItemCount
-
-`func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
-
-HasRemainingItemCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
