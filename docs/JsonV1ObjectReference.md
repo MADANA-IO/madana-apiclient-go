@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
-**Uid** | Pointer to **string** |  | [optional] 
-**FieldPath** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
+**FieldPath** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
+**Uid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -56,31 +56,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetNamespace
-
-`func (o *JsonV1ObjectReference) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *JsonV1ObjectReference) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *JsonV1ObjectReference) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
 ### GetResourceVersion
 
 `func (o *JsonV1ObjectReference) GetResourceVersion() string`
@@ -106,55 +81,30 @@ SetResourceVersion sets ResourceVersion field to given value.
 
 HasResourceVersion returns a boolean if a field has been set.
 
-### GetApiVersion
+### GetKind
 
-`func (o *JsonV1ObjectReference) GetApiVersion() string`
+`func (o *JsonV1ObjectReference) GetKind() string`
 
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+GetKind returns the Kind field if non-nil, zero value otherwise.
 
-### GetApiVersionOk
+### GetKindOk
 
-`func (o *JsonV1ObjectReference) GetApiVersionOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetKindOk() (*string, bool)`
 
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiVersion
+### SetKind
 
-`func (o *JsonV1ObjectReference) SetApiVersion(v string)`
+`func (o *JsonV1ObjectReference) SetKind(v string)`
 
-SetApiVersion sets ApiVersion field to given value.
+SetKind sets Kind field to given value.
 
-### HasApiVersion
+### HasKind
 
-`func (o *JsonV1ObjectReference) HasApiVersion() bool`
+`func (o *JsonV1ObjectReference) HasKind() bool`
 
-HasApiVersion returns a boolean if a field has been set.
-
-### GetUid
-
-`func (o *JsonV1ObjectReference) GetUid() string`
-
-GetUid returns the Uid field if non-nil, zero value otherwise.
-
-### GetUidOk
-
-`func (o *JsonV1ObjectReference) GetUidOk() (*string, bool)`
-
-GetUidOk returns a tuple with the Uid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUid
-
-`func (o *JsonV1ObjectReference) SetUid(v string)`
-
-SetUid sets Uid field to given value.
-
-### HasUid
-
-`func (o *JsonV1ObjectReference) HasUid() bool`
-
-HasUid returns a boolean if a field has been set.
+HasKind returns a boolean if a field has been set.
 
 ### GetFieldPath
 
@@ -181,30 +131,80 @@ SetFieldPath sets FieldPath field to given value.
 
 HasFieldPath returns a boolean if a field has been set.
 
-### GetKind
+### GetApiVersion
 
-`func (o *JsonV1ObjectReference) GetKind() string`
+`func (o *JsonV1ObjectReference) GetApiVersion() string`
 
-GetKind returns the Kind field if non-nil, zero value otherwise.
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
-### GetKindOk
+### GetApiVersionOk
 
-`func (o *JsonV1ObjectReference) GetKindOk() (*string, bool)`
+`func (o *JsonV1ObjectReference) GetApiVersionOk() (*string, bool)`
 
-GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKind
+### SetApiVersion
 
-`func (o *JsonV1ObjectReference) SetKind(v string)`
+`func (o *JsonV1ObjectReference) SetApiVersion(v string)`
 
-SetKind sets Kind field to given value.
+SetApiVersion sets ApiVersion field to given value.
 
-### HasKind
+### HasApiVersion
 
-`func (o *JsonV1ObjectReference) HasKind() bool`
+`func (o *JsonV1ObjectReference) HasApiVersion() bool`
 
-HasKind returns a boolean if a field has been set.
+HasApiVersion returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *JsonV1ObjectReference) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *JsonV1ObjectReference) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *JsonV1ObjectReference) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *JsonV1ObjectReference) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
+
+### GetUid
+
+`func (o *JsonV1ObjectReference) GetUid() string`
+
+GetUid returns the Uid field if non-nil, zero value otherwise.
+
+### GetUidOk
+
+`func (o *JsonV1ObjectReference) GetUidOk() (*string, bool)`
+
+GetUidOk returns a tuple with the Uid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUid
+
+`func (o *JsonV1ObjectReference) SetUid(v string)`
+
+SetUid sets Uid field to given value.
+
+### HasUid
+
+`func (o *JsonV1ObjectReference) HasUid() bool`
+
+HasUid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

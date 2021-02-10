@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateNode**](NodeServiceApi.md#CreateNode) | **Post** /nodes/v2 | 
 [**GetBootstrap**](NodeServiceApi.md#GetBootstrap) | **Get** /nodes/bootstrap | 
+[**GetNodeLicenses**](NodeServiceApi.md#GetNodeLicenses) | **Get** /nodes/licenses | 
 [**GetNodeV2**](NodeServiceApi.md#GetNodeV2) | **Get** /nodes/v2/{ident} | 
 [**GetNodes2**](NodeServiceApi.md#GetNodes2) | **Get** /nodes | 
 [**GetNodesV2**](NodeServiceApi.md#GetNodesV2) | **Get** /nodes/v2 | Returns UUIDs of existing analyses.
@@ -119,6 +120,70 @@ This endpoint does not need any parameter.
 
 Other parameters are passed through a pointer to a apiGetBootstrapRequest struct via the builder pattern
 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNodeLicenses
+
+> *os.File GetNodeLicenses(ctx).Active(active).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    active := "active_example" // string |  (optional) (default to "true")
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NodeServiceApi.GetNodeLicenses(context.Background()).Active(active).Execute()
+    if err.Error() != "" {
+        fmt.Fprintf(os.Stderr, "Error when calling `NodeServiceApi.GetNodeLicenses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetNodeLicenses`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `NodeServiceApi.GetNodeLicenses`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNodeLicensesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **active** | **string** |  | [default to &quot;true&quot;]
 
 ### Return type
 

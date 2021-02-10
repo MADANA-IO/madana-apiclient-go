@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Operation** | Pointer to **string** |  | [optional] 
-**FieldsType** | Pointer to **string** |  | [optional] 
-**FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Manager** | Pointer to **string** |  | [optional] 
+**FieldsType** | Pointer to **string** |  | [optional] 
+**FieldsV1** | Pointer to **map[string]interface{}** |  | [optional] 
+**Operation** | Pointer to **string** |  | [optional] 
 **Time** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -30,30 +30,55 @@ NewJsonV1ManagedFieldsEntryWithDefaults instantiates a new JsonV1ManagedFieldsEn
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetOperation
+### GetApiVersion
 
-`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
+`func (o *JsonV1ManagedFieldsEntry) GetApiVersion() string`
 
-GetOperation returns the Operation field if non-nil, zero value otherwise.
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
-### GetOperationOk
+### GetApiVersionOk
 
-`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
+`func (o *JsonV1ManagedFieldsEntry) GetApiVersionOk() (*string, bool)`
 
-GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOperation
+### SetApiVersion
 
-`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
+`func (o *JsonV1ManagedFieldsEntry) SetApiVersion(v string)`
 
-SetOperation sets Operation field to given value.
+SetApiVersion sets ApiVersion field to given value.
 
-### HasOperation
+### HasApiVersion
 
-`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
+`func (o *JsonV1ManagedFieldsEntry) HasApiVersion() bool`
 
-HasOperation returns a boolean if a field has been set.
+HasApiVersion returns a boolean if a field has been set.
+
+### GetManager
+
+`func (o *JsonV1ManagedFieldsEntry) GetManager() string`
+
+GetManager returns the Manager field if non-nil, zero value otherwise.
+
+### GetManagerOk
+
+`func (o *JsonV1ManagedFieldsEntry) GetManagerOk() (*string, bool)`
+
+GetManagerOk returns a tuple with the Manager field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManager
+
+`func (o *JsonV1ManagedFieldsEntry) SetManager(v string)`
+
+SetManager sets Manager field to given value.
+
+### HasManager
+
+`func (o *JsonV1ManagedFieldsEntry) HasManager() bool`
+
+HasManager returns a boolean if a field has been set.
 
 ### GetFieldsType
 
@@ -105,55 +130,30 @@ SetFieldsV1 sets FieldsV1 field to given value.
 
 HasFieldsV1 returns a boolean if a field has been set.
 
-### GetApiVersion
+### GetOperation
 
-`func (o *JsonV1ManagedFieldsEntry) GetApiVersion() string`
+`func (o *JsonV1ManagedFieldsEntry) GetOperation() string`
 
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+GetOperation returns the Operation field if non-nil, zero value otherwise.
 
-### GetApiVersionOk
+### GetOperationOk
 
-`func (o *JsonV1ManagedFieldsEntry) GetApiVersionOk() (*string, bool)`
+`func (o *JsonV1ManagedFieldsEntry) GetOperationOk() (*string, bool)`
 
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiVersion
+### SetOperation
 
-`func (o *JsonV1ManagedFieldsEntry) SetApiVersion(v string)`
+`func (o *JsonV1ManagedFieldsEntry) SetOperation(v string)`
 
-SetApiVersion sets ApiVersion field to given value.
+SetOperation sets Operation field to given value.
 
-### HasApiVersion
+### HasOperation
 
-`func (o *JsonV1ManagedFieldsEntry) HasApiVersion() bool`
+`func (o *JsonV1ManagedFieldsEntry) HasOperation() bool`
 
-HasApiVersion returns a boolean if a field has been set.
-
-### GetManager
-
-`func (o *JsonV1ManagedFieldsEntry) GetManager() string`
-
-GetManager returns the Manager field if non-nil, zero value otherwise.
-
-### GetManagerOk
-
-`func (o *JsonV1ManagedFieldsEntry) GetManagerOk() (*string, bool)`
-
-GetManagerOk returns a tuple with the Manager field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManager
-
-`func (o *JsonV1ManagedFieldsEntry) SetManager(v string)`
-
-SetManager sets Manager field to given value.
-
-### HasManager
-
-`func (o *JsonV1ManagedFieldsEntry) HasManager() bool`
-
-HasManager returns a boolean if a field has been set.
+HasOperation returns a boolean if a field has been set.
 
 ### GetTime
 

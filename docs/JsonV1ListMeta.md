@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
 **SelfLink** | Pointer to **string** |  | [optional] 
-**ResourceVersion** | Pointer to **string** |  | [optional] 
 **Continue** | Pointer to **string** |  | [optional] 
+**ResourceVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -78,31 +78,6 @@ SetSelfLink sets SelfLink field to given value.
 
 HasSelfLink returns a boolean if a field has been set.
 
-### GetResourceVersion
-
-`func (o *JsonV1ListMeta) GetResourceVersion() string`
-
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
-
-### GetResourceVersionOk
-
-`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
-
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceVersion
-
-`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
-
-SetResourceVersion sets ResourceVersion field to given value.
-
-### HasResourceVersion
-
-`func (o *JsonV1ListMeta) HasResourceVersion() bool`
-
-HasResourceVersion returns a boolean if a field has been set.
-
 ### GetContinue
 
 `func (o *JsonV1ListMeta) GetContinue() string`
@@ -127,6 +102,31 @@ SetContinue sets Continue field to given value.
 `func (o *JsonV1ListMeta) HasContinue() bool`
 
 HasContinue returns a boolean if a field has been set.
+
+### GetResourceVersion
+
+`func (o *JsonV1ListMeta) GetResourceVersion() string`
+
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
+
+### GetResourceVersionOk
+
+`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
+
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceVersion
+
+`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
+
+SetResourceVersion sets ResourceVersion field to given value.
+
+### HasResourceVersion
+
+`func (o *JsonV1ListMeta) HasResourceVersion() bool`
+
+HasResourceVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
