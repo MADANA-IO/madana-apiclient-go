@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
-**SelfLink** | Pointer to **string** |  | [optional] 
-**Continue** | Pointer to **string** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
+**Continue** | Pointer to **string** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetRemainingItemCount sets RemainingItemCount field to given value.
 
 HasRemainingItemCount returns a boolean if a field has been set.
 
-### GetSelfLink
+### GetResourceVersion
 
-`func (o *JsonV1ListMeta) GetSelfLink() string`
+`func (o *JsonV1ListMeta) GetResourceVersion() string`
 
-GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
 
-### GetSelfLinkOk
+### GetResourceVersionOk
 
-`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
 
-GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSelfLink
+### SetResourceVersion
 
-`func (o *JsonV1ListMeta) SetSelfLink(v string)`
+`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
 
-SetSelfLink sets SelfLink field to given value.
+SetResourceVersion sets ResourceVersion field to given value.
 
-### HasSelfLink
+### HasResourceVersion
 
-`func (o *JsonV1ListMeta) HasSelfLink() bool`
+`func (o *JsonV1ListMeta) HasResourceVersion() bool`
 
-HasSelfLink returns a boolean if a field has been set.
+HasResourceVersion returns a boolean if a field has been set.
 
 ### GetContinue
 
@@ -103,30 +103,30 @@ SetContinue sets Continue field to given value.
 
 HasContinue returns a boolean if a field has been set.
 
-### GetResourceVersion
+### GetSelfLink
 
-`func (o *JsonV1ListMeta) GetResourceVersion() string`
+`func (o *JsonV1ListMeta) GetSelfLink() string`
 
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
+GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
 
-### GetResourceVersionOk
+### GetSelfLinkOk
 
-`func (o *JsonV1ListMeta) GetResourceVersionOk() (*string, bool)`
+`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
 
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
+GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceVersion
+### SetSelfLink
 
-`func (o *JsonV1ListMeta) SetResourceVersion(v string)`
+`func (o *JsonV1ListMeta) SetSelfLink(v string)`
 
-SetResourceVersion sets ResourceVersion field to given value.
+SetSelfLink sets SelfLink field to given value.
 
-### HasResourceVersion
+### HasSelfLink
 
-`func (o *JsonV1ListMeta) HasResourceVersion() bool`
+`func (o *JsonV1ListMeta) HasSelfLink() bool`
 
-HasResourceVersion returns a boolean if a field has been set.
+HasSelfLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

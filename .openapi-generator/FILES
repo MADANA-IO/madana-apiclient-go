@@ -61,7 +61,6 @@ docs/JsonProcess.md
 docs/JsonRunConfig.md
 docs/JsonSGXInfo.md
 docs/JsonSignedData.md
-docs/JsonSignedDataUtils.md
 docs/JsonV1Event.md
 docs/JsonV1EventList.md
 docs/JsonV1EventSeries.md
@@ -154,7 +153,6 @@ model_json_process.go
 model_json_run_config.go
 model_json_sgx_info.go
 model_json_signed_data.go
-model_json_signed_data_utils.go
 model_json_v1_event.go
 model_json_v1_event_list.go
 model_json_v1_event_series.go

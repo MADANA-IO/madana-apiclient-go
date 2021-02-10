@@ -44,7 +44,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := *openapiclient.NewJsonSignedDataUtils() // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.NewJsonSignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
+ **body** | [**JsonSignedData**](JsonSignedData.md) |  | 
 
 ### Return type
 
@@ -118,7 +118,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := *openapiclient.NewJsonSignedDataUtils() // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.NewJsonSignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
+ **body** | [**JsonSignedData**](JsonSignedData.md) |  | 
 
 ### Return type
 
@@ -191,7 +191,7 @@ import (
 
 func main() {
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := *openapiclient.NewJsonSignedDataUtils() // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.NewJsonSignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -217,7 +217,7 @@ Other parameters are passed through a pointer to a apiCreateNewRequestRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
+ **body** | [**JsonSignedData**](JsonSignedData.md) |  | 
 
 ### Return type
 
@@ -457,7 +457,7 @@ No authorization required
 
 ## GetData
 
-> JsonSignedDataUtils GetData(ctx, uuid).Authorization(authorization).Execute()
+> JsonSignedData GetData(ctx, uuid).Authorization(authorization).Execute()
 
 Is called from the APE to request all parked datasets.
 
@@ -486,7 +486,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestServiceApi.GetData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetData`: JsonSignedDataUtils
+    // response from `GetData`: JsonSignedData
     fmt.Fprintf(os.Stdout, "Response from `RequestServiceApi.GetData`: %v\n", resp)
 }
 ```
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonSignedDataUtils**](json_SignedData_utils.md)
+[**JsonSignedData**](json_SignedData.md)
 
 ### Authorization
 
@@ -971,7 +971,7 @@ import (
 func main() {
     uuid := "uuid_example" // string | 
     authorization := "authorization_example" // string | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c (optional)
-    body := *openapiclient.NewJsonSignedDataUtils() // JsonSignedDataUtils |  (optional)
+    body := *openapiclient.NewJsonSignedData() // JsonSignedData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **authorization** | **string** | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c | 
- **body** | [**JsonSignedDataUtils**](JsonSignedDataUtils.md) |  | 
+ **body** | [**JsonSignedData**](JsonSignedData.md) |  | 
 
 ### Return type
 

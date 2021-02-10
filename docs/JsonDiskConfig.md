@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Readonly** | Pointer to **bool** |  | [optional] 
+**Roothash** | Pointer to **string** |  | [optional] 
 **Disk** | Pointer to **string** |  | [optional] 
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
-**Roothash** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +52,31 @@ SetReadonly sets Readonly field to given value.
 `func (o *JsonDiskConfig) HasReadonly() bool`
 
 HasReadonly returns a boolean if a field has been set.
+
+### GetRoothash
+
+`func (o *JsonDiskConfig) GetRoothash() string`
+
+GetRoothash returns the Roothash field if non-nil, zero value otherwise.
+
+### GetRoothashOk
+
+`func (o *JsonDiskConfig) GetRoothashOk() (*string, bool)`
+
+GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoothash
+
+`func (o *JsonDiskConfig) SetRoothash(v string)`
+
+SetRoothash sets Roothash field to given value.
+
+### HasRoothash
+
+`func (o *JsonDiskConfig) HasRoothash() bool`
+
+HasRoothash returns a boolean if a field has been set.
 
 ### GetDisk
 
@@ -102,31 +127,6 @@ SetRoothashOffset sets RoothashOffset field to given value.
 `func (o *JsonDiskConfig) HasRoothashOffset() bool`
 
 HasRoothashOffset returns a boolean if a field has been set.
-
-### GetRoothash
-
-`func (o *JsonDiskConfig) GetRoothash() string`
-
-GetRoothash returns the Roothash field if non-nil, zero value otherwise.
-
-### GetRoothashOk
-
-`func (o *JsonDiskConfig) GetRoothashOk() (*string, bool)`
-
-GetRoothashOk returns a tuple with the Roothash field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoothash
-
-`func (o *JsonDiskConfig) SetRoothash(v string)`
-
-SetRoothash sets Roothash field to given value.
-
-### HasRoothash
-
-`func (o *JsonDiskConfig) HasRoothash() bool`
-
-HasRoothash returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

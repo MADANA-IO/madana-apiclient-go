@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Args** | Pointer to **[]string** |  | [optional] 
 **Run** | Pointer to **string** |  | [optional] 
 **DiskConfig** | Pointer to [**[]JsonDiskConfig**](JsonDiskConfig.md) |  | [optional] 
+**Args** | Pointer to **[]string** |  | [optional] 
 **Environment** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonRunConfigWithDefaults instantiates a new JsonRunConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetArgs
-
-`func (o *JsonRunConfig) GetArgs() []string`
-
-GetArgs returns the Args field if non-nil, zero value otherwise.
-
-### GetArgsOk
-
-`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
-
-GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArgs
-
-`func (o *JsonRunConfig) SetArgs(v []string)`
-
-SetArgs sets Args field to given value.
-
-### HasArgs
-
-`func (o *JsonRunConfig) HasArgs() bool`
-
-HasArgs returns a boolean if a field has been set.
 
 ### GetRun
 
@@ -102,6 +77,31 @@ SetDiskConfig sets DiskConfig field to given value.
 `func (o *JsonRunConfig) HasDiskConfig() bool`
 
 HasDiskConfig returns a boolean if a field has been set.
+
+### GetArgs
+
+`func (o *JsonRunConfig) GetArgs() []string`
+
+GetArgs returns the Args field if non-nil, zero value otherwise.
+
+### GetArgsOk
+
+`func (o *JsonRunConfig) GetArgsOk() (*[]string, bool)`
+
+GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArgs
+
+`func (o *JsonRunConfig) SetArgs(v []string)`
+
+SetArgs sets Args field to given value.
+
+### HasArgs
+
+`func (o *JsonRunConfig) HasArgs() bool`
+
+HasArgs returns a boolean if a field has been set.
 
 ### GetEnvironment
 
