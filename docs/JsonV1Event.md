@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Message** | Pointer to **string** |  | [optional] 
-**FirstTimestamp** | Pointer to **float32** |  | [optional] 
-**Related** | Pointer to [**JsonV1ObjectReference**](json_V1ObjectReference.md) |  | [optional] 
-**ApiVersion** | Pointer to **string** |  | [optional] 
-**EventTime** | Pointer to **float32** |  | [optional] 
-**ReportingInstance** | Pointer to **string** |  | [optional] 
-**ReportingComponent** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**JsonV1ObjectMeta**](json_V1ObjectMeta.md) |  | [optional] 
 **Series** | Pointer to [**JsonV1EventSeries**](json_V1EventSeries.md) |  | [optional] 
-**LastTimestamp** | Pointer to **float32** |  | [optional] 
 **Count** | Pointer to **float32** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**Kind** | Pointer to **string** |  | [optional] 
 **InvolvedObject** | Pointer to [**JsonV1ObjectReference**](json_V1ObjectReference.md) |  | [optional] 
-**Action** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
+**ReportingComponent** | Pointer to **string** |  | [optional] 
+**EventTime** | Pointer to **float32** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**JsonV1ObjectMeta**](json_V1ObjectMeta.md) |  | [optional] 
 **Source** | Pointer to [**JsonV1EventSource**](json_V1EventSource.md) |  | [optional] 
+**LastTimestamp** | Pointer to **float32** |  | [optional] 
+**FirstTimestamp** | Pointer to **float32** |  | [optional] 
+**Action** | Pointer to **string** |  | [optional] 
+**Related** | Pointer to [**JsonV1ObjectReference**](json_V1ObjectReference.md) |  | [optional] 
+**Message** | Pointer to **string** |  | [optional] 
 **Reason** | Pointer to **string** |  | [optional] 
+**ReportingInstance** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -40,206 +40,6 @@ will change when the set of required properties is changed
 NewJsonV1EventWithDefaults instantiates a new JsonV1Event object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMessage
-
-`func (o *JsonV1Event) GetMessage() string`
-
-GetMessage returns the Message field if non-nil, zero value otherwise.
-
-### GetMessageOk
-
-`func (o *JsonV1Event) GetMessageOk() (*string, bool)`
-
-GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMessage
-
-`func (o *JsonV1Event) SetMessage(v string)`
-
-SetMessage sets Message field to given value.
-
-### HasMessage
-
-`func (o *JsonV1Event) HasMessage() bool`
-
-HasMessage returns a boolean if a field has been set.
-
-### GetFirstTimestamp
-
-`func (o *JsonV1Event) GetFirstTimestamp() float32`
-
-GetFirstTimestamp returns the FirstTimestamp field if non-nil, zero value otherwise.
-
-### GetFirstTimestampOk
-
-`func (o *JsonV1Event) GetFirstTimestampOk() (*float32, bool)`
-
-GetFirstTimestampOk returns a tuple with the FirstTimestamp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFirstTimestamp
-
-`func (o *JsonV1Event) SetFirstTimestamp(v float32)`
-
-SetFirstTimestamp sets FirstTimestamp field to given value.
-
-### HasFirstTimestamp
-
-`func (o *JsonV1Event) HasFirstTimestamp() bool`
-
-HasFirstTimestamp returns a boolean if a field has been set.
-
-### GetRelated
-
-`func (o *JsonV1Event) GetRelated() JsonV1ObjectReference`
-
-GetRelated returns the Related field if non-nil, zero value otherwise.
-
-### GetRelatedOk
-
-`func (o *JsonV1Event) GetRelatedOk() (*JsonV1ObjectReference, bool)`
-
-GetRelatedOk returns a tuple with the Related field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRelated
-
-`func (o *JsonV1Event) SetRelated(v JsonV1ObjectReference)`
-
-SetRelated sets Related field to given value.
-
-### HasRelated
-
-`func (o *JsonV1Event) HasRelated() bool`
-
-HasRelated returns a boolean if a field has been set.
-
-### GetApiVersion
-
-`func (o *JsonV1Event) GetApiVersion() string`
-
-GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
-
-### GetApiVersionOk
-
-`func (o *JsonV1Event) GetApiVersionOk() (*string, bool)`
-
-GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiVersion
-
-`func (o *JsonV1Event) SetApiVersion(v string)`
-
-SetApiVersion sets ApiVersion field to given value.
-
-### HasApiVersion
-
-`func (o *JsonV1Event) HasApiVersion() bool`
-
-HasApiVersion returns a boolean if a field has been set.
-
-### GetEventTime
-
-`func (o *JsonV1Event) GetEventTime() float32`
-
-GetEventTime returns the EventTime field if non-nil, zero value otherwise.
-
-### GetEventTimeOk
-
-`func (o *JsonV1Event) GetEventTimeOk() (*float32, bool)`
-
-GetEventTimeOk returns a tuple with the EventTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEventTime
-
-`func (o *JsonV1Event) SetEventTime(v float32)`
-
-SetEventTime sets EventTime field to given value.
-
-### HasEventTime
-
-`func (o *JsonV1Event) HasEventTime() bool`
-
-HasEventTime returns a boolean if a field has been set.
-
-### GetReportingInstance
-
-`func (o *JsonV1Event) GetReportingInstance() string`
-
-GetReportingInstance returns the ReportingInstance field if non-nil, zero value otherwise.
-
-### GetReportingInstanceOk
-
-`func (o *JsonV1Event) GetReportingInstanceOk() (*string, bool)`
-
-GetReportingInstanceOk returns a tuple with the ReportingInstance field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReportingInstance
-
-`func (o *JsonV1Event) SetReportingInstance(v string)`
-
-SetReportingInstance sets ReportingInstance field to given value.
-
-### HasReportingInstance
-
-`func (o *JsonV1Event) HasReportingInstance() bool`
-
-HasReportingInstance returns a boolean if a field has been set.
-
-### GetReportingComponent
-
-`func (o *JsonV1Event) GetReportingComponent() string`
-
-GetReportingComponent returns the ReportingComponent field if non-nil, zero value otherwise.
-
-### GetReportingComponentOk
-
-`func (o *JsonV1Event) GetReportingComponentOk() (*string, bool)`
-
-GetReportingComponentOk returns a tuple with the ReportingComponent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReportingComponent
-
-`func (o *JsonV1Event) SetReportingComponent(v string)`
-
-SetReportingComponent sets ReportingComponent field to given value.
-
-### HasReportingComponent
-
-`func (o *JsonV1Event) HasReportingComponent() bool`
-
-HasReportingComponent returns a boolean if a field has been set.
-
-### GetMetadata
-
-`func (o *JsonV1Event) GetMetadata() JsonV1ObjectMeta`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *JsonV1Event) GetMetadataOk() (*JsonV1ObjectMeta, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *JsonV1Event) SetMetadata(v JsonV1ObjectMeta)`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *JsonV1Event) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
 
 ### GetSeries
 
@@ -266,31 +66,6 @@ SetSeries sets Series field to given value.
 
 HasSeries returns a boolean if a field has been set.
 
-### GetLastTimestamp
-
-`func (o *JsonV1Event) GetLastTimestamp() float32`
-
-GetLastTimestamp returns the LastTimestamp field if non-nil, zero value otherwise.
-
-### GetLastTimestampOk
-
-`func (o *JsonV1Event) GetLastTimestampOk() (*float32, bool)`
-
-GetLastTimestampOk returns a tuple with the LastTimestamp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastTimestamp
-
-`func (o *JsonV1Event) SetLastTimestamp(v float32)`
-
-SetLastTimestamp sets LastTimestamp field to given value.
-
-### HasLastTimestamp
-
-`func (o *JsonV1Event) HasLastTimestamp() bool`
-
-HasLastTimestamp returns a boolean if a field has been set.
-
 ### GetCount
 
 `func (o *JsonV1Event) GetCount() float32`
@@ -315,56 +90,6 @@ SetCount sets Count field to given value.
 `func (o *JsonV1Event) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *JsonV1Event) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *JsonV1Event) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *JsonV1Event) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *JsonV1Event) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetKind
-
-`func (o *JsonV1Event) GetKind() string`
-
-GetKind returns the Kind field if non-nil, zero value otherwise.
-
-### GetKindOk
-
-`func (o *JsonV1Event) GetKindOk() (*string, bool)`
-
-GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKind
-
-`func (o *JsonV1Event) SetKind(v string)`
-
-SetKind sets Kind field to given value.
-
-### HasKind
-
-`func (o *JsonV1Event) HasKind() bool`
-
-HasKind returns a boolean if a field has been set.
 
 ### GetInvolvedObject
 
@@ -391,30 +116,130 @@ SetInvolvedObject sets InvolvedObject field to given value.
 
 HasInvolvedObject returns a boolean if a field has been set.
 
-### GetAction
+### GetKind
 
-`func (o *JsonV1Event) GetAction() string`
+`func (o *JsonV1Event) GetKind() string`
 
-GetAction returns the Action field if non-nil, zero value otherwise.
+GetKind returns the Kind field if non-nil, zero value otherwise.
 
-### GetActionOk
+### GetKindOk
 
-`func (o *JsonV1Event) GetActionOk() (*string, bool)`
+`func (o *JsonV1Event) GetKindOk() (*string, bool)`
 
-GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAction
+### SetKind
 
-`func (o *JsonV1Event) SetAction(v string)`
+`func (o *JsonV1Event) SetKind(v string)`
 
-SetAction sets Action field to given value.
+SetKind sets Kind field to given value.
 
-### HasAction
+### HasKind
 
-`func (o *JsonV1Event) HasAction() bool`
+`func (o *JsonV1Event) HasKind() bool`
 
-HasAction returns a boolean if a field has been set.
+HasKind returns a boolean if a field has been set.
+
+### GetReportingComponent
+
+`func (o *JsonV1Event) GetReportingComponent() string`
+
+GetReportingComponent returns the ReportingComponent field if non-nil, zero value otherwise.
+
+### GetReportingComponentOk
+
+`func (o *JsonV1Event) GetReportingComponentOk() (*string, bool)`
+
+GetReportingComponentOk returns a tuple with the ReportingComponent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReportingComponent
+
+`func (o *JsonV1Event) SetReportingComponent(v string)`
+
+SetReportingComponent sets ReportingComponent field to given value.
+
+### HasReportingComponent
+
+`func (o *JsonV1Event) HasReportingComponent() bool`
+
+HasReportingComponent returns a boolean if a field has been set.
+
+### GetEventTime
+
+`func (o *JsonV1Event) GetEventTime() float32`
+
+GetEventTime returns the EventTime field if non-nil, zero value otherwise.
+
+### GetEventTimeOk
+
+`func (o *JsonV1Event) GetEventTimeOk() (*float32, bool)`
+
+GetEventTimeOk returns a tuple with the EventTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventTime
+
+`func (o *JsonV1Event) SetEventTime(v float32)`
+
+SetEventTime sets EventTime field to given value.
+
+### HasEventTime
+
+`func (o *JsonV1Event) HasEventTime() bool`
+
+HasEventTime returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *JsonV1Event) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *JsonV1Event) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *JsonV1Event) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *JsonV1Event) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *JsonV1Event) GetMetadata() JsonV1ObjectMeta`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *JsonV1Event) GetMetadataOk() (*JsonV1ObjectMeta, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *JsonV1Event) SetMetadata(v JsonV1ObjectMeta)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *JsonV1Event) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetSource
 
@@ -441,6 +266,131 @@ SetSource sets Source field to given value.
 
 HasSource returns a boolean if a field has been set.
 
+### GetLastTimestamp
+
+`func (o *JsonV1Event) GetLastTimestamp() float32`
+
+GetLastTimestamp returns the LastTimestamp field if non-nil, zero value otherwise.
+
+### GetLastTimestampOk
+
+`func (o *JsonV1Event) GetLastTimestampOk() (*float32, bool)`
+
+GetLastTimestampOk returns a tuple with the LastTimestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastTimestamp
+
+`func (o *JsonV1Event) SetLastTimestamp(v float32)`
+
+SetLastTimestamp sets LastTimestamp field to given value.
+
+### HasLastTimestamp
+
+`func (o *JsonV1Event) HasLastTimestamp() bool`
+
+HasLastTimestamp returns a boolean if a field has been set.
+
+### GetFirstTimestamp
+
+`func (o *JsonV1Event) GetFirstTimestamp() float32`
+
+GetFirstTimestamp returns the FirstTimestamp field if non-nil, zero value otherwise.
+
+### GetFirstTimestampOk
+
+`func (o *JsonV1Event) GetFirstTimestampOk() (*float32, bool)`
+
+GetFirstTimestampOk returns a tuple with the FirstTimestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstTimestamp
+
+`func (o *JsonV1Event) SetFirstTimestamp(v float32)`
+
+SetFirstTimestamp sets FirstTimestamp field to given value.
+
+### HasFirstTimestamp
+
+`func (o *JsonV1Event) HasFirstTimestamp() bool`
+
+HasFirstTimestamp returns a boolean if a field has been set.
+
+### GetAction
+
+`func (o *JsonV1Event) GetAction() string`
+
+GetAction returns the Action field if non-nil, zero value otherwise.
+
+### GetActionOk
+
+`func (o *JsonV1Event) GetActionOk() (*string, bool)`
+
+GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAction
+
+`func (o *JsonV1Event) SetAction(v string)`
+
+SetAction sets Action field to given value.
+
+### HasAction
+
+`func (o *JsonV1Event) HasAction() bool`
+
+HasAction returns a boolean if a field has been set.
+
+### GetRelated
+
+`func (o *JsonV1Event) GetRelated() JsonV1ObjectReference`
+
+GetRelated returns the Related field if non-nil, zero value otherwise.
+
+### GetRelatedOk
+
+`func (o *JsonV1Event) GetRelatedOk() (*JsonV1ObjectReference, bool)`
+
+GetRelatedOk returns a tuple with the Related field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelated
+
+`func (o *JsonV1Event) SetRelated(v JsonV1ObjectReference)`
+
+SetRelated sets Related field to given value.
+
+### HasRelated
+
+`func (o *JsonV1Event) HasRelated() bool`
+
+HasRelated returns a boolean if a field has been set.
+
+### GetMessage
+
+`func (o *JsonV1Event) GetMessage() string`
+
+GetMessage returns the Message field if non-nil, zero value otherwise.
+
+### GetMessageOk
+
+`func (o *JsonV1Event) GetMessageOk() (*string, bool)`
+
+GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessage
+
+`func (o *JsonV1Event) SetMessage(v string)`
+
+SetMessage sets Message field to given value.
+
+### HasMessage
+
+`func (o *JsonV1Event) HasMessage() bool`
+
+HasMessage returns a boolean if a field has been set.
+
 ### GetReason
 
 `func (o *JsonV1Event) GetReason() string`
@@ -465,6 +415,56 @@ SetReason sets Reason field to given value.
 `func (o *JsonV1Event) HasReason() bool`
 
 HasReason returns a boolean if a field has been set.
+
+### GetReportingInstance
+
+`func (o *JsonV1Event) GetReportingInstance() string`
+
+GetReportingInstance returns the ReportingInstance field if non-nil, zero value otherwise.
+
+### GetReportingInstanceOk
+
+`func (o *JsonV1Event) GetReportingInstanceOk() (*string, bool)`
+
+GetReportingInstanceOk returns a tuple with the ReportingInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReportingInstance
+
+`func (o *JsonV1Event) SetReportingInstance(v string)`
+
+SetReportingInstance sets ReportingInstance field to given value.
+
+### HasReportingInstance
+
+`func (o *JsonV1Event) HasReportingInstance() bool`
+
+HasReportingInstance returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *JsonV1Event) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *JsonV1Event) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *JsonV1Event) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *JsonV1Event) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

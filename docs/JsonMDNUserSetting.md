@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -53,31 +53,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetDescription
-
-`func (o *JsonMDNUserSetting) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *JsonMDNUserSetting) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *JsonMDNUserSetting) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *JsonMDNUserSetting) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *JsonMDNUserSetting) GetName() string`
@@ -102,6 +77,31 @@ SetName sets Name field to given value.
 `func (o *JsonMDNUserSetting) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *JsonMDNUserSetting) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *JsonMDNUserSetting) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *JsonMDNUserSetting) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *JsonMDNUserSetting) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetValue
 

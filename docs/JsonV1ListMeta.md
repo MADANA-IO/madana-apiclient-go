@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RemainingItemCount** | Pointer to **float32** |  | [optional] 
+**SelfLink** | Pointer to **string** |  | [optional] 
 **ResourceVersion** | Pointer to **string** |  | [optional] 
 **Continue** | Pointer to **string** |  | [optional] 
-**SelfLink** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,6 +52,31 @@ SetRemainingItemCount sets RemainingItemCount field to given value.
 `func (o *JsonV1ListMeta) HasRemainingItemCount() bool`
 
 HasRemainingItemCount returns a boolean if a field has been set.
+
+### GetSelfLink
+
+`func (o *JsonV1ListMeta) GetSelfLink() string`
+
+GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
+
+### GetSelfLinkOk
+
+`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
+
+GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelfLink
+
+`func (o *JsonV1ListMeta) SetSelfLink(v string)`
+
+SetSelfLink sets SelfLink field to given value.
+
+### HasSelfLink
+
+`func (o *JsonV1ListMeta) HasSelfLink() bool`
+
+HasSelfLink returns a boolean if a field has been set.
 
 ### GetResourceVersion
 
@@ -102,31 +127,6 @@ SetContinue sets Continue field to given value.
 `func (o *JsonV1ListMeta) HasContinue() bool`
 
 HasContinue returns a boolean if a field has been set.
-
-### GetSelfLink
-
-`func (o *JsonV1ListMeta) GetSelfLink() string`
-
-GetSelfLink returns the SelfLink field if non-nil, zero value otherwise.
-
-### GetSelfLinkOk
-
-`func (o *JsonV1ListMeta) GetSelfLinkOk() (*string, bool)`
-
-GetSelfLinkOk returns a tuple with the SelfLink field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSelfLink
-
-`func (o *JsonV1ListMeta) SetSelfLink(v string)`
-
-SetSelfLink sets SelfLink field to given value.
-
-### HasSelfLink
-
-`func (o *JsonV1ListMeta) HasSelfLink() bool`
-
-HasSelfLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
