@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeletionTimestamp** | Pointer to **float32** |  | [optional] 
-**GenerateName** | Pointer to **string** |  | [optional] 
-**Labels** | Pointer to **map[string]string** |  | [optional] 
-**ResourceVersion** | Pointer to **string** |  | [optional] 
-**DeletionGracePeriodSeconds** | Pointer to **float32** |  | [optional] 
+**Finalizers** | Pointer to **[]string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Generation** | Pointer to **float32** |  | [optional] 
 **Uid** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Finalizers** | Pointer to **[]string** |  | [optional] 
+**ManagedFields** | Pointer to [**[]JsonV1ManagedFieldsEntry**](JsonV1ManagedFieldsEntry.md) |  | [optional] 
+**ResourceVersion** | Pointer to **string** |  | [optional] 
+**DeletionTimestamp** | Pointer to **float32** |  | [optional] 
+**DeletionGracePeriodSeconds** | Pointer to **float32** |  | [optional] 
+**GenerateName** | Pointer to **string** |  | [optional] 
 **CreationTimestamp** | Pointer to **float32** |  | [optional] 
 **SelfLink** | Pointer to **string** |  | [optional] 
 **Annotations** | Pointer to **map[string]string** |  | [optional] 
-**Generation** | Pointer to **float32** |  | [optional] 
-**ManagedFields** | Pointer to [**[]JsonV1ManagedFieldsEntry**](JsonV1ManagedFieldsEntry.md) |  | [optional] 
-**ClusterName** | Pointer to **string** |  | [optional] 
 **OwnerReferences** | Pointer to [**[]JsonV1OwnerReference**](JsonV1OwnerReference.md) |  | [optional] 
+**ClusterName** | Pointer to **string** |  | [optional] 
+**Labels** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -40,130 +40,80 @@ NewJsonV1ObjectMetaWithDefaults instantiates a new JsonV1ObjectMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDeletionTimestamp
+### GetFinalizers
 
-`func (o *JsonV1ObjectMeta) GetDeletionTimestamp() float32`
+`func (o *JsonV1ObjectMeta) GetFinalizers() []string`
 
-GetDeletionTimestamp returns the DeletionTimestamp field if non-nil, zero value otherwise.
+GetFinalizers returns the Finalizers field if non-nil, zero value otherwise.
 
-### GetDeletionTimestampOk
+### GetFinalizersOk
 
-`func (o *JsonV1ObjectMeta) GetDeletionTimestampOk() (*float32, bool)`
+`func (o *JsonV1ObjectMeta) GetFinalizersOk() (*[]string, bool)`
 
-GetDeletionTimestampOk returns a tuple with the DeletionTimestamp field if it's non-nil, zero value otherwise
+GetFinalizersOk returns a tuple with the Finalizers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeletionTimestamp
+### SetFinalizers
 
-`func (o *JsonV1ObjectMeta) SetDeletionTimestamp(v float32)`
+`func (o *JsonV1ObjectMeta) SetFinalizers(v []string)`
 
-SetDeletionTimestamp sets DeletionTimestamp field to given value.
+SetFinalizers sets Finalizers field to given value.
 
-### HasDeletionTimestamp
+### HasFinalizers
 
-`func (o *JsonV1ObjectMeta) HasDeletionTimestamp() bool`
+`func (o *JsonV1ObjectMeta) HasFinalizers() bool`
 
-HasDeletionTimestamp returns a boolean if a field has been set.
+HasFinalizers returns a boolean if a field has been set.
 
-### GetGenerateName
+### GetName
 
-`func (o *JsonV1ObjectMeta) GetGenerateName() string`
+`func (o *JsonV1ObjectMeta) GetName() string`
 
-GetGenerateName returns the GenerateName field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetGenerateNameOk
+### GetNameOk
 
-`func (o *JsonV1ObjectMeta) GetGenerateNameOk() (*string, bool)`
+`func (o *JsonV1ObjectMeta) GetNameOk() (*string, bool)`
 
-GetGenerateNameOk returns a tuple with the GenerateName field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGenerateName
+### SetName
 
-`func (o *JsonV1ObjectMeta) SetGenerateName(v string)`
+`func (o *JsonV1ObjectMeta) SetName(v string)`
 
-SetGenerateName sets GenerateName field to given value.
+SetName sets Name field to given value.
 
-### HasGenerateName
+### HasName
 
-`func (o *JsonV1ObjectMeta) HasGenerateName() bool`
+`func (o *JsonV1ObjectMeta) HasName() bool`
 
-HasGenerateName returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
-### GetLabels
+### GetGeneration
 
-`func (o *JsonV1ObjectMeta) GetLabels() map[string]string`
+`func (o *JsonV1ObjectMeta) GetGeneration() float32`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+GetGeneration returns the Generation field if non-nil, zero value otherwise.
 
-### GetLabelsOk
+### GetGenerationOk
 
-`func (o *JsonV1ObjectMeta) GetLabelsOk() (*map[string]string, bool)`
+`func (o *JsonV1ObjectMeta) GetGenerationOk() (*float32, bool)`
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+GetGenerationOk returns a tuple with the Generation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetGeneration
 
-`func (o *JsonV1ObjectMeta) SetLabels(v map[string]string)`
+`func (o *JsonV1ObjectMeta) SetGeneration(v float32)`
 
-SetLabels sets Labels field to given value.
+SetGeneration sets Generation field to given value.
 
-### HasLabels
+### HasGeneration
 
-`func (o *JsonV1ObjectMeta) HasLabels() bool`
+`func (o *JsonV1ObjectMeta) HasGeneration() bool`
 
-HasLabels returns a boolean if a field has been set.
-
-### GetResourceVersion
-
-`func (o *JsonV1ObjectMeta) GetResourceVersion() string`
-
-GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
-
-### GetResourceVersionOk
-
-`func (o *JsonV1ObjectMeta) GetResourceVersionOk() (*string, bool)`
-
-GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceVersion
-
-`func (o *JsonV1ObjectMeta) SetResourceVersion(v string)`
-
-SetResourceVersion sets ResourceVersion field to given value.
-
-### HasResourceVersion
-
-`func (o *JsonV1ObjectMeta) HasResourceVersion() bool`
-
-HasResourceVersion returns a boolean if a field has been set.
-
-### GetDeletionGracePeriodSeconds
-
-`func (o *JsonV1ObjectMeta) GetDeletionGracePeriodSeconds() float32`
-
-GetDeletionGracePeriodSeconds returns the DeletionGracePeriodSeconds field if non-nil, zero value otherwise.
-
-### GetDeletionGracePeriodSecondsOk
-
-`func (o *JsonV1ObjectMeta) GetDeletionGracePeriodSecondsOk() (*float32, bool)`
-
-GetDeletionGracePeriodSecondsOk returns a tuple with the DeletionGracePeriodSeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeletionGracePeriodSeconds
-
-`func (o *JsonV1ObjectMeta) SetDeletionGracePeriodSeconds(v float32)`
-
-SetDeletionGracePeriodSeconds sets DeletionGracePeriodSeconds field to given value.
-
-### HasDeletionGracePeriodSeconds
-
-`func (o *JsonV1ObjectMeta) HasDeletionGracePeriodSeconds() bool`
-
-HasDeletionGracePeriodSeconds returns a boolean if a field has been set.
+HasGeneration returns a boolean if a field has been set.
 
 ### GetUid
 
@@ -215,55 +165,130 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
-### GetName
+### GetManagedFields
 
-`func (o *JsonV1ObjectMeta) GetName() string`
+`func (o *JsonV1ObjectMeta) GetManagedFields() []JsonV1ManagedFieldsEntry`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetManagedFields returns the ManagedFields field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetManagedFieldsOk
 
-`func (o *JsonV1ObjectMeta) GetNameOk() (*string, bool)`
+`func (o *JsonV1ObjectMeta) GetManagedFieldsOk() (*[]JsonV1ManagedFieldsEntry, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetManagedFieldsOk returns a tuple with the ManagedFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetManagedFields
 
-`func (o *JsonV1ObjectMeta) SetName(v string)`
+`func (o *JsonV1ObjectMeta) SetManagedFields(v []JsonV1ManagedFieldsEntry)`
 
-SetName sets Name field to given value.
+SetManagedFields sets ManagedFields field to given value.
 
-### HasName
+### HasManagedFields
 
-`func (o *JsonV1ObjectMeta) HasName() bool`
+`func (o *JsonV1ObjectMeta) HasManagedFields() bool`
 
-HasName returns a boolean if a field has been set.
+HasManagedFields returns a boolean if a field has been set.
 
-### GetFinalizers
+### GetResourceVersion
 
-`func (o *JsonV1ObjectMeta) GetFinalizers() []string`
+`func (o *JsonV1ObjectMeta) GetResourceVersion() string`
 
-GetFinalizers returns the Finalizers field if non-nil, zero value otherwise.
+GetResourceVersion returns the ResourceVersion field if non-nil, zero value otherwise.
 
-### GetFinalizersOk
+### GetResourceVersionOk
 
-`func (o *JsonV1ObjectMeta) GetFinalizersOk() (*[]string, bool)`
+`func (o *JsonV1ObjectMeta) GetResourceVersionOk() (*string, bool)`
 
-GetFinalizersOk returns a tuple with the Finalizers field if it's non-nil, zero value otherwise
+GetResourceVersionOk returns a tuple with the ResourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFinalizers
+### SetResourceVersion
 
-`func (o *JsonV1ObjectMeta) SetFinalizers(v []string)`
+`func (o *JsonV1ObjectMeta) SetResourceVersion(v string)`
 
-SetFinalizers sets Finalizers field to given value.
+SetResourceVersion sets ResourceVersion field to given value.
 
-### HasFinalizers
+### HasResourceVersion
 
-`func (o *JsonV1ObjectMeta) HasFinalizers() bool`
+`func (o *JsonV1ObjectMeta) HasResourceVersion() bool`
 
-HasFinalizers returns a boolean if a field has been set.
+HasResourceVersion returns a boolean if a field has been set.
+
+### GetDeletionTimestamp
+
+`func (o *JsonV1ObjectMeta) GetDeletionTimestamp() float32`
+
+GetDeletionTimestamp returns the DeletionTimestamp field if non-nil, zero value otherwise.
+
+### GetDeletionTimestampOk
+
+`func (o *JsonV1ObjectMeta) GetDeletionTimestampOk() (*float32, bool)`
+
+GetDeletionTimestampOk returns a tuple with the DeletionTimestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletionTimestamp
+
+`func (o *JsonV1ObjectMeta) SetDeletionTimestamp(v float32)`
+
+SetDeletionTimestamp sets DeletionTimestamp field to given value.
+
+### HasDeletionTimestamp
+
+`func (o *JsonV1ObjectMeta) HasDeletionTimestamp() bool`
+
+HasDeletionTimestamp returns a boolean if a field has been set.
+
+### GetDeletionGracePeriodSeconds
+
+`func (o *JsonV1ObjectMeta) GetDeletionGracePeriodSeconds() float32`
+
+GetDeletionGracePeriodSeconds returns the DeletionGracePeriodSeconds field if non-nil, zero value otherwise.
+
+### GetDeletionGracePeriodSecondsOk
+
+`func (o *JsonV1ObjectMeta) GetDeletionGracePeriodSecondsOk() (*float32, bool)`
+
+GetDeletionGracePeriodSecondsOk returns a tuple with the DeletionGracePeriodSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletionGracePeriodSeconds
+
+`func (o *JsonV1ObjectMeta) SetDeletionGracePeriodSeconds(v float32)`
+
+SetDeletionGracePeriodSeconds sets DeletionGracePeriodSeconds field to given value.
+
+### HasDeletionGracePeriodSeconds
+
+`func (o *JsonV1ObjectMeta) HasDeletionGracePeriodSeconds() bool`
+
+HasDeletionGracePeriodSeconds returns a boolean if a field has been set.
+
+### GetGenerateName
+
+`func (o *JsonV1ObjectMeta) GetGenerateName() string`
+
+GetGenerateName returns the GenerateName field if non-nil, zero value otherwise.
+
+### GetGenerateNameOk
+
+`func (o *JsonV1ObjectMeta) GetGenerateNameOk() (*string, bool)`
+
+GetGenerateNameOk returns a tuple with the GenerateName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGenerateName
+
+`func (o *JsonV1ObjectMeta) SetGenerateName(v string)`
+
+SetGenerateName sets GenerateName field to given value.
+
+### HasGenerateName
+
+`func (o *JsonV1ObjectMeta) HasGenerateName() bool`
+
+HasGenerateName returns a boolean if a field has been set.
 
 ### GetCreationTimestamp
 
@@ -340,55 +365,30 @@ SetAnnotations sets Annotations field to given value.
 
 HasAnnotations returns a boolean if a field has been set.
 
-### GetGeneration
+### GetOwnerReferences
 
-`func (o *JsonV1ObjectMeta) GetGeneration() float32`
+`func (o *JsonV1ObjectMeta) GetOwnerReferences() []JsonV1OwnerReference`
 
-GetGeneration returns the Generation field if non-nil, zero value otherwise.
+GetOwnerReferences returns the OwnerReferences field if non-nil, zero value otherwise.
 
-### GetGenerationOk
+### GetOwnerReferencesOk
 
-`func (o *JsonV1ObjectMeta) GetGenerationOk() (*float32, bool)`
+`func (o *JsonV1ObjectMeta) GetOwnerReferencesOk() (*[]JsonV1OwnerReference, bool)`
 
-GetGenerationOk returns a tuple with the Generation field if it's non-nil, zero value otherwise
+GetOwnerReferencesOk returns a tuple with the OwnerReferences field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGeneration
+### SetOwnerReferences
 
-`func (o *JsonV1ObjectMeta) SetGeneration(v float32)`
+`func (o *JsonV1ObjectMeta) SetOwnerReferences(v []JsonV1OwnerReference)`
 
-SetGeneration sets Generation field to given value.
+SetOwnerReferences sets OwnerReferences field to given value.
 
-### HasGeneration
+### HasOwnerReferences
 
-`func (o *JsonV1ObjectMeta) HasGeneration() bool`
+`func (o *JsonV1ObjectMeta) HasOwnerReferences() bool`
 
-HasGeneration returns a boolean if a field has been set.
-
-### GetManagedFields
-
-`func (o *JsonV1ObjectMeta) GetManagedFields() []JsonV1ManagedFieldsEntry`
-
-GetManagedFields returns the ManagedFields field if non-nil, zero value otherwise.
-
-### GetManagedFieldsOk
-
-`func (o *JsonV1ObjectMeta) GetManagedFieldsOk() (*[]JsonV1ManagedFieldsEntry, bool)`
-
-GetManagedFieldsOk returns a tuple with the ManagedFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManagedFields
-
-`func (o *JsonV1ObjectMeta) SetManagedFields(v []JsonV1ManagedFieldsEntry)`
-
-SetManagedFields sets ManagedFields field to given value.
-
-### HasManagedFields
-
-`func (o *JsonV1ObjectMeta) HasManagedFields() bool`
-
-HasManagedFields returns a boolean if a field has been set.
+HasOwnerReferences returns a boolean if a field has been set.
 
 ### GetClusterName
 
@@ -415,30 +415,30 @@ SetClusterName sets ClusterName field to given value.
 
 HasClusterName returns a boolean if a field has been set.
 
-### GetOwnerReferences
+### GetLabels
 
-`func (o *JsonV1ObjectMeta) GetOwnerReferences() []JsonV1OwnerReference`
+`func (o *JsonV1ObjectMeta) GetLabels() map[string]string`
 
-GetOwnerReferences returns the OwnerReferences field if non-nil, zero value otherwise.
+GetLabels returns the Labels field if non-nil, zero value otherwise.
 
-### GetOwnerReferencesOk
+### GetLabelsOk
 
-`func (o *JsonV1ObjectMeta) GetOwnerReferencesOk() (*[]JsonV1OwnerReference, bool)`
+`func (o *JsonV1ObjectMeta) GetLabelsOk() (*map[string]string, bool)`
 
-GetOwnerReferencesOk returns a tuple with the OwnerReferences field if it's non-nil, zero value otherwise
+GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOwnerReferences
+### SetLabels
 
-`func (o *JsonV1ObjectMeta) SetOwnerReferences(v []JsonV1OwnerReference)`
+`func (o *JsonV1ObjectMeta) SetLabels(v map[string]string)`
 
-SetOwnerReferences sets OwnerReferences field to given value.
+SetLabels sets Labels field to given value.
 
-### HasOwnerReferences
+### HasLabels
 
-`func (o *JsonV1ObjectMeta) HasOwnerReferences() bool`
+`func (o *JsonV1ObjectMeta) HasLabels() bool`
 
-HasOwnerReferences returns a boolean if a field has been set.
+HasLabels returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,38 +4,38 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WgInterface** | Pointer to [**JsonWireguardInterface**](json_WireguardInterface.md) |  | [optional] 
-**Process** | Pointer to [**JsonProcess**](json_Process.md) |  | [optional] 
-**StartupCMD** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
 **SignerIdent** | Pointer to **string** |  | [optional] 
-**RemoteControlServer** | Pointer to **string** |  | [optional] 
-**Environment** | Pointer to [**JsonEnvironment**](json_Environment.md) |  | [optional] 
-**WireguardServer** | Pointer to **string** |  | [optional] 
-**EnclaveIdent** | Pointer to **string** |  | [optional] 
-**StartupTime** | Pointer to **string** |  | [optional] 
-**InternalRemoteControlServer** | Pointer to **string** |  | [optional] 
-**EnclaveInputstream** | Pointer to **map[string]interface{}** |  | [optional] 
-**AttestationServer** | Pointer to **string** |  | [optional] 
-**ConsoleOutput** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **string** |  | [optional] 
+**WgInterface** | Pointer to [**JsonWireguardInterface**](json_WireguardInterface.md) |  | [optional] 
+**StartupCMD** | Pointer to **string** |  | [optional] 
 **EndingTime** | Pointer to **string** |  | [optional] 
-**WireguardPublicKey** | Pointer to **string** |  | [optional] 
-**PublicIdent** | Pointer to **string** |  | [optional] 
-**PortMapping** | Pointer to **map[string]string** |  | [optional] 
-**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
+**RemoteControlServer** | Pointer to **string** |  | [optional] 
+**InternalWireguardServer** | Pointer to **string** |  | [optional] 
+**InternalRemoteControlServer** | Pointer to **string** |  | [optional] 
 **InternalIdent** | Pointer to **string** |  | [optional] 
 **KubernetesEnclave** | Pointer to [**JsonKubernetesEnclave**](json_KubernetesEnclave.md) |  | [optional] 
+**WireguardServer** | Pointer to **string** |  | [optional] 
+**PortMapping** | Pointer to **map[string]string** |  | [optional] 
+**AttestationServer** | Pointer to **string** |  | [optional] 
+**Process** | Pointer to [**JsonProcess**](json_Process.md) |  | [optional] 
+**PublicIdent** | Pointer to **string** |  | [optional] 
+**StartupTime** | Pointer to **string** |  | [optional] 
+**Environment** | Pointer to [**JsonEnvironment**](json_Environment.md) |  | [optional] 
+**ConsoleOutput** | Pointer to **string** |  | [optional] 
+**WireguardPublicKey** | Pointer to **string** |  | [optional] 
+**EnclaveIdent** | Pointer to **string** |  | [optional] 
 **InternalAttesationServer** | Pointer to **string** |  | [optional] 
-**InternalWireguardServer** | Pointer to **string** |  | [optional] 
-**AttestationPort** | Pointer to **int32** |  | [optional] 
-**PodPhase** | Pointer to **string** |  | [optional] 
-**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
+**EnclaveInputstream** | Pointer to **map[string]interface{}** |  | [optional] 
+**Ports** | Pointer to [**[]JsonEnclavePort**](JsonEnclavePort.md) |  | [optional] 
 **EnclavePodEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
-**EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 **RemoteControlIP** | Pointer to **string** |  | [optional] 
-**DebugInfo** | Pointer to **string** |  | [optional] 
+**PodPhase** | Pointer to **string** |  | [optional] 
 **EnclaveDeploymentEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
+**DebugInfo** | Pointer to **string** |  | [optional] 
+**AttestationPort** | Pointer to **int32** |  | [optional] 
+**IsUsingInitContainer** | Pointer to **bool** |  | [optional] 
 **WireguardPort** | Pointer to **int32** |  | [optional] 
+**EnclaveReplicaSetEvents** | Pointer to [**JsonV1EventList**](json_V1EventList.md) |  | [optional] 
 
 ## Methods
 
@@ -55,106 +55,6 @@ will change when the set of required properties is changed
 NewJsonKubernetesEnclaveWithDefaults instantiates a new JsonKubernetesEnclave object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetWgInterface
-
-`func (o *JsonKubernetesEnclave) GetWgInterface() JsonWireguardInterface`
-
-GetWgInterface returns the WgInterface field if non-nil, zero value otherwise.
-
-### GetWgInterfaceOk
-
-`func (o *JsonKubernetesEnclave) GetWgInterfaceOk() (*JsonWireguardInterface, bool)`
-
-GetWgInterfaceOk returns a tuple with the WgInterface field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWgInterface
-
-`func (o *JsonKubernetesEnclave) SetWgInterface(v JsonWireguardInterface)`
-
-SetWgInterface sets WgInterface field to given value.
-
-### HasWgInterface
-
-`func (o *JsonKubernetesEnclave) HasWgInterface() bool`
-
-HasWgInterface returns a boolean if a field has been set.
-
-### GetProcess
-
-`func (o *JsonKubernetesEnclave) GetProcess() JsonProcess`
-
-GetProcess returns the Process field if non-nil, zero value otherwise.
-
-### GetProcessOk
-
-`func (o *JsonKubernetesEnclave) GetProcessOk() (*JsonProcess, bool)`
-
-GetProcessOk returns a tuple with the Process field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProcess
-
-`func (o *JsonKubernetesEnclave) SetProcess(v JsonProcess)`
-
-SetProcess sets Process field to given value.
-
-### HasProcess
-
-`func (o *JsonKubernetesEnclave) HasProcess() bool`
-
-HasProcess returns a boolean if a field has been set.
-
-### GetStartupCMD
-
-`func (o *JsonKubernetesEnclave) GetStartupCMD() string`
-
-GetStartupCMD returns the StartupCMD field if non-nil, zero value otherwise.
-
-### GetStartupCMDOk
-
-`func (o *JsonKubernetesEnclave) GetStartupCMDOk() (*string, bool)`
-
-GetStartupCMDOk returns a tuple with the StartupCMD field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStartupCMD
-
-`func (o *JsonKubernetesEnclave) SetStartupCMD(v string)`
-
-SetStartupCMD sets StartupCMD field to given value.
-
-### HasStartupCMD
-
-`func (o *JsonKubernetesEnclave) HasStartupCMD() bool`
-
-HasStartupCMD returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *JsonKubernetesEnclave) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *JsonKubernetesEnclave) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *JsonKubernetesEnclave) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *JsonKubernetesEnclave) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 ### GetSignerIdent
 
@@ -181,230 +81,80 @@ SetSignerIdent sets SignerIdent field to given value.
 
 HasSignerIdent returns a boolean if a field has been set.
 
-### GetRemoteControlServer
+### GetStatus
 
-`func (o *JsonKubernetesEnclave) GetRemoteControlServer() string`
+`func (o *JsonKubernetesEnclave) GetStatus() string`
 
-GetRemoteControlServer returns the RemoteControlServer field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetRemoteControlServerOk
+### GetStatusOk
 
-`func (o *JsonKubernetesEnclave) GetRemoteControlServerOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetStatusOk() (*string, bool)`
 
-GetRemoteControlServerOk returns a tuple with the RemoteControlServer field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRemoteControlServer
+### SetStatus
 
-`func (o *JsonKubernetesEnclave) SetRemoteControlServer(v string)`
+`func (o *JsonKubernetesEnclave) SetStatus(v string)`
 
-SetRemoteControlServer sets RemoteControlServer field to given value.
+SetStatus sets Status field to given value.
 
-### HasRemoteControlServer
+### HasStatus
 
-`func (o *JsonKubernetesEnclave) HasRemoteControlServer() bool`
+`func (o *JsonKubernetesEnclave) HasStatus() bool`
 
-HasRemoteControlServer returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
-### GetEnvironment
+### GetWgInterface
 
-`func (o *JsonKubernetesEnclave) GetEnvironment() JsonEnvironment`
+`func (o *JsonKubernetesEnclave) GetWgInterface() JsonWireguardInterface`
 
-GetEnvironment returns the Environment field if non-nil, zero value otherwise.
+GetWgInterface returns the WgInterface field if non-nil, zero value otherwise.
 
-### GetEnvironmentOk
+### GetWgInterfaceOk
 
-`func (o *JsonKubernetesEnclave) GetEnvironmentOk() (*JsonEnvironment, bool)`
+`func (o *JsonKubernetesEnclave) GetWgInterfaceOk() (*JsonWireguardInterface, bool)`
 
-GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
+GetWgInterfaceOk returns a tuple with the WgInterface field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnvironment
+### SetWgInterface
 
-`func (o *JsonKubernetesEnclave) SetEnvironment(v JsonEnvironment)`
+`func (o *JsonKubernetesEnclave) SetWgInterface(v JsonWireguardInterface)`
 
-SetEnvironment sets Environment field to given value.
+SetWgInterface sets WgInterface field to given value.
 
-### HasEnvironment
+### HasWgInterface
 
-`func (o *JsonKubernetesEnclave) HasEnvironment() bool`
+`func (o *JsonKubernetesEnclave) HasWgInterface() bool`
 
-HasEnvironment returns a boolean if a field has been set.
+HasWgInterface returns a boolean if a field has been set.
 
-### GetWireguardServer
+### GetStartupCMD
 
-`func (o *JsonKubernetesEnclave) GetWireguardServer() string`
+`func (o *JsonKubernetesEnclave) GetStartupCMD() string`
 
-GetWireguardServer returns the WireguardServer field if non-nil, zero value otherwise.
+GetStartupCMD returns the StartupCMD field if non-nil, zero value otherwise.
 
-### GetWireguardServerOk
+### GetStartupCMDOk
 
-`func (o *JsonKubernetesEnclave) GetWireguardServerOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetStartupCMDOk() (*string, bool)`
 
-GetWireguardServerOk returns a tuple with the WireguardServer field if it's non-nil, zero value otherwise
+GetStartupCMDOk returns a tuple with the StartupCMD field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardServer
+### SetStartupCMD
 
-`func (o *JsonKubernetesEnclave) SetWireguardServer(v string)`
+`func (o *JsonKubernetesEnclave) SetStartupCMD(v string)`
 
-SetWireguardServer sets WireguardServer field to given value.
+SetStartupCMD sets StartupCMD field to given value.
 
-### HasWireguardServer
+### HasStartupCMD
 
-`func (o *JsonKubernetesEnclave) HasWireguardServer() bool`
+`func (o *JsonKubernetesEnclave) HasStartupCMD() bool`
 
-HasWireguardServer returns a boolean if a field has been set.
-
-### GetEnclaveIdent
-
-`func (o *JsonKubernetesEnclave) GetEnclaveIdent() string`
-
-GetEnclaveIdent returns the EnclaveIdent field if non-nil, zero value otherwise.
-
-### GetEnclaveIdentOk
-
-`func (o *JsonKubernetesEnclave) GetEnclaveIdentOk() (*string, bool)`
-
-GetEnclaveIdentOk returns a tuple with the EnclaveIdent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveIdent
-
-`func (o *JsonKubernetesEnclave) SetEnclaveIdent(v string)`
-
-SetEnclaveIdent sets EnclaveIdent field to given value.
-
-### HasEnclaveIdent
-
-`func (o *JsonKubernetesEnclave) HasEnclaveIdent() bool`
-
-HasEnclaveIdent returns a boolean if a field has been set.
-
-### GetStartupTime
-
-`func (o *JsonKubernetesEnclave) GetStartupTime() string`
-
-GetStartupTime returns the StartupTime field if non-nil, zero value otherwise.
-
-### GetStartupTimeOk
-
-`func (o *JsonKubernetesEnclave) GetStartupTimeOk() (*string, bool)`
-
-GetStartupTimeOk returns a tuple with the StartupTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStartupTime
-
-`func (o *JsonKubernetesEnclave) SetStartupTime(v string)`
-
-SetStartupTime sets StartupTime field to given value.
-
-### HasStartupTime
-
-`func (o *JsonKubernetesEnclave) HasStartupTime() bool`
-
-HasStartupTime returns a boolean if a field has been set.
-
-### GetInternalRemoteControlServer
-
-`func (o *JsonKubernetesEnclave) GetInternalRemoteControlServer() string`
-
-GetInternalRemoteControlServer returns the InternalRemoteControlServer field if non-nil, zero value otherwise.
-
-### GetInternalRemoteControlServerOk
-
-`func (o *JsonKubernetesEnclave) GetInternalRemoteControlServerOk() (*string, bool)`
-
-GetInternalRemoteControlServerOk returns a tuple with the InternalRemoteControlServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalRemoteControlServer
-
-`func (o *JsonKubernetesEnclave) SetInternalRemoteControlServer(v string)`
-
-SetInternalRemoteControlServer sets InternalRemoteControlServer field to given value.
-
-### HasInternalRemoteControlServer
-
-`func (o *JsonKubernetesEnclave) HasInternalRemoteControlServer() bool`
-
-HasInternalRemoteControlServer returns a boolean if a field has been set.
-
-### GetEnclaveInputstream
-
-`func (o *JsonKubernetesEnclave) GetEnclaveInputstream() map[string]interface{}`
-
-GetEnclaveInputstream returns the EnclaveInputstream field if non-nil, zero value otherwise.
-
-### GetEnclaveInputstreamOk
-
-`func (o *JsonKubernetesEnclave) GetEnclaveInputstreamOk() (*map[string]interface{}, bool)`
-
-GetEnclaveInputstreamOk returns a tuple with the EnclaveInputstream field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveInputstream
-
-`func (o *JsonKubernetesEnclave) SetEnclaveInputstream(v map[string]interface{})`
-
-SetEnclaveInputstream sets EnclaveInputstream field to given value.
-
-### HasEnclaveInputstream
-
-`func (o *JsonKubernetesEnclave) HasEnclaveInputstream() bool`
-
-HasEnclaveInputstream returns a boolean if a field has been set.
-
-### GetAttestationServer
-
-`func (o *JsonKubernetesEnclave) GetAttestationServer() string`
-
-GetAttestationServer returns the AttestationServer field if non-nil, zero value otherwise.
-
-### GetAttestationServerOk
-
-`func (o *JsonKubernetesEnclave) GetAttestationServerOk() (*string, bool)`
-
-GetAttestationServerOk returns a tuple with the AttestationServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttestationServer
-
-`func (o *JsonKubernetesEnclave) SetAttestationServer(v string)`
-
-SetAttestationServer sets AttestationServer field to given value.
-
-### HasAttestationServer
-
-`func (o *JsonKubernetesEnclave) HasAttestationServer() bool`
-
-HasAttestationServer returns a boolean if a field has been set.
-
-### GetConsoleOutput
-
-`func (o *JsonKubernetesEnclave) GetConsoleOutput() string`
-
-GetConsoleOutput returns the ConsoleOutput field if non-nil, zero value otherwise.
-
-### GetConsoleOutputOk
-
-`func (o *JsonKubernetesEnclave) GetConsoleOutputOk() (*string, bool)`
-
-GetConsoleOutputOk returns a tuple with the ConsoleOutput field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsoleOutput
-
-`func (o *JsonKubernetesEnclave) SetConsoleOutput(v string)`
-
-SetConsoleOutput sets ConsoleOutput field to given value.
-
-### HasConsoleOutput
-
-`func (o *JsonKubernetesEnclave) HasConsoleOutput() bool`
-
-HasConsoleOutput returns a boolean if a field has been set.
+HasStartupCMD returns a boolean if a field has been set.
 
 ### GetEndingTime
 
@@ -431,105 +181,80 @@ SetEndingTime sets EndingTime field to given value.
 
 HasEndingTime returns a boolean if a field has been set.
 
-### GetWireguardPublicKey
+### GetRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) GetWireguardPublicKey() string`
+`func (o *JsonKubernetesEnclave) GetRemoteControlServer() string`
 
-GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+GetRemoteControlServer returns the RemoteControlServer field if non-nil, zero value otherwise.
 
-### GetWireguardPublicKeyOk
+### GetRemoteControlServerOk
 
-`func (o *JsonKubernetesEnclave) GetWireguardPublicKeyOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetRemoteControlServerOk() (*string, bool)`
 
-GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+GetRemoteControlServerOk returns a tuple with the RemoteControlServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWireguardPublicKey
+### SetRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) SetWireguardPublicKey(v string)`
+`func (o *JsonKubernetesEnclave) SetRemoteControlServer(v string)`
 
-SetWireguardPublicKey sets WireguardPublicKey field to given value.
+SetRemoteControlServer sets RemoteControlServer field to given value.
 
-### HasWireguardPublicKey
+### HasRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) HasWireguardPublicKey() bool`
+`func (o *JsonKubernetesEnclave) HasRemoteControlServer() bool`
 
-HasWireguardPublicKey returns a boolean if a field has been set.
+HasRemoteControlServer returns a boolean if a field has been set.
 
-### GetPublicIdent
+### GetInternalWireguardServer
 
-`func (o *JsonKubernetesEnclave) GetPublicIdent() string`
+`func (o *JsonKubernetesEnclave) GetInternalWireguardServer() string`
 
-GetPublicIdent returns the PublicIdent field if non-nil, zero value otherwise.
+GetInternalWireguardServer returns the InternalWireguardServer field if non-nil, zero value otherwise.
 
-### GetPublicIdentOk
+### GetInternalWireguardServerOk
 
-`func (o *JsonKubernetesEnclave) GetPublicIdentOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetInternalWireguardServerOk() (*string, bool)`
 
-GetPublicIdentOk returns a tuple with the PublicIdent field if it's non-nil, zero value otherwise
+GetInternalWireguardServerOk returns a tuple with the InternalWireguardServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPublicIdent
+### SetInternalWireguardServer
 
-`func (o *JsonKubernetesEnclave) SetPublicIdent(v string)`
+`func (o *JsonKubernetesEnclave) SetInternalWireguardServer(v string)`
 
-SetPublicIdent sets PublicIdent field to given value.
+SetInternalWireguardServer sets InternalWireguardServer field to given value.
 
-### HasPublicIdent
+### HasInternalWireguardServer
 
-`func (o *JsonKubernetesEnclave) HasPublicIdent() bool`
+`func (o *JsonKubernetesEnclave) HasInternalWireguardServer() bool`
 
-HasPublicIdent returns a boolean if a field has been set.
+HasInternalWireguardServer returns a boolean if a field has been set.
 
-### GetPortMapping
+### GetInternalRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) GetPortMapping() map[string]string`
+`func (o *JsonKubernetesEnclave) GetInternalRemoteControlServer() string`
 
-GetPortMapping returns the PortMapping field if non-nil, zero value otherwise.
+GetInternalRemoteControlServer returns the InternalRemoteControlServer field if non-nil, zero value otherwise.
 
-### GetPortMappingOk
+### GetInternalRemoteControlServerOk
 
-`func (o *JsonKubernetesEnclave) GetPortMappingOk() (*map[string]string, bool)`
+`func (o *JsonKubernetesEnclave) GetInternalRemoteControlServerOk() (*string, bool)`
 
-GetPortMappingOk returns a tuple with the PortMapping field if it's non-nil, zero value otherwise
+GetInternalRemoteControlServerOk returns a tuple with the InternalRemoteControlServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPortMapping
+### SetInternalRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) SetPortMapping(v map[string]string)`
+`func (o *JsonKubernetesEnclave) SetInternalRemoteControlServer(v string)`
 
-SetPortMapping sets PortMapping field to given value.
+SetInternalRemoteControlServer sets InternalRemoteControlServer field to given value.
 
-### HasPortMapping
+### HasInternalRemoteControlServer
 
-`func (o *JsonKubernetesEnclave) HasPortMapping() bool`
+`func (o *JsonKubernetesEnclave) HasInternalRemoteControlServer() bool`
 
-HasPortMapping returns a boolean if a field has been set.
-
-### GetPorts
-
-`func (o *JsonKubernetesEnclave) GetPorts() []JsonEnclavePort`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *JsonKubernetesEnclave) GetPortsOk() (*[]JsonEnclavePort, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *JsonKubernetesEnclave) SetPorts(v []JsonEnclavePort)`
-
-SetPorts sets Ports field to given value.
-
-### HasPorts
-
-`func (o *JsonKubernetesEnclave) HasPorts() bool`
-
-HasPorts returns a boolean if a field has been set.
+HasInternalRemoteControlServer returns a boolean if a field has been set.
 
 ### GetInternalIdent
 
@@ -581,6 +306,256 @@ SetKubernetesEnclave sets KubernetesEnclave field to given value.
 
 HasKubernetesEnclave returns a boolean if a field has been set.
 
+### GetWireguardServer
+
+`func (o *JsonKubernetesEnclave) GetWireguardServer() string`
+
+GetWireguardServer returns the WireguardServer field if non-nil, zero value otherwise.
+
+### GetWireguardServerOk
+
+`func (o *JsonKubernetesEnclave) GetWireguardServerOk() (*string, bool)`
+
+GetWireguardServerOk returns a tuple with the WireguardServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWireguardServer
+
+`func (o *JsonKubernetesEnclave) SetWireguardServer(v string)`
+
+SetWireguardServer sets WireguardServer field to given value.
+
+### HasWireguardServer
+
+`func (o *JsonKubernetesEnclave) HasWireguardServer() bool`
+
+HasWireguardServer returns a boolean if a field has been set.
+
+### GetPortMapping
+
+`func (o *JsonKubernetesEnclave) GetPortMapping() map[string]string`
+
+GetPortMapping returns the PortMapping field if non-nil, zero value otherwise.
+
+### GetPortMappingOk
+
+`func (o *JsonKubernetesEnclave) GetPortMappingOk() (*map[string]string, bool)`
+
+GetPortMappingOk returns a tuple with the PortMapping field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortMapping
+
+`func (o *JsonKubernetesEnclave) SetPortMapping(v map[string]string)`
+
+SetPortMapping sets PortMapping field to given value.
+
+### HasPortMapping
+
+`func (o *JsonKubernetesEnclave) HasPortMapping() bool`
+
+HasPortMapping returns a boolean if a field has been set.
+
+### GetAttestationServer
+
+`func (o *JsonKubernetesEnclave) GetAttestationServer() string`
+
+GetAttestationServer returns the AttestationServer field if non-nil, zero value otherwise.
+
+### GetAttestationServerOk
+
+`func (o *JsonKubernetesEnclave) GetAttestationServerOk() (*string, bool)`
+
+GetAttestationServerOk returns a tuple with the AttestationServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttestationServer
+
+`func (o *JsonKubernetesEnclave) SetAttestationServer(v string)`
+
+SetAttestationServer sets AttestationServer field to given value.
+
+### HasAttestationServer
+
+`func (o *JsonKubernetesEnclave) HasAttestationServer() bool`
+
+HasAttestationServer returns a boolean if a field has been set.
+
+### GetProcess
+
+`func (o *JsonKubernetesEnclave) GetProcess() JsonProcess`
+
+GetProcess returns the Process field if non-nil, zero value otherwise.
+
+### GetProcessOk
+
+`func (o *JsonKubernetesEnclave) GetProcessOk() (*JsonProcess, bool)`
+
+GetProcessOk returns a tuple with the Process field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProcess
+
+`func (o *JsonKubernetesEnclave) SetProcess(v JsonProcess)`
+
+SetProcess sets Process field to given value.
+
+### HasProcess
+
+`func (o *JsonKubernetesEnclave) HasProcess() bool`
+
+HasProcess returns a boolean if a field has been set.
+
+### GetPublicIdent
+
+`func (o *JsonKubernetesEnclave) GetPublicIdent() string`
+
+GetPublicIdent returns the PublicIdent field if non-nil, zero value otherwise.
+
+### GetPublicIdentOk
+
+`func (o *JsonKubernetesEnclave) GetPublicIdentOk() (*string, bool)`
+
+GetPublicIdentOk returns a tuple with the PublicIdent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicIdent
+
+`func (o *JsonKubernetesEnclave) SetPublicIdent(v string)`
+
+SetPublicIdent sets PublicIdent field to given value.
+
+### HasPublicIdent
+
+`func (o *JsonKubernetesEnclave) HasPublicIdent() bool`
+
+HasPublicIdent returns a boolean if a field has been set.
+
+### GetStartupTime
+
+`func (o *JsonKubernetesEnclave) GetStartupTime() string`
+
+GetStartupTime returns the StartupTime field if non-nil, zero value otherwise.
+
+### GetStartupTimeOk
+
+`func (o *JsonKubernetesEnclave) GetStartupTimeOk() (*string, bool)`
+
+GetStartupTimeOk returns a tuple with the StartupTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartupTime
+
+`func (o *JsonKubernetesEnclave) SetStartupTime(v string)`
+
+SetStartupTime sets StartupTime field to given value.
+
+### HasStartupTime
+
+`func (o *JsonKubernetesEnclave) HasStartupTime() bool`
+
+HasStartupTime returns a boolean if a field has been set.
+
+### GetEnvironment
+
+`func (o *JsonKubernetesEnclave) GetEnvironment() JsonEnvironment`
+
+GetEnvironment returns the Environment field if non-nil, zero value otherwise.
+
+### GetEnvironmentOk
+
+`func (o *JsonKubernetesEnclave) GetEnvironmentOk() (*JsonEnvironment, bool)`
+
+GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironment
+
+`func (o *JsonKubernetesEnclave) SetEnvironment(v JsonEnvironment)`
+
+SetEnvironment sets Environment field to given value.
+
+### HasEnvironment
+
+`func (o *JsonKubernetesEnclave) HasEnvironment() bool`
+
+HasEnvironment returns a boolean if a field has been set.
+
+### GetConsoleOutput
+
+`func (o *JsonKubernetesEnclave) GetConsoleOutput() string`
+
+GetConsoleOutput returns the ConsoleOutput field if non-nil, zero value otherwise.
+
+### GetConsoleOutputOk
+
+`func (o *JsonKubernetesEnclave) GetConsoleOutputOk() (*string, bool)`
+
+GetConsoleOutputOk returns a tuple with the ConsoleOutput field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsoleOutput
+
+`func (o *JsonKubernetesEnclave) SetConsoleOutput(v string)`
+
+SetConsoleOutput sets ConsoleOutput field to given value.
+
+### HasConsoleOutput
+
+`func (o *JsonKubernetesEnclave) HasConsoleOutput() bool`
+
+HasConsoleOutput returns a boolean if a field has been set.
+
+### GetWireguardPublicKey
+
+`func (o *JsonKubernetesEnclave) GetWireguardPublicKey() string`
+
+GetWireguardPublicKey returns the WireguardPublicKey field if non-nil, zero value otherwise.
+
+### GetWireguardPublicKeyOk
+
+`func (o *JsonKubernetesEnclave) GetWireguardPublicKeyOk() (*string, bool)`
+
+GetWireguardPublicKeyOk returns a tuple with the WireguardPublicKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWireguardPublicKey
+
+`func (o *JsonKubernetesEnclave) SetWireguardPublicKey(v string)`
+
+SetWireguardPublicKey sets WireguardPublicKey field to given value.
+
+### HasWireguardPublicKey
+
+`func (o *JsonKubernetesEnclave) HasWireguardPublicKey() bool`
+
+HasWireguardPublicKey returns a boolean if a field has been set.
+
+### GetEnclaveIdent
+
+`func (o *JsonKubernetesEnclave) GetEnclaveIdent() string`
+
+GetEnclaveIdent returns the EnclaveIdent field if non-nil, zero value otherwise.
+
+### GetEnclaveIdentOk
+
+`func (o *JsonKubernetesEnclave) GetEnclaveIdentOk() (*string, bool)`
+
+GetEnclaveIdentOk returns a tuple with the EnclaveIdent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveIdent
+
+`func (o *JsonKubernetesEnclave) SetEnclaveIdent(v string)`
+
+SetEnclaveIdent sets EnclaveIdent field to given value.
+
+### HasEnclaveIdent
+
+`func (o *JsonKubernetesEnclave) HasEnclaveIdent() bool`
+
+HasEnclaveIdent returns a boolean if a field has been set.
+
 ### GetInternalAttesationServer
 
 `func (o *JsonKubernetesEnclave) GetInternalAttesationServer() string`
@@ -606,105 +581,55 @@ SetInternalAttesationServer sets InternalAttesationServer field to given value.
 
 HasInternalAttesationServer returns a boolean if a field has been set.
 
-### GetInternalWireguardServer
+### GetEnclaveInputstream
 
-`func (o *JsonKubernetesEnclave) GetInternalWireguardServer() string`
+`func (o *JsonKubernetesEnclave) GetEnclaveInputstream() map[string]interface{}`
 
-GetInternalWireguardServer returns the InternalWireguardServer field if non-nil, zero value otherwise.
+GetEnclaveInputstream returns the EnclaveInputstream field if non-nil, zero value otherwise.
 
-### GetInternalWireguardServerOk
+### GetEnclaveInputstreamOk
 
-`func (o *JsonKubernetesEnclave) GetInternalWireguardServerOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetEnclaveInputstreamOk() (*map[string]interface{}, bool)`
 
-GetInternalWireguardServerOk returns a tuple with the InternalWireguardServer field if it's non-nil, zero value otherwise
+GetEnclaveInputstreamOk returns a tuple with the EnclaveInputstream field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInternalWireguardServer
+### SetEnclaveInputstream
 
-`func (o *JsonKubernetesEnclave) SetInternalWireguardServer(v string)`
+`func (o *JsonKubernetesEnclave) SetEnclaveInputstream(v map[string]interface{})`
 
-SetInternalWireguardServer sets InternalWireguardServer field to given value.
+SetEnclaveInputstream sets EnclaveInputstream field to given value.
 
-### HasInternalWireguardServer
+### HasEnclaveInputstream
 
-`func (o *JsonKubernetesEnclave) HasInternalWireguardServer() bool`
+`func (o *JsonKubernetesEnclave) HasEnclaveInputstream() bool`
 
-HasInternalWireguardServer returns a boolean if a field has been set.
+HasEnclaveInputstream returns a boolean if a field has been set.
 
-### GetAttestationPort
+### GetPorts
 
-`func (o *JsonKubernetesEnclave) GetAttestationPort() int32`
+`func (o *JsonKubernetesEnclave) GetPorts() []JsonEnclavePort`
 
-GetAttestationPort returns the AttestationPort field if non-nil, zero value otherwise.
+GetPorts returns the Ports field if non-nil, zero value otherwise.
 
-### GetAttestationPortOk
+### GetPortsOk
 
-`func (o *JsonKubernetesEnclave) GetAttestationPortOk() (*int32, bool)`
+`func (o *JsonKubernetesEnclave) GetPortsOk() (*[]JsonEnclavePort, bool)`
 
-GetAttestationPortOk returns a tuple with the AttestationPort field if it's non-nil, zero value otherwise
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttestationPort
+### SetPorts
 
-`func (o *JsonKubernetesEnclave) SetAttestationPort(v int32)`
+`func (o *JsonKubernetesEnclave) SetPorts(v []JsonEnclavePort)`
 
-SetAttestationPort sets AttestationPort field to given value.
+SetPorts sets Ports field to given value.
 
-### HasAttestationPort
+### HasPorts
 
-`func (o *JsonKubernetesEnclave) HasAttestationPort() bool`
+`func (o *JsonKubernetesEnclave) HasPorts() bool`
 
-HasAttestationPort returns a boolean if a field has been set.
-
-### GetPodPhase
-
-`func (o *JsonKubernetesEnclave) GetPodPhase() string`
-
-GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
-
-### GetPodPhaseOk
-
-`func (o *JsonKubernetesEnclave) GetPodPhaseOk() (*string, bool)`
-
-GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPodPhase
-
-`func (o *JsonKubernetesEnclave) SetPodPhase(v string)`
-
-SetPodPhase sets PodPhase field to given value.
-
-### HasPodPhase
-
-`func (o *JsonKubernetesEnclave) HasPodPhase() bool`
-
-HasPodPhase returns a boolean if a field has been set.
-
-### GetIsUsingInitContainer
-
-`func (o *JsonKubernetesEnclave) GetIsUsingInitContainer() bool`
-
-GetIsUsingInitContainer returns the IsUsingInitContainer field if non-nil, zero value otherwise.
-
-### GetIsUsingInitContainerOk
-
-`func (o *JsonKubernetesEnclave) GetIsUsingInitContainerOk() (*bool, bool)`
-
-GetIsUsingInitContainerOk returns a tuple with the IsUsingInitContainer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsUsingInitContainer
-
-`func (o *JsonKubernetesEnclave) SetIsUsingInitContainer(v bool)`
-
-SetIsUsingInitContainer sets IsUsingInitContainer field to given value.
-
-### HasIsUsingInitContainer
-
-`func (o *JsonKubernetesEnclave) HasIsUsingInitContainer() bool`
-
-HasIsUsingInitContainer returns a boolean if a field has been set.
+HasPorts returns a boolean if a field has been set.
 
 ### GetEnclavePodEvents
 
@@ -731,31 +656,6 @@ SetEnclavePodEvents sets EnclavePodEvents field to given value.
 
 HasEnclavePodEvents returns a boolean if a field has been set.
 
-### GetEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclave) GetEnclaveReplicaSetEvents() JsonV1EventList`
-
-GetEnclaveReplicaSetEvents returns the EnclaveReplicaSetEvents field if non-nil, zero value otherwise.
-
-### GetEnclaveReplicaSetEventsOk
-
-`func (o *JsonKubernetesEnclave) GetEnclaveReplicaSetEventsOk() (*JsonV1EventList, bool)`
-
-GetEnclaveReplicaSetEventsOk returns a tuple with the EnclaveReplicaSetEvents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclave) SetEnclaveReplicaSetEvents(v JsonV1EventList)`
-
-SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
-
-### HasEnclaveReplicaSetEvents
-
-`func (o *JsonKubernetesEnclave) HasEnclaveReplicaSetEvents() bool`
-
-HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
-
 ### GetRemoteControlIP
 
 `func (o *JsonKubernetesEnclave) GetRemoteControlIP() string`
@@ -781,30 +681,30 @@ SetRemoteControlIP sets RemoteControlIP field to given value.
 
 HasRemoteControlIP returns a boolean if a field has been set.
 
-### GetDebugInfo
+### GetPodPhase
 
-`func (o *JsonKubernetesEnclave) GetDebugInfo() string`
+`func (o *JsonKubernetesEnclave) GetPodPhase() string`
 
-GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
+GetPodPhase returns the PodPhase field if non-nil, zero value otherwise.
 
-### GetDebugInfoOk
+### GetPodPhaseOk
 
-`func (o *JsonKubernetesEnclave) GetDebugInfoOk() (*string, bool)`
+`func (o *JsonKubernetesEnclave) GetPodPhaseOk() (*string, bool)`
 
-GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
+GetPodPhaseOk returns a tuple with the PodPhase field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDebugInfo
+### SetPodPhase
 
-`func (o *JsonKubernetesEnclave) SetDebugInfo(v string)`
+`func (o *JsonKubernetesEnclave) SetPodPhase(v string)`
 
-SetDebugInfo sets DebugInfo field to given value.
+SetPodPhase sets PodPhase field to given value.
 
-### HasDebugInfo
+### HasPodPhase
 
-`func (o *JsonKubernetesEnclave) HasDebugInfo() bool`
+`func (o *JsonKubernetesEnclave) HasPodPhase() bool`
 
-HasDebugInfo returns a boolean if a field has been set.
+HasPodPhase returns a boolean if a field has been set.
 
 ### GetEnclaveDeploymentEvents
 
@@ -831,6 +731,81 @@ SetEnclaveDeploymentEvents sets EnclaveDeploymentEvents field to given value.
 
 HasEnclaveDeploymentEvents returns a boolean if a field has been set.
 
+### GetDebugInfo
+
+`func (o *JsonKubernetesEnclave) GetDebugInfo() string`
+
+GetDebugInfo returns the DebugInfo field if non-nil, zero value otherwise.
+
+### GetDebugInfoOk
+
+`func (o *JsonKubernetesEnclave) GetDebugInfoOk() (*string, bool)`
+
+GetDebugInfoOk returns a tuple with the DebugInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugInfo
+
+`func (o *JsonKubernetesEnclave) SetDebugInfo(v string)`
+
+SetDebugInfo sets DebugInfo field to given value.
+
+### HasDebugInfo
+
+`func (o *JsonKubernetesEnclave) HasDebugInfo() bool`
+
+HasDebugInfo returns a boolean if a field has been set.
+
+### GetAttestationPort
+
+`func (o *JsonKubernetesEnclave) GetAttestationPort() int32`
+
+GetAttestationPort returns the AttestationPort field if non-nil, zero value otherwise.
+
+### GetAttestationPortOk
+
+`func (o *JsonKubernetesEnclave) GetAttestationPortOk() (*int32, bool)`
+
+GetAttestationPortOk returns a tuple with the AttestationPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttestationPort
+
+`func (o *JsonKubernetesEnclave) SetAttestationPort(v int32)`
+
+SetAttestationPort sets AttestationPort field to given value.
+
+### HasAttestationPort
+
+`func (o *JsonKubernetesEnclave) HasAttestationPort() bool`
+
+HasAttestationPort returns a boolean if a field has been set.
+
+### GetIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclave) GetIsUsingInitContainer() bool`
+
+GetIsUsingInitContainer returns the IsUsingInitContainer field if non-nil, zero value otherwise.
+
+### GetIsUsingInitContainerOk
+
+`func (o *JsonKubernetesEnclave) GetIsUsingInitContainerOk() (*bool, bool)`
+
+GetIsUsingInitContainerOk returns a tuple with the IsUsingInitContainer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclave) SetIsUsingInitContainer(v bool)`
+
+SetIsUsingInitContainer sets IsUsingInitContainer field to given value.
+
+### HasIsUsingInitContainer
+
+`func (o *JsonKubernetesEnclave) HasIsUsingInitContainer() bool`
+
+HasIsUsingInitContainer returns a boolean if a field has been set.
+
 ### GetWireguardPort
 
 `func (o *JsonKubernetesEnclave) GetWireguardPort() int32`
@@ -855,6 +830,31 @@ SetWireguardPort sets WireguardPort field to given value.
 `func (o *JsonKubernetesEnclave) HasWireguardPort() bool`
 
 HasWireguardPort returns a boolean if a field has been set.
+
+### GetEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclave) GetEnclaveReplicaSetEvents() JsonV1EventList`
+
+GetEnclaveReplicaSetEvents returns the EnclaveReplicaSetEvents field if non-nil, zero value otherwise.
+
+### GetEnclaveReplicaSetEventsOk
+
+`func (o *JsonKubernetesEnclave) GetEnclaveReplicaSetEventsOk() (*JsonV1EventList, bool)`
+
+GetEnclaveReplicaSetEventsOk returns a tuple with the EnclaveReplicaSetEvents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclave) SetEnclaveReplicaSetEvents(v JsonV1EventList)`
+
+SetEnclaveReplicaSetEvents sets EnclaveReplicaSetEvents field to given value.
+
+### HasEnclaveReplicaSetEvents
+
+`func (o *JsonKubernetesEnclave) HasEnclaveReplicaSetEvents() bool`
+
+HasEnclaveReplicaSetEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**LastObservedTime** | Pointer to **float32** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Count** | Pointer to **float32** |  | [optional] 
-**LastObservedTime** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -26,6 +26,31 @@ will change when the set of required properties is changed
 NewJsonV1EventSeriesWithDefaults instantiates a new JsonV1EventSeries object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetLastObservedTime
+
+`func (o *JsonV1EventSeries) GetLastObservedTime() float32`
+
+GetLastObservedTime returns the LastObservedTime field if non-nil, zero value otherwise.
+
+### GetLastObservedTimeOk
+
+`func (o *JsonV1EventSeries) GetLastObservedTimeOk() (*float32, bool)`
+
+GetLastObservedTimeOk returns a tuple with the LastObservedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastObservedTime
+
+`func (o *JsonV1EventSeries) SetLastObservedTime(v float32)`
+
+SetLastObservedTime sets LastObservedTime field to given value.
+
+### HasLastObservedTime
+
+`func (o *JsonV1EventSeries) HasLastObservedTime() bool`
+
+HasLastObservedTime returns a boolean if a field has been set.
 
 ### GetState
 
@@ -76,31 +101,6 @@ SetCount sets Count field to given value.
 `func (o *JsonV1EventSeries) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
-
-### GetLastObservedTime
-
-`func (o *JsonV1EventSeries) GetLastObservedTime() float32`
-
-GetLastObservedTime returns the LastObservedTime field if non-nil, zero value otherwise.
-
-### GetLastObservedTimeOk
-
-`func (o *JsonV1EventSeries) GetLastObservedTimeOk() (*float32, bool)`
-
-GetLastObservedTimeOk returns a tuple with the LastObservedTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastObservedTime
-
-`func (o *JsonV1EventSeries) SetLastObservedTime(v float32)`
-
-SetLastObservedTime sets LastObservedTime field to given value.
-
-### HasLastObservedTime
-
-`func (o *JsonV1EventSeries) HasLastObservedTime() bool`
-
-HasLastObservedTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

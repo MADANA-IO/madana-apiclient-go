@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Readonly** | Pointer to **bool** |  | [optional] 
 **Roothash** | Pointer to **string** |  | [optional] 
-**Disk** | Pointer to **string** |  | [optional] 
 **RoothashOffset** | Pointer to **int32** |  | [optional] 
+**Disk** | Pointer to **string** |  | [optional] 
+**Readonly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewJsonDiskConfigWithDefaults instantiates a new JsonDiskConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetReadonly
-
-`func (o *JsonDiskConfig) GetReadonly() bool`
-
-GetReadonly returns the Readonly field if non-nil, zero value otherwise.
-
-### GetReadonlyOk
-
-`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
-
-GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadonly
-
-`func (o *JsonDiskConfig) SetReadonly(v bool)`
-
-SetReadonly sets Readonly field to given value.
-
-### HasReadonly
-
-`func (o *JsonDiskConfig) HasReadonly() bool`
-
-HasReadonly returns a boolean if a field has been set.
 
 ### GetRoothash
 
@@ -78,6 +53,31 @@ SetRoothash sets Roothash field to given value.
 
 HasRoothash returns a boolean if a field has been set.
 
+### GetRoothashOffset
+
+`func (o *JsonDiskConfig) GetRoothashOffset() int32`
+
+GetRoothashOffset returns the RoothashOffset field if non-nil, zero value otherwise.
+
+### GetRoothashOffsetOk
+
+`func (o *JsonDiskConfig) GetRoothashOffsetOk() (*int32, bool)`
+
+GetRoothashOffsetOk returns a tuple with the RoothashOffset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoothashOffset
+
+`func (o *JsonDiskConfig) SetRoothashOffset(v int32)`
+
+SetRoothashOffset sets RoothashOffset field to given value.
+
+### HasRoothashOffset
+
+`func (o *JsonDiskConfig) HasRoothashOffset() bool`
+
+HasRoothashOffset returns a boolean if a field has been set.
+
 ### GetDisk
 
 `func (o *JsonDiskConfig) GetDisk() string`
@@ -103,30 +103,30 @@ SetDisk sets Disk field to given value.
 
 HasDisk returns a boolean if a field has been set.
 
-### GetRoothashOffset
+### GetReadonly
 
-`func (o *JsonDiskConfig) GetRoothashOffset() int32`
+`func (o *JsonDiskConfig) GetReadonly() bool`
 
-GetRoothashOffset returns the RoothashOffset field if non-nil, zero value otherwise.
+GetReadonly returns the Readonly field if non-nil, zero value otherwise.
 
-### GetRoothashOffsetOk
+### GetReadonlyOk
 
-`func (o *JsonDiskConfig) GetRoothashOffsetOk() (*int32, bool)`
+`func (o *JsonDiskConfig) GetReadonlyOk() (*bool, bool)`
 
-GetRoothashOffsetOk returns a tuple with the RoothashOffset field if it's non-nil, zero value otherwise
+GetReadonlyOk returns a tuple with the Readonly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoothashOffset
+### SetReadonly
 
-`func (o *JsonDiskConfig) SetRoothashOffset(v int32)`
+`func (o *JsonDiskConfig) SetReadonly(v bool)`
 
-SetRoothashOffset sets RoothashOffset field to given value.
+SetReadonly sets Readonly field to given value.
 
-### HasRoothashOffset
+### HasReadonly
 
-`func (o *JsonDiskConfig) HasRoothashOffset() bool`
+`func (o *JsonDiskConfig) HasReadonly() bool`
 
-HasRoothashOffset returns a boolean if a field has been set.
+HasReadonly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
